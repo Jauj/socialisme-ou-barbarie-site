@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorateur CPS</title>
+<style>
+  :root {
+    --bg: #fbfaf8; --fg: #1d1b19; --muted: #6b6560; --line: #e4e0db;
+    --accent: #b3261e; --chip: #f1ece6; --chip-fg: #4a433d; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161514; --fg: #ece8e3; --muted: #a39d96; --line: #34312e;
+      --accent: #ff7a6e; --chip: #2a2725; --chip-fg: #d8d2cb; --card: #1d1c1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header, main { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 24px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px;
+              padding: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+  .controls label { display: flex; flex-direction: column; font-size: .8rem; color: var(--muted); gap: 2px; }
+  .controls .wide { grid-column: 1 / -1; }
+  input, select, button { font: inherit; color: var(--fg); background: var(--bg);
+                          border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+  button { cursor: pointer; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .status { color: var(--muted); margin: 12px 0; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  ol { list-style: none; padding: 0; margin: 0; }
+  li.art { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .meta { font-size: .8rem; color: var(--muted); }
+  .titre { margin: 2px 0; }
+  .titre small { color: var(--muted); }
+  .liens a { font-size: .8rem; margin-right: 10px; color: var(--accent); }
+  .tag { display: inline-block; font-size: .75rem; padding: 1px 7px; margin: 2px 4px 0 0; border-radius: 10px;
+         background: var(--chip); color: var(--chip-fg); border: 0; cursor: pointer; }
+  .tag.regle { opacity: .75; font-style: italic; }
+  .more { display: block; margin: 16px auto 40px; }
+  .erreur { color: var(--accent); }
+  footer { color: var(--muted); font-size: .8rem; max-width: 1000px; margin: 0 auto; padding: 0 16px 32px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Combattre pour le <span>socialisme</span></h1>
+  <p class="sub" id="sub">Chargement de la base…</p>
+  <div class="controls">
+    <label class="wide">Recherche dans les titres
+      <input id="q" type="search" placeholder="ex. grève générale, Bolivie, Jospin…">
+    </label>
+    <label>Série
+      <select id="serie"><option value="">Toutes</option></select>
+    </label>
+    <label>Type
+      <select id="type"><option value="">Tous</option></select>
+    </label>
+    <label>Tag
+      <select id="tag"><option value="">Tous</option></select>
+    </label>
+    <label>Depuis
+      <input id="de" type="number" min="1984" max="2100" placeholder="1984">
+    </label>
+    <label>Jusqu'à
+      <input id="a" type="number" min="1984" max="2100" placeholder="2026">
+    </label>
+    <label>Tri
+      <select id="tri"><option value="desc">Plus récents d'abord</option><option value="asc">Plus anciens d'abord</option></select>
+    </label>
+    <div class="row wide">
+      <label class="row" style="flex-direction:row"><input id="texte" type="checkbox"> Texte intégral disponible</label>
+      <button id="raz" type="button">Réinitialiser</button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="status"><span id="compte"></span><span>Tags en italique : déduits du titre ; autres : index thématique du site.</span></div>
+  <ol id="liste"></ol>
+  <button class="more" id="plus" hidden>Afficher plus</button>
+</main>
+<footer>Source : <a href="http://socialisme.free.fr/">socialisme.free.fr</a> — données : <code>data/cps.json</code>.</footer>
+<script>
+const SERIES = { bulletin1984: "Bulletin 1984", ancienne: "Ancienne série", nouvelle: "Nouvelle série" };
+const TYPES = { numero: "Numéro", numero_special: "Numéro spécial", supplement: "Supplément", hors_serie: "Hors-série" };
+const PAS = 150;
+const $ = (id) => document.getElementById(id);
+const sansAccents = (s) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+let articles = [], libelles = {}, limite = PAS;
+
+function libellePublication(p) {
+  if (p.type === "supplement") return `Supplément au n°${p.numero} (${SERIES[p.serie]})`;
+  if (p.type === "hors_serie") return "Hors-série";
+  const cumule = p.serie === "nouvelle" && p.numero_cumule ? ` (n°${p.numero_cumule})` : "";
+  const prefixe = p.type === "numero_special" ? "N° spécial " : "n°";
+  return `CPS ${prefixe}${p.numero_label}${cumule} — ${SERIES[p.serie]}`;
+}
+
+function dateFr(d) {
+  const [y, m, j] = d.split("-");
+  return `${j !== "00" ? j + "/" : ""}${m}/${y}`;
+}
+
+function lireEtat() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  for (const k of ["q", "serie", "type", "tag", "de", "a", "tri"]) if (h.has(k)) $(k).value = h.get(k);
+  $("texte").checked = h.get("texte") === "1";
+}
+
+function ecrireEtat() {
+  const h = new URLSearchParams();
+  for (const k of ["q", "serie", "type", "tag", "de", "a"]) if ($(k).value) h.set(k, $(k).value);
+  if ($("tri").value !== "desc") h.set("tri", $("tri").value);
+  if ($("texte").checked) h.set("texte", "1");
+  history.replaceState(null, "", h.toString() ? "#" + h : location.pathname);
+}
+
+function filtrer() {
+  const q = sansAccents($("q").value).split(/\s+/).filter(Boolean);
+  const serie = $("serie").value, type = $("type").value, tag = $("tag").value;
+  const de = $("de").value, a = $("a").value, texte = $("texte").checked;
+  const res = articles.filter((x) =>
+    (!serie || x.pub.serie === serie) && (!type || x.pub.type === type) &&
+    (!tag || x.tags.some((t) => t.tag === tag)) &&
+    (!de || x.date.slice(0, 4) >= de) && (!a || x.date.slice(0, 4) <= a) &&
+    (!texte || x.texte_disponible) && q.every((m) => x.cle.includes(m)));
+  res.sort((u, v) => (u.date + u.id).localeCompare(v.date + v.id));
+  if ($("tri").value === "desc") res.reverse();
+  return res;
+}
+
+function lien(href, texte) {
+  const a = document.createElement("a");
+  a.href = href; a.textContent = texte; a.target = "_blank"; a.rel = "noopener";
+  return a;
+}
+
+function afficher() {
+  ecrireEtat();
+  const res = filtrer();
+  $("compte").textContent = `${res.length} article${res.length > 1 ? "s" : ""}`;
+  const ol = $("liste");
+  ol.replaceChildren();
+  for (const x of res.slice(0, limite)) {
+    const li = document.createElement("li");
+    li.className = "art";
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.textContent = `${dateFr(x.date)} · ${libellePublication(x.pub)} · ${x.id}`;
+    const titre = document.createElement("div");
+    titre.className = "titre";
+    titre.textContent = x.titre;
+    if (x.titre_index) {
+      const s = document.createElement("small");
+      s.textContent = " — " + x.titre_index;
+      titre.append(s);
+    }
+    const liens = document.createElement("div");
+    liens.className = "liens";
+    if (x.url_html) liens.append(lien(x.url_html, "HTML"));
+    if (x.url_pdf) liens.append(lien(x.url_pdf + (x.pdf_page ? "#page=" + x.pdf_page : ""), x.pdf_page ? `PDF p. ${x.pdf_page}` : "PDF"));
+    if (x.pub.url_pdf && x.pub.pdf_disponible && x.pub.url_pdf !== x.url_pdf) liens.append(lien(x.pub.url_pdf, "PDF du numéro"));
+    const tags = document.createElement("div");
+    for (const t of x.tags) {
+      const b = document.createElement("button");
+      b.className = "tag" + (t.source === "regle" ? " regle" : "");
+      b.textContent = libelles[t.tag] || t.tag;
+      b.title = t.source === "regle" ? "Tag déduit du titre" : "Tag de l'index thématique du site";
+      b.onclick = () => { $("tag").value = t.tag; limite = PAS; afficher(); window.scrollTo(0, 0); };
+      tags.append(b);
+    }
+    li.append(meta, titre, liens, tags);
+    ol.append(li);
+  }
+  $("plus").hidden = res.length <= limite;
+}
+
+async function init() {
+  try {
+    const r = await fetch("../data/cps.json");
+    if (!r.ok) throw new Error(r.status);
+    const data = await r.json();
+    for (const t of data.tags) libelles[t.slug] = t.libelle;
+    for (const p of data.publications)
+      for (const a of p.articles)
+        articles.push({ ...a, pub: p, cle: sansAccents(a.titre + " " + (a.titre_index || "")) });
+    const compte = {};
+    for (const a of articles) for (const t of a.tags) compte[t.tag] = (compte[t.tag] || 0) + 1;
+    for (const [k, v] of Object.entries(SERIES)) $("serie").add(new Option(v, k));
+    for (const [k, v] of Object.entries(TYPES)) $("type").add(new Option(v, k));
+    const cats = {};
+    for (const t of data.tags) (cats[t.categorie] ||= []).push(t);
+    for (const [cat, ts] of Object.entries(cats)) {
+      const g = document.createElement("optgroup");
+      g.label = cat;
+      ts.sort((u, v) => u.libelle.localeCompare(v.libelle, "fr"));
+      for (const t of ts) g.append(new Option(`${t.libelle} (${compte[t.slug] || 0})`, t.slug));
+      $("tag").append(g);
+    }
+    $("sub").textContent = `${data.publications.length} publications, ${articles.length} articles, ${data.tags.length} tags — 1984 à aujourd'hui.`;
+    lireEtat();
+    for (const id of ["q", "serie", "type", "tag", "de", "a", "tri", "texte"])
+      $(id).addEventListener(id === "q" ? "input" : "change", () => { limite = PAS; afficher(); });
+    $("plus").onclick = () => { limite += PAS; afficher(); };
+    $("raz").onclick = () => {
+      for (const id of ["q", "serie", "type", "tag", "de", "a"]) $(id).value = "";
+      $("tri").value = "desc"; $("texte").checked = false; limite = PAS; afficher();
+    };
+    afficher();
+  } catch (e) {
+    $("sub").innerHTML = '<span class="erreur">Impossible de charger ../data/cps.json. Servez le dépôt avec un serveur web (ex. <code>python3 -m http.server</code> à la racine) puis ouvrez /explorateur/.</span>';
+  }
+}
+init();
+</script>
+</body>
+</html>

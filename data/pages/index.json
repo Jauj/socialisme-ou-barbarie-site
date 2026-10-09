@@ -1,0 +1,1260 @@
+{
+ "B84-001": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/1984_10_00_cps_1.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 10,
+  "caracteres": 41131
+ },
+ "HS-2012-05-27": {
+  "source": "http://socialisme.free.fr/rapp_inter_conf_2012.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 21,
+  "caracteres": 131095
+ },
+ "HS-2016-04-15": {
+  "source": "http://socialisme.free.fr/histoire_theorie/2016_04_15_lo_une_reference_au_trotskysme_usurpee.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 14,
+  "caracteres": 59481
+ },
+ "HS-2022-01-01": {
+  "source": "http://socialisme.free.fr/brochurecjr/BrochureCJR-1couleur.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 35,
+  "caracteres": 222240
+ },
+ "HS-2022-09-01": {
+  "source": "http://socialisme.free.fr/brochurecjr/SouB_bulletin-n0_ETE%202022.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 103414
+ },
+ "NS-034": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_09_24_cps_34_116_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 32,
+  "caracteres": 173568
+ },
+ "NS-035": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_01_07_cps_35_117_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 36,
+  "caracteres": 202335
+ },
+ "NS-036": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_03_29_cps_36_118_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 34,
+  "caracteres": 179977
+ },
+ "NS-037": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_05_30_cps_37_119_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 34,
+  "caracteres": 182677
+ },
+ "NS-038": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_10_09_cps_38_120_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 34,
+  "caracteres": 189489
+ },
+ "NS-039": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2010_01_23_cps39_121as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 34,
+  "caracteres": 192613
+ },
+ "NS-039-S2": {
+  "source": "http://socialisme.free.fr/supplements/sup030410.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 20751
+ },
+ "NS-040": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2010_05_17_cps_40_122_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 36,
+  "caracteres": 211621
+ },
+ "NS-041": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2010_10_13_cps41_123as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 28,
+  "caracteres": 152500
+ },
+ "NS-042": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2011_02_10_cps42_124as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 34,
+  "caracteres": 182459
+ },
+ "NS-043": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2011_05_11_cps_43_125_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 32,
+  "caracteres": 182989
+ },
+ "NS-044": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2011_10_11_cps44_126as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 30,
+  "caracteres": 162726
+ },
+ "NS-045": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2012_01_23_cps45_127as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 34,
+  "caracteres": 196887
+ },
+ "NS-046": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2012_04_19_cps46_128as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 37,
+  "caracteres": 210967
+ },
+ "NS-047": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2012_06_25_cps47_129as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 34,
+  "caracteres": 195157
+ },
+ "NS-048": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2012_10_20_cps48_130as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 26,
+  "caracteres": 151229
+ },
+ "NS-049": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2013_01_15_cps49_131as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 198193
+ },
+ "NS-050": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2013_04_10_cps50_132as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 186278
+ },
+ "NS-051": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2013_09_25_cps51_133as.pdf",
+  "statut": "introuvable"
+ },
+ "NS-051-S1": {
+  "source": "http://socialisme.free.fr/supplements/2013_10_27_groupe_declaration_manifestations_lyceennes.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9165
+ },
+ "NS-053": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2014_03_19_cps_53_135as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 35,
+  "caracteres": 182328
+ },
+ "NS-053-S1": {
+  "source": "http://socialisme.free.fr/supplements/2014_03_17_supp_cps53.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7004
+ },
+ "NS-054": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2014_05_31_cps_54_136as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 35,
+  "caracteres": 186080
+ },
+ "NS-054-S2": {
+  "source": "http://socialisme.free.fr/supplements/2014_09_18_supp_cps54_rentree.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 17772
+ },
+ "NS-055": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2014_12_03_cps_55_137as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 188267
+ },
+ "NS-056": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2015_02_19_cps_56_138as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 38,
+  "caracteres": 192304
+ },
+ "NS-057": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2015_05_13_cps_57_139as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 40,
+  "caracteres": 234061
+ },
+ "NS-058": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2015_10_10_cps_58_140_as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 205679
+ },
+ "NS-059": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2016_01_20_cps_59_141as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 190580
+ },
+ "NS-060": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2016_04_07_cps_60_142as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 38,
+  "caracteres": 217292
+ },
+ "NS-061": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2016_06_07_cps_61_143as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 38,
+  "caracteres": 222478
+ },
+ "NS-062": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2016_09_28_cps62_144as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 184775
+ },
+ "NS-063": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2016_12_07_cps_63_145as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 180948
+ },
+ "NS-063-S1": {
+  "source": "http://socialisme.free.fr/supplements/2016_10_10_supp_cps_62_universite.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 10630
+ },
+ "NS-064": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2017_03_01_cps_64_146as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 183371
+ },
+ "NS-064-S2": {
+  "source": "http://socialisme.free.fr/conferences/2017_04_17_5e_conf_rapport_inter.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 22,
+  "caracteres": 117073
+ },
+ "NS-064-S3": {
+  "source": "http://socialisme.free.fr/supplements/2017_04_26_groupe_apres_1er_tour_presidentielle_2017.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7925
+ },
+ "NS-064-S4": {
+  "source": "http://socialisme.free.fr/supplements/2017_05_15_supp_cps_64_apres_l_election_presidentielle.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 8,
+  "caracteres": 35130
+ },
+ "NS-065": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2017_06_01_cps_65_147as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 30,
+  "caracteres": 158751
+ },
+ "NS-065-S1": {
+  "source": "http://socialisme.free.fr/supplements/2017_06_27_supp_cps_65.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 6,
+  "caracteres": 28223
+ },
+ "NS-066": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2017_09_20_cps_66_148as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 38,
+  "caracteres": 212640
+ },
+ "NS-066-S1": {
+  "source": "http://socialisme.free.fr/supplements/2017_09_30_supp_cps_66_universites.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9698
+ },
+ "NS-066-S2": {
+  "source": "http://socialisme.free.fr/supplements/2017_10_08_supp_cps_66_fonction_publique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9295
+ },
+ "NS-066-S3": {
+  "source": "http://socialisme.free.fr/supplements/2017_10_22_supp_cps_66_catalogne.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 7,
+  "caracteres": 37348
+ },
+ "NS-067": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2017_12_01_cps_67_149as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 169766
+ },
+ "NS-067-S1": {
+  "source": "http://socialisme.free.fr/supplements/2018_01_27_supp_universites_cps_67.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9042
+ },
+ "NS-067-S2": {
+  "source": "http://socialisme.free.fr/supplements/2018_02_19_supp_fct_publ_cps_67.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9605
+ },
+ "NS-068": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2018_03_01_cps_68_150as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 38,
+  "caracteres": 203442
+ },
+ "NS-068-S1": {
+  "source": "http://socialisme.free.fr/sommaires_cps/supplements/2018_04_20_supp_universite.pdf",
+  "statut": "introuvable"
+ },
+ "NS-068-S2": {
+  "source": "http://socialisme.free.fr/supplements/2018_04_28_palestine_communique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7774
+ },
+ "NS-069": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2018_05_24_cps_69_151as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 213536
+ },
+ "NS-070": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2018_09_27_cps_70_152as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 199445
+ },
+ "NS-070-S1": {
+  "source": "http://socialisme.free.fr/supplements/2018_10_06_suppl_cps_70_jeunes.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 11844
+ },
+ "NS-070-S2": {
+  "source": "http://socialisme.free.fr/supplements/2018_10_08_cps_declaration_bresil.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9297
+ },
+ "NS-070-S3": {
+  "source": "http://socialisme.free.fr/supplements/2018_10_08_supp_finances_cps_70.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9824
+ },
+ "NS-071": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2018_12_05_cps_71_153as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 40,
+  "caracteres": 210302
+ },
+ "NS-071-S1": {
+  "source": "http://socialisme.free.fr/supplements/2018_12_12_supp_gj_cps_71.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 22735
+ },
+ "NS-071-S2": {
+  "source": "http://socialisme.free.fr/supplements/2019_02_02_supp_finances_cps_71.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 12063
+ },
+ "NS-071-S3": {
+  "source": "http://socialisme.free.fr/supplements/2019_02_19_declaration_loi_anti_casseurs.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 5519
+ },
+ "NS-071-S4": {
+  "source": "http://socialisme.free.fr/supplements/2019_02_20_supp_%20jeunes_cps_71.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 10294
+ },
+ "NS-072": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2019_03_13_cps_72_154as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 38,
+  "caracteres": 203498
+ },
+ "NS-072-S1": {
+  "source": "http://socialisme.free.fr/supplements/2019_03_17_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9301
+ },
+ "NS-072-S2": {
+  "source": "http://socialisme.free.fr/supplements/2019_03_31_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9859
+ },
+ "NS-072-S3": {
+  "source": "http://socialisme.free.fr/supplements/2019_04_08_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 3,
+  "caracteres": 14004
+ },
+ "NS-072-S4": {
+  "source": "http://socialisme.free.fr/supplements/2019_04_18_cps_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 3,
+  "caracteres": 12793
+ },
+ "NS-072-S5": {
+  "source": "http://socialisme.free.fr/supplements/2019_05_05_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 10782
+ },
+ "NS-072-S6": {
+  "source": "http://socialisme.free.fr/supplements/2019_05_07_apres_le_1er_mai_2019.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 5244
+ },
+ "NS-072-S7": {
+  "source": "http://socialisme.free.fr/supplements/2019_05_10_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 5840
+ },
+ "NS-073": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2019_06_05_cps_73_155as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 40,
+  "caracteres": 221028
+ },
+ "NS-073-S1": {
+  "source": "http://socialisme.free.fr/supplements/2019_06_17_declaration_algerie_MS.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 10424
+ },
+ "NS-073-S2": {
+  "source": "http://socialisme.free.fr/supplements/2019_07_07_supp_cps_73_algerie_questions.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 16,
+  "caracteres": 84960
+ },
+ "NS-073-S3": {
+  "source": "http://socialisme.free.fr/supplements/2019_07_28_declaration_algerie_MS.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 21118
+ },
+ "NS-073-S4": {
+  "source": "http://socialisme.free.fr/supplements/2019_09_22_declaration_algerie_ms.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 15153
+ },
+ "NS-074": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2019_09_25_cps_74_156as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 28,
+  "caracteres": 133202
+ },
+ "NS-074-S1": {
+  "source": "http://socialisme.free.fr/supplements/2019_10_07_declaration_algerie_ms.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7519
+ },
+ "NS-074-S2": {
+  "source": "http://socialisme.free.fr/supplements/2019_10_19_cps_declaracion_cataluna_es.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 3951
+ },
+ "NS-074-S3": {
+  "source": "http://socialisme.free.fr/supplements/2019_10_19_cps_declaration_catalogne.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4323
+ },
+ "NS-074-S4": {
+  "source": "http://socialisme.free.fr/supplements/2019_11_15_supp_jeunes_cps74.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 10093
+ },
+ "NS-074-S5": {
+  "source": "http://socialisme.free.fr/supplements/2019_11_17_declaration_algerie_ms.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9869
+ },
+ "NS-075": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2019_12_01_cps_75_157as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 207605
+ },
+ "NS-075-S1": {
+  "source": "http://socialisme.free.fr/supplements/2019_12_26_declaration_ms_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 7,
+  "caracteres": 26481
+ },
+ "NS-075-S2": {
+  "source": "http://socialisme.free.fr/supplements/2020_01_07_supplement_cps_75_retraites.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 8993
+ },
+ "NS-075-S3": {
+  "source": "http://socialisme.free.fr/supplements/2020_01_23_supplement_cps_informe_cdfn.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7718
+ },
+ "NS-075-S4": {
+  "source": "http://socialisme.free.fr/supplements/2020_01_30_interventions_ratp.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 6,
+  "caracteres": 27384
+ },
+ "NS-075-S5": {
+  "source": "http://socialisme.free.fr/supplements/2020_02_12_declaration_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 11477
+ },
+ "NS-076": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2020_03_12_cps_76_158as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 180608
+ },
+ "NS-076-S1": {
+  "source": "http://socialisme.free.fr/supplements/2020_03_23_declaration_covid19.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 7,
+  "caracteres": 36530
+ },
+ "NS-076-S2": {
+  "source": "http://socialisme.free.fr/supplements/2020_04_20_supplement_cps_76.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 7,
+  "caracteres": 39694
+ },
+ "NS-076-S4": {
+  "source": "http://socialisme.free.fr/supplements/2020_05_17_ms_declaration.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 7,
+  "caracteres": 34847
+ },
+ "NS-076-S5": {
+  "source": "http://socialisme.free.fr/supplements/2020_05_28_supp_cps_76_etudiants.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 6,
+  "caracteres": 30773
+ },
+ "NS-076-S6": {
+  "source": "http://socialisme.free.fr/supplements/2020_06_12_supp_cps.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 19308
+ },
+ "NS-076-S7": {
+  "source": "http://socialisme.free.fr/supplements/2020_06_12_cps_supp_hopitaux.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 8833
+ },
+ "NS-076-S8": {
+  "source": "http://socialisme.free.fr/supplements/2020_06_12_cps_jeunes.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 11842
+ },
+ "NS-077": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2020_09_23_cps_77_159as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 41,
+  "caracteres": 232648
+ },
+ "NS-077-S1": {
+  "source": "http://socialisme.free.fr/supplements/2020_10_16_situation_hopital.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 15450
+ },
+ "NS-077-S2": {
+  "source": "http://socialisme.free.fr/supplements/2020_11_26_supp_cps_77_jeunes.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 5035
+ },
+ "NS-077-S3": {
+  "source": "http://socialisme.free.fr/supplements/2020_11_26_supp_cps_77_communique_interv_cdfn_fsu.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 6323
+ },
+ "NS-078": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2021_01_21_cps_78_160as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 40,
+  "caracteres": 223728
+ },
+ "NS-078-S1": {
+  "source": "http://socialisme.free.fr/supplements/2021_03_07_ms_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 6,
+  "caracteres": 19078
+ },
+ "NS-078-S2": {
+  "source": "http://socialisme.free.fr/supplements/2021_03_23_declaration_cps_unef.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 8405
+ },
+ "NS-078-S3": {
+  "source": "http://socialisme.free.fr/supplements/2021_04_20_ms_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 11333
+ },
+ "NS-078-S4": {
+  "source": "http://socialisme.free.fr/supplements/2021_05_13_sup_cps78_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 6749
+ },
+ "NS-079": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2021_06_03_cps_79_161as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 28,
+  "caracteres": 152805
+ },
+ "NS-079-S1": {
+  "source": "http://socialisme.free.fr/supplements/2021_08_28_cps_supp_declaration_afghanistan.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 3,
+  "caracteres": 15075
+ },
+ "NS-080": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2021_09_29_cps_80_162as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 34,
+  "caracteres": 184459
+ },
+ "NS-080-S1": {
+  "source": "http://socialisme.free.fr/supplements/2021_10_02_supp_cps_80_fonction_publique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 10696
+ },
+ "NS-080-S2": {
+  "source": "http://socialisme.free.fr/supplements/2021_10_21_ratp.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 12032
+ },
+ "NS-080-S3": {
+  "source": "http://socialisme.free.fr/supplements/2021_11_02_supp_cps_80_sante.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 8,
+  "caracteres": 47113
+ },
+ "NS-081": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2021_12_01_cps_81_163as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 40,
+  "caracteres": 223199
+ },
+ "NS-081-S1": {
+  "source": "http://socialisme.free.fr/supplements/2022_01_26_supp_cps_81_fonction_publique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7883
+ },
+ "NS-082": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2022_03_09_cps_82_164as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 201300
+ },
+ "NS-082-S1": {
+  "source": "http://socialisme.free.fr/supplements/2022_03_01_declaration_ukraine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 13989
+ },
+ "NS-082-S2": {
+  "source": "http://socialisme.free.fr/supplements/2022_04_12_cps_communique_presidentielle.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7705
+ },
+ "NS-083": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2022_06_01_cps_83_165as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 46,
+  "caracteres": 246197
+ },
+ "NS-083-S1": {
+  "source": "http://socialisme.free.fr/supplements/2022_09_00_sup_cps_bresil.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 17724
+ },
+ "NS-084": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2022_10_06_cps_84_166as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 40,
+  "caracteres": 211038
+ },
+ "NS-084-S1": {
+  "source": "http://socialisme.free.fr/supplements/2022_10_31_cps%20communique_iran.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 5574
+ },
+ "NS-084-S2": {
+  "source": "http://socialisme.free.fr/supplements/2022_11_08_supp_cps_retraites.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7662
+ },
+ "NS-084-S3": {
+  "source": "http://socialisme.free.fr/supplements/2022_11_21_ms_loiexercicesyndical.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 5,
+  "caracteres": 16218
+ },
+ "NS-085": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2022_12_01_cps_85_167as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 33,
+  "caracteres": 158384
+ },
+ "NS-085-S1": {
+  "source": "http://socialisme.free.fr/supplements/2023_01_05_communique_iran.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 4325
+ },
+ "NS-085-S2": {
+  "source": "http://socialisme.free.fr/supplements/2023_01_16_cps_supplement_retraites.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 6994
+ },
+ "NS-085-S3": {
+  "source": "http://socialisme.free.fr/supplements/2023_01_27_supp_cps_retraites.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 6994
+ },
+ "NS-085-S4": {
+  "source": "http://socialisme.free.fr/supplements/2023_02_02_supp_cps_retraite.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 3754
+ },
+ "NS-085-S5": {
+  "source": "http://socialisme.free.fr/supplements/2023_02_24_supp_cps_retraite.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4331
+ },
+ "NS-086": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2023_03_02_cps_86_168as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 35,
+  "caracteres": 151733
+ },
+ "NS-086-S1": {
+  "source": "http://socialisme.free.fr/supplements/2023_03_10_supp_cps86_fu_bdfn_fsu.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 3714
+ },
+ "NS-086-S2": {
+  "source": "http://socialisme.free.fr/supplements/2023_03_17_supp_cps_86_interv_fu_ca_sncs.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 2958
+ },
+ "NS-086-S3": {
+  "source": "http://socialisme.free.fr/supplements/2023_03_27_supp_cps_86_interv_fu_bdfn_fsu.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4267
+ },
+ "NS-086-S4": {
+  "source": "http://socialisme.free.fr/supplements/2023_04_02_ms_declaration_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 5,
+  "caracteres": 13626
+ },
+ "NS-087": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2023_05_18_cps_87_169as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 188866
+ },
+ "NS-087-S1": {
+  "source": "http://socialisme.free.fr/supplements/2023_05_15_supp_bresil_fr.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 6,
+  "caracteres": 25470
+ },
+ "NS-087-S2": {
+  "source": "http://socialisme.free.fr/supplements/2023_06_08_supp_ratp_macron_n_a_du_renoncer_a_sa_contre_reforme.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 22266
+ },
+ "NS-087-S3": {
+  "source": "http://socialisme.free.fr/supplements/2023_08_13_ms_declaration_niger.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 10802
+ },
+ "NS-088": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2023_09_30_cps_88_170as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 24,
+  "caracteres": 124971
+ },
+ "NS-088-S1": {
+  "source": "http://socialisme.free.fr/supplements/2023_10_09_intervention_fu_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4927
+ },
+ "NS-088-S2": {
+  "source": "http://socialisme.free.fr/supplements/2023_10_21_cps_soub_supp_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4878
+ },
+ "NS-088-S3": {
+  "source": "http://socialisme.free.fr/supplements/2023_11_16_sup_cps_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4840
+ },
+ "NS-089": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2023_11_30_cps_89_171as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 166491
+ },
+ "NS-089-S1": {
+  "source": "http://socialisme.free.fr/supplements/2024_01_13_cjr_loi_immigration.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 5536
+ },
+ "NS-089-S2": {
+  "source": "http://socialisme.free.fr/supplements/2024_02_18_supp_cps_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4086
+ },
+ "NS-090": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2024_03_07_cps_90_172as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 33,
+  "caracteres": 182342
+ },
+ "NS-090-S1": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2024_02_29_cps_90_172as_femmes.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 18,
+  "caracteres": 92855
+ },
+ "NS-090-S2": {
+  "source": "http://socialisme.free.fr/supplements/2024_03_16_sup_cps_90_fonction_publique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7665
+ },
+ "NS-090-S3": {
+  "source": "http://socialisme.free.fr/supplements/2024_03_23_cjr_palestine_mars_2024.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7045
+ },
+ "NS-090-S4": {
+  "source": "http://socialisme.free.fr/supplements/2024_04_29_supp_palestine_cps_avril%202024.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 5350
+ },
+ "NS-090-S5": {
+  "source": "http://socialisme.free.fr/supplements/2024_05_14_supp_cps_90_fonction_publique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 8208
+ },
+ "NS-091": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2024_05_23_cps_91_173as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 35,
+  "caracteres": 180567
+ },
+ "NS-091-S1": {
+  "source": "http://socialisme.free.fr/supplements/2024_06_22_supp_cps91_declaration_%20legislatives.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 17012
+ },
+ "NS-091-S2": {
+  "source": "http://socialisme.free.fr/supplements/2024_06_04_ms_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 20,
+  "caracteres": 60045
+ },
+ "NS-091-S3": {
+  "source": "http://socialisme.free.fr/supplements/2024_09_26_ms_communique.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 6,
+  "caracteres": 16108
+ },
+ "NS-091-S4": {
+  "source": "http://socialisme.free.fr/2024_10_01_supp_cps_liban.pdf",
+  "statut": "introuvable"
+ },
+ "NS-092": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2024_10_09_cps_92_174as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 36,
+  "caracteres": 188881
+ },
+ "NS-092-S1": {
+  "source": "http://socialisme.free.fr/supplements/2025_02_03_FU_LL_368.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 7374
+ },
+ "NS-093": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2025_01_30_cps_93_175as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 27,
+  "caracteres": 141029
+ },
+ "NS-093-S1": {
+  "source": "http://socialisme.free.fr/supplements/2025_02_00_cjr_soub_3.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 91926
+ },
+ "NS-093-S2": {
+  "source": "http://socialisme.free.fr/supplements/2024_09_00_cjr_soub_2.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 20,
+  "caracteres": 65872
+ },
+ "NS-093-S3": {
+  "source": "http://socialisme.free.fr/supplements/2025_04_04_supplement_cps_93.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 18519
+ },
+ "NS-093-S4": {
+  "source": "http://socialisme.free.fr/supplements/2025_05_08_supp_cps_94_declaration_palestine.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 3905
+ },
+ "NS-094": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2025_05_08_cps_94_176as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 32,
+  "caracteres": 159511
+ },
+ "NS-094-S1": {
+  "source": "http://socialisme.free.fr/supplements/2025_06_08_declaration_gaza_supp_cps94.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9119
+ },
+ "NS-094-S2": {
+  "source": "http://socialisme.free.fr/supplements/2025_06_22_declaration_iran_supp_cps94.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 3,
+  "caracteres": 13595
+ },
+ "NS-094-S3": {
+  "source": "http://socialisme.free.fr/supplements/2025_08_10_ms_article_algerie.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 13,
+  "caracteres": 46433
+ },
+ "NS-094-S4": {
+  "source": "http://socialisme.free.fr/supplements/2025_09_15_supp_cps_94.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9853
+ },
+ "NS-095": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2025_10_11_cps_95_177as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 34,
+  "caracteres": 175349
+ },
+ "NS-095-S1": {
+  "source": "http://socialisme.free.fr/supplements/2025_11_01_supp_cps_95.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 20488
+ },
+ "NS-095-S2": {
+  "source": "http://socialisme.free.fr/supplements/2025_28_11_declaration_gaza_supp_cps95.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 8627
+ },
+ "NS-095-S3": {
+  "source": "http://socialisme.free.fr/supplements/2026_01_07_suppl_venezuela.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 9292
+ },
+ "NS-096": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2026_02_28_cps_96_178as.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 37,
+  "caracteres": 185448
+ },
+ "NS-096-S1": {
+  "source": "http://socialisme.free.fr/supplements/2026_03_07_supp_iran_cps_96.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 6876
+ },
+ "NS-096-S2": {
+  "source": "http://socialisme.free.fr/supplements/2026_03_11_ms_iran.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 5,
+  "caracteres": 10142
+ },
+ "NS-096-S3": {
+  "source": "http://socialisme.free.fr/supplements/2026_04_10_communique_loi_yadan.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 1,
+  "caracteres": 4572
+ },
+ "NS-097": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2026_04_00_cps_97_179as_conference.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 29,
+  "caracteres": 140735
+ },
+ "NS-097-S1": {
+  "source": "http://socialisme.free.fr/supplements/2026_06_01_supp_cps_97.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 4,
+  "caracteres": 24108
+ },
+ "NS-098-S1": {
+  "source": "http://socialisme.free.fr/supplements/2026_10_05_supp_cps_98_enseigement.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 6805
+ },
+ "NS-098-S2": {
+  "source": "http://socialisme.free.fr/supplements/2026_10_05_supp_cps_98_cjr.pdf",
+  "statut": "ok",
+  "methode": "pdf_texte",
+  "pages": 2,
+  "caracteres": 5623
+ }
+}

@@ -1,0 +1,119 @@
+slug,libelle,categorie,origine,nb_articles
+editorial,Editorial,Rubriques,site,166
+etudiants,Etudiants,Rubriques,site,45
+hommage,Hommage,Rubriques,site,11
+immigration,Immigration,Rubriques,site,5
+jeunesse,Jeunesse,Rubriques,site,71
+kanakynouvelle,Kanaky («Nouvelle-Calédonie»),Rubriques,site,5
+maghrebsociali,Maghreb socialiste,Rubriques,site,26
+militants,Les militants interviennent et informent CPS,Rubriques,site,131
+niger,Niger,Rubriques,site,2
+noteseco,Situation Economique,Rubriques,site,41
+situinter,Situation Internationale,Rubriques,site,35
+srilanka,Sri Lanka,Rubriques,site,1
+elections,Elections,France,site,89
+enseignement,Enseignement Public,France,site,188
+etatpolicier,État policier,France,site,20
+fonctionnaires,Fonction Publique,France,site,56
+maijuin68,Grève générale de mai-juin 1968,France,site,3
+onnouscommuniq,On nous communique,France,site,43
+ratp,RATP,France,site,59
+retraites,Retraites,France,site,34
+sante,Santé publique,France,site,20
+secu,Sécurité Sociale,France,site,24
+sncf,SNCF,France,site,7
+université,Université,France,site,57
+cci,CCI,Partis et syndicats en France,site,4
+cgt,CGT,Partis et syndicats en France,site,44
+cjr,Cercle de Jeunes Révolutionnaires,Partis et syndicats en France,site,13
+cps,Groupe pour la construction du POR,Partis et syndicats en France,site,75
+fen,FEN,Partis et syndicats en France,site,28
+fn,Front National,Partis et syndicats en France,site,4
+fo,Force Ouvrière,Partis et syndicats en France,site,45
+fsu,FSU,Partis et syndicats en France,site,39
+lfi,LFI,Partis et syndicats en France,site,3
+lo,LO,Partis et syndicats en France,site,3
+pcf,Parti Communiste Français,Partis et syndicats en France,site,28
+pci,PCI,Partis et syndicats en France,site,34
+poi,POI,Partis et syndicats en France,site,3
+ps,Parti Socialiste,Partis et syndicats en France,site,44
+pt,PT/MPPT,Partis et syndicats en France,site,20
+snuipp,SNUIPP,Partis et syndicats en France,site,3
+syndicats,Syndicats,Partis et syndicats en France,site,172
+unef,UNEF,Partis et syndicats en France,site,22
+1789,Revolution Française,Théorie,site,4
+1917,Révolution Russe,Théorie,site,3
+crise,Crise du Capitalisme,Théorie,site,25
+dialsoc,Dialogue Social / Crise du Syndicalisme,Théorie,site,54
+ecologie,Ecologie,Théorie,site,8
+femmes,Femmes,Théorie,site,7
+guerreimp,Guerre Impérialiste,Théorie,site,36
+histheo,Histoire et Theorie,Théorie,site,18
+ivinter,Iveme Internationale,Théorie,site,22
+laïcité,Laïcité,Théorie,site,7
+marx,Marx,Théorie,site,6
+trotsky,Défense du Trotskisme,Théorie,site,9
+wwi,Première Guerre Mondiale,Théorie,site,2
+afdusud,Afrique du Sud,International,site,14
+afghanistan,Afghanistan,International,site,6
+albanie,Albanie,International,site,3
+algerie,Algérie,International,site,44
+allemagne,Allemagne,International,site,15
+ameriquelatine,Amérique latine,International,site,1
+argentine,Argentine,International,site,3
+armenie,Arménie,International,site,1
+balkans,Balkans,International,site,5
+basque,Pays Basque,International,site,2
+belgique,Belgique,International,site,2
+bolivie,Bolivie,International,site,4
+bresil,Brésil,International,site,23
+catalogne,Catalogne,International,site,3
+chili,Chili,International,site,4
+chine,Chine,International,site,10
+conf,Textes adoptés par nos Conférences,International,site,18
+coreedusud,Corée du Sud,International,site,2
+cotedivoire,Cote d'Ivoire,International,site,4
+cuba,Cuba,International,site,1
+danemark,Danemark,International,site,1
+egypte,Egypte,International,site,3
+espagne,Espagne,International,site,10
+europe,Union Européenne / Etats Unis Socialistes d'Europe,International,site,28
+france,France,International,site,262
+georgie,Georgie,International,site,1
+grece,Grèce,International,site,5
+guadeloupe,Guadeloupe,International,site,1
+haiti,Haïti,International,site,3
+immigres,Migrants,International,site,4
+indochine,Indochine,International,site,2
+iran,Iran,International,site,11
+irlande,Irlande,International,site,1
+italie,Italie,International,site,11
+kosovo,Kosovo,International,site,1
+liban,Liban,International,site,6
+lybie,Lybie,International,site,1
+maghreb,Maghreb,International,site,31
+mali,Mali,International,site,1
+maroc,Maroc,International,site,1
+mayotte,Mayotte,International,site,1
+mexique,Mexique,International,site,1
+nicaragua,Nicaragua,International,site,2
+palestine,Palestine,International,site,47
+pologne,Pologne,International,site,2
+roumanie,Roumanie,International,site,1
+russie,Russie / URSS,International,site,37
+somalie,Somalie,International,site,2
+tchad,Tchad,International,site,1
+uk,Royaume-Uni,International,site,12
+ukraine,Ukraine,International,site,5
+uruguay,Uruguay,International,site,2
+usa,Etats-Unis,International,site,23
+venezuela,Venezuela,International,site,9
+yougo,Ex-Yougoslavie,International,site,19
+irak,Irak,International,ajout,12
+tunisie,Tunisie,International,ajout,4
+afrique,Afrique,International,ajout,4
+travail,"Code du travail, emploi, chômage, salaires",France,ajout,28
+industrie,"Métallurgie, automobile, industrie",France,ajout,26
+vrepublique,"Ve République, institutions",France,ajout,19
+grevegenerale,Grève générale,Théorie,ajout,13
+frontunique,Front unique,Théorie,ajout,34
