@@ -163,7 +163,10 @@ function afficher() {
     liens.className = "liens";
     if (x.url_html) liens.append(lien(x.url_html, "HTML"));
     if (x.url_pdf) liens.append(lien(x.url_pdf + (x.pdf_page ? "#page=" + x.pdf_page : ""), x.pdf_page ? `PDF p. ${x.pdf_page}` : "PDF"));
-    if (x.pub.url_pdf && x.pub.pdf_disponible && x.pub.url_pdf !== x.url_pdf) liens.append(lien(x.pub.url_pdf, "PDF du numéro"));
+    if (x.pub.url_pdf && x.pub.pdf_disponible && x.pub.url_pdf !== x.url_pdf) {
+      const p = !x.pdf_page && x.page_debut ? x.page_debut : null;
+      liens.append(lien(x.pub.url_pdf + (p ? "#page=" + p : ""), p ? `PDF du numéro p. ${p}` : "PDF du numéro"));
+    }
     const tags = document.createElement("div");
     for (const t of x.tags) {
       const b = document.createElement("button");

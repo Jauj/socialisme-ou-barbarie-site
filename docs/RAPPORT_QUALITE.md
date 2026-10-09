@@ -18,13 +18,13 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 | — avec lien HTML | 334 |
 | — avec lien PDF propre ou page de PDF | 334 |
 | — avec texte intégral (page HTML ou PDF propre) | 402 |
-| — avec texte intégral (PDF de la publication) | 113 |
-| — avec texte approximatif (pages du numéro) | 132 |
-| — page de début connue (site) | 79 |
-| — page de début retrouvée par le titre | 154 |
-| Publications dont le texte intégral est disponible (pages) | 184 |
-| — dont océrisées (scans) | 17 |
-| Pages de texte | 2909 |
+| — avec texte intégral (PDF de la publication) | 150 |
+| — avec texte approximatif (pages du numéro) | 469 |
+| — page de début connue (site) | 80 |
+| — page de début retrouvée par le titre | 557 |
+| Publications dont le texte intégral est disponible (pages) | 350 |
+| — dont océrisées (scans) | 177 |
+| Pages de texte | 7688 |
 | Tags | 118 |
 | Associations article-tag (index du site) | 1535 |
 | Associations article-tag (règles) | 1242 |
@@ -66,11 +66,8 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 - `NS-024` : date du sommaire 2006-03-24 ≠ date du fichier PDF 2006-06-03
 - `NS-025` : date du sommaire 2006-06-03 ≠ date du fichier PDF 2006-08-22
 
-### Liens morts sur le site (3)
+### Liens morts sur le site (0)
 
-- `NS-051` : http://socialisme.free.fr/bulletin_cps_archives/2013_09_25_cps51_133as.pdf
-- `NS-068-S1` : http://socialisme.free.fr/sommaires_cps/supplements/2018_04_20_supp_universite.pdf
-- `NS-091-S4` : http://socialisme.free.fr/2024_10_01_supp_cps_liban.pdf
 
 ### Entrées de l'index thématique non rattachées (0)
 

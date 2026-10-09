@@ -13,6 +13,9 @@ de *Combattre pour le socialisme* (CPS) publiés en ligne sur
 S'y ajoutent les **suppléments** (déclarations, tracts, communiqués…) et les **hors‑séries**
 (brochures, rapports de conférence) listés sur le site.
 
+En chiffres : **381 publications, 1 293 articles, 118 tags**, et le **texte intégral de
+7 688 pages** (les 350 PDF disponibles, dont 177 numéros scannés océrisés).
+
 Chiffres et anomalies détectées : voir [`docs/RAPPORT_QUALITE.md`](docs/RAPPORT_QUALITE.md)
 (généré automatiquement à chaque construction).
 
@@ -21,7 +24,8 @@ Chiffres et anomalies détectées : voir [`docs/RAPPORT_QUALITE.md`](docs/RAPPOR
 ```
 data/
   cps.sqlite            base SQLite : publications, articles, tags, textes d'articles, recherche plein texte
-  cps_complet.sqlite    même base + texte de chaque page de chaque numéro (non versionnée, voir plus bas)
+  cps_complet.sqlite    même base + texte de chaque page de chaque numéro (non versionnée : ~120 Mo,
+                        se régénère en 15 s avec `python3 scripts/build_db.py`, sans réseau)
   cps.json              export hiérarchique publications → articles → tags (sans les textes)
   csv/                  les tables au format CSV (UTF‑8) : publications, articles, tags, articles_tags
   textes/<article>.txt  texte des articles disposant d'une page HTML ou d'un PDF propre sur le site
@@ -59,9 +63,10 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `titre` | titre tel que dans le sommaire du site |
 | `titre_index` | titre plus complet donné par l'index thématique, quand il diffère |
 | `date`, `serie` | reprises de la publication |
-| `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (page de début dans le PDF du numéro quand elle est connue) |
+| `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (`pdf_page` : page indiquée par le site) |
+| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`) ou retrouvée en cherchant le titre dans le texte des pages (`localisation`) |
 | `texte` | texte intégral quand il a pu être obtenu |
-| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (pages du numéro, **découpage approximatif**) |
+| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (pages du numéro depuis `page_debut` jusqu'à la page où commence l'article suivant : **découpage approximatif**, qui peut déborder sur l'article voisin) |
 | `origine` | `sommaire` (sommaire du site) ou `index_thematique` (article présent seulement dans l'index) |
 
 **`tags`** et **`articles_tags`** — vocabulaire et associations.
@@ -77,9 +82,21 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
     (l'index du site est incomplet : beaucoup d'articles n'y figurent pas).
 
 **`pages`** (dans `cps_complet.sqlite`) — texte de chaque page de chaque PDF de publication,
-avec recherche plein texte (`pages_fts`). Les numéros scannés (ancienne série et premières années
-de la nouvelle) ont été océrisés avec Tesseract (français) : le texte peut contenir des erreurs de
-reconnaissance.
+avec recherche plein texte (`pages_fts`). Les numéros scannés (bulletin 1984, ancienne série et
+nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract (français) : le texte peut
+contenir des erreurs de reconnaissance.
+
+**Localisation des articles.** Le site n'indique la page de début que pour 80 articles. Pour les
+autres, le titre est recherché dans le texte des pages, en ne retenant qu'une ligne composée des
+mots du titre (un intertitre, pas une simple mention), dans l'ordre du sommaire et hors pages de
+sommaire/couverture ; les titres de moins de trois mots significatifs (« Éditorial », « Brésil »…)
+ne sont pas localisés. Sur les articles dont le site donne la page, la méthode retrouve 32 pages
+sur 60, toutes exactes ; 557 articles ont ainsi été localisés.
+
+**Recherche plein texte.** `cps.sqlite` contient l'index `articles_fts` en mode allégé (recherche
+par mots, opérateurs AND/OR/NOT, préfixes `mot*`, mais pas de phrase exacte entre guillemets) pour
+rester sous 50 Mo. `cps_complet.sqlite` a l'index complet (phrases exactes, NEAR) sur les articles
+et sur les pages.
 
 Vues pratiques : `v_articles` (articles avec leurs tags en une colonne), `v_tags` (tags avec leurs effectifs).
 
@@ -96,12 +113,16 @@ WHERE t.tag = 'editorial' AND a.serie = 'ancienne' ORDER BY a.date;
 
 -- Recherche plein texte dans les titres et textes d'articles (sans accents ni casse)
 SELECT a.id, a.date, a.titre FROM articles_fts f JOIN articles a ON a.rowid = f.rowid
-WHERE articles_fts MATCH 'echelle mobile' ORDER BY a.date;
+WHERE articles_fts MATCH 'echelle AND mobile AND salaires' ORDER BY a.date;
 
--- Recherche dans toutes les pages de tous les numéros (cps_complet.sqlite)
+-- Seulement dans les titres
+SELECT a.id, a.date, a.titre FROM articles_fts f JOIN articles a ON a.rowid = f.rowid
+WHERE articles_fts MATCH 'titre:bolivie' ORDER BY a.date;
+
+-- Phrase exacte dans toutes les pages de tous les numéros (cps_complet.sqlite)
 SELECT p.publication_id, p.page, snippet(pages_fts, 0, '[', ']', '…', 12)
 FROM pages_fts JOIN pages p ON p.rowid = pages_fts.rowid
-WHERE pages_fts MATCH '"gouvernement ouvrier"' ORDER BY p.publication_id;
+WHERE pages_fts MATCH '"gouvernement ouvrier et paysan"' ORDER BY p.publication_id;
 ```
 
 Avec Python : `sqlite3.connect("data/cps.sqlite")`, ou avec pandas
@@ -128,8 +149,9 @@ python3 scripts/extraire_pages.py     # texte des PDF de numéros (OCR des scans
 python3 scripts/build_db.py           # reconstruction avec les textes
 ```
 
-`build_db.py` ne fait aucun accès réseau : `cps_complet.sqlite` (trop volumineux pour être
-versionné) se régénère en quelques secondes à partir de `data/pages/`.
+`build_db.py` ne fait aucun accès réseau et n'utilise que la bibliothèque standard de Python :
+`cps_complet.sqlite` (trop volumineux pour être versionné) se régénère en une quinzaine de
+secondes à partir de `data/pages/` et `data/textes/`.
 
 Pour intégrer un nouveau numéro : `fetch_sources.py --refresh`, `fetch_textes.py`,
 `extraire_pages.py`, puis `build_db.py`.

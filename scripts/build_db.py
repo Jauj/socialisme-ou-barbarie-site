@@ -546,7 +546,11 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
     db.executemany("INSERT INTO articles_tags VALUES (?,?,?,?)", liens_tags)
     # recherche plein texte (titres + textes)
     try:
-        db.execute("CREATE VIRTUAL TABLE articles_fts USING fts5(titre, titre_index, texte, content='articles', content_rowid='rowid', tokenize='unicode61 remove_diacritics 2')")
+        # base légère : index sans positions (detail=column) — recherche par mots, sans
+        # recherche de phrase exacte ; base complète : index complet
+        detail = "full" if avec_pages else "column"
+        db.execute("CREATE VIRTUAL TABLE articles_fts USING fts5(titre, titre_index, texte, content='articles', content_rowid='rowid', "
+                   f"tokenize='unicode61 remove_diacritics 2', detail={detail})")
         db.execute("INSERT INTO articles_fts(rowid, titre, titre_index, texte) SELECT rowid, titre, coalesce(titre_index,''), coalesce(texte,'') FROM articles")
         if avec_pages:
             db.execute("CREATE VIRTUAL TABLE pages_fts USING fts5(texte, content='pages', content_rowid='rowid', tokenize='unicode61 remove_diacritics 2')")
