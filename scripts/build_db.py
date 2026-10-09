@@ -27,6 +27,7 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import localiser  # noqa: E402
 import parse_sommaire  # noqa: E402
 import parse_tags  # noqa: E402
 
@@ -474,6 +475,8 @@ CREATE TABLE articles (
   url_html TEXT,
   url_pdf TEXT,
   pdf_page INTEGER,               -- page dans le PDF quand le site la précise
+  page_debut INTEGER,             -- page de début dans le PDF de la publication (ou dans url_pdf)
+  page_debut_source TEXT,         -- site | localisation (titre retrouvé dans le texte des pages)
   autres_liens TEXT,              -- JSON
   origine TEXT NOT NULL,          -- sommaire | index_thematique
   texte TEXT,                     -- texte intégral quand il a pu être extrait
@@ -501,7 +504,7 @@ CREATE VIEW v_articles AS
 SELECT a.id, a.date, a.serie, p.type AS type_publication, p.numero_label,
        p.id AS publication_id, a.ordre, a.titre, a.titre_index,
        (SELECT group_concat(tag, ';') FROM (SELECT tag FROM articles_tags t WHERE t.article_id = a.id ORDER BY tag)) AS tags,
-       a.url_html, a.url_pdf, a.pdf_page, p.url_pdf AS url_pdf_numero,
+       a.url_html, a.url_pdf, a.pdf_page, a.page_debut, p.url_pdf AS url_pdf_numero,
        a.texte IS NOT NULL AS texte_disponible
 FROM articles a JOIN publications p ON p.id = a.publication_id;
 
@@ -532,9 +535,9 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
     if avec_pages:
         db.executemany("INSERT INTO pages VALUES (?,?,?,?)", [
             (pid, i, t, v["methode"]) for pid, v in sorted(pages.items()) for i, t in enumerate(v["pages"], 1)])
-    db.executemany("INSERT INTO articles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+    db.executemany("INSERT INTO articles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
         (a["id"], a["publication_id"], a["ordre"], a["titre"], a.get("titre_index"), a["date"], a["date_sommaire"], a["serie"],
-         a["url_html"], a["url_pdf"], a["pdf_page"],
+         a["url_html"], a["url_pdf"], a["pdf_page"], a.get("page_debut"), a.get("page_debut_source"),
          json.dumps(a["autres_liens"], ensure_ascii=False) if a["autres_liens"] else None,
          a["origine"], a.get("texte"), a.get("texte_type"), a.get("texte_source"))
         for a in articles])
@@ -570,7 +573,7 @@ def ecrire_csv(dossier, publications, articles, tags, liens_tags):
     w("publications.csv", ["id", "type", "serie", "numero", "numero_label", "numero_cumule", "date", "titre",
                            "parent_id", "url_pdf", "pdf_disponible"], publications)
     w("articles.csv", ["id", "publication_id", "ordre", "date", "serie", "titre", "titre_index", "tags", "url_html", "url_pdf",
-                       "pdf_page", "origine", "texte_disponible"],
+                       "pdf_page", "page_debut", "page_debut_source", "origine", "texte_disponible"],
       [{**a, "tags": ";".join(sorted(tags_par_article[a["id"]])), "texte_disponible": int(bool(a.get("texte")))}
        for a in articles])
     w("tags.csv", ["slug", "libelle", "categorie", "origine", "nb_articles"],
@@ -586,7 +589,8 @@ def ecrire_json(path, publications, articles, tags, liens_tags):
     arts = defaultdict(list)
     for a in articles:
         arts[a["publication_id"]].append({
-            k: a.get(k) for k in ("id", "ordre", "titre", "titre_index", "date", "url_html", "url_pdf", "pdf_page", "origine")
+            k: a.get(k) for k in ("id", "ordre", "titre", "titre_index", "date", "url_html", "url_pdf", "pdf_page",
+                                  "page_debut", "page_debut_source", "origine")
         } | {"tags": sorted(tags_par_article[a["id"]], key=lambda t: t["tag"]),
              "texte_disponible": bool(a.get("texte"))})
     out = {
@@ -623,6 +627,8 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| — avec texte intégral (page HTML ou PDF propre) | {sum(1 for a in articles if a.get('texte_type') in ('html', 'pdf_article'))} |",
         f"| — avec texte intégral (PDF de la publication) | {sum(1 for a in articles if a.get('texte_type') == 'pdf_publication')} |",
         f"| — avec texte approximatif (pages du numéro) | {sum(1 for a in articles if a.get('texte_type') == 'pages_numero')} |",
+        f"| — page de début connue (site) | {sum(1 for a in articles if a.get('page_debut_source') == 'site')} |",
+        f"| — page de début retrouvée par le titre | {sum(1 for a in articles if a.get('page_debut_source') == 'localisation')} |",
         f"| Publications dont le texte intégral est disponible (pages) | {sum(1 for p in pubs if p['id'] in pages)} |",
         f"| — dont océrisées (scans) | {sum(1 for p in pubs if pages.get(p['id'], {}).get('methode') == 'ocr_tesseract')} |",
         f"| Pages de texte | {sum(len(v['pages']) for k, v in pages.items() if k in {p['id'] for p in pubs})} |",
@@ -701,11 +707,17 @@ MAX_PAGES_ARTICLE = 12
 
 
 def charger_textes(articles, publications, pages):
-    """Texte de chaque article, par ordre de préférence :
+    """Page de début et texte de chaque article.
+
+    Page de début dans le PDF de la publication : celle indiquée par le site
+    (page_debut_source = site), sinon celle trouvée en cherchant le titre dans le
+    texte des pages (localisation, voir localiser.py).
+
+    Texte, par ordre de préférence :
     1. page HTML ou PDF propre à l'article (fetch_textes.py) ;
     2. PDF entier d'une publication qui ne contient qu'un article (supplément…) ;
-    3. pages du PDF du numéro, quand le site indique la page de début de l'article
-       (découpage approximatif : jusqu'à la page de début de l'article suivant)."""
+    3. pages du PDF à partir de la page de début, jusqu'à la page où commence
+       l'article suivant (incluse) : découpage approximatif."""
     dossier = DATA / "textes"
     meta_path = dossier / "index.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
@@ -713,6 +725,20 @@ def charger_textes(articles, publications, pages):
     par_pub = defaultdict(list)
     for a in articles:
         par_pub[a["publication_id"]].append(a)
+
+    # 1. pages de début
+    for pid, arts in par_pub.items():
+        pub = publications[pid]
+        for a in arts:
+            a["page_debut"], a["page_debut_source"] = None, None
+            if a["pdf_page"] and (a["url_pdf"] == pub["url_pdf"] or a["url_pdf"] in pages_par_url):
+                a["page_debut"], a["page_debut_source"] = a["pdf_page"], "site"
+        if pid in pages and len(arts) > 1:
+            for a, page in zip(arts, localiser.localiser([a["titre"] for a in arts], pages[pid]["pages"])):
+                if page and not a["page_debut"]:
+                    a["page_debut"], a["page_debut_source"] = page, "localisation"
+
+    # 2. textes
     for a in articles:
         m = meta.get(a["id"], {})
         f = dossier / f"{m.get('identique_a', a['id'])}.txt"
@@ -722,23 +748,33 @@ def charger_textes(articles, publications, pages):
             a["texte_source"] = m["source"]
             continue
         pub = publications[a["publication_id"]]
-        source_pages = pages_par_url.get(a["url_pdf"]) if a["url_pdf"] else None
         if len(par_pub[pub["id"]]) == 1 and pub["id"] in pages and (not a["url_pdf"] or a["url_pdf"] == pub["url_pdf"]) and not a["pdf_page"]:
             v = pages[pub["id"]]
             a["texte"] = "\n\n".join(p for p in v["pages"] if p.strip())
             a["texte_type"] = "pdf_publication"
             a["texte_source"] = f"{v['source']} ({v['methode']})"
-        elif source_pages and a["pdf_page"]:
-            debut = a["pdf_page"]
-            suivants = sorted({b["pdf_page"] for b in par_pub[pub["id"]]
-                               if b["url_pdf"] == a["url_pdf"] and b["pdf_page"] and b["pdf_page"] > debut})
-            fin = (suivants[0] - 1) if suivants else debut
-            fin = max(debut, min(fin, debut + MAX_PAGES_ARTICLE - 1, len(source_pages["pages"])))
-            extrait = source_pages["pages"][debut - 1:fin]
-            if any(p.strip() for p in extrait):
-                a["texte"] = "\n\n".join(extrait)
-                a["texte_type"] = "pages_numero"
-                a["texte_source"] = f"{source_pages['source']} pages {debut}-{fin} ({source_pages['methode']}, découpage approximatif)"
+            continue
+        if not a["page_debut"]:
+            continue
+        # PDF dans lequel se trouve l'article : celui de sa publication, ou celui qu'il cite
+        if a["page_debut_source"] == "site" and a["url_pdf"] in pages_par_url:
+            v, url = pages_par_url[a["url_pdf"]], a["url_pdf"]
+        elif pub["id"] in pages:
+            v, url = pages[pub["id"]], pub["url_pdf"]
+        else:
+            continue
+        debut = a["page_debut"]
+        suivants = sorted({b["page_debut"] for b in par_pub[pub["id"]]
+                           if b is not a and b["page_debut"] and b["page_debut"] > debut
+                           and (b["url_pdf"] if b["page_debut_source"] == "site" else pub["url_pdf"]) == url})
+        fin = suivants[0] if suivants else debut
+        fin = max(debut, min(fin, debut + MAX_PAGES_ARTICLE - 1, len(v["pages"])))
+        extrait = v["pages"][debut - 1:fin]
+        if any(p.strip() for p in extrait):
+            a["texte"] = "\n\n".join(extrait)
+            a["texte_type"] = "pages_numero"
+            how = "page indiquée par le site" if a["page_debut_source"] == "site" else "page trouvée par le titre"
+            a["texte_source"] = f"{v['source']} pages {debut}-{fin} ({v['methode']} ; {how} ; découpage approximatif)"
 
 
 def main():

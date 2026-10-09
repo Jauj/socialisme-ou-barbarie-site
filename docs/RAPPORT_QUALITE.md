@@ -19,10 +19,12 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 | — avec lien PDF propre ou page de PDF | 334 |
 | — avec texte intégral (page HTML ou PDF propre) | 402 |
 | — avec texte intégral (PDF de la publication) | 113 |
-| — avec texte approximatif (pages du numéro) | 56 |
-| Publications dont le texte intégral est disponible (pages) | 178 |
-| — dont océrisées (scans) | 11 |
-| Pages de texte | 2699 |
+| — avec texte approximatif (pages du numéro) | 132 |
+| — page de début connue (site) | 79 |
+| — page de début retrouvée par le titre | 154 |
+| Publications dont le texte intégral est disponible (pages) | 184 |
+| — dont océrisées (scans) | 17 |
+| Pages de texte | 2909 |
 | Tags | 118 |
 | Associations article-tag (index du site) | 1535 |
 | Associations article-tag (règles) | 1242 |

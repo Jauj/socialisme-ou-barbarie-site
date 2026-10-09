@@ -34,6 +34,56 @@
   "pages": 36,
   "caracteres": 103414
  },
+ "NS-028": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_03_16_cps28_110as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 24,
+  "caracteres": 118919
+ },
+ "NS-029": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_05_25_cps_29_111_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 36,
+  "caracteres": 177067
+ },
+ "NS-030": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_09_29_cps30_112as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 33,
+  "caracteres": 191556
+ },
+ "NS-031": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_01_12_cps31_113as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 34,
+  "caracteres": 196404
+ },
+ "NS-032": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_03_29_cps32_114as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 35,
+  "caracteres": 201173
+ },
+ "NS-033": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_05_31_cps_33_115_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 36,
+  "caracteres": 204873
+ },
+ "NS-033-S1": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_05_31_cps_33_115_as.pdf",
+  "statut": "ok",
+  "methode": "ocr_tesseract",
+  "pages": 36,
+  "caracteres": 204873,
+  "identique_a": "NS-033"
+ },
  "NS-034": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_09_24_cps_34_116_as.pdf",
   "statut": "ok",
