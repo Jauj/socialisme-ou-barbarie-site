@@ -27,6 +27,8 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import assemblage  # noqa: E402
+import html_markdown  # noqa: E402
 import localiser  # noqa: E402
 import parse_sommaire  # noqa: E402
 import parse_tags  # noqa: E402
@@ -332,7 +334,7 @@ def associer_tags_du_site(publications, articles, tag_pages):
             if u:
                 par_url[url_sans_ancre(u)].append(a)
 
-    liens, non_trouves, ajouts = [], [], []
+    liens, non_trouves = [], []
     for slug, entrees in tag_pages.items():
         for e in entrees:
             cands = candidats_pour(e, publications, index_pub)
@@ -459,7 +461,8 @@ CREATE TABLE publications (
 CREATE TABLE pages (
   publication_id TEXT NOT NULL REFERENCES publications(id),
   page INTEGER NOT NULL,          -- n° de page dans le PDF (1 = couverture)
-  texte TEXT NOT NULL,
+  texte TEXT NOT NULL,            -- texte brut (couche texte ou OCR)
+  markdown TEXT,                  -- la page structurée en Markdown
   methode TEXT NOT NULL,          -- pdf_texte | ocr_tesseract
   PRIMARY KEY (publication_id, page)
 );
@@ -476,11 +479,12 @@ CREATE TABLE articles (
   url_pdf TEXT,
   pdf_page INTEGER,               -- page dans le PDF quand le site la précise
   page_debut INTEGER,             -- page de début dans le PDF de la publication (ou dans url_pdf)
-  page_debut_source TEXT,         -- site | localisation (titre retrouvé dans le texte des pages)
+  page_debut_source TEXT,         -- site | titre (titre de l'article retrouvé dans le texte des pages)
   autres_liens TEXT,              -- JSON
   origine TEXT NOT NULL,          -- sommaire | index_thematique
-  texte TEXT,                     -- texte intégral quand il a pu être extrait
-  texte_type TEXT,                -- html | pdf_article | pdf_publication | pages_numero (découpage approximatif)
+  texte_markdown TEXT,            -- texte intégral en Markdown (## titre affiché, ### intertitres, > citations, [^n] notes)
+  texte TEXT,                     -- le même texte, brut (sans balisage)
+  texte_type TEXT,                -- html | pdf_article | pdf_publication | pages_numero (découpage automatique)
   texte_source TEXT               -- URL ou description de la source du texte
 );
 CREATE TABLE tags (
@@ -505,7 +509,7 @@ SELECT a.id, a.date, a.serie, p.type AS type_publication, p.numero_label,
        p.id AS publication_id, a.ordre, a.titre, a.titre_index,
        (SELECT group_concat(tag, ';') FROM (SELECT tag FROM articles_tags t WHERE t.article_id = a.id ORDER BY tag)) AS tags,
        a.url_html, a.url_pdf, a.pdf_page, a.page_debut, p.url_pdf AS url_pdf_numero,
-       a.texte IS NOT NULL AS texte_disponible
+       a.texte_markdown IS NOT NULL AS texte_disponible
 FROM articles a JOIN publications p ON p.id = a.publication_id;
 
 CREATE VIEW v_tags AS
@@ -518,11 +522,24 @@ GROUP BY t.slug;
 """
 
 
+COLONNES_ARTICLES = ["id", "publication_id", "ordre", "titre", "titre_index", "date", "date_sommaire", "serie",
+                     "url_html", "url_pdf", "pdf_page", "page_debut", "page_debut_source", "autres_liens", "origine",
+                     "texte_markdown", "texte", "texte_type", "texte_source"]
+
+
 def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pages=True):
+    """avec_pages=False : base légère (versionnée) sans la table pages ni le texte brut
+    des articles (redondant avec le Markdown), pour rester sous 50 Mo."""
     if path.exists():
         path.unlink()
+    schema = SCHEMA
+    colonnes = list(COLONNES_ARTICLES)
+    if not avec_pages:
+        schema = re.sub(r"CREATE TABLE pages \(.*?\);\n", "", schema, flags=re.S)
+        schema = re.sub(r"\n  texte TEXT,[^\n]*", "", schema)
+        colonnes.remove("texte")
     db = sqlite3.connect(path)
-    db.executescript(SCHEMA)
+    db.executescript(schema)
     db.executemany("INSERT INTO series VALUES (?,?,?)",
                    [(k, v["prefixe"], v["libelle"]) for k, v in SERIES.items()])
     db.executemany("INSERT INTO publications VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
@@ -533,25 +550,29 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
          " ; ".join(p["cles_sommaire"]))
         for p in publications])
     if avec_pages:
-        db.executemany("INSERT INTO pages VALUES (?,?,?,?)", [
-            (pid, i, t, v["methode"]) for pid, v in sorted(pages.items()) for i, t in enumerate(v["pages"], 1)])
-    db.executemany("INSERT INTO articles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
-        (a["id"], a["publication_id"], a["ordre"], a["titre"], a.get("titre_index"), a["date"], a["date_sommaire"], a["serie"],
-         a["url_html"], a["url_pdf"], a["pdf_page"], a.get("page_debut"), a.get("page_debut_source"),
-         json.dumps(a["autres_liens"], ensure_ascii=False) if a["autres_liens"] else None,
-         a["origine"], a.get("texte"), a.get("texte_type"), a.get("texte_source"))
-        for a in articles])
+        db.executemany("INSERT INTO pages VALUES (?,?,?,?,?)", [
+            (pid, i, t, (v["md"][i - 1] if v.get("md") else None), v["methode"])
+            for pid, v in sorted(pages.items()) for i, t in enumerate(v["pages"], 1)])
+
+    def valeur(a, c):
+        if c == "autres_liens":
+            return json.dumps(a["autres_liens"], ensure_ascii=False) if a["autres_liens"] else None
+        return a.get(c)
+
+    db.executemany(f"INSERT INTO articles ({', '.join(colonnes)}) VALUES ({', '.join('?' * len(colonnes))})",
+                   [tuple(valeur(a, c) for c in colonnes) for a in articles])
     db.executemany("INSERT INTO tags VALUES (?,?,?,?)",
                    [(t["slug"], t["libelle"], t["categorie"], t["origine"]) for t in tags])
     db.executemany("INSERT INTO articles_tags VALUES (?,?,?,?)", liens_tags)
-    # recherche plein texte (titres + textes)
+    # recherche plein texte (titres + textes Markdown)
     try:
         # base légère : index sans positions (detail=column) — recherche par mots, sans
         # recherche de phrase exacte ; base complète : index complet
         detail = "full" if avec_pages else "column"
-        db.execute("CREATE VIRTUAL TABLE articles_fts USING fts5(titre, titre_index, texte, content='articles', content_rowid='rowid', "
-                   f"tokenize='unicode61 remove_diacritics 2', detail={detail})")
-        db.execute("INSERT INTO articles_fts(rowid, titre, titre_index, texte) SELECT rowid, titre, coalesce(titre_index,''), coalesce(texte,'') FROM articles")
+        db.execute("CREATE VIRTUAL TABLE articles_fts USING fts5(titre, titre_index, texte_markdown, content='articles', "
+                   f"content_rowid='rowid', tokenize='unicode61 remove_diacritics 2', detail={detail})")
+        db.execute("INSERT INTO articles_fts(rowid, titre, titre_index, texte_markdown) "
+                   "SELECT rowid, titre, coalesce(titre_index,''), coalesce(texte_markdown,'') FROM articles")
         if avec_pages:
             db.execute("CREATE VIRTUAL TABLE pages_fts USING fts5(texte, content='pages', content_rowid='rowid', tokenize='unicode61 remove_diacritics 2')")
             db.execute("INSERT INTO pages_fts(rowid, texte) SELECT rowid, texte FROM pages")
@@ -595,7 +616,7 @@ def ecrire_json(path, publications, articles, tags, liens_tags):
         arts[a["publication_id"]].append({
             k: a.get(k) for k in ("id", "ordre", "titre", "titre_index", "date", "url_html", "url_pdf", "pdf_page",
                                   "page_debut", "page_debut_source", "origine")
-        } | {"tags": sorted(tags_par_article[a["id"]], key=lambda t: t["tag"]),
+        } | {"markdown": "data/" + chemin_markdown(a)} | {"tags": sorted(tags_par_article[a["id"]], key=lambda t: t["tag"]),
              "texte_disponible": bool(a.get("texte"))})
     out = {
         "titre": "Combattre pour le socialisme — base des articles",
@@ -630,9 +651,10 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| — avec lien PDF propre ou page de PDF | {sum(1 for a in articles if a['url_pdf'])} |",
         f"| — avec texte intégral (page HTML ou PDF propre) | {sum(1 for a in articles if a.get('texte_type') in ('html', 'pdf_article'))} |",
         f"| — avec texte intégral (PDF de la publication) | {sum(1 for a in articles if a.get('texte_type') == 'pdf_publication')} |",
-        f"| — avec texte approximatif (pages du numéro) | {sum(1 for a in articles if a.get('texte_type') == 'pages_numero')} |",
-        f"| — page de début connue (site) | {sum(1 for a in articles if a.get('page_debut_source') == 'site')} |",
-        f"| — page de début retrouvée par le titre | {sum(1 for a in articles if a.get('page_debut_source') == 'localisation')} |",
+        f"| — avec texte découpé dans le PDF du numéro (titre → article suivant) | {sum(1 for a in articles if a.get('texte_type') == 'pages_numero')} |",
+        f"| — avec texte (total, Markdown et brut) | {sum(1 for a in articles if a.get('texte_markdown'))} |",
+        f"| — page de début indiquée par le site | {sum(1 for a in articles if a.get('page_debut_source') == 'site')} |",
+        f"| — page de début retrouvée par le titre | {sum(1 for a in articles if a.get('page_debut_source') == 'titre')} |",
         f"| Publications dont le texte intégral est disponible (pages) | {sum(1 for p in pubs if p['id'] in pages)} |",
         f"| — dont océrisées (scans) | {sum(1 for p in pubs if pages.get(p['id'], {}).get('methode') == 'ocr_tesseract')} |",
         f"| Pages de texte | {sum(len(v['pages']) for k, v in pages.items() if k in {p['id'] for p in pubs})} |",
@@ -692,7 +714,7 @@ def corriger_liens(obj, table):
 
 
 def charger_pages(publications):
-    """Textes page par page produits par extraire_pages.py."""
+    """Pages brutes (extraire_pages.py) et Markdown (extraire_markdown.py) de chaque publication."""
     dossier = DATA / "pages"
     meta_path = dossier / "index.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
@@ -700,85 +722,169 @@ def charger_pages(publications):
     for pid, m in meta.items():
         if m.get("statut") != "ok" or pid not in publications:
             continue
-        f = dossier / f"{m.get('identique_a', pid)}.txt"
-        if f.exists():
-            pages[pid] = {"pages": f.read_text(encoding="utf-8").rstrip("\n").split("\f"),
-                          "methode": m["methode"], "source": m["source"]}
+        base = m.get("identique_a", pid)
+        f = dossier / f"{base}.txt"
+        if not f.exists():
+            continue
+        brut = f.read_text(encoding="utf-8").rstrip("\n").split("\f")
+        fm = dossier / f"{base}.md"
+        md = fm.read_text(encoding="utf-8").rstrip("\n").split("\f") if fm.exists() else None
+        if md is not None and len(md) != len(brut):
+            md = None
+        pages[pid] = {"pages": brut, "md": md, "methode": m["methode"], "source": m["source"]}
     return pages, meta
 
 
 MAX_PAGES_ARTICLE = 12
 
 
-def charger_textes(articles, publications, pages):
-    """Page de début et texte de chaque article.
+def brut_vers_md(texte):
+    """Repli quand le Markdown d'une page manque : paragraphes du texte brut."""
+    paras = [re.sub(r"\s*\n\s*", " ", p).strip() for p in re.split(r"\n\s*\n", texte)]
+    return "\n\n".join(re.sub(r"([*_`\[\]\\])", r"\\\1", p) for p in paras if p)
 
-    Page de début dans le PDF de la publication : celle indiquée par le site
-    (page_debut_source = site), sinon celle trouvée en cherchant le titre dans le
-    texte des pages (localisation, voir localiser.py).
+
+def charger_textes(articles, publications, pages):
+    """Page de début, texte Markdown et texte brut de chaque article.
 
     Texte, par ordre de préférence :
-    1. page HTML ou PDF propre à l'article (fetch_textes.py) ;
-    2. PDF entier d'une publication qui ne contient qu'un article (supplément…) ;
-    3. pages du PDF à partir de la page de début, jusqu'à la page où commence
-       l'article suivant (incluse) : découpage approximatif."""
+    1. page HTML ou PDF propre à l'article (fetch_textes.py + extraire_markdown.py) ;
+    2. PDF d'une publication qui ne contient qu'un texte (supplément…) ;
+    3. découpage du PDF de la publication : le titre de l'article est cherché parmi
+       les intertitres (assemblage.py), en commençant par la page indiquée par le site
+       quand il y en a une ; le texte va jusqu'au titre de l'article suivant."""
     dossier = DATA / "textes"
     meta_path = dossier / "index.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
-    pages_par_url = {v["source"]: v for v in pages.values()}
     par_pub = defaultdict(list)
     for a in articles:
         par_pub[a["publication_id"]].append(a)
+        a.update(page_debut=None, page_debut_source=None, texte=None, texte_markdown=None,
+                 texte_type=None, texte_source=None)
 
-    # 1. pages de début
-    for pid, arts in par_pub.items():
-        pub = publications[pid]
-        for a in arts:
-            a["page_debut"], a["page_debut_source"] = None, None
-            if a["pdf_page"] and (a["url_pdf"] == pub["url_pdf"] or a["url_pdf"] in pages_par_url):
-                a["page_debut"], a["page_debut_source"] = a["pdf_page"], "site"
-        if pid in pages and len(arts) > 1:
-            for a, page in zip(arts, localiser.localiser([a["titre"] for a in arts], pages[pid]["pages"])):
-                if page and not a["page_debut"]:
-                    a["page_debut"], a["page_debut_source"] = page, "localisation"
-
-    # 2. textes
+    # 1. textes propres aux articles
     for a in articles:
         m = meta.get(a["id"], {})
-        f = dossier / f"{m.get('identique_a', a['id'])}.txt"
-        if m.get("statut") == "ok" and f.exists():
-            a["texte"] = f.read_text(encoding="utf-8").strip()
+        base = m.get("identique_a", a["id"])
+        if m.get("statut") == "ok" and (dossier / f"{base}.txt").exists():
+            fmd = dossier / f"{base}.md"
+            a["texte_markdown"] = (fmd.read_text(encoding="utf-8") if fmd.exists()
+                                   else brut_vers_md((dossier / f"{base}.txt").read_text(encoding="utf-8")))
             a["texte_type"] = "html" if m.get("type") == "html" else "pdf_article"
             a["texte_source"] = m["source"]
+
+    # 2-3. PDF des publications
+    for pid, v in pages.items():
+        pages_md = v["md"] or [brut_vers_md(t) for t in v["pages"]]
+        blocs = assemblage.blocs_document(pages_md)
+        if not blocs:
             continue
-        pub = publications[a["publication_id"]]
-        if len(par_pub[pub["id"]]) == 1 and pub["id"] in pages and (not a["url_pdf"] or a["url_pdf"] == pub["url_pdf"]) and not a["pdf_page"]:
-            v = pages[pub["id"]]
-            a["texte"] = "\n\n".join(p for p in v["pages"] if p.strip())
-            a["texte_type"] = "pdf_publication"
-            a["texte_source"] = f"{v['source']} ({v['methode']})"
+        propres = par_pub.get(pid, [])
+        etrangers = [a for a in articles if a["publication_id"] != pid and a["pdf_page"] and a["url_pdf"] == v["source"]]
+        membres = propres + etrangers
+        if not membres:
             continue
-        if not a["page_debut"]:
+        seul = propres[0] if len(propres) == 1 else None
+        if seul and not etrangers and not seul["pdf_page"] and (not seul["url_pdf"] or seul["url_pdf"] == v["source"]):
+            if seul["texte_markdown"] is None:
+                seul["texte_markdown"] = assemblage.extraire(blocs, 0, len(blocs))
+                seul["texte_type"] = "pdf_publication"
+                seul["texte_source"] = f"{v['source']} ({v['methode']})"
             continue
-        # PDF dans lequel se trouve l'article : celui de sa publication, ou celui qu'il cite
-        if a["page_debut_source"] == "site" and a["url_pdf"] in pages_par_url:
-            v, url = pages_par_url[a["url_pdf"]], a["url_pdf"]
-        elif pub["id"] in pages:
-            v, url = pages[pub["id"]], pub["url_pdf"]
+        imposees = {i: a["pdf_page"] for i, a in enumerate(membres)
+                    if a["pdf_page"] and a["url_pdf"] == v["source"] and a["pdf_page"] <= len(pages_md)}
+        titres = [a["titre"] for a in membres]
+        debuts = assemblage.localiser_blocs(titres, blocs, imposees)
+        # repli : titre retrouvé en début de ligne dans le texte brut (localiser.py)
+        for i, page in enumerate(localiser.localiser(titres, v["pages"])):
+            if debuts[i] is None and page and page not in {blocs[d][0] for d in debuts if d is not None}:
+                debuts[i] = assemblage.meilleur_bloc_page(titres[i], blocs, page)
+                if debuts[i] is None:
+                    debuts[i] = next((k for k, b in enumerate(blocs) if b[0] == page), None)
+        positions = sorted({d for d in debuts if d is not None})
+        for i, a in enumerate(membres):
+            k = debuts[i]
+            if k is None:
+                continue
+            page = blocs[k][0]
+            a["page_debut"], a["page_debut_source"] = page, ("site" if i in imposees else "titre")
+            fin = next((d for d in positions if d > k), len(blocs))
+            fin = next((j for j in range(k, fin) if blocs[j][0] >= page + MAX_PAGES_ARTICLE), fin)
+            if a["texte_markdown"] is not None:
+                continue
+            md = assemblage.extraire(blocs, k, fin)
+            if md.strip():
+                a["texte_markdown"] = md
+                a["texte_type"] = "pages_numero"
+                a["texte_source"] = (f"{v['source']} pages {page}-{blocs[fin - 1][0]} ({v['methode']} ; "
+                                     "du titre de l'article à celui de l'article suivant, découpage automatique)")
+
+    # texte brut dérivé du Markdown
+    for a in articles:
+        if a["texte_markdown"]:
+            a["texte_markdown"] = a["texte_markdown"].strip() + "\n"
+            a["texte"] = html_markdown.markdown_vers_texte(a["texte_markdown"])
+
+
+def chemin_markdown(a):
+    return f"markdown/{a['publication_id']}/{a['id']}.md"
+
+
+def ecrire_markdown(dossier, publications, articles, tags, liens_tags):
+    """Un fichier Markdown par article, avec ses métadonnées en en-tête YAML."""
+    import shutil
+    if dossier.exists():
+        shutil.rmtree(dossier)
+    pubs = {p["id"]: p for p in publications}
+    libelles = {t["slug"]: t["libelle"] for t in tags}
+    tags_par_article = defaultdict(list)
+    for aid, tag, *_ in liens_tags:
+        tags_par_article[aid].append(tag)
+
+    def y(v):  # chaîne YAML sûre (syntaxe JSON, valide en YAML)
+        return json.dumps(v, ensure_ascii=False)
+
+    for a in articles:
+        p = pubs[a["publication_id"]]
+        tg = sorted(tags_par_article[a["id"]])
+        meta = [
+            ("title", y(a["titre"])),
+            ("id", y(a["id"])),
+            ("date", a["date"]),
+            ("publication", y(p["id"])),
+            ("serie", y(p["serie"])),
+            ("type_publication", y(p["type"])),
+            ("numero", y(p["numero_label"])),
+        ]
+        if p["numero_cumule"]:
+            meta.append(("numero_cumule", str(p["numero_cumule"])))
+        if a.get("titre_index"):
+            meta.append(("titre_index", y(a["titre_index"])))
+        meta.append(("tags", "[" + ", ".join(y(t) for t in tg) + "]"))
+        meta.append(("tags_libelles", "[" + ", ".join(y(libelles.get(t, t)) for t in tg) + "]"))
+        for cle in ("url_html", "url_pdf"):
+            if a.get(cle):
+                meta.append((cle, y(a[cle])))
+        if p.get("url_pdf") and p["pdf_disponible"]:
+            meta.append(("url_pdf_publication", y(p["url_pdf"])))
+        if a.get("page_debut"):
+            meta.append(("page_debut", str(a["page_debut"])))
+        meta.append(("texte_disponible", "true" if a.get("texte_markdown") else "false"))
+        if a.get("texte_type"):
+            meta.append(("texte_type", y(a["texte_type"])))
+            meta.append(("texte_source", y(a["texte_source"])))
+        entete = "---\n" + "\n".join(f"{k}: {v}" for k, v in meta) + "\n---\n\n"
+        if a.get("texte_markdown"):
+            corps = a["texte_markdown"]
         else:
-            continue
-        debut = a["page_debut"]
-        suivants = sorted({b["page_debut"] for b in par_pub[pub["id"]]
-                           if b is not a and b["page_debut"] and b["page_debut"] > debut
-                           and (b["url_pdf"] if b["page_debut_source"] == "site" else pub["url_pdf"]) == url})
-        fin = suivants[0] if suivants else debut
-        fin = max(debut, min(fin, debut + MAX_PAGES_ARTICLE - 1, len(v["pages"])))
-        extrait = v["pages"][debut - 1:fin]
-        if any(p.strip() for p in extrait):
-            a["texte"] = "\n\n".join(extrait)
-            a["texte_type"] = "pages_numero"
-            how = "page indiquée par le site" if a["page_debut_source"] == "site" else "page trouvée par le titre"
-            a["texte_source"] = f"{v['source']} pages {debut}-{fin} ({v['methode']} ; {how} ; découpage approximatif)"
+            lien = None
+            if p.get("url_pdf") and p["pdf_disponible"]:
+                lien = p["url_pdf"] + (f"#page={a['page_debut']}" if a.get("page_debut") else "")
+            corps = ("*Texte non disponible dans la base*" +
+                     (f" : voir [le PDF de la publication]({lien})." if lien else ".") + "\n")
+        f = dossier / chemin_markdown(a).split("/", 1)[1]
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(entete + corps, encoding="utf-8")
 
 
 def main():
@@ -837,6 +943,7 @@ def main():
         ecrire_sqlite(DATA / "cps_complet.sqlite", pubs, articles, tags, liens_tags, pages, avec_pages=True)
     ecrire_csv(DATA / "csv", pubs, articles, tags, liens_tags)
     ecrire_json(DATA / "cps.json", pubs, articles, tags, liens_tags)
+    ecrire_markdown(DATA / "markdown", pubs, articles, tags, liens_tags)
     ecrire_rapport(DOCS / "RAPPORT_QUALITE.md", pubs, articles, tags, liens_tags, anomalies, non_trouves, nb_ajouts, pages)
     print(f"{len(pubs)} publications, {len(articles)} articles, {len(tags)} tags, "
           f"{len(liens_tags)} associations, {len(non_trouves)} entrées de tag non rattachées")

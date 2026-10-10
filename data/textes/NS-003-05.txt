@@ -8,141 +8,18 @@ Le dimanche 12 mars 2000, des élections législatives, sénatoriales et une él
 
 Les élections législatives ont représenté une victoire écrasante du P.P. : il obtient 183 sièges, c’est à dire la majorité absolue aux Cortés (fixée à 176 sièges) et 44,54% des voix. En 1996, il n’avait obtenu que 156 sièges et 38,8% des voix. Les résultats (le vote a lieu à la proportionnelle par liste dans chaque Province qui élit un nombre de députés proportionnel à sa population).
 
-1996
-
-2000
-
-Inscrits
-
-32.531.833
-
-33.045.318
-
-Pourcentage
-
-Sièges
-
-Voix
-
-Pourcentage
-
-Sièges
-
-Voix
-
-Abstention
-
-22,62%
-
--
-
-7.358.706
-
-30,2%
-
--
-
-9.979.686
-
-Parti Populaire
-
-38,85%
-
-156
-
-9.716.006
-
-44,54%
-
-183
-
-10.230.345
-
-PSOE
-
-37,48%
-
-141
-
-9.425.678
-
-34,98%
-
-141
-
-7829.210
-
-I.U.[1]
-
-10,58%
-
-21
-
-2.639.744
-
-5,46%
-
-8
-
-1.253.859
-
-CiU
-
-4,61%
-
-16
-
-1.151.633
-
-4,2%
-
-15
-
-964.990
-
-P.N.V.[2]
-
-1,28%
-
-5
-
-318.951
-
-1,53%
-
-7
-
-351.816
-
-Herri-Batasuna
-
-(Euskal Herritarrok)
-
-0,73%
-
-2
-
-181.304
-
--
-
--
-
--
-
-Autres[3]
-
-4,01%
-
-9
-
-780.181
-
-5,46%
-
-12
-
-1.300.828
+|  | 1996 | | | 2000 | | |
+| --- | --- | --- | --- | --- | --- | --- |
+| Inscrits | 32.531.833 | | | 33.045.318 | | |
+|  | Pourcentage | Sièges | Voix | Pourcentage | Sièges | Voix |
+| Abstention | 22,62% | - | 7.358.706 | 30,2% | - | 9.979.686 |
+| Parti Populaire | 38,85% | 156 | 9.716.006 | 44,54% | 183 | 10.230.345 |
+| PSOE | 37,48% | 141 | 9.425.678 | 34,98% | 141 | 7829.210 |
+| I.U.[1] | 10,58% | 21 | 2.639.744 | 5,46% | 8 | 1.253.859 |
+| CiU | 4,61% | 16 | 1.151.633 | 4,2% | 15 | 964.990 |
+| P.N.V.[2] | 1,28% | 5 | 318.951 | 1,53% | 7 | 351.816 |
+| Herri-Batasuna (Euskal Herritarrok) | 0,73% | 2 | 181.304 | - | - | - |
+| Autres[3] | 4,01% | 9 | 780.181 | 5,46% | 12 | 1.300.828 |
 
 Pour le PSOE et IU, ces élections représentent une véritable défaite : ils ont 1,2 millions de voix de moins que le PP et 50 sièges de différence. En même temps le prolétariat et la jeunesse se sont abstenus massivement.
 
@@ -169,7 +46,6 @@ Le parti populaire est le nouveau nom que s'est donnée en 1989 l’Alliance Pop
 Il faut aussi préciser que le fondateur et chef de l’AP, Manuel Fraga, n’est rien d’autre qu’un ancien ministre de l'information de Franco, et ministre de l'intérieur dans le gouvernement constitué au lendemain de la mort de Franco. A partir de 1989, les personnalités directement liées au franquisme se retirent de la direction du PP. Aznar prend la direction du PP, il rajeunit et renouvelle son appareil, tout en “ recentrant ” idéologiquement le parti : par exemple, au niveau européen, il quitte le groupe conservateur pour rejoindre le Parti Populaire Européen. Pourtant, en 1996, la presse présente encore le PP comme le parti des anciens franquistes :
 
 “ Le Caudillo est mort en 1975, Manuel Fraga, ancien ministre du dictateur, a fondé le parti en 1976, avec des franquistes convertis. José Maria Aznar, qui a pris en 1990 la direction du PP, a grandi dans une famille naturellement franquiste. Son grand-père a été l’un des historiens de la “ croisade ”. Son père était l’un des responsables de la radio officielle. Ses rares écrits de jeunesse révèlent un jeune homme très conformiste. Les nostalgiques de l’ancien régime qui avaient jusqu’ici voté sans état d’âme pour les “ populaires ” sont pourtant perplexes. José Maria Aznar affecte en effet une élégante distance verbale à l’égard des droites franquistes qu’il qualifie de “ classiques ”. Tendu vers la conquête du pouvoir, il a lancé une OPA sur le centre et renvoyé à l’histoire les éventuelles leçons sur le passé.
-
 (...)Les héritiers de la dictature ont été discrètement éloignés. Ils sont pourtant nécessaires et le font toujours savoir. Manuel Fraga préside la Galice ; de Santiago de Compostela, il dit haut et clair tout le mal qu’il pense des concessions fiscales accordées par Aznar aux régionalistes catalans. (...) Jeune élue européenne et conseillère municipale de Madrid, Mercedes de la Merced a revendiqué les acquis sociaux du franquisme. ” (Problèmes politiques et sociaux, La Documentation Française, N°792, 24 octobre 1997, p.32).
 
 Ajoutons que le groupement catholique particulièrement réactionnaire Opus Dei est omniprésent dans le PP. Ce groupement a prospéré avec le franquisme; la politique de Jean-Paul II, pape élu grâce à l'Opus Dei, donne une idée du caractère réactionnaire de cette église.
@@ -187,7 +63,6 @@ La maladie puis la mort de Franco vont être également un élément de fragilis
 avec Franco disparaît celui qui a été pendant quarante ans au sens le plus plein du terme le bourreau de la classe ouvrière d’Espagne ; celui dont l’ensemble des forces de répression tenaient en dernière instance leur force ; celui qui était le seul encore en mesure politiquement de leur faire jouer tout leur rôle ; celui qui symbolisait, face à la classe ouvrière, l’écrasement de 1939. Franco disparu, c’est tout ce que le système répressif gardait encore comme force dissuasive effective face à la classe ouvrière qui tend à se désagréger rapidement.
 
 (…) la conduite de la bourgeoisie est d’ores et déjà commandée par le fait qu’il n’y a plus à la tête de l’Etat d’homme politique en mesure, politiquement, de se servir des armes répressives établies et maniées si longtemps par Franco. La mort de Franco constitue ainsi, par son seul fait, un nouvel élément de modification des rapports de force entre les classes en faveur de la classe ouvrière.
-
 Cette nouvelle modification des rapports entre les classes intervient, d’autre part, au moment précis où la bourgeoisie se trouve placée dans une situation où elle est contrainte, en raison même du vide créé par la disparition de Franco, de bouger tant soit peu les éléments constitutifs de l’édifice constitutionnel dans un sens qui doit obligatoirement comporter l’introduction dans cet édifice d’éléments incompatibles avec ce qu’est celui-ci. ”
 
 C'est Juan Carlos qui va diriger les opérations de transformation du régime franquiste.
@@ -233,9 +108,7 @@ Puis, face à une nouvelle poussée des masses en septembre 1977 (des centaines 
 Pourtant, la signature du pacte de la Moncloa s’est faite malgré la résistance de la classe ouvrière espagnole :
 
 " La réaction immédiate de la classe ouvrière au pacte de la Moncloa a été celle d’une mobilisation massive pour le rejeter, refuser l’ensemble des mesures d’agression économique anti-ouvrière qui y sont inscrites. Cette mobilisation a bien entendu pris la forme de manifestations de rue massives (…).
-
 Mais elle a aussi pris au départ la forme d’une condamnation du pacte et de ses mesures anti-ouvrières par la CNT et pratiquement par toutes les instances syndicales, sections syndicales, unions départementales et instances fédérales de l’UGT (…)."
-
 (La Vérité, N°581, avril 1978)
 
 Seule la direction de l’UGT refusait de prendre position aux côtés de la classe ouvrière espagnole, puis en s’alignant sur l’appareil des commissions ouvrières, elle empêchait que le mouvement vers la destruction des institutions franquistes se poursuive. Cette situation stoppait alors la mobilisation des masses. Insistons encore une fois sur la politique du PCE, fer de lance du pacte de la Moncloa, qui combat ouvertement contre tout mouvement de grève. C’est cela qui a permis que la nouvelle constitution soit adoptée par un referendum en décembre 1978, malgré une abstention de plus de 30%, allant jusqu'à 56 % dans certaines provinces du Pays Basque. Le PSOE et le PCE avaient fait campagne pour l'adoption de cette constitution, dont l’article 2 fait du roi la personnification de la permanence des institutions, qui en assure la continuité et les arbitrages après chaque élections, le premier ministre devant lui prêter serment au moment de son investiture.
@@ -269,7 +142,6 @@ En 1996, le programme du gouvernement Aznar est celui d’une offensive généra
 Le Monde du 12 et 13 mars 2000 dressait le bilan suivant de la politique menée par le gouvernement Aznar:
 
 “ L’Espagne va bien”, plaide [Aznar]. Sur trois grands fronts, celui de la croissance, des grands équilibres financiers et surtout du chômage, traditionnel talon d’Achille de l’Espagne, José Maria Aznar peut en effet s’enorgueillir d’un bilan de législature positif. De 2% à peine en 1996, le taux de croissance du produit intérieur brut (PIB) espagnol a quasiment doublé quatre ans plus tard. Un bond qui s’explique par le dynamisme de la consommation “ mais aussi par la plus grande flexibilité de l’offre, notamment en raison des réformes libérales entreprises et l’élimination des rigidités ”, tient à souligner José Luis de Molina, directeur général de la Banque d’Espagne. (...)
-
 Pour l’heure, la bonne santé de l’économie et les rentrées fiscales qui en ont découlé ont permis de réduire de façon drastique le déficit public (4,4% du PIB en 1996, 1,1% fin 1999) et, dans une moindre mesure, de diminuer la dette de l’Etat (70% au début de la législature, 63% à ce jour). De 22% encore en 1996, le nombre de demandeurs d’emploi (...) est tombé à 15,4% fin 1999. (...) Cette amélioration résulte de plusieurs facteurs, notamment la modération salariale qui a encouragé la demande de main d’œuvre, mais, patronat et syndicats en conviennent, elle doit beaucoup à la réforme du marché du travail intervenue en 1997 et négociée par les partenaires sociaux. ”
 
 Avant de revenir sur cette "réforme du marché du travail", il faut ajouter à ce panégyrique qu'en même temps, le prolétariat a subit une politique de privatisations. Entre 1996 et 2000, il y a eut au total 43 entreprises privatisées, dont la plupart en 1996 et 1997 (21 en 96, 18 en 97). Ces privatisations ont touché des grands groupes des secteurs clés de l’économie : dans le secteur bancaire (Argentaria), l’électricité (Endesa, l’EDF espagnol, pour une valeur de 1600 milliards de pestas), les télécommunications (Telefonica et Retevision), le pétrole (Repsol), la sidérurgie (Aceralia). Au total, les privatisations ont permis la suppression de 60000 emplois, dont 20000 chez Telefonica.
@@ -317,7 +189,6 @@ Cet accord , bien que le PSOE présentent indépendamment ses propres candidats,
 Dans ce programme, il n’est nullement question de remettre en cause la politique d’Aznar ; d’ailleurs, pendant toute la campagne électorale, Almunia n’a cessé de déclaré que les privatisations avaient été initiées par Gonzales et qu’il les respecterait. Par ailleurs, les grandes lignes de ce programme restent dans le vague : pour le mieux elles n’engagent à rien, pour le reste, elles reprennent à leur compte la défense des intérêts de la bourgeoisie :
 
 “ Ainsi l’emploi, notamment celui des jeunes, est une priorité [Aznar ne dit pas le contraire-Ndlr], tout comme l’éducation et la formation. Concernant l’U.E., l’accent est mis sur la construction d’une Europe sociale où seront garantis les droits de l’homme, la coopération et le développement. On ne manquera pas toutefois de noter que le PSOE veut tenir les engagements contenus, en matière de déficit public, dans le pacte de stabilité, quand I.U. souhaite aller “ au delà de Maastricht ”( ? ! !). ”
-
 (Le Monde, 9 février 2000).
 
 Ajoutons-y la reprise des "35 heures" à la sauce Aubry, c'est-à-dire avec annualisation et flexibilité maximale.
@@ -351,15 +222,12 @@ Face aux coups portés aux masses, la victoire écrasante du P.P. aux dernières
 Les CCOO sont à l’avant garde de cette politique. Ainsi, lors de leur dernier congrès, qui s’est tenu après les élections, les CCOO ont proclamé leur fidélité à Aznar et fait l’éloge de sa politique :
 
 “ Tout un symbole : CCOO, traditionnellement proche des communistes,(…) couvre de louanges l’exécutif de José Maria Aznar, renforcé après sa victoire triomphale aux législatives de mars.
-
 Lune de miel. Le 7e congrès du syndicat, ouvert hier à Madrid, illustre la lune de miel entre une centrale d’inspiration communiste et un gouvernement de droite. Devant quelques 700 délégués et des centaines d’invités, Antonio Gutierez, le secrétaire général, n’a pas manqué d’applaudir les “ efforts du gouvernement en matière d’emploi et de protection des travailleurs ”, et de faire l’éloge de la politique sociale d’Aznar. L’invité de marque n’était autre qu’Alberto Ruiz Gallardon, président PP de la Région, qui côtoyait José Maria Cuevas, président du patronat espagnol ! ”(Libération, 13 avril 2000).
 
 Aujourd’hui, le P.P. sort renforcé des élections législatives, il a les mains libres pour continuer et approfondir sa politique et sait qu’il peut compter sur le soutien des dirigeants du mouvement ouvrier. En février, avant les élections, dans une interview pour le Monde, Aznar donnait l’axe de cette politique :
 
 “ Pour les quatre années qui viennent, si je suis reconduit dans mes fonctions, je vise un surplus budgétaire en 2002, une baisse des dépenses de l’Etat d’un point par an pour les ramener à 40% du PIB en 2004 et un nouveau volet de réformes. Elles concerneront la fiscalité, avec une baisse des impôts des familles, des PME et des travailleurs indépendants ; le marché du travail, avec des aides à l’emploi des femmes ; et la sécurité sociale. (...)
-
 - Comment maintenir la paix sociale avec les dures réformes structurelles qui restent à faire ? - Certains critiquent en disant qu’il faudrait réformer plus vite. Je dis non : il faut procéder petit à petit, dans le consensus. ”
-
 (Le Monde, 28 février 2000).
 
 Aznar l’affirme clairement : si il a pu mener à bien son offensive contre les acquis du prolétariat, sans que celui-ci n’est pu combattre son gouvernement, c’est avant tout grâce à l’élaboration d’une politique de “ consensus ” avec les dirigeants des organisations syndicales.
@@ -413,7 +281,6 @@ Pour le droit des nationalités à l'autodétermination
 En 1931, Trotsky expliquait:
 
 "Les tendances séparatistes posent devant la révolution le problème démocratique du droit des nationalités à disposer d’elles mêmes. Ces tendances, considérées superficiellement, se sont aggravées pendant la dictature. Mais tandis que le séparatisme de la bourgeoisie catalane n’est qu’un moyen pour elle de jouer avec le gouvernement madrilène contre le peuple catalan et espagnol, le séparatisme des ouvriers et paysans n’est que l’enveloppe d’une révolte intime, d’ordre social. Il faut établir une rigoureuse distinction entre ces deux genres de séparatisme. Cependant, et précisément pour disjoindre de leur bourgeoisie les ouvriers et les paysans opprimés dans leur sentiment national, l’avant-garde prolétarienne doit prendre, sur cette question du droit des nationalités à disposer d’elles-mêmes, la position la plus hardie, la plus sincère. Les ouvriers défendront intégralement et sans réserves le droit des Catalans et des Basques à vivre en Etats indépendants, dans la cas où la majorité des nationaux se prononcerait pour une complète séparation. Ce qui ne veut nullement dire que l’élite ouvrière doive pousser les Catalans et les Basques dans la voie du séparatisme. Bien au contraire : l’unité économique du pays, comportant une large autonomie des nationalités, offrirait aux ouvriers et aux paysans de grands avantages du point de vue de l’économie et de la culture générales."
-
 (La révolution espagnole et les tâches communistes, 24 janvier 1931)
 
 En 1978, La Vérité analysait que:
@@ -440,8 +307,8 @@ Retour à la section: Europe
 
 Retour à l'accueil
 
-[1] Izquierda Unida : Gauche Unie, coalition du P.C.E. avec des petites organisations bourgeoises, à laquelle appartiennent les pablistes (ex-LCR).
+[1]: Izquierda Unida : Gauche Unie, coalition du P.C.E. avec des petites organisations bourgeoises, à laquelle appartiennent les pablistes (ex-LCR).
 
-[2] Parti Nationaliste Basque : Parti Basque “ modéré ”, démocrate-chrétien, créé en 1895. A rompu, le 22 septembre 1997, l’accord de gouvernement conclu avec le P.P. en 1996.
+[2]: Parti Nationaliste Basque : Parti Basque “ modéré ”, démocrate-chrétien, créé en 1895. A rompu, le 22 septembre 1997, l’accord de gouvernement conclu avec le P.P. en 1996.
 
-[3] Divers partis régionaux, dont la Coalition Canarienne, le Bloc nationaliste galicien, le Parti Andalou, la Gauche Républicaine de Catalogne, Eusko Alkartasuna et la Junte aragonaise.
+[3]: Divers partis régionaux, dont la Coalition Canarienne, le Bloc nationaliste galicien, le Parti Andalou, la Gauche Républicaine de Catalogne, Eusko Alkartasuna et la Junte aragonaise.

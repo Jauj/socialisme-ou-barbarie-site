@@ -26,177 +26,17 @@ Au soir du 15 mars le PSOE arrive en tête des élections, le PP et Aznar (bien 
 
 La victoire du PSOE : le résultat de la mobilisation des travailleurs et des jeunes
 
-2004
-
-2000
-
-1996
-
-Nombre de voix
-
-% des Inscrits
-
-Députés
-
-Nombre de voix
-
-% des Inscrits
-
-Députés
-
-Nombre de voix
-
-% des Inscrits
-
-Députés
-
-PSOE
-
-10.909.687
-
-31,95
-
-164
-
-7.918.752
-
-22,96
-
-125
-
-9.425.678
-
-28,65
-
-141
-
-Parti Populaire
-
-9.630512
-
-28,20
-
-148
-
-10.321.178
-
-29,92
-
-183
-
-9.716.006
-
-29,53
-
-156
-
-Izquierda Unida
-
-1.269.532
-
-3,72
-
-5
-
-1.263.043
-
-3,66
-
-8
-
-2.639.774
-
-8,02
-
-21
-
-CiU[1]
-
-829.046
-
-2,43
-
-10
-
-970.421
-
-2,81
-
-15
-
-1.151.633
-
-3,5
-
-16
-
-ERC[2]
-
-649.999
-
-1,90
-
-8
-
-194.715
-
-0,56
-
-1
-
-167.641
-
-0,51
-
-1
-
-PNV[3]
-
-417.154
-
-1,22
-
-7
-
-353.953
-
-1,03
-
-7
-
-318.951
-
-0,97
-
-5
-
-Divers
-
-661.770
-
-1,94
-
-8
-
-1.056.084
-
-3,06
-
-11
-
-829.305
-
-2,52
-
-10
-
-Participation
-
-77,21%
-
-68,71%
-
-77,38%
+|  | 2004 | | | 2000 | | | 1996 | | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  | Nombre de voix | % des Inscrits | Députés | Nombre de voix | % des Inscrits | Députés | Nombre de voix | % des Inscrits | Députés |
+| PSOE | 10.909.687 | 31,95 | 164 | 7.918.752 | 22,96 | 125 | 9.425.678 | 28,65 | 141 |
+| Parti Populaire | 9.630512 | 28,20 | 148 | 10.321.178 | 29,92 | 183 | 9.716.006 | 29,53 | 156 |
+| Izquierda Unida | 1.269.532 | 3,72 | 5 | 1.263.043 | 3,66 | 8 | 2.639.774 | 8,02 | 21 |
+| CiU[1] | 829.046 | 2,43 | 10 | 970.421 | 2,81 | 15 | 1.151.633 | 3,5 | 16 |
+| ERC[2] | 649.999 | 1,90 | 8 | 194.715 | 0,56 | 1 | 167.641 | 0,51 | 1 |
+| PNV[3] | 417.154 | 1,22 | 7 | 353.953 | 1,03 | 7 | 318.951 | 0,97 | 5 |
+| Divers | 661.770 | 1,94 | 8 | 1.056.084 | 3,06 | 11 | 829.305 | 2,52 | 10 |
+| Participation | 77,21% | | | 68,71% | | | 77,38% | | |
 
 La direction du PSOE ne voulait pas de cette victoire : sa campagne était entièrement axée sur l’orientation d’une « nouvelle voie », version espagnole de l’orientation de Blair, et se maintenait toujours dans le cadre d’une « opposition loyale ». Ce sont les réactions à la politique d’Aznar face aux attentats, sa responsabilité, qui vont provoquer la mobilisation des masses.
 
@@ -217,11 +57,8 @@ En avril 2000, après avoir passé quatre ans au pouvoir, le Parti Populaire d�
 « Aznar propose un pacte à l’opposition (…).
 
 M. Aznar a prévenu : " L'Espagne a encore des efforts à faire. " Pour cela, il prévoit une réforme du droit du travail, dans le sens d'une plus grande flexibilité et des facilités de licenciement, et " la convocation immédiate du " pacte de Tolède " (…).
-
 De plus, le chef du gouvernement espagnol a annoncé la mise en place d'une délégation gouvernementale sur l'immigration, pour traiter " l'immigration avec une législation forte et en accord avec les possibilités d'accueil ". De même, il a prôné " l'idée d'une Espagne fondée constitutionnellement " sur la notion de " nation plurielle " et sur " l'importance de la mobilisation sociale et populaire contre l'ETA ".
-
 (…), José Maria Aznar a souligné que l'Espagne se trouve aujourd'hui " devant une grande opportunité ", jugeant " qu'est arrivé le moment d'approcher le plein-emploi ", (…) de " réduire les dépenses publiques à moins de 40 % du PIB ", de "renforcer le rayonnement extérieur de l'Espagne. "
-
 (…)Malgré la majorité absolue atteinte lors des dernières élections, José Maria Aznar a souhaité se montrer " ouvert au dialogue " et au " consensus ". » (L’Humanité, 27/04/2000)
 
 Le PSOE va répondre présent, ses dirigeants déclarant qu’ « ils sont prêts, (…), « à tendre la main » à M. Aznar « pour en finir avec le fléau du terrorisme ». Voire à conclure d'autres accords ponctuels, si les appels au consensus « sont réels ». »
@@ -236,8 +73,7 @@ Pour cela la LOU met en œuvre une série de mesures : autonomie des université
 
 C’est une provocation pour les étudiants. Dès le printemps 2001 une première série de manifestations de lycéens ont déjà lieu contre les projets de réformes du gouvernement, et à l’automne c’est l’ensemble des étudiants qui engage le combat contre la LOU, n’empêchant pas pourtant qu’elle soit adoptée le 21 décembre 2001.
 
-Le mouvement étudiant contre la LOU (octobre novembre 2001) :
-la première mobilisation massive contre la politique d’Aznar depuis 1996.
+Le mouvement étudiant contre la LOU (octobre novembre 2001) : la première mobilisation massive contre la politique d’Aznar depuis 1996.
 
 Le combat s’engage en octobre alors que la LOU entre dans sa phase parlementaire, c’est le Syndicat des Etudiants qui est à l’initiative de la première journée d’action dont vont s’emparer les étudiants : le 25 octobre ils sont massivement en grève et les manifestations rassemblent plus de cent milles étudiants. Suite à cette journée de grève les syndicats de l’enseignement supérieur UGT et CCOO vont appeler à une journée d’action pour le 7 novembre avec le SE, ce dernier appelant également à une journée d’action pour le 14 novembre.
 
@@ -245,8 +81,7 @@ Malgré tous les obstacles mis devant le combat des étudiants, la participation
 
 Pourtant, le combat des étudiants va poser ouvertement la question de défaire le gouvernement Aznar et cela pour la première fois depuis 1996. Malgré la défaite marquée par l’adoption de la loi, la « paix sociale » dont bénéficiait le gouvernement depuis 1996 - grâce à l’appui des directions ouvrières – a été rompue. Le mouvement des étudiants aura été le bourgeon des combats qui s’engageront ensuite.
 
-Le « decretazo » et la grève générale du 20 juin 2002 :
-un affrontement entre le prolétariat et le gouvernement sans précédent depuis des années.
+Le « decretazo » et la grève générale du 20 juin 2002 : un affrontement entre le prolétariat et le gouvernement sans précédent depuis des années.
 
 Au printemps 2002, le gouvernement Aznar annonce l’adoption d’un décret loi (procédure d’urgence dans la Constitution) de remise en cause profonde de l’assurance chômage. Voilà le contenu du décret, le « decretazo », ratifier par le gouvernement le 25 mai 2002:
 
@@ -259,7 +94,6 @@ Le « dialogue social » garant de la « paix social » n’est plus de mise, il
 Face à la brutalité de cette attaque, les directions des CCOO et de l’UGT ne peuvent faire autrement que d’appeler à une journée de grève générale, le 20 juin, veille du sommet européen de Séville, alors que le gouvernement convoque le parlement à partir du 13 juin, dans une procédure d’urgence pour ratifier le « decretazo ». Mais, les organisations convoquent cette grève générale en réclamant la réouverture du dialogue social. Fidalgo, le secrétaire général des CCOO l’explique au journal Le Monde :
 
 « Le gouvernement Aznar a jusque-là joui d’une paix sociale notable. José Maria Fidalgo le reconnaît. (…)
-
 José Maria Fidalgo aborde avec plus de réticences l’autre problème qui à ses yeux, a pesé lourd : l’attitude du gouvernement face à cette grève et les multiples tentatives menées pour occulter le conflit. « Aznar est têtu, il répète : ″ce que je dis, je le fais″. Nous aussi sommes conscients qu’il faut des réformes, mais nous voulons des réformes négociées [souligné par la rédaction]. Tout ce que l’on demande est qu’ils retirent ce décret sur les allocations chômages et négocient. (…) Il y a des signaux de dérive de ce pouvoir (…). J’espère que cette grève le fera réfléchir. » » (Le Monde, 21/06/2002)
 
 De son côté le gouvernement met en place son propre dispositif contre la grève générale. S’appuyant sur un accord de 1996 sur les « conflits du travail », il impose un service minimum extrêmement large, par ailleurs il tente de restreindre la portée de la grève : ainsi, à une heure du matin (!), le 20 il déclare que la grève est un échec, à 8 heures Aznar déclare qu’il n’y a pas eu de grève générale.
@@ -278,8 +112,7 @@ Le nouveau décret, amendé par les directions syndicales, rétablie un certain 
 
 Alors qu’il aurait été possible d’infliger une défaite décisive au gouvernement en lui imposant de retirer son projet de loi, les directions ouvrières vont l’aider à reculer en bon ordre, lui permettant de poursuivre son offensive contre le prolétariat et la jeunesse.
 
-A nouveau le combat des enseignants et des étudiants
-contre les réformes- destruction de l’enseignement public.
+A nouveau le combat des enseignants et des étudiants contre les réformes- destruction de l’enseignement public.
 
 La loi organique dite de « qualité de l’enseignement » (la LOCE) a été présentée en Conseil des ministres le 11 mars 2002, elle se retrouve devant les Cortés à partir du mois d’octobre, et elle est adoptée le 31. Cette loi organique s’attaque à l’ensemble de l’enseignement public, de l’école maternelle au lycée. Elle renforce la sélection à tous les niveaux, notamment en réinstaurant un examen final du second degré, la « revalidad », alors que la sélection à l’entrée de l’Université existe également. Elle instaure des « parcours » ou « itinéraires » au collège, l’autonomie et la mise en concurrence des établissements (notamment entre l’enseignement public et privé) sont renforcées, tous comme l’aide à l’enseignement privé (le plus souvent catholique), etc.…Le point le plus contesté de la LOCE sera le renforcement de l’enseignement religieux, contrôlé par l’épiscopat, qui existait déjà dans l’enseignement public grâce au concordat signé entre Franco et le Vatican, que la constitution a maintenu.
 
@@ -296,7 +129,6 @@ Le 15 février une journée internationale d’action « pour la paix », mais a
 De février à avril, la mobilisation va être quasi-permanente. Le 21 mars les armées impérialistes commencent les bombardements massifs sur l’Irak ; en Espagne, de nouvelles manifestations se tiennent, le gouvernement en est la cible directe :
 
 « A Madrid, de 5000 à 8000 personnes s’étaient rassemblées, vers 20 heures, près de l’ambassade des Etats-Unis. Parmi les slogans, on pouvait entendre « Aznar canaille, on se reverra à La Haye ». Vers 22 heures, des groupes ont tentés de se diriger vers le siège du PP, mais aussi vers le Congrès (…).
-
 Les forces de l’ordre ont alors chargé à plusieurs reprises, tirants des balles de caoutchouc (…).» (Le Monde, 23/03/2003).
 
 Le lendemain, à l’issue d’une réunion d’un cabinet de crise, le Ministre de l’Intérieur s’en prend aux « minorités violentes et radicales », déclarant que les manifestations sont « illégales, puisque non autorisées. ». Une « marche sur la Moncloa » (le siège du gouvernement) était prévue, elle est annulée au dernier moment suite aux « incidents » de la veille. Les manifestations du 22 mars sont massives : trois millions de manifestants selon les organisateurs (quelques centaine de milliers selon la police ( !!!)).
@@ -308,9 +140,7 @@ Au mois de mai, les élections régionales et municipales suivaient, c’était 
 Les élections municipales et régionales de mai 2003 : une victoire pour Aznar.
 
 « Mais le PP est loin d'avoir subi la déroute que laissait entrevoir le rejet massif des Espagnols à l'appui inconditionnel du gouvernement Aznar aux Etats-Unis, lors de la guerre en Irak. Le malaise né de la grève générale de juin 2002 et aggravé par la mauvaise gestion de la catastrophe écologique du Prestige, en Galice, s'est finalement peu traduit dans les urnes. (…)
-
 Le Parti populaire a remporté une bataille emblématique en obtenant la majorité absolue à la mairie de Madrid (…).
-
 Si les socialistes devancent le PP de 200 000 voix à ces élections municipales et si le PP a perdu près de 6 % de ses électeurs depuis les municipales de 1999, il conserve toutefois plus de conseillers municipaux que les socialistes et a obtenu plus de voix dans 29 grandes villes comme Valence, Malaga ou Valladolid. Les socialistes gouverneront 13 villes, trois de moins qu'en 1999. Ils devront chercher des alliances auprès des partis régionalistes à Séville et à Saragosse. Les socialistes catalans gardent Barcelone, mais perdent cinq sièges. Le PP gouvernera également la majorité des communautés autonomes, gagnant même les Baléares. » (Le Monde, 27/05/2003)
 
 Dans la communauté autonome de Madrid, grâce à l’appoint des conseillers d’IU, le PSOE va prendre la région, mais seulement pour cinq mois. Suite à l’exclusion de deux députés de PSOE, des élections sont réorganisées en octobre et le PP remporte brillamment les élections et le PSOE perd deux cent milles voix.
@@ -340,7 +170,6 @@ En réalité, cet accord représente l’alliance du PSOE et du PP pour le renfo
 Deux procédures vont entériner ce pacte : d’une part une procédure judicaire engagée par le juge Garzon contre Batasuna pour « ses liens avec ETA », d’autre part une procédure législative d’interdiction de Batasuna :
 
 « Le lundi 26 août, le parlement espagnol réuni en session extraordinaire à l'initiative du gouvernement Aznar votait l'interdiction de Herri Batasuna, organisation nationaliste basque espagnole considérée comme le "bras politique" d'ETA. Ce résultat était obtenu avec le vote positif des députés du parti socialiste espagnol et l'abstention de ceux du parti communistes. Dans la soirée même, Aznar envoyait la police évacuer le siège central de Batasuna à Pampelune. Dans la foulée, plus d'une vingtaine de locaux et de permanences, notamment de San Sebastien et de Bilbao, étaient évacués à coups de matraques. Un délégué d'un syndicat lié à Batasuna était blessé à Bilbao. Une importante manifestation de défense d'Herri Batasuna a été violemment réprimée par la police.
-
 La loi sur les partis politiques adoptée par le parlement le 4 juin 2002, dont l'interdiction de Herri Batasuna est une conséquence, prévoit qu'il suffit dorénavant au tribunal suprême d'être sollicité par le gouvernement, par cinquante députés ou sénateurs, pour décider d'interdire un parti politique qui "tendrait (sic!) à miner le système démocratique (re-sic!) ou apporterait un soutien actif ou tacite (re-re-sic!) au terrorisme ". En fait, par "système démocratique " il faut entendre la monarchie espagnole, le gouvernement du parti populaire, parti dont les racines politiques remontent au franquisme et, plus généralement, le régime bourgeois, la propriété privée des moyens de production.
 
 Ainsi l'organisation Herri Batasuna est interdite non pour avoir approuvé les attentats commis par l'ETA mais pour ne les avoir pas condamnés publiquement! Rien d'étonnant à ce que le département d'Etat américain ait approuvé le gouvernement Aznar. Il s'agit de la même politique que celle de l'administration Bush, en particulier depuis le 11 septembre 2001: sous couvert de "lutte contre le terrorisme" une offensive brutale contre les droits démocratiques, pour le renforcement de l'appareil répressif, contre le prolétariat et le jeunesse. Le gouvernement Aznar cherchant tout particulièrement à reprendre l'offensive politique après la grève générale d'une journée du mois de juin. » (CPS n°9, octobre 2002)
@@ -370,13 +199,9 @@ La politique des directions syndicales va paver la voie au gouvernement Aznar.
 Le Parti Populaire au pouvoir : une dégradation continue des conditions de vie des masses espagnoles.
 
 « En huit ans, le produit intérieur brut (PIB) a progressé de 31,6 % (…). Côté finances publiques, l'assainissement s'est concrétisé depuis l'adoption, en 1999, de la loi de stabilité budgétaire, et la politique du « déficit zéro » est devenue réalité. Les administrations centrales (Etat et sécurité sociale) ont même dégagé un excédent de 0,6 % du PIB en 2003 (…). A l'actif de la politique gouvernementale, il faut aussi signaler la réduction de la dette publique, ramenée à 52 % du PIB fin 2003 contre 55,2 % un an plus tôt.
-
 Des centaines de milliers de nouveaux emplois ont certes été créés (…), mais les deux tiers d'entre eux n'offrent aucune garantie de durée. Il y a dix ans, le taux de précarité de l'emploi était de 32 % ; il est encore aujourd'hui de 30,70 %, (…).
-
 Au regard du niveau de vie qu'exige notamment le coût exorbitant du logement, les salaires demeurent très bas. Le salaire minimum n'est que de 516 euros par mois, contre 1 100 euros pour la moyenne européenne, à peine plus que la moyenne des retraites, 509 euros mensuels (…).
-
 (…) la vie de tous les jours est devenue difficile pour le commun des salariés avec des factures d'électricité, de téléphone, d'accès à Internet comparativement plus élevées que dans bien d'autres pays européens. Parallèlement, les ménages doivent financer quantité de dépenses de santé et d'éducation que ne fournissent pas les pouvoirs publics, obligation leur étant faite de recourir à l'assurance privée et de délaisser l'école publique alors que l'enseignement supérieur perd chaque année un peu plus de sa qualité. L'absence de prestations familiales et de crèches publiques est criante alors qu'il faut attendre plus de trois mois pour avoir une place à l'hôpital.
-
 C'est cette insécurité sociale que seuls viennent pallier la solidité de la cellule familiale - où l'on retrouve trois générations sous un même toit - et le recours au travail au noir - un quart du PIB - (…). » (Le Monde, 02/03/2004)
 
 Dès son investiture, Zapatero veut se placer dans la continuité d’Aznar.
@@ -415,8 +240,8 @@ Vers la section : Europe
 
 Vers l’accueil
 
-[1] Convergencia y Unio, partis Catalan
+[1]: Convergencia y Unio, partis Catalan
 
-[2] Gauche Républicaine Catalane.
+[2]: Gauche Républicaine Catalane.
 
-[3] Parti National Basque.
+[3]: Parti National Basque.

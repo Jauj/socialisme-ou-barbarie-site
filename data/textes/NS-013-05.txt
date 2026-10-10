@@ -82,95 +82,12 @@ Les résultats des législatives du 22 septembre 2002
 
 Le Spd, seul parti ouvrier (bourgeois), a reculé sensiblement, en pourcentage d’exprimés, (-2,4%) par rapport aux législatives de 1998, alors que le pourcentage de votants a diminué de 3,1%. Il est probable que les électeurs qui ont manqué au Spd se sont réfugiés dans l’abstention, même si le vote de l’allié du Spd, les Verts, ont progressé de 1,9%. Il faut rappeler que le vote Spd en 1998 était lui-même inférieur aux suffrages obtenus avant 1980 : 42,7% des exprimés en 1969, 45,8% en 1972, 42,6% en 1976 et 42,9% en 1980 ; alors que la participation était supérieure (jusqu’à 91,1% en 1972).
 
-% d'exprimés
-
-Participation
-
-Spd
-
-Pds
-
-Verts
-
-Cdu/Csu
-
-Fdp
-
-Extdr
-
-Autres
-
-1990
-
-77,8%
-
-33,5%
-
-2,4%
-
-5,0%
-
-43,8%
-
-11,0%
-
-2,1%
-
-2,2%
-
-1994
-
-79,0%
-
-36,4%
-
-4,4%
-
-7,3%
-
-41,4%
-
-6,9%
-
-1,8%
-
-1,8%
-
-1998
-
-82,2%
-
-40,9%
-
-5,1%
-
-6,7%
-
-35,1%
-
-6,2%
-
-3,3%
-
-2,7%
-
-2002
-
-79,1%
-
-38,5%
-
-4,0%
-
-8,6%
-
-38,5%
-
-7,4%
-
-1,0%
-
-2,0%
+| % d'exprimés | Participation | Spd | Pds | Verts | Cdu/Csu | Fdp | Extdr | Autres |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1990 | 77,8% | 33,5% | 2,4% | 5,0% | 43,8% | 11,0% | 2,1% | 2,2% |
+| 1994 | 79,0% | 36,4% | 4,4% | 7,3% | 41,4% | 6,9% | 1,8% | 1,8% |
+| 1998 | 82,2% | 40,9% | 5,1% | 6,7% | 35,1% | 6,2% | 3,3% | 2,7% |
+| 2002 | 79,1% | 38,5% | 4,0% | 8,6% | 38,5% | 7,4% | 1,0% | 2,0% |
 
 Certains ont présenté le résultat obtenu par le Spd comme “miraculeux”. Début mai, un sondage ne créditait-il pas la Cdu-Csu de 41% des intentions de vote, contre 31% pour le Spd ?
 
@@ -303,11 +220,8 @@ Pour un gouvernement du seul Spd
 L’article sur l’Allemagne dans Cps77 (6/4/1999), écrit quelques mois après les législatives de 1998, se terminait ainsi :
 
 “En 1996, face à l’offensive généralisée de la bourgeoisie et de son gouvernement, la question du pouvoir a commencé à affleurer, dans le prolétariat, dans les termes: il faut chasser le gouvernement Kohl !
-
 Lors des élections de 1998, les masses laborieuses ont fourni la réponse possible avec l’organisation dont elles disposent, le Spd : vote massif en faveur du Spd; les partis bourgeois sont défaits et le gouvernement Kohl chassé.
-
 Le Spd a immédiatement constitué, avec les Verts, un gouvernement au service du capital qui s’est rapidement mis en ordre de bataille. Cela pèse sur les masses, d’autant que cela apparaît comme un engrenage inévitable pour la classe ouvrière en Europe.
-
 Pour se défendre contre les remises en cause de ses conditions d’existence qu’exige la défense du mode de production capitaliste et arracher les revendications, le prolétariat aura à combattre et battre ce gouvernement. Dans ces affrontements, pour les préparer, il lui faudra se dresser contre les appareils syndicaux, les dirigeants du Dgb, leur imposer qu’ils rompent avec le gouvernement et le patronat - qu’ils soutiennent sans réserve -, avec la “ cogestion ” sous toutes ses formes, et d’abord leur imposer la rupture des “ négociations ” préparant le “ pacte de solidarité ”.”
 
 On l’a constaté : l‘affrontement avec l’appareil n’a été qu’ébauché. La presse française en a donné quelques rares aperçus. Ainsi, au congrès de l’Ig Metall d’octobre 1999, c’est sous les sifflets des jeunes que Schröder était accueilli. Mais l’appareil a détourné politiquement l’hostilité des jeunes métallos. Un responsable du syndicat intervint : “Nous voulons une autre politique mais pas d’autre gouvernement. (…) Le syndicat ne fera rien qui pourrait aider les conservateurs. C’est une question de tactique politique. Il ne commettra pas l’erreur de mettre des milliers de gens dans la rue, même si cela ne serait pas difficile vu l’humeur actuelle”.
@@ -319,7 +233,6 @@ A quelques mois des législatives de 2002, pour mobiliser l’électorat ouvrier
 Ce mouvement a été bloqué depuis la constitution du 1er gouvernement Spd-Verts. Le prolétariat allemand a subi des reculs, pas de défaite. Il est confronté à des attaques sans précédent depuis longtemps. Il faut faire fond sur sa volonté de défendre ses acquis, sa puissance d’organisation, la conscience qu’il en a. On peut reprendre en conclusion celle de l’article cité :
 
 “Compte tenu des relations politiques, le prolétariat sera poussé à contraindre le Spd à rompre avec les partis bourgeois, des Verts au Cdu et Fdp (et Pds !), à tous les niveaux, à revendiquer qu’il forme un gouvernement du seul Spd, soutenu par le Dgb, avec la volonté d’obtenir que ce gouvernement satisfasse les revendications.
-
 Il lui faut ouvrir cette voie. Dans la lutte de classe et les conflits inévitables avec les appareils syndicaux et le Spd, pour une nouvelle génération de militants issue des rangs de la classe ouvrière, mais surtout de la jeunesse, la question du parti révolutionnaire nécessaire à un véritable gouvernement ouvrier, un gouvernement révolutionnaire, redeviendra à l’ordre du jour.”
 
 Haut

@@ -1,5 +1,3 @@
-HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
-
 "On ne peut aller de l'avant si l'on craint d'aller au socialisme" (Lénine)
 
 CERCLE pour la construction du Parti et de l'Internationale ouvriers révolutionnaires
@@ -38,9 +36,9 @@ Ce « diagnostic partagé » ouvre la voie à une contre-réforme qui se fixerai
 
 Sur la base du « consensus » affiché, le gouvernement a annoncé la tenue pour le 9 février d'un sommet sur l'assurance-maladie. Alors pour enrayer la « réforme » destructrice de l'assurance-maladie, les directions syndicales ouvrières CGT, FO, le PS, le PCF ont la responsabilité immédiate de:
 
-dénoncer le rapport du Haut Conseil,
+- dénoncer le rapport du Haut Conseil,
 
-boycotter le sommet sur l'assurance-maladie
+  - boycotter le sommet sur l'assurance-maladie
 
 et les réunions ultérieures préparant la « réforme ».
 

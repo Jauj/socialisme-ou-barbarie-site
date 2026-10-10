@@ -1,58 +1,5 @@
-Accueil
-
-Textes constitutifs
-
-Histoire et théorie
-
-Sommaire de CPS
-
-Liens
-
-Abonnement &
-Contact
-
-France
-
-Situation française
-
-Défense des acquis ouvriers
-
-Echéances électorales
-
-Enseignement public
-
-Etudiants, Lycéens
-
-Interventions, Suppléments
-
-Leçons des luttes de classe
-
-Syndicats, partis
-
-International
-
-Situation Internationale
-
-Situation économique
-
-Afrique
-
-Amériques
-
-Asie
-
-Balkans
-
-Europe
-
-Guerres impérialistes
-
-Moyen-Orient
-
-URSS, Russie, Europe orientale
-
-" participer au mouvement les yeux ouverts, avec une volonté tendue,
-telle est bien la satisfaction morale par excellence qui puisse être donnée à un être pensant".
+" participer au mouvement les yeux ouverts, avec une volonté tendue, 
+ telle est bien la satisfaction morale par excellence qui puisse être donnée à un être pensant".
 
 Léon Trotsky - Leur morale et la nôtre
 
@@ -96,7 +43,7 @@ Sommaire
 
 I. Stéphane Just, militant ouvrier révolutionnaire
 
-· DANS LA MONTÉE RÉVOLUTIONNAIRE DES ANNÉES 30
+- DANS LA MONTÉE RÉVOLUTIONNAIRE DES ANNÉES 30
 
 LA RENCONTRE AVEC UN MILITANT TROTSKYSTE EN ALLEMAGNE
 
@@ -118,7 +65,7 @@ SUR LA LIGNE DE L'INTERNATIONALISME PROLÉTARIEN
 
 II. Le combat contre le révisionnisme pabliste
 
-· 1951-1953: DISLOCATION DE LA IVe INTERNATIONALE
+- 1951-1953: DISLOCATION DE LA IVe INTERNATIONALE
 
 "ORIGINES DU PABLISME"
 
@@ -138,7 +85,7 @@ CANDIDAT AU NOM DE L'OCI DANS LES LÉGISLATIVES DE 1967
 
 Défense de l'analyse marxiste de "l'impérialisme, stade suprême du capitalisme"
 
-· ASSIMILER L'ANALYSE MARXISTE DU MODE DE PRODUCTION CAPITALISTE
+- ASSIMILER L'ANALYSE MARXISTE DU MODE DE PRODUCTION CAPITALISTE
 
 CONTRE LE "NÉOCAPITALISME"
 
@@ -148,7 +95,7 @@ ACTUALITÉ DE LA RÉVOLUTION SOCIALISTE
 
 1968 : Une nouvelle période de la révolution prolétarienne mondiale
 
-· LEÇONS DE MAI-JUIN 1968: LE COMBAT POUR LE GOUVERNEMENT OUVRIER ET PAYSAN:
+- LEÇONS DE MAI-JUIN 1968: LE COMBAT POUR LE GOUVERNEMENT OUVRIER ET PAYSAN:
 
 LA LUTTE CONTRE LE GAUCHISME, EN DÉFENSE DU TROTSKYSME, DU BOLCHÉVISME
 
@@ -166,7 +113,7 @@ POUR LA RECONSTRUCTION DE LA QUATRIÈME INTERNATIONALE (CORQUI)
 
 "Fronts populaires d'hier et d'aujourd'hui"
 
-· À L’HORLOGE DE L’HISTOIRE, SONNE À NOUVEAU L’HEURE DES FRONTS POPULAIRES
+- À L’HORLOGE DE L’HISTOIRE, SONNE À NOUVEAU L’HEURE DES FRONTS POPULAIRES
 
 PLUS QU’UNE SIMPLE COLLABORATION DE CLASSES
 
@@ -180,7 +127,7 @@ CONTRE LE VOTE MITTERRAND AU PREMIER TOUR DES PRÉSIDENTIELLES
 
 Stéphane Just, ultime combattant pour sauver la IVe Internationale
 
-· 28e CONGRÈS DU PCI
+- 28e CONGRÈS DU PCI
 
 UN COUP MONTÉ POUR EXCLURE STÉPHANE JUST...
 
@@ -212,7 +159,7 @@ L’ARRÊT DE MORT DU PCI
 
 "une nouvelle perspective"
 
-· LES PROLÉTARIATS ONT LIQUIDÉ LE CARCAN BUREAUCRATIQUE...
+- LES PROLÉTARIATS ONT LIQUIDÉ LE CARCAN BUREAUCRATIQUE...
 
 ...PAS LES CONSÉQUENCES DU STALINISME
 
@@ -239,5 +186,3 @@ STÉPHANE JUST, LE COMBATTANT
 Bibliographie
 
 Commander ce numéro
-
-Haut de la page

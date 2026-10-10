@@ -1,8 +1,6 @@
 Article paru dans C.P.S nouvelle série n°21 de juin 2005
 
-Italie :
-
-Après les élections régionales, comment en finir avec Berlusconi ?
+Italie :Après les élections régionales, comment en finir avec Berlusconi ?
 
 Les élections régionales de 2005, une cinglante défaite pour Berlusconi et ses alliés.
 
@@ -29,7 +27,6 @@ Finalement, c’est le président de la Cofindustria, la confédération patrona
 Et quel programme mettra en œuvre ce gouvernement ? Voici le compte-rendu qu’en fait le Monde du 28 avril :
 
 « La relance proposée par Silvio Berlusconi pour la dernière année de la législature porte sur trois points : les entreprises, les familles et le Mezzogiorno. Le chef du gouvernement a annoncé une réforme de la fiscalité sur les sociétés, en particulier la réduction des cotisations sociales.
-
 Ces mesures, destinées à réduire le coût du travail, devraient favoriser la consommation, a-t-il précisé, en augmentant le pouvoir d’achat des familles. Cela devrait représenter un dégrèvement de 12 milliards d’euros sur trois ans. M. Berlusconi a, par ailleurs, annoncé qu’il poursuivrait sur la voie des baisses d’impôts pour les faibles revenus. »
 
 Non seulement Berlusconi est maintenu au pouvoir, mais il poursuit sans encombre la liquidation de la sécurité sociale, au nom du « pouvoir d’achat des familles », comme si de rien n’était.
@@ -56,209 +53,28 @@ En dehors du Piémont, les DS ne se présentaient que dans le sud de l’Italie,
 
 Quant à la présidence, les DS y avaient renoncé !
 
-Partis
-
-Voix
-
-%
-
-sièges
-
-Alliances total
-
-Sièges région
-
-Forza Italia
-
-458 305
-
-22.4
-
-11
-
-973 349, 47,7%
-
-Ensemble des partis
-
-soutenant le gouvernement
-
-Berlusconi
-
-23
-
-A N
-
-194 516
-
-9.5
-
-5
-
-Lega Nord
-
-173 208
-
-8.5
-
-4
-
-UDC
-
-93 998
-
-4.6
-
-2
-
-Ambienta Lista
-
-23 179
-
-1.2
-
-1
-
-Socialisti Liberali
-
-16 939
-
-0.8
-
--
-
-Partito Pensionati
-
-14 204
-
-0.7
-
--
-
-Alter.Soc Mussolini
-
-14 131
-
-0.7
-
--
-
-Liste sans alliance
-
--
-
-Democrazia cristiana
-
-14 204
-
-0.7
-
--
-
-Liste sans alliance
-
--
-
-D S
-
-411 615
-
-20.1
-
-11
-
-595 687, 29 %, ensemble des
-
-partis issus du mouvement ouvrier
-
-16
-
-PRC
-
-130 684
-
-6.4
-
-4
-
-C I (scission Cossuta)
-
-53 388
-
-2.6
-
-1
-
-La margherita
-
-212 072
-
-10.4
-
-6
-
-Partis bourgeois de la GAD,
-
-448 750, 22 % (total opposition
-
-centre-gauche 1 044 437), 51%
-
-10
-
-UDEUR-popolari
-
-10 687
-
-0.5
-
--
-
-Verdi
-
-57 426
-
-2.8
-
-1
-
-SDI
-
-49 983
-
-2.4
-
-1
-
-Pensionati Europa
-
-5162
-
-0.3
-
--
-
-Insieme per Bresso
-
-60 309
-
-2.9
-
-1
-
-L’Italia dei valori
-
-30 947
-
-1.5
-
-1
-
-Lista consumatori
-
-22 164
-
-1.1
-
-‘
+| Partis | Voix | % | sièges | Alliances total | Sièges région |
+| --- | --- | --- | --- | --- | --- |
+| Forza Italia | 458 305 | 22.4 | 11 | 973 349, 47,7% Ensemble des partis  soutenant le gouvernement  Berlusconi | 23 |
+| A N | 194 516 | 9.5 | 5 |
+| Lega Nord | 173 208 | 8.5 | 4 |
+| UDC | 93 998 | 4.6 | 2 |
+| Ambienta Lista | 23 179 | 1.2 | 1 |
+| Socialisti Liberali | 16 939 | 0.8 | - |
+| Partito Pensionati | 14 204 | 0.7 | - |
+| Alter.Soc Mussolini | 14 131 | 0.7 | - | Liste sans alliance | - |
+| Democrazia cristiana | 14 204 | 0.7 | - | Liste sans alliance | - |
+| D S | 411 615 | 20.1 | 11 | 595 687, 29 %, ensemble des  partis issus du mouvement ouvrier | 16 |
+| PRC | 130 684 | 6.4 | 4 |
+| C I (scission Cossuta) | 53 388 | 2.6 | 1 |
+| La margherita | 212 072 | 10.4 | 6 | Partis bourgeois de la GAD, 448 750, 22 % (total opposition  centre-gauche 1 044 437), 51% | 10 |
+| UDEUR-popolari | 10 687 | 0.5 | - |
+| Verdi | 57 426 | 2.8 | 1 |
+| SDI | 49 983 | 2.4 | 1 |
+| Pensionati Europa | 5162 | 0.3 | - |
+| Insieme per Bresso | 60 309 | 2.9 | 1 |
+| L’Italia dei valori | 30 947 | 1.5 | 1 |
+| Lista consumatori | 22 164 | 1.1 | ‘ |
 
 Ces indications montrent à quoi s’en tenir sur le plan de l’appréciation des rapports politiques entre les classes. Dans la région où c’est le plus favorable pour eux, les partis issus du mouvement ouvrier arrivent loin derrière l’alliance des partis soutenant Berlusconi !
 
@@ -304,11 +120,9 @@ Le 26 avril, alors que la police n’était plus intervenue contre des gréviste
 
 Des négociations ouvertes le 28 avril, ont débouché le 9 mai sur l’accord suivant :
 
-• alignement des salaires, par 105 euros d’augmentation en trois étapes de juillet 2004 à juillet 2006 ;
-
-• les équipes continues de 12 jours sont abolies, le travail est organisé en une semaine de six jours, suivie d’une semaine de quatre jours ;
-
-• la commission paritaire « conciliation et prévention » doit réexaminer les mesures disciplinaires des douze derniers mois.
+- • alignement des salaires, par 105 euros d’augmentation en trois étapes de juillet 2004 à juillet 2006 ;
+- • les équipes continues de 12 jours sont abolies, le travail est organisé en une semaine de six jours, suivie d’une semaine de quatre jours ;
+- • la commission paritaire « conciliation et prévention » doit réexaminer les mesures disciplinaires des douze derniers mois.
 
 En réalité si les revendications ne sont pas totalement ni immédiatement satisfaites, la direction a tout de même dû reculer face à au mouvement des ouvriers de Melfi et à la menace d’une grève générale dans tout le groupe contenue dans la grève de 4 heures de Turin.
 
@@ -335,7 +149,6 @@ Le Monde du 03/08/2004, apprécie :
 Quant à l’Humanité, voici ses explications :
 
 « En pleine crise politique, «Il Cavaliere » a dû recourir au vote de confiance pour faire adopter une réforme des retraites très dure pour les travailleurs.
-
 En votant hier la confiance au gouvernement, les députés ont certes sauvé la mise à Silvio Berlusconi et permis l’adoption sans heurts de sa réforme des retraites. L’issue du vote ne faisait guère de doute : les quatre partis de la coalition avaient appelé à soutenir le premier ministre. »
 
 Une « crise politique », peut-être, mais dont les effets pour les travailleurs ne se font guère sentir !
@@ -380,8 +193,7 @@ Sans doute faut-il chercher dans cette situation le sens du « réveil » des pr
 
 A ce jour, après la défaite électorale de la « maison des libertés », les affrontements entre ses partis, notamment, entre l’UDC et l’Alleanza nazionale de Fini, et Forza Italia de Berlusconi, les rangs se sont resserrés pour entamer une nouvelle phase de l’offensive contre le prolétariat italien, sous la forme d’un plan de liquidation des « charges », c’est-à-dire du salaire différé et des cotisations que paie le patronat italien, notamment pour la santé publique. Et durant encore treize mois Berlusconi devrait, sauf événement imprévu terminer son mandat. S’il n’est pas favori pour les élections de 2006, le « centre gauche », Olivier, ou « unione », n’offre aucune perspective politique propre au prolétariat italien, mais au contraire des ressources pour la bourgeoisie italienne, et notamment empêcher la formation du Front Unique en Italie.
 
-Battre Berlusconi et son gouvernement, c’est combattre malgré les obstacles
-pour le Front Unique des organisations du mouvement ouvrier italien.
+Battre Berlusconi et son gouvernement, c’est combattre malgré les obstacles pour le Front Unique des organisations du mouvement ouvrier italien.
 
 L’aspiration du prolétariat italien est certainement d’affronter le gouvernement Berlusconi 2, et le faire tomber avant la fin de son mandat. Pour cela, il s’agit – les occasions ne manquent et ne manqueront pas – d’opposer à Berlusconi le front unique des organisations du mouvement ouvrier.
 

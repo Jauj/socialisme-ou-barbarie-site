@@ -26,228 +26,29 @@ Les élections du 5 mai 2005
 
 Les élections ont été convoquées le 5 mai 2005. Les résultats portant sur tout le Royaume-Uni ont été les suivants, un siège restant non pourvu du fait du décès à la veille des élections d’un des candidats, du parti libéral démocrate (SLD). Un rappel des résultats des élections générales de 1997 et de 2001 est éclairant.
 
-Labour Party
-
-Conservateurs (Tories)
-
-Libéraux (SLD)
-
-Autres***
-
-année
-
-%
-
-%
-
-%
-
-sièges
-
-%
-
-%
-
-sièges
-
-%
-
-%
-
-Sièges
-
-%
-
-%
-
-sièges
-
-part.
-
-expr
-
-inscrits
-
-expr
-
-inscrits
-
-expr
-
-inscrits
-
-Expr
-
-inscrits
-
-1997
-
-71,22
-
-43,17
-
-30,74
-
-419
-
-30,6
-
-21,8
-
-165
-
-16,7
-
-11,89
-
-46
-
-9,53
-
-6,79
-
-29
-
-2001
-
-59,38
-
-41,96
-
-24,92
-
-412
-
-32,69
-
-19,41
-
-166
-
-18,84
-
-11,19
-
-52
-
-6,51
-
-3,866
-
-29
-
-2005
-
-61,30
-
-35,20
-
-21,58
-
-356
-
-32,30
-
-19,80
-
-197
-
-22,00
-
-13,49
-
-62
-
-10,50
-
-6,44
-
-30
+|  |  | Labour Party | | | Conservateurs (Tories) | | | Libéraux (SLD) | | | Autres\* | | |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| année | % | % | % | sièges | % | % | sièges | % | % | Sièges | % | % | sièges |
+| part. | expr | inscrits |  | expr | inscrits |  | expr | inscrits |  | Expr | inscrits |  |
+| 1997 | 71,22 | 43,17 | 30,74 | 419 | 30,6 | 21,8 | 165 | 16,7 | 11,89 | 46 | 9,53 | 6,79 | 29 |
+| 2001 | 59,38 | 41,96 | 24,92 | 412 | 32,69 | 19,41 | 166 | 18,84 | 11,19 | 52 | 6,51 | 3,866 | 29 |
+| 2005 | 61,30 | 35,20 | 21,58 | 356 | 32,30 | 19,80 | 197 | 22,00 | 13,49 | 62 | 10,50 | 6,44 | 30 |
 
 Avant les élections de 2005, à la suite d’élections partielles, la composition du parlement était la suivante : Labour Party 408, conservateurs 160 ; libéraux 55, autres 36. Entre 2001 et 2005, le nombre de députés a été réduit de 659 à 646 du fait d’une réduction du nombre de circonscriptions en Écosse.
 
 En voix les données sont les suivantes :
 
-Labour Party
+|  | Labour Party | Conservateur (Tories) | Libéraux (SLD) | Autres\* |
+| --- | --- | --- | --- | --- |
+| 1997 | 13 517 911 | 9 591 082 | 5 243 440 | 2 144 674 |
+| 2001 | 10 591 082 | 8 355 193 | 4 814 321 | 1 662 542 |
+| diff. voix | -2 926 829 | -1 235 889 | -429 119 | -482 132 |
+| diff.% | -21,65 | -12,89 | -8,18 | -22,48 |
+| 2005 | 9 556 183 | 8 772 598 | 5 982 045 | 2 821 501 |
+| diff. voix | -1 034 899 | 417 405 | 1 167 724 | 1 158 959 |
+| diff.% | -9,77 | 5,00 | 24,26 | 69,71 |
 
-Conservateur (Tories)
-
-Libéraux (SLD)
-
-Autres***
-
-1997
-
-13 517 911
-
-9 591 082
-
-5 243 440
-
-2 144 674
-
-2001
-
-10 591 082
-
-8 355 193
-
-4 814 321
-
-1 662 542
-
-diff. voix
-
--2 926 829
-
--1 235 889
-
--429 119
-
--482 132
-
-diff.%
-
--21,65
-
--12,89
-
--8,18
-
--22,48
-
-2005
-
-9 556 183
-
-8 772 598
-
-5 982 045
-
-2 821 501
-
-diff. voix
-
--1 034 899
-
-417 405
-
-1 167 724
-
-1 158 959
-
-diff.%
-
--9,77
-
-5,00
-
-24,26
-
-69,71
-
-***Dans le total « Autres » sont comptabilisés les résultats de plus de 50 partis et organisations. Parmi eux, obtiennent des députés en 2005, comme en 1997 et 2001, essentiellement les partis bourgeois et petits bourgeois que sont les nationalistes écossais, gallois et ceux représentés en ’Irlande du Nord (le Labour Party ne présente pas de candidat en Irlande du Nord). Pour ces partis le décompte est le suivant : 9 députés pour le DUP (Démocrates Unioniste d’Irlande du Nord…) ; 6 pour le SNP (Parti Nationaliste Écossais) ; 5 pour le Sinn Fein (Parti Républicain Irlandais) ; 3 pour le Plaid Cymru (Parti nationaliste Gallois) ; 3 pour le SDLP (Parti Social-démocrate et Travailliste d’Irlande du Nord) ; 1 pour l’UUP (Unioniste d’Ulster). Ces derniers représentent près de la moitié des votes classés ici dans la catégorie Autres.
-
+\\Dans le total « Autres » sont comptabilisés les résultats de plus de 50 partis et organisations. Parmi eux, obtiennent des députés en 2005, comme en 1997 et 2001, essentiellement les partis bourgeois et petits bourgeois que sont les nationalistes écossais, gallois et ceux représentés en ’Irlande du Nord (le Labour Party ne présente pas de candidat en Irlande du Nord). Pour ces partis le décompte est le suivant : 9 députés pour le DUP (Démocrates Unioniste d’Irlande du Nord…) ; 6 pour le SNP (Parti Nationaliste Écossais) ; 5 pour le Sinn Fein (Parti Républicain Irlandais) ; 3 pour le Plaid Cymru (Parti nationaliste Gallois) ; 3 pour le SDLP (Parti Social-démocrate et Travailliste d’Irlande du Nord) ; 1 pour l’UUP (Unioniste d’Ulster). Ces derniers représentent près de la moitié des votes classés ici dans la catégorie Autres.
 Pour le reste il faut mentionner le député obtenu à Londres aux dépends du Labour Party par la coalition Respect (68 065 voix seulement sur tout le Royaume-Uni). Il faut aussi noter le score de l’UKIP (United Kingdom Independant Party), ultra conservateur, ouvertement anti européen et xénophobe, qui, sans obtenir de député, passe, par rapport à 2001, de 390 910 à 618 898 voix (soit en exprimés de 1,5 à 2,3 %) alors que ce parti avait obtenu 16,1 % des exprimés lors des élections européennes de juin 2004, soit 12 eurodéputés, au troisième rang derrière le Labour et les conservateurs. En fin le BNP (British National Party), l’équivalent du FN en Grande-Bretagne obtient 192 850 voix, progressant de 0,5 % par rapport aux exprimés alors qu’il avait obtenu 4,9 % aux élections européennes. Il reste une organisation marginale.
 
 Une majorité aux Communes acquise de justesse
@@ -264,7 +65,7 @@ Le moins que l’on puisse dire, c’est que le Labour Party et Tony Blair ont e
 
 Le Labour ne devance le parti conservateur que de 785 585 voix. Conservateurs et Libéraux obtiennent 54,30 % des suffrages exprimés contre 35,20 % pour le Labour Party. En réalité le New Labour ne doit son salut au fait qu’une grande partie de la « Middle Class » (la classe moyenne) lui est restée fidèle.
 
-Cet électorat petit-bourgeois avait fait les frais de la politique des gouvernements conservateurs de Thatcher et Major. Il ne trouve pas dans le Parti conservateur une nouvelle perspective crédible.Ceci pas plus que le capital financier : à la veille des élections, The Economist, journal patronal, titrait « Il n’y a pas d’alternative hélas ! ».
+Cet électorat petit-bourgeois avait fait les frais de la politique des gouvernements conservateurs de Thatcher et Major. Il ne trouve pas dans le Parti conservateur une nouvelle perspective crédible.Ceci pas plus que le capital financier : à la veille des élections, *The Economist, journal patronal, titrait « Il n’y a pas d’alternative hélas ! ».
 
 Un signe qui indique que le capital financier, autant au plan de la politique intérieure que de la politique extérieure s’accommode des gouvernements dirigés par Tony Blair. Ni le parti conservateur, toujours déchiré en particulier sur la ligne à suivre vis-à-vis de L’Union Européenne, ni les libéraux ne sont à même de prendre le relais, « hélas ! ». C’est aussi une donnée qui a évité le pire au New Labour : perdre les élections.
 

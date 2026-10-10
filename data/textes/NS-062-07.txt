@@ -68,61 +68,16 @@ Un régime aux abois
 
 Depuis la mort de Chávez, le régime dirigé par Maduro est aux abois. De fait le régime bonapartiste a besoin du charisme du chef, et Maduro n’est qu’un épigone. De plus, la crise économique que connaît le Venezuela n’arrange pas les affaires politiques de ce dernier. Mais il faut aussi préciser que l’aura de Chávez lui-même n’avait pas empêché l’opposition de se reconstituer. Si l’on suit les résultats de Chávez, il n’a cessé de gagner des voix, jusqu’en 2012, où il atteint plus de 8 millions de voix, face aux différents candidats de l’opposition « démocratique », c’est-à-dire la fraction de la bourgeoisie liée à l’impérialisme, sous différentes formes et coalitions : Arias Cardenas, le oui lors du référendum révocatoire de 2004, Rosales, puis Capriles le candidat de l’actuelle MUD (table d’unité démocratique). Lors de l’élection de 2013, Maduro ne réalisait pas un mauvais score en soi (il ne perdait que 500 000 voix par rapport à Chavez) mais l’opposition bourgeoise s’était reconstituée derrière la candidature de Capriles.
 
-2000
-
-2004 *
-
-2006
-
-2012
-
-2013
-
-% participation
-
-56
-
-69,9
-
-74
-
-80,56
-
-79,7
-
-H. Chávez
-
-3 757 733
-
-7 309 080
-
-8 191 132
-
-F. Arias Cardenas (opposition )
-
-2 359 459
-
-No
-
-5 800 629
-
-Sí (opposition)
-
-3 989 008
-
-Rosales (opposition)
-
-4 292 466
-
-Capriles (opposition)
-
-6 591 304
-
-7 363 264
-
-Maduro
-
-7 587 532
+|  | 2000 | 2004 * | 2006 | 2012 | 2013 |
+| --- | --- | --- | --- | --- | --- |
+| % participation | 56 | 69,9 | 74 | 80,56 | 79,7 |
+| H. Chávez | 3 757 733 |  | 7 309 080 | 8 191 132 |  |
+| F. Arias Cardenas (opposition ) | 2 359 459 |  |  |  |  |
+| No |  | 5 800 629 |  |  |  |
+| Sí (opposition) |  | 3 989 008 |  |  |  |
+| Rosales (opposition) |  |  | 4 292 466 |  |  |
+| Capriles (opposition) |  |  |  | 6 591 304 | 7 363 264 |
+| Maduro |  |  |  |  | 7 587 532 |
 
 *En 2004 un référendum révocatoire a été organisé sur demande des partis de l’opposition « démocratique » bourgeoise.
 
@@ -132,57 +87,14 @@ Depuis 2012, le déclin électoral du régime s’est transformé en défaite ci
 
 Les élections de 2015 ont donc mené à la victoire de la MUD, face à la coalition articulée autour du PSUV, le grand pôle patriotique Simon Bolivar.
 
-2010
-
-2015
-
-inscrits
-
-17 712 768
-
-19 504 106
-
-exprimés
-
-11 097 667
-
-66,45 %
-
-14 385 349
-
-74,17 %
-
-Gran polo patriótico Simón Bolívar
-
-5 423 324
-
-48,13 %
-
-5 622 844
-
-40,91 %
-
-Mesa de Unidad Democrática
-
-5 320 364
-
-47,22 %
-
-7 726 066
-
-56,22 %
-
-Sièges GPPSB
-
-98
-
-55
-
-Sièges MUD
-
-65
-
-112
+|  | 2010 | | 2015 | |
+| --- | --- | --- | --- | --- |
+| inscrits | 17 712 768 | | 19 504 106 | |
+| exprimés | 11 097 667 | 66,45 % | 14 385 349 | 74,17 % |
+| Gran polo patriótico Simón Bolívar | 5 423 324 | 48,13 % | 5 622 844 | 40,91 % |
+| Mesa de Unidad Democrática | 5 320 364 | 47,22 % | 7 726 066 | 56,22 % |
+| Sièges GPPSB | 98 | | 55 | |
+| Sièges MUD | 65 | | 112 | |
 
 Ainsi depuis 2010, l’opposition s’est reconstituée et renforcée face au régime. Dès lors, à la suite des élections de 2015, Maduro se voit obligé de composer avec un Parlement hostile, malgré des pouvoirs réduits, et donc est contraint à gouverner par décret, sans base parlementaire. L’opposition continue d’occuper la rue, et tente de prendre l’initiative d’organiser un nouveau référendum révocatoire, en réunissant les signatures des citoyens, premièrement pour l’ouverture de la procédure, puis deuxièmement en nombre suffisant pour déclencher l’organisation du vote, dans les délais les plus brefs. Si la procédure n’arrive pas à temps, en effet, Maduro serait remplacé par son vice-président, sans que des élections anticipées aient lieu, vu que l’échéance électorale normale prévue est en 2019.
 
@@ -239,15 +151,10 @@ Quelle voie pour les masses au Venezuela ?
 Bien entendu, le retour au pouvoir de la fraction la plus ouvertement soumise à l’impérialisme ne peut être une bonne nouvelle. Il faut lutter pour l’empêcher. Cela est indissociable en réalité d’un combat contre le gouvernement de Maduro, dont toute la politique fait le lit de cette « restauration », dont les masses, quoiqu’il arrive, feraient les frais. Il faut donc rompre avec le gouvernement pour combattre sur le terrain de l’indépendance de classe.
 
 - Cela signifie tout d’abord l’indépendance de l’UNT, de ses sections, de ses fédérations et syndicats. La direction de l’UNT ne doit plus se soumettre aux intérêts du gouvernement et défendre les revendications des travailleurs ;
-
 - Dans le cadre de la pénurie généralisée et du marché noir, les travailleurs, par le biais de leurs organisations, doivent prendre en main la question du contrôle ouvrier, du contrôle de l’approvisionnement, de la production qui doit être soumise à un plan permettant de satisfaire les immenses besoins de la population ; dans le cadre des problèmes liés à la monnaie et au marché noir, le monopole du commerce extérieur, le contrôle des changes, l’appel aux travailleurs des banques pour interdire la spéculation, la fuite des capitaux semble aussi nécessaire ;
-
 - Contre les mesures de restriction de liberté : contre les mesures d’état d’urgence, la loi antiterroriste destinées à frapper les plus pauvres, dans leurs manifestations ;
-
 - Pour les étudiants, la question des bourses est cruciale ;
-
 - Les salaires et leur défense par une échelle mobile est absolument nécessaire face aux prix réels ;
-
 - La réforme agraire, l’organisation de l’agriculture de sorte à répondre aux besoins urgents de la population.
 
 Toutes ces mesures évidemment nécessitent un gouvernement, un gouvernement ouvrier, dont la seule organisation qui puisse l’assurer semble être l’UNT, qui pourrait s’appuyer sur des comités, des comités d’usine, de quartiers, d’approvisionnement. Dans ce cadre, la lutte pour des États-Unis Socialistes d’Amérique latine est aussi indispensable, afin de permettre aux différents prolétariats de s’appuyer les uns sur les autres et d’organiser les échanges à l’échelle du continent afin, par exemple, de bénéficier notamment des produits agricoles importés depuis le Brésil ou l’Argentine, en échange des ressources pétrolières.

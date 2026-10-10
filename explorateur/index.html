@@ -44,6 +44,27 @@
   .more { display: block; margin: 16px auto 40px; }
   .erreur { color: var(--accent); }
   footer { color: var(--muted); font-size: .8rem; max-width: 1000px; margin: 0 auto; padding: 0 16px 32px; }
+  .lire { font-size: .8rem; padding: 2px 10px; margin-right: 10px; border-color: var(--accent); color: var(--accent);
+          background: transparent; border-radius: 12px; }
+  dialog#lecteur { width: min(780px, 100%); max-width: 100%; max-height: 92vh; padding: 0; border: 1px solid var(--line);
+                   border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog#lecteur::backdrop { background: rgb(0 0 0 / .45); }
+  .lect-tete { position: sticky; top: 0; background: var(--card); border-bottom: 1px solid var(--line);
+               padding: 14px 52px 10px 20px; z-index: 1; }
+  .lect-tete h2 { font-size: 1.15rem; margin: 4px 0 6px; line-height: 1.35; }
+  #l-fermer { position: absolute; top: 10px; right: 12px; font-size: 1.3rem; line-height: 1; padding: 4px 10px; }
+  .corps { padding: 8px 20px 24px; font: 17px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif; }
+  .corps h3 { font: 600 1.15rem/1.35 system-ui, sans-serif; margin: 1.4em 0 .5em; }
+  .corps h4, .corps h5 { font: 600 1rem/1.35 system-ui, sans-serif; margin: 1.2em 0 .4em; }
+  .corps blockquote { margin: 1em 0; padding: .1em 1em; border-left: 3px solid var(--line); color: var(--muted); }
+  .corps img { max-width: 100%; height: auto; }
+  .corps table { border-collapse: collapse; font: .85rem/1.4 system-ui, sans-serif; margin: 1em 0; display: block; overflow-x: auto; }
+  .corps td, .corps th { border: 1px solid var(--line); padding: 3px 8px; }
+  .corps .notes { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: .8em; }
+  .corps a { color: var(--accent); }
+  .avert { font: .8rem/1.4 system-ui, sans-serif; color: var(--muted); background: var(--chip); padding: 8px 10px;
+           border-radius: 6px; margin: 10px 0 0; }
+  @media (max-width: 600px) { dialog#lecteur { max-height: 100vh; height: 100vh; border-radius: 0; } .corps { font-size: 16px; } }
 </style>
 </head>
 <body>
@@ -83,6 +104,15 @@
   <ol id="liste"></ol>
   <button class="more" id="plus" hidden>Afficher plus</button>
 </main>
+<dialog id="lecteur">
+  <div class="lect-tete">
+    <div class="meta" id="l-meta"></div>
+    <h2 id="l-titre"></h2>
+    <div class="liens" id="l-liens"></div>
+    <button id="l-fermer" type="button" aria-label="Fermer">×</button>
+  </div>
+  <div class="corps" id="l-corps"></div>
+</dialog>
 <footer>Source : <a href="http://socialisme.free.fr/">socialisme.free.fr</a> — données : <code>data/cps.json</code>.</footer>
 <script>
 const SERIES = { bulletin1984: "Bulletin 1984", ancienne: "Ancienne série", nouvelle: "Nouvelle série" };
@@ -90,7 +120,7 @@ const TYPES = { numero: "Numéro", numero_special: "Numéro spécial", supplemen
 const PAS = 150;
 const $ = (id) => document.getElementById(id);
 const sansAccents = (s) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-let articles = [], libelles = {}, limite = PAS;
+let articles = [], libelles = {}, limite = PAS, lecture = null;
 
 function libellePublication(p) {
   if (p.type === "supplement") return `Supplément au n°${p.numero} (${SERIES[p.serie]})`;
@@ -116,6 +146,7 @@ function ecrireEtat() {
   for (const k of ["q", "serie", "type", "tag", "de", "a"]) if ($(k).value) h.set(k, $(k).value);
   if ($("tri").value !== "desc") h.set("tri", $("tri").value);
   if ($("texte").checked) h.set("texte", "1");
+  if (lecture) h.set("lire", lecture);
   history.replaceState(null, "", h.toString() ? "#" + h : location.pathname);
 }
 
@@ -161,6 +192,14 @@ function afficher() {
     }
     const liens = document.createElement("div");
     liens.className = "liens";
+    if (x.texte_disponible) {
+      const b = document.createElement("button");
+      b.className = "lire";
+      b.type = "button";
+      b.textContent = "Lire";
+      b.onclick = () => lire(x);
+      liens.append(b);
+    }
     if (x.url_html) liens.append(lien(x.url_html, "HTML"));
     if (x.url_pdf) liens.append(lien(x.url_pdf + (x.pdf_page ? "#page=" + x.pdf_page : ""), x.pdf_page ? `PDF p. ${x.pdf_page}` : "PDF"));
     if (x.pub.url_pdf && x.pub.pdf_disponible && x.pub.url_pdf !== x.url_pdf) {
@@ -180,6 +219,115 @@ function afficher() {
     ol.append(li);
   }
   $("plus").hidden = res.length <= limite;
+}
+
+// ---- rendu Markdown (sous-ensemble produit par ce projet), sans HTML venant du texte
+function echapperHTML(t) {
+  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function enLigne(t) {
+  const proteges = [];
+  t = t.replace(/\\([\\`*_{}\[\]()#+\-.!<>|])/g, (m, c) => { proteges.push(c); return "\u0000" + (proteges.length - 1) + "\u0000"; });
+  t = echapperHTML(t);
+  t = t.replace(/!\[([^\]]*)\]\((https?:[^)\s]+)\)/g, (m, alt, u) => `<img src="${u}" alt="${alt}" loading="lazy">`);
+  t = t.replace(/\[\^(\w+)\]/g, (m, n) => `<sup><a href="#note-${n}">${n}</a></sup>`);
+  t = t.replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, (m, txt, u) => `<a href="${u}" target="_blank" rel="noopener">${txt}</a>`);
+  t = t.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
+  t = t.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  t = t.replace(/\*(.+?)\*/g, "<em>$1</em>");
+  return t.replace(/\u0000(\d+)\u0000/g, (m, i) => echapperHTML(proteges[+i]));
+}
+
+function tableau(lignes) {
+  const cellules = (l) => l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+  let h = "<table>", debut = 0;
+  if (lignes.length > 1 && /^\|?\s*:?-{3,}/.test(lignes[1])) {
+    h += "<thead><tr>" + cellules(lignes[0]).map((c) => `<th>${enLigne(c)}</th>`).join("") + "</tr></thead>";
+    debut = 2;
+  }
+  return h + "<tbody>" + lignes.slice(debut).map((l) => "<tr>" + cellules(l).map((c) => `<td>${enLigne(c)}</td>`).join("") + "</tr>").join("") + "</tbody></table>";
+}
+
+function rendreMarkdown(md) {
+  const L = md.split("\n"), notes = [];
+  let h = "", i = 0;
+  const special = /^(#{1,6}\s|>|- |\||\[\^\w+\]:)/;
+  while (i < L.length) {
+    const l = L[i];
+    let m;
+    if (!l.trim()) { i++; continue; }
+    if ((m = l.match(/^(#{1,6})\s+(.*)$/))) {
+      const n = Math.min(6, m[1].length + 1);
+      h += `<h${n}>${enLigne(m[2])}</h${n}>`; i++; continue;
+    }
+    if ((m = l.match(/^\[\^(\w+)\]:\s?(.*)$/))) { notes.push([m[1], m[2]]); i++; continue; }
+    if (l.startsWith(">")) {
+      const b = [];
+      while (i < L.length && (L[i].startsWith(">") || (L[i].trim() && b.length && !special.test(L[i])))) { b.push(L[i].replace(/^>\s?/, "")); i++; }
+      h += `<blockquote>${rendreMarkdown(b.join("\n"))}</blockquote>`; continue;
+    }
+    if (/^- /.test(l)) {
+      h += "<ul>";
+      while (i < L.length && /^- /.test(L[i])) {
+        let item = L[i].slice(2); i++;
+        while (i < L.length && L[i].trim() && !special.test(L[i])) { item += " " + L[i].trim(); i++; }
+        h += `<li>${enLigne(item)}</li>`;
+        while (i + 1 < L.length && !L[i].trim() && /^- /.test(L[i + 1])) i++;
+      }
+      h += "</ul>"; continue;
+    }
+    if (l.startsWith("|")) {
+      const rangs = [];
+      while (i < L.length && L[i].startsWith("|")) rangs.push(L[i++]);
+      h += tableau(rangs); continue;
+    }
+    const p = [];
+    while (i < L.length && L[i].trim() && !(p.length && special.test(L[i]))) p.push(L[i++]);
+    h += "<p>" + p.map((x) => x.endsWith("\\") ? enLigne(x.slice(0, -1)) + "<br>" : enLigne(x)).join(" ") + "</p>";
+  }
+  if (notes.length) h += `<ol class="notes">${notes.map(([n, t]) => `<li id="note-${n}" value="${/^\d+$/.test(n) ? n : ""}">${enLigne(t)}</li>`).join("")}</ol>`;
+  return h;
+}
+
+function enTete(md) {
+  const m = md.match(/^---\n([\s\S]*?)\n---\n/);
+  const meta = {};
+  if (m) for (const l of m[1].split("\n")) {
+    const k = l.indexOf(": ");
+    if (k > 0) { try { meta[l.slice(0, k)] = JSON.parse(l.slice(k + 2)); } catch { meta[l.slice(0, k)] = l.slice(k + 2); } }
+  }
+  return [meta, m ? md.slice(m[0].length) : md];
+}
+
+async function lire(x) {
+  lecture = x.id;
+  ecrireEtat();
+  $("l-meta").textContent = `${dateFr(x.date)} · ${libellePublication(x.pub)} · ${x.id}`;
+  $("l-titre").textContent = x.titre;
+  const liens = $("l-liens");
+  liens.replaceChildren();
+  if (x.url_html) liens.append(lien(x.url_html, "HTML"));
+  const pdf = x.url_pdf || (x.pub.pdf_disponible ? x.pub.url_pdf : null);
+  const page = x.pdf_page || x.page_debut;
+  if (pdf) liens.append(lien(pdf + (page ? "#page=" + page : ""), page ? `PDF p. ${page}` : "PDF"));
+  liens.append(lien("../" + x.markdown, "Markdown"));
+  $("l-corps").innerHTML = '<p class="meta">Chargement…</p>';
+  if (!$("lecteur").open) $("lecteur").showModal();
+  $("lecteur").scrollTop = 0;
+  try {
+    const r = await fetch("../" + x.markdown);
+    if (!r.ok) throw new Error(r.status);
+    const [meta, corps] = enTete(await r.text());
+    let html = rendreMarkdown(corps);
+    if (meta.texte_type === "pages_numero")
+      html = '<p class="avert">Texte découpé automatiquement dans le PDF du numéro : le début ou la fin peuvent déborder sur l\'article voisin. Pour les numéros scannés, le texte vient de l\'OCR et peut contenir des erreurs.</p>' + html;
+    else if (meta.texte_type === "pdf_publication" && /ocr/.test(meta.texte_source || ""))
+      html = '<p class="avert">Texte obtenu par OCR d\'un document scanné : il peut contenir des erreurs de reconnaissance.</p>' + html;
+    $("l-corps").innerHTML = html;
+  } catch (e) {
+    $("l-corps").innerHTML = '<p class="erreur">Impossible de charger le texte de cet article.</p>';
+  }
 }
 
 async function init() {
@@ -209,11 +357,17 @@ async function init() {
     for (const id of ["q", "serie", "type", "tag", "de", "a", "tri", "texte"])
       $(id).addEventListener(id === "q" ? "input" : "change", () => { limite = PAS; afficher(); });
     $("plus").onclick = () => { limite += PAS; afficher(); };
+    $("l-fermer").onclick = () => $("lecteur").close();
+    $("lecteur").addEventListener("close", () => { lecture = null; ecrireEtat(); });
+    $("lecteur").addEventListener("click", (e) => { if (e.target === $("lecteur")) $("lecteur").close(); });
+    const demande = new URLSearchParams(location.hash.slice(1)).get("lire");
     $("raz").onclick = () => {
       for (const id of ["q", "serie", "type", "tag", "de", "a"]) $(id).value = "";
       $("tri").value = "desc"; $("texte").checked = false; limite = PAS; afficher();
     };
     afficher();
+    const cible = demande && articles.find((a) => a.id === demande);
+    if (cible) lire(cible);
   } catch (e) {
     $("sub").innerHTML = '<span class="erreur">Impossible de charger ../data/cps.json. Servez le dépôt avec un serveur web (ex. <code>python3 -m http.server</code> à la racine) puis ouvrez /explorateur/.</span>';
   }

@@ -46,8 +46,7 @@ La question des déficits est en effet l’autre souci majeur que pointe le FMI.
 
 « Après avoir réussi à réduire leurs déficits publics sous la pression du pacte de stabilité et l'effet du boum économique de la fin des années 90, les Etats membres connaissent des évolutions erratiques. La Commission devrait préconiser le 7 juin d'ouvrir une procédure pour "déficits excessifs" à l'encontre de l'Italie, ceux-ci devant dépasser la barre des 3 % du PIB.
 
-L'Allemagne viole cette limite depuis 2002 et ne parvient pas à tenir ses engagements. Son ministre des finances, Hans Eichel, a déjà dit que le retour sous les 3 % en 2005 était "de plus en plus difficile", compte tenu du faible niveau des recettes fiscales, et des chiffres du chômage.
-
+ L'Allemagne viole cette limite depuis 2002 et ne parvient pas à tenir ses engagements. Son ministre des finances, Hans Eichel, a déjà dit que le retour sous les 3 % en 2005 était "de plus en plus difficile", compte tenu du faible niveau des recettes fiscales, et des chiffres du chômage.
 Deux autres petits pays ont pulvérisé les règles européennes : la Grèce, avec un déficit de 7,1 % de son PIB en 2004 et 5,5 % cette année, tandis que le gouffre portugais pourrait frôler les 7 % du PIB. Les autorités européennes sont dans l'incapacité de discipliner réellement la conduite budgétaire des Etats membres. Avec la France et l'Allemagne, les ministres des finances ont fait voler en éclat les règles du pacte de stabilité fin 2003. Celui-ci a été depuis assoupli. Les marges de manoeuvres sont telles qu'elles permettent les dérapages en tout genre. »
 
 Les principaux pays de l’Union Européenne ont suivi à reculons en matière de déficits le cours économique initié depuis 2001 aux Etats-Unis, où les déficits publics ont été creusés sans compter pour éviter un effondrement économique. A reculons, sauf pour la Grande Bretagne qui, n’appartenant pas à la zone euro, s’est aussi permise de diminuer drastiquement ses taux d’intérêts en suivant l’exemple venu d’outre atlantique. Mais à son tour « l'économie britannique montre des signes d'essoufflement » (Le Monde du 11 mai).
@@ -80,13 +79,12 @@ La situation de l’industrie américaine est suffisamment préoccupante pour qu
 
 «Pour des raisons parfois différentes, l'automobile, la sidérurgie, la métallurgie, les biens d'équipement (hors technologies de l'information), le plastique, la chimie, le textile, le papier, le meuble, l'électronique grand public, les jouets... apparaissent comme les laissés-pour-compte de l'économie américaine. La désindustrialisation s'accélère, et certaines de ces activités semblent condamnées à disparaître.
 
-En dépit d'une conjoncture favorable et de la forte baisse du dollar depuis trois ans, face à l'euro et au yen, l'industrie américaine ne cesse de perdre des parts de marché à l'exportation et aux Etats-Unis même. (…)
-
+ En dépit d'une conjoncture favorable et de la forte baisse du dollar depuis trois ans, face à l'euro et au yen, l'industrie américaine ne cesse de perdre des parts de marché à l'exportation et aux Etats-Unis même. (…)
 La situation se dégrade d'autant plus vite que les industries vieillissantes entrent dans un cercle vicieux. Elles ont des marges faibles ou inexistantes, des coûts élevés notamment en matière de retraite et de couverture médicale pour des salariés dont la moyenne d'âge ne cesse d'augmenter. Elles n'investissent plus et leur productivité stagne. Leur seule chance est d'innover et de fabriquer des produits différents, mais elles n'en ont ni les moyens ni la volonté.
 
-(…) L'emploi industriel, hors technologies de l'information, représentait 11 % du total en 1996 et moins de 8 % en 2004 (…) L'exemple du textile, secteur qui a perdu 374 000 emplois (soit plus du tiers de ses effectifs industriels) entre 2001 et 2004, est le plus souvent cité.»
+ (…) L'emploi industriel, hors technologies de l'information, représentait 11 % du total en 1996 et moins de 8 % en 2004 (…) L'exemple du textile, secteur qui a perdu 374 000 emplois (soit plus du tiers de ses effectifs industriels) entre 2001 et 2004, est le plus souvent cité.»
 
-Aux Etats-Unis aussi, alors même qu’il s’agit d’un pays dont les principales firmes, surtout sur les nouveaux marchés, occupent le plus souvent des positions dominantes, les « délocalisations » sont pointées du doigt. Qu’en est-il ?
+ Aux Etats-Unis aussi, alors même qu’il s’agit d’un pays dont les principales firmes, surtout sur les nouveaux marchés, occupent le plus souvent des positions dominantes, les « délocalisations » sont pointées du doigt. Qu’en est-il ?
 
 Quant au constat on pourrait reprendre les termes du rapport Fontagné-Lorenzi sur la question, remis à Raffarin en novembre dernier :
 
@@ -103,17 +101,13 @@ Autrement dit, c’est avec la réapparition de la crise structurelle du capital
 Conclusion des auteurs du rapport :
 
 « En d’autres termes, l’essentiel de la désindustrialisation depuis 1970 serait dû à des facteurs internes aux pays industrialisés. (…)
-
 Le recul relatif de l’emploi industriel dans les pays dits industrialisés est indéniable et la France n’échappe pas à ce mouvement. Mais ce recul de l’industrie s’explique avant tout par un différentiel positif de productivité par rapport aux services : l’industrie est en quelque sorte victime de son succès dans l’application du progrès technique et des méthodes scientifiques d’organisation du travail. Aussi ne doit-on pas s’étonner que le recul soit très prononcé en valeur, et très limité en volume, une fois corrigé de cet effet de prix relatif»
 
 Ces « facteurs internes », ce sont ceux dans le fond de l’affaire que Marx a dégagé dans le Capital :
 
 « La réserve industrielle est d'autant plus nombreuse que la richesse sociale, le capital en fonction, l'étendue et l'énergie de son accumulation, partant aussi le nombre absolu de la classe ouvrière et la puissance productive de son travail, sont plus considérables.
-
 Les mêmes causes qui développent la force expansive du capital amenant la mise en disponibilité de la force ouvrière, la réserve industrielle doit augmenter avec les ressorts de la richesse. Mais plus la réserve grossit, comparativement à l'armée active du travail, plus grossit aussi la surpopulation consolidée dont la misère est en raison directe du labeur imposé. Plus s'accroît enfin cette couche des Lazare de la classe salariée, plus s'accroît aussi le paupérisme officiel.
-
 Voilà la loi générale, absolue, de l'accumulation capitaliste. L'action de cette loi, comme de toute autre, est naturellement modifiée par des circonstances particulières. »
-
 (Le Capital, chapitre XXV)
 
 La dernière phrase de ce passage n’est pas superflue, ni pour Marx, ni pour comprendre la situation actuelle.
@@ -123,7 +117,6 @@ La tendance fondamentale de l’accumulation capitaliste est de faire produire u
 Ces lignes de Marx, extraites du même passage, ont une résonance tout à fait actuelle :
 
 « Enfin la loi, qui toujours équilibre le progrès de l'accumulation et celui de la surpopulation relative, rive le travailleur au capital plus solidement que les coins de Vulcain ne rivaient Prométhée à son rocher.
-
 C'est cette loi qui établit une corrélation fatale entre l'accumulation du capital et l'accumulation de la misère, de telle sorte qu'accumulation de richesse à un pôle, c'est égale accumulation de pauvreté, de souffrance, d'ignorance, d'abrutissement, de dégradation morale, d'esclavage, au pôle opposé, du côté de la classe qui produit le capital même. »
 
 L’extension de l’usage du crédit (l’endettement des ménages notamment aux USA et en Grande Bretagne est respectivement de 125% et 150% du revenu disponible, selon la Lettre de l’OFCE du 26 avril 2005) aux particuliers, aux entreprises, l’endettement des Etats est un moyen de repousser une des conséquences de cette loi, à savoir les crises de surproduction dont l’automobile et le textile fournissent de nouveaux et vivants exemples. A son tour, il génère d’autres menaces.
@@ -133,12 +126,11 @@ L’extension de l’usage du crédit (l’endettement des ménages notamment au
 La hausse des taux d’intérêt américains a ainsi beau être limitée, elle est lourde de dangers. Citons une tribune de l’économiste M.Dessetine, parue dans Libération du 18 janvier qui en révèle une des facettes :
 
 « La croissance américaine se nourrit, autant qu'elle produit, de la dette. L'Etat fédéral creuse un déficit abyssal, auquel il convient d'ajouter ceux des Etats de l'union ; de plus, le déficit est chronique chez tous les acteurs économiques d'outre-Atlantique, privés ou publics, individuels ou collectifs. L'ensemble des balances est déséquilibré ; l'Amérique pratique une fuite en avant perpétuelle, et vit à crédit.
-
 Le reste du monde est plus que jamais contraint de financer le statut désormais unique de la superpuissance.
 
-Tout laisse à penser cependant que ce système touche ses limites. Parmi les dettes qui viennent d'être évoquées, il en est une particulière : la dette immobilière ; elle explique à elle seule le niveau d'endettement faramineux des ménages américains. Ce mécanisme est très spécifique aux Etats-Unis : l'augmentation des prix de l'habitat y est convertie par les banques en de nouvelles dettes offertes aux propriétaires, dettes gagées sur ce surcroît de valeur (les mortgage securities), dettes immédiatement transformées en consommation.
+ Tout laisse à penser cependant que ce système touche ses limites. Parmi les dettes qui viennent d'être évoquées, il en est une particulière : la dette immobilière ; elle explique à elle seule le niveau d'endettement faramineux des ménages américains. Ce mécanisme est très spécifique aux Etats-Unis : l'augmentation des prix de l'habitat y est convertie par les banques en de nouvelles dettes offertes aux propriétaires, dettes gagées sur ce surcroît de valeur (les mortgage securities), dettes immédiatement transformées en consommation.
 
-La croissance provient donc en grande partie de cette liquidité offerte aux ménages par le monde financier, sur la base d'un accroissement spéculatif des prix de l'immobilier. Nous sommes en présence d'une traînée de poudre menant tout droit au stock de dynamite sur lequel est assis le système économique international.
+ La croissance provient donc en grande partie de cette liquidité offerte aux ménages par le monde financier, sur la base d'un accroissement spéculatif des prix de l'immobilier. Nous sommes en présence d'une traînée de poudre menant tout droit au stock de dynamite sur lequel est assis le système économique international.
 
 En effet, pourquoi est-on incité à investir dans l'immobilier? N'importe quel client d'une banque le sait : parce que les taux sont faibles.
 
@@ -155,15 +147,13 @@ L’économie mondiale à un carrefour
 Enfin, dans Le Monde du 1er février dernier, un certain nombre de faits économiques étaient soulignés avec angoisse :
 
 « En 2004, les sociétés européennes ont davantage reversé d'argent à leurs actionnaires qu'elles n'ont levé de capitaux. C'est un paradoxe puisque la raison d'être des marchés est d'irriguer l'économie et que l'épargne est abondante. Mais celle-ci comble surtout les déficits publics (…)
-
 Jamais par le passé la situation n'avait affiché un tel contraste. Selon les statistiques de la Société générale, les entreprises européennes ont versé, en 2004, 199 milliards d'euros de dividendes, soit 10 % de plus qu'en 2003, à leurs actionnaires. Elles ont dépensé en plus 30 milliards dans le rachat de leurs actions. Dans le même temps, les augmentations de capital, les introductions en Bourse, les placements se sont élevés à 110 milliards d'euros. Les groupes ont ainsi distribué 120 milliards d'euros de plus qu'ils n'ont obtenu de capital auprès des marchés financiers. (…)
-
 La réalité est encore plus défavorable qu'il n'y paraît, ajoute Daniel Fermon, stratégiste sur les marchés d'actions à la Société générale. L'essentiel des levées de capitaux est lié à la poursuite des privatisations en Europe. (…)
 
 Plus loin, il est fait état d’un phénomène particulier :
 
 (…) cette fois-ci, nous assistons à une déformation jamais vue. Ce sont les entreprises désormais qui détiennent l'épargne face à des ménages et à des Etats de plus en plus endettés.(…) les groupes utilisent tous les arguments pour justifier leur non-investissement, leur non-recours à de nouveaux capitaux. Pourtant, ils ont retrouvé toutes leurs marges de manœuvre : les taux d'autofinancement atteignent 110 % en Allemagne, 105 % aux Etats-Unis, 95 % en France. Mais, par peur d'effrayer leurs actionnaires, ils préfèrent la prudence. Et les marchés applaudissent. »
-« (…) Pour Patrick Artus, chef économiste d'Ixis CIB, le fait que "l'épargne n'aille plus vers le système productif" constitue un changement majeur, lourd de conséquences pour l'économie. "Nous ne sommes plus dans le cercle traditionnel : les profits d'aujourd'hui financent les investissements de demain. Les marchés n'assurent plus le financement de la croissance, mais uniquement celui des déficits des Etats", s'inquiète-t-il, persuadé que ces mécanismes ne peuvent que conduire à un développement de plus en lent de l'économie (…) »
+ « (…) Pour Patrick Artus, chef économiste d'Ixis CIB, le fait que "l'épargne n'aille plus vers le système productif" constitue un changement majeur, lourd de conséquences pour l'économie. "Nous ne sommes plus dans le cercle traditionnel : les profits d'aujourd'hui financent les investissements de demain. Les marchés n'assurent plus le financement de la croissance, mais uniquement celui des déficits des Etats", s'inquiète-t-il, persuadé que ces mécanismes ne peuvent que conduire à un développement de plus en lent de l'économie (…) »
 
 Et un économiste de souligner tandis que le Monde titre à côté sur « les dangers d’un capitalisme de rentiers » :
 

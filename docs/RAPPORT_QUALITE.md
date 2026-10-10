@@ -18,10 +18,11 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 | — avec lien HTML | 334 |
 | — avec lien PDF propre ou page de PDF | 334 |
 | — avec texte intégral (page HTML ou PDF propre) | 402 |
-| — avec texte intégral (PDF de la publication) | 150 |
-| — avec texte approximatif (pages du numéro) | 469 |
-| — page de début connue (site) | 80 |
-| — page de début retrouvée par le titre | 557 |
+| — avec texte intégral (PDF de la publication) | 147 |
+| — avec texte découpé dans le PDF du numéro (titre → article suivant) | 537 |
+| — avec texte (total, Markdown et brut) | 1086 |
+| — page de début indiquée par le site | 80 |
+| — page de début retrouvée par le titre | 677 |
 | Publications dont le texte intégral est disponible (pages) | 350 |
 | — dont océrisées (scans) | 177 |
 | Pages de texte | 7688 |

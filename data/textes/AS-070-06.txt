@@ -3,7 +3,6 @@ Article paru dans Combattre pour le Socialisme n°70 (décembre 1997)
 Collaboration de classe à l'italienne
 
 « Plus l’influence des réformistes sur les ouvriers est forte, et plus les ouvriers sont impuissants, plus ils seront sous la coupe de la bourgeoisie, plus il est facile pour celle-ci de réduire à néant les acquis par des subterfuges divers. »
-
 V. Lénine (Marxisme et réformisme, 1913)
 
 En Italie, après avoir empêché que le gouvernement Berlusconi tombe sous le coup d’une grève générale, après le mouvement de millions de travailleurs contre son budget d’austérité à l’automne 1994, les dirigeants des centrales syndicales, le Parti démocratique de la gauche (PDS, ex-PCI stalinien), avaient permis à la bourgeoisie italienne de se remettre en selle. Ils avaient œuvré à la constitution d’un nouveau gouvernement bourgeois, dirigé par L. Dini, ancien expert du Fonds monétaire international, dirigeant de la banque centrale italienne (la Banca d’Italia), ancien ministre des finances de Berlusconi.
@@ -28,9 +27,8 @@ A partir de la réunification allemande de 1989, la plupart des États membres d
 
 En 1991, quand le traité de Maastricht a été négocié, le gouvernement Kohl a concédé la monnaie commune à ses partenaires, mais en a éloigné l’échéance (au mieux 1997, sinon 1999) et fixé ses conditions :
 
-· « l’indépendance » de la Banque centrale européenne sur le modèle de la banque centrale allemande, la Bundesbank (en d’autres termes, une grande autonomie des dirigeants de l’institut d’émission de « l’euro » vis-à-vis des gouvernements autre que celui de l'Allemagne) ;
-
-· l’exigence de conditions de nature monétaire et financière, les « critères de convergence », pour participer à la zone monétaire (dette, déficit, taux d’intérêt, inflation, parité).
+- · « l’indépendance » de la Banque centrale européenne sur le modèle de la banque centrale allemande, la Bundesbank (en d’autres termes, une grande autonomie des dirigeants de l’institut d’émission de « l’euro » vis-à-vis des gouvernements autre que celui de l'Allemagne) ;
+- · l’exigence de conditions de nature monétaire et financière, les « critères de convergence », pour participer à la zone monétaire (dette, déficit, taux d’intérêt, inflation, parité).
 
 A priori, ces critères écartaient les pays que les dirigeants allemands nommaient aimablement en coulisse le « Club Med » (Italie, Portugal, Espagne et Grèce). Au cas où il leur faudrait abandonner le mark, autant que ce soit pour une monnaie stable et forte, peu victime d’inflation et correspondant à la productivité allemande, capable de rivaliser avec le dollar.
 
@@ -130,121 +128,16 @@ Ce dispositif parachève, sur le terrain électoral, la politique continue de co
 
 Les résultats des élections à la chambre des députés du 21 avril 1996
 
-Collèges à scrutin majoritaire
-
-Circonscriptions proportionnelles
-
-Listes
-
-Voix
-
-Pourcentage
-
-Sièges
-
-Voix
-
-Pourcentage
-
-Sièges
-
-Olivier
-
-15 729 124
-
-42
-
-246
-
-13 054 975
-
-34,8
-
-38
-
-Olivier + PRC
-
-16 729 368
-
-44,8
-
-261
-
-16 270 935
-
-43,4
-
-58
-
-Pôle des libertés
-
-14 995 777
-
-40,2
-
-169
-
-15 780 752
-
-42,1
-
-77
-
-Pôle + alliés
-
-15 065 722
-
-40,4
-
-169
-
-16 481 785
-
-44
-
-77
-
-Ligue du nord
-
-4 038 511
-
-10,8
-
-39
-
-3 777 786
-
-10,1
-
-20
-
-Autres
-
-1 470 532
-
-3,9
-
-6
-
-964 459
-
-2,6
-
-0
-
-TOTAL
-
-37 304 133
-
-100
-
-475
-
-37 494 965
-
-100
-
-155
+|  | Collèges à scrutin majoritaire | | | Circonscriptions proportionnelles | | |
+| --- | --- | --- | --- | --- | --- | --- |
+| Listes | Voix | Pourcentage | Sièges | Voix | Pourcentage | Sièges |
+| Olivier | 15 729 124 | 42 | 246 | 13 054 975 | 34,8 | 38 |
+| Olivier + PRC | 16 729 368 | 44,8 | 261 | 16 270 935 | 43,4 | 58 |
+| Pôle des libertés | 14 995 777 | 40,2 | 169 | 15 780 752 | 42,1 | 77 |
+| Pôle + alliés | 15 065 722 | 40,4 | 169 | 16 481 785 | 44 | 77 |
+| Ligue du nord | 4 038 511 | 10,8 | 39 | 3 777 786 | 10,1 | 20 |
+| Autres | 1 470 532 | 3,9 | 6 | 964 459 | 2,6 | 0 |
+| TOTAL | 37 304 133 | 100 | 475 | 37 494 965 | 100 | 155 |
 
 La modification du mode de scrutin a en effet donné une nette majorité, mais pas au Pôle des libertés, au grand dam de Berlusconi et Fini. L’Olivier et son allié le PRC remportent les élections d’avril 1997. Le système d’élections à la majorité à un seul tour pour 75 % des sièges, et à la proportionnelle pour les 25 % restants, a fortement avantagé la coalition la plus large, c’est-à-dire l’Olivier. Avec un peu moins de 16 millions de voix, il gagne 246 sièges de députés. Tandis qu’avec 4 millions de suffrages, la LN obtient 39 sièges à la Chambre, soit 6 fois moins. Entre le Pôle des libertés et l’Olivier, 2 % d’écart au scrutin majoritaire donnent 75 députés de différence, soit 16 % des sièges correspondants.
 
@@ -272,11 +165,9 @@ Ainsi, en septembre 1996, est signé un « pacte de flexibilité salariale dans 
 
 La classe ouvrière italienne essaie alors de desserrer l’étau : dans la foulée de cette signature, les métallurgistes débraient contre l’eurotaxe et les contrats de zone permis par le pacte de flexibilité, et imposent une grève générale. Mais la politique du PDS, du PRC, des directions confédérales, leur bouche toute perspective. Pèse lourdement l’absence d’un parti ouvrier révolutionnaire, capable de formuler une issue politique :
 
-· que les dirigeants des centrales retirent leurs signatures du pacte de flexibilité,
-
-· que PDS et PRC rejettent l’eurotaxe,
-
-· qu’ils prennent le pouvoir, qu’ils constituent un gouvernement sans ministre issu des partis bourgeois.
+- · que les dirigeants des centrales retirent leurs signatures du pacte de flexibilité,
+- · que PDS et PRC rejettent l’eurotaxe,
+- · qu’ils prennent le pouvoir, qu’ils constituent un gouvernement sans ministre issu des partis bourgeois.
 
 Au contraire, PDS, PRC, dirigeants de la CGIL et de l’UIL protègent le gouvernement et permettent à la bourgeoisie de marquer des points contre le prolétariat. Mais il reste à régler leur compte aux retraites.
 
@@ -333,28 +224,22 @@ L’abolition des régimes spéciaux est avalisée L’échéancier Dini est eff
 Prodi ne cache pas sa satisfaction :
 
 « Ce fut une prise de conscience générale des problèmes du pays, et tout le monde a consenti à faire des sacrifices dont le bénéficiaire a été l’Italie. »
-
 (Le Monde, 4 novembre 1997)
 
 La confédération patronale Cofindustria (l’équivalent italien du CNPF) a compris le message. Un pan vient de tomber, il est possible de démolir tout l’édifice. Elle y pousse :
 
 « C’est un accord cosmétique, un renoncement à affronter les nœuds structurels du déséquilibre des dépenses sociales et de nouvelles discussions seront nécessaires à brève échéance. »
-
 (Libération, 3 novembre 1997).
 
 La réforme constitutionnelle
 
 Remis en selle, le gouvernement de l’Olivier avance sur une autre question décisive pour la bourgeoisie : la stabilité de ses institutions. Sur la base d’un rapport rédigé après négociations de toutes les formations représentées à la Chambre et au Sénat, il propose :
 
-· l’élection du Président de la République au suffrage universel, pour un mandat de 6 ans,
-
-· l’élargissement de ses attributions,
-
-· la diminution des pouvoirs du Sénat,
-
-· le renforcement du scrutin majoritaire,
-
-· une dose de fédéralisme pour tendre la main à la Ligue du nord.
+- · l’élection du Président de la République au suffrage universel, pour un mandat de 6 ans,
+- · l’élargissement de ses attributions,
+- · la diminution des pouvoirs du Sénat,
+- · le renforcement du scrutin majoritaire,
+- · une dose de fédéralisme pour tendre la main à la Ligue du nord.
 
 Un autre signe du renforcement du gouvernement PDS-PPI-Verts-RI à l’issue de la crise politique d’octobre est donné par les résultats des élections municipales partielles. La coalition de l’Olivier y a remporté un succès. A l’inverse, le PRC a perdu la moitié de ses voix dans plusieurs régions.
 
@@ -370,13 +255,10 @@ En Italie, comme dans dix autres pays d’Europe, les organisations ouvrières t
 
 Mais la classe ouvrière italienne, une des plus riches de traditions de lutte, n’est pas écrasée. Ses capacités immenses de combat se manifesteront de nouveau pour défendre ses acquis, ses conditions d’existence et de travail :
 
-· rattrapage du pouvoir d’achat perdu, rétablissement de l’échelle mobile des salaires,
-
-· rétablissement du régime des retraites, alignement sur les régimes les plus avantageux,
-
-· réduction du temps de travail hebdomadaire, sans baisse de salaire, sans flexibilité,
-
-· mêmes droits pour tous les travailleurs, quelle que soit leur nationalité...
+- · rattrapage du pouvoir d’achat perdu, rétablissement de l’échelle mobile des salaires,
+- · rétablissement du régime des retraites, alignement sur les régimes les plus avantageux,
+- · réduction du temps de travail hebdomadaire, sans baisse de salaire, sans flexibilité,
+- · mêmes droits pour tous les travailleurs, quelle que soit leur nationalité...
 
 Ces revendications nécessitent pour le prolétariat de prendre le pouvoir, d’exproprier les capitalistes, de collaborer avec les prolétariats voisins dans le cadre des États-Unis socialistes d'Europe, de planifier la production.
 
@@ -385,7 +267,6 @@ Préparer politiquement ces affrontements implique de combattre sur l’axe de l
 Cette orientation ne charrie aucune illusion sur le caractère totalement pourri de ces organisations et de leur politique. Elle ouvre, au contraire, une voie au prolétariat, à la jeunesse. Pour affronter la bourgeoisie, ces derniers ne peuvent compter sur la génération spontanée d’un parti révolutionnaire, et auront recours obligatoirement à ce qui existe, partis ouvriers traditionnels et syndicats, tout en bâtissant leurs organes de lutte (conseils, comités de grève...). CPS 56 concluait:
 
 "Cette orientation est une ligne d’affrontement contre les organisations ouvrières dégénérées traîtres. Il est d'ailleurs possible que celles-ci soient contraintes de faire des pas dans la rupture avec la bourgeoisie, le Front unique, sans aller jusqu'au bout: un gouvernement du front unique. En tout cas dans cet affrontement le processus de reconstruction du mouvement ouvrier sur un nouvel axe, de la prise du pouvoir par un gouvernement ouvrier, peut s'engager, et corrélativement, ce qui est décisif, la construction d'un parti ouvrier révolutionnaire. Naturellement, le prolétariat italien ne pourra prendre le pouvoir, réaliser ses tâches historiques, sans que se forme, grandisse un tel parti jusqu'à devenir sa direction politique.
-
 " Dans cet affrontement, le processus de reconstruction du mouvement ouvrier sur un nouvel axe, de la prise du pouvoir par un gouvernement ouvrier peut s’engager et corrélativement, ce qui est décisif, la construction d’un parti ouvrier révolutionnaire. Naturellement, le prolétariat italien, comme tous les autres prolétariats, ne pourra prendre le pouvoir, réaliser ses tâches historiques sans que se forme, grandisse un tel parti jusqu’à devenir sa direction politique (...)
 
 " En Italie sont concentrés l’essentiel des problèmes auxquels les prolétariats de nombreux pays d’Europe ont à répondre. Mais peut-être est-ce plus net et plus brutal qu’ailleurs. »

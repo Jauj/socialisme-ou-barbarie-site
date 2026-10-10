@@ -30,27 +30,10 @@ L’Allemagne s’est vu rappeler sa dépendance étroite par rapport au marché
 
 Les chiffres des échanges de l’Allemagne en 2013 indiquent :
 
-France
-
-USA
-
-Chine
-
-Exportations (en milliards)
-
-100
-
-88
-
-67
-
-Importations (en milliards)
-
-64
-
-48
-
-74
+|  | France | USA | Chine |
+| --- | --- | --- | --- |
+| Exportations (en milliards) | 100 | 88 | 67 |
+| Importations (en milliards) | 64 | 48 | 74 |
 
 Et cette dépendance n’est pas sans rapport avec la situation de quasi-récession que connaît l’Allemagne aujourd’hui.
 
@@ -77,9 +60,7 @@ Les conséquences pour la classe ouvrière
 Il y a d’abord le chômage de masse qui enfle mois après mois :
 
 « Le nombre de demandeurs d’emploi de catégorie A, c’est-à-dire sans aucune activité, en France métropolitaine, progresse sur un mois (+0,6%). Il s’élève à 3 432 500 en septembre 2014, soit 19 200 inscrits de plus qu’en août.
-
 Sur un an, le nombre de chômeurs de catégorie A dans la métropole est en hausse (+4,3%, soit 140 300 demandeurs d’emploi de plus qu’en septembre 2013). Au total, fin septembre 2014, le nombre de demandeurs d’emploi de catégories A, B, C s’établit à 5 128 200 en métropole (5 431 500 Dom compris). Ce nombre est en hausse de 1% sur un mois (+50 000) et de 5,7% sur un an (+277 800). Dans une interview qu’il a accordée au Parisien, François Rebsamen, le ministre du Travail, a évoqué un «échec» du gouvernement à propos des chiffres du chômage.
-
 Une augmentation du nombre de demandeurs d’emploi qui intervient après un mois de baisse : pour la première fois depuis octobre 2013, le nombre de chômeurs de catégorie A avait reculé en août. Cette trêve était en partie imputable à la progression des cessations d’inscription pour défaut d’actualisation (+14,4% en août) » (extrait du Journal du Net).
 
 En réalité, le chiffre de 5 431 000 sous-estime sérieusement la réalité. D’une part parce qu’il faut y rajouter les chômeurs catégorie D qui sont des chômeurs en maladie ou en formation. D’autre part parce qu’il faut y rajouter ceux qui ont cessé de « faire des actes positifs de recherche d’emploi » et qui sont donc radiés des listes. La réalité se situe donc aujourd’hui largement au-dessus de 6 millions. Il faut préciser : dans la jeunesse (moins de 25 ans), la proportion de chômeurs est de plus de 22%, soit près d’un jeune sur 4.
@@ -94,29 +75,20 @@ Les pseudo-spécialistes de la bourgeoisie prétendent que les plans de licencie
 
 Cet affaiblissement du cœur productif du prolétariat, qui n’a rien d’un phénomène purement « objectif » mais qui est au contraire largement le produit des défaites passées du prolétariat, n’est pas sans conséquence sur les capacités de la classe ouvrière à combattre.
 
-A propos des théories des appareils dirigeants des syndicats
-sur les « recettes » pour sortir de la crise sans toucher au capitalisme
+A propos des théories des appareils dirigeants des syndicats sur les « recettes » pour sortir de la crise sans toucher au capitalisme
 
 Il faut ici dénoncer le caractère frauduleux de la théorie imputant la crise à la « sous- consommation des masses » et son corollaire : relançons la consommation par l’augmentation des salaires et la machine capitaliste repartira de plus bel. Dans le cadre du système capitaliste maintenu - et les appareils dirigeants ne parlent pas une seconde de le liquider ! - l’augmentation des salaires ne saurait avoir d’autres effets que de rendre invendables les marchandises ainsi renchéries des entreprises qui auraient augmenté les salaires.
 
 Mais il y a un autre aspect de cette théorie frauduleuse, à savoir : la crise viendrait du sous-investissement. Tout le problème viendrait du fait que les patrons « préfèrent » servir des dividendes aux actionnaires plutôt que d’investir. C’est ce qu’on trouve par exemple dans cette déclaration de la CGT sur la crise financière :
 
 « Contrairement à ce que prône le patronat, ce ne sont ni le coût du travail ni la rigidité du marché du travail qui plombent la compétitivité des entreprises.
-
 Ce sont les salariés par leur travail qui créent les richesses. L’enjeu porte donc sur la répartition des richesses entre le capital et le travail :
-
 Ce qui va aux salariés : le salaire, y compris les cotisations sociales (part salarié et employeur)
-
 Le reste étant réparti entre les impôts des entreprises, les investissements et les dividendes aux actionnaires.
-
 Part des salaires dans la valeur ajoutée : 1983->1989 : -10%
-
 Part des dividendes dans la valeur ajoutée : 1985->2011 : de 5% à 25%
-
 Aujourd’hui, la part des salaires dans les richesses créées est plus faible qu’à la sortie de la guerre.
-
 Alors que la rentabilité financière des entreprises est en hausse, le chômage explose et le pouvoir d’achat, baisse freinant ainsi la relance économique.
-
 Diviser par deux les dividendes libérerait 120 milliards d’euros pour les investissements productifs, créerait de l’emploi, permettrait de financer la protection sociale et de diminuer le déficit de l’état.»
 
 Citons d’abord ce qu’écrivait à ce propos le supplément à Combattre pour le Socialisme du 13 septembre 2014 :
@@ -151,8 +123,7 @@ Campaoré, mieux nommé par Hollande dans une lettre à lui adressée : « Mon c
 
 On ne reviendra pas sur la façon dont l’impérialisme français se positionne au Moyen-Orient, non pas en caniche, mais en roquet de l’impérialisme américain, en suppôt aussi bien de l’État sioniste que du gouvernement turc, tentant de conserver une position politique, non par la force qu’il n’a plus mais par des sommets de veulerie !
 
-Flèche de tout bois contre les peuples des pays dominés.
-Flèche de tout bois contre le prolétariat : le budget...
+Flèche de tout bois contre les peuples des pays dominés. Flèche de tout bois contre le prolétariat : le budget...
 
 C’est la même énergie du désespoir qui est mise par le gouvernement Hollande-Valls-Macron-Pinel à l’intérieur, contre le prolétariat.
 
@@ -161,9 +132,7 @@ Il faut le constater : le budget et la Loi de financement de la Sécurité socia
 Il faut le remarquer : dans le moindre détail, ce budget vise à complaire au capital financier. Non seulement parce que son cœur est le pacte de responsabilité, mais parce que dans chacune des mesures prises, de la manière la plus écœurante, les caisses sont ouvertes pour les patrons. Quelques chiffres :
 
 - Crédit investissement compétitivité : 877 euros par an et par salarié dans l’industrie, 653 euros par an et par salarié dans les services. Coût : 8,7 milliards depuis le début de l’année. On ira beaucoup plus loin puisqu’il est prévu que le CICE représente 6% de la masse salariale en 2015.
-
 - rupture de contrat avec Ecomouv (suite à la suppression de l’écotaxe, laquelle fait suite au recul ouvertement assumé devant les « bonnets rouges »: plus d’1 milliard, soit le montant du bénéfice attendu de la diminution de la masse salariale de la Fonction publique !
-
 - Vivendi : versement de 365 millions au titre du « bénéfice mondial consolidé », suite à un arrêt de la cour de cassation. Vivendi comptait, disent les attendus du jugement, sur cette somme pour « créer des emplois » donc il a été trahi par la décision parlementaire de supprimer cette clause. En réalité, la « création d’emplois »... c’est le rachat d’un concurrent et l’intégration au personnel de Vivendi des salariés de ce concurrent, intégration du reste partielle. En réalité, il y a suppression d’emplois !
 
 ... et la loi de financement de la Sécurité sociale
@@ -195,11 +164,8 @@ Autres aspects de l’offensive gouvernementale
 L’offensive gouvernementale prend d’autres formes encore :
 
 - attaque contre le code du travail, en particulier avec l’extension du travail du dimanche ;
-
 - disparition des élections prud’homales. Les conseils de prud’hommes même si, à strictement parler, ils ne font pas partie des conquêtes ouvrières, offrent à ce jour un recours à des milliers de travailleurs contre l’arbitraire patronal ;
-
 - déréglementation générale pour détruire tous les freins à la « libre entreprise », notamment avec le principe selon lequel le silence de l’administration vaut consentement en particulier pour le bâtiment (au moment même du procès de Xinthia, qui montre où a conduit la construction « déréglementée ») ;
-
 - remise en cause des garanties de santé publique, à travers la loi sur les « professions protégées », etc.
 
 Mais tout cela ne suffit pas. Il faut maintenant passer aux « réformes structurelles ». Car, paradoxalement, même si les attaques portées à ce jour contre le prolétariat sont bien loin d’être négligeables, tout reste à faire pour la bourgeoisie et son gouvernement.
@@ -289,11 +255,8 @@ L’engagement dans la mise en œuvre de la politique du gouvernement ne se dém
 Le gouvernement met donc en place un comité qui va distribuer la manne aux patrons. Voilà comment y répond la direction de la CGT :
 
 « Le Premier ministre a installé ce 4 novembre le Comité national de suivi des aides publiques aux entreprises et des engagements.
-
 Ce comité a pour objectif de disposer d’évaluation des différents dispositifs d’aides publiques aux entreprises. Il contribuera à une connaissance partagée sur l’aspect des aides publiques en matière d’emploi, de croissance et de compétitivité. Il sera présidé par le Premier ministre et composé de parlementaires, de représentants des administrations, patronaux et des organisations syndicales.
-
 La CGT accueille favorablement la concrétisation de cette proposition qu’elle porte depuis plusieurs années. Il s’agit maintenant de poursuivre pour que ce suivi soit décliné dans chaque région et revendiquer le droit pour les salariés des entreprises de suspendre les aides publiques.
-
 La CGT participera activement aux travaux de ce comité national. »
 
 Dans l’enseignement
@@ -366,8 +329,7 @@ Décrets de 50 des enseignants du secondaire
 
 Rien n’est plus significatif que ce qui s’est passé sur les décrets de 50. Une fois désamorcée – avec un rôle déterminant de la direction du SNES – la mine que pouvait constituer la grève des profs de classes préparatoires à l’automne dernier, gouvernement et direction du SNES ont pu avancer de manière conjointe dans l’élaboration du nouveau décret. Là encore, il faut faire le même constat que chez les étudiants : là où les militants révolutionnaires sont intervenus, ils ont bénéficié de l’accord des enseignants, de leur approbation. Mais à aucun moment, cette approbation ne s’est transformée en une force mettant en difficulté l’appareil. Et ce, y compris au congrès du SNES où Rollet, secrétaire générale du SNES, s’est elle-même étonnée du peu de difficultés de l’appareil à faire avaliser son orientation
 
-La place du Groupe pour la Construction du Parti Ouvrier Révolutionnaire,
-de l’Internationale Ouvrière Révolutionnaire
+La place du Groupe pour la Construction du Parti Ouvrier Révolutionnaire, de l’Internationale Ouvrière Révolutionnaire
 
 C’est dans cette situation difficile que nous devons combattre. Nous savons pourquoi nous sommes dans cette situation. Pèsent de tout leur poids sur le prolétariat les défaites passées, le désarroi politique devant l’absence d’alternative politique.
 

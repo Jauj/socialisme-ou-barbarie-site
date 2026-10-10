@@ -6,141 +6,38 @@ Annoncés fin octobre 2003, les chiffres concernant les performances de l’éco
 
 Evolution du PIB réel
 
-2001
-
-2002
-
-2003
-
-USA
-
-0,5%
-
-2,2%
-
-3,1%
-
-JAPON
-
-0,4%
-
--0,3%
-
-2,7%
-
-ALLEMAGNE
-
-0,8%
-
-0,2%
-
--0,1%
-
-FRANCE
-
-2,1%
-
-1,2%
-
-0,2%
-
-ITALIE
-
-1,8%
-
-0,4%
-
-0,3%
-
-ESPAGNE
-
-2,8%
-
-2,0%
-
-2,4%
+|  | 2001 | 2002 | 2003 |
+| --- | --- | --- | --- |
+| USA | 0,5% | 2,2% | 3,1% |
+| JAPON | 0,4% | -0,3% | 2,7% |
+| ALLEMAGNE | 0,8% | 0,2% | -0,1% |
+| FRANCE | 2,1% | 1,2% | 0,2% |
+| ITALIE | 1,8% | 0,4% | 0,3% |
+| ESPAGNE | 2,8% | 2,0% | 2,4% |
 
 Les deux premières puissances de l’économie mondiale, les USA et le Japon, sont donc, pour le moment, sortis de la récession. Les données concernant ces deux pays, présentées dans les tableaux suivants, confirment cette appréciation.
 
-Source :
-
-OCDE
-
-Investissement
-
-des entreprises
-
-Investissement
-
-total
-
-2003
-
-2003
-
-USA
-
-+ 2,3%
-
-+ 3,7 %
-
-Japon
-
-+ 10,3%
-
-+ 4,4 %
+| Source : OCDE | Investissement  des entreprises | Investissement  total |
+| --- | --- | --- |
+| 2003 | 2003 |
+| USA | + 2,3% | + 3,7 % |
+| Japon | + 10,3% | + 4,4 % |
 
 L’évolution de l’investissement peut également être appréhendée à partir des chiffres de la formation brute de capital fixe présentés par le FMI dans son rapport annuel :
 
-Formation brute de capital fixe
-
-2001
-
-2002
-
-2003
-
-USA
-
--2,3 %
-
--2,3 %
-
-4 %
-
-Japon
-
--1,3 %
-
--6,0 %
-
-3,3 %
+|  | Formation brute de capital fixe | | |
+| --- | --- | --- | --- |
+| 2001 | 2002 | 2003 |
+| USA | -2,3 % | -2,3 % | 4 % |
+| Japon | -1,3 % | -6,0 % | 3,3 % |
 
 La productivité du travail a nettement augmenté à partir de l’année 2002, en comparaison au niveau où elle se situait pour l’année 2001 :
 
-Productivité (source FMI)
-
-2001
-
-2002
-
-2003
-
-USA
-
-2,4 %
-
-7,2 %
-
-5,2 %
-
-Japon
-
--3,5 %
-
-3,5 %
-
-5,4 %
+|  | Productivité (source FMI) | | |
+| --- | --- | --- | --- |
+| 2001 | 2002 | 2003 |
+| USA | 2,4 % | 7,2 % | 5,2 % |
+| Japon | -3,5 % | 3,5 % | 5,4 % |
 
 Aux Etats-Unis, les profits ont nettement augmenté: à partir du quatrième trimestre 2002 jusqu’au deuxième trimestre 2003: environ +6%. Cela s’est poursuivi au troisième trimestre 2003 et au quatrième. La même tendance, quoique dans une moindre mesure, a été observée au Japon.
 
@@ -166,17 +63,14 @@ Ensuite, les taux d’intérêt ont été réduit à un niveau historiquement ba
 
 Ceci a permis aux entreprises de réduire leur endettement, de continuer à emprunter massivement pour financer l’activité, et encore de soutenir artificiellement le cours des marchés d’actions. En plus, des baisses massives d’impôt sont encore venues à la rescousse des capitalistes. Mais le plus frappant est sans aucun doute la gigantesque impulsion donnée à l’économie d’armement.
 
-« 447 milliards de dollars : l’effort annuel de défense américain représente désormais
-la moitié des dépenses militaires mondiales. » (L’Expansion, n°687, juin 2004)
+« 447 milliards de dollars : l’effort annuel de défense américain représente désormais la moitié des dépenses militaires mondiales. » (L’Expansion, n°687, juin 2004)
 
 Le titre ci-dessus, à lui seul, peut déjà rendre compte de l’importance que recouvre l’économie d’armement pour l’impérialisme américain. Pourtant, pour en donner toute l’ampleur, et la signification politique, il faut ajouter que les dépenses militaires américaines sont revenues aujourd’hui au niveau auquel elles se situaient au moment de la guerre de Corée. L’évolution de ces dernières années est spectaculaire.
 
 Après presque une décennie de baisse importante des dépenses militaires, le gouvernement Clinton annonçait en 1998, quelques mois avant l’agression impérialiste contre la Serbie, une augmentation de 112 milliards sur la période 2000-2005. Dans un article de 2001 intitulé « Le système militaro-industriel américain, acteur et bénéficiaire non collatéral de la guerre », Claude Serfati expliquait :
 
 « A partir de 1993, les grands groupes à production militaire, encouragés à se restructurer par le secrétaire d’Etat à la défense, ont réalisé de nombreuses fusions-acquisitions. Au terme provisoire du processus de concentration, les cinq grands groupes (Loockheed Martin, Boeing, Raytheon, Northrop Grumman et General Dynamics – Ndlr) qui ont émergé en 1997 reçoivent environ 40% des commandes d’armes du Pentagone et un peu plus de 40% des crédits de recherche-développement militaire. (…) Certains estiment que le soutien financier fédéral aux exportations s’élèverait à près de 40% de leur valeur totale.
-
 Chéris par Wall Street dans la période 1993-1997, les groupes de l’armement ont ensuite perdu de leur attrait lors de la phase d’ « exubérance irrationnelle » qui sévissait à Wall Street et se portait également sur les « dot.compagnies »(…). La politique mise en œuvre dans ces groupes prit alors deux formes. Les dirigeants supprimèrent des dizaines de milliers d’emplois (…). D’autre part, la pression des actionnaires et des dirigeants se fit plus forte pour contraindre le « client », le Pentagone, à augmenter ses dépenses et à l’administration d’assouplir ses procédures de livraisons d’armes aux pays acheteurs. Les deux mesures, augmentation du budget et facilitation des exportations d’armes, furent prises par le Pentagone. Concomitantes ou presque à la guerre contre la Serbie, elles donnèrent aux groupes de l’armement un nouveau dynamisme et un attrait qui furent d’autant plus forts que dans le même temps, la plupart des firmes de la « nouvelle économie » étaient au cœur du krach du Nasdaq et participaient au fort recul de Wall Street (…).
-
 En 2000, les valeurs boursières des groupes de la défense (surtout ceux spécialisés en électronique de défense, si importante dans les nouvelles générations d’armes) et de l’aéronautique ont augmenté de 58%, alors que l’indice Standard&Poor des 500 premières valeurs de Wall Street baissait de 9% »
 
 L’augmentation des dépenses militaires fut encore accentuée avec l’arrivée au pouvoir du gouvernement Bush. Entre 2000 et 2002, le budget croissait de 10% et atteignait 330 milliards de dollars. On doit encore y ajouter le budget de la « sécurité du territoire », dont l’augmentation s’est élevée à 10% pour la même année 2002, avec un budget de 41 milliards de dollars. Le budget de la Défense est aujourd’hui de 450 milliards de dollars, sans compter une série de dépenses qui n’y sont pas inscrites, comme les rallonges successives demandées par le gouvernement Bush au Congrès pour financer l’occupation de l’Irak.
@@ -189,13 +83,11 @@ Ce qui est vrai pour l ‘impérialisme US l’est aussi pour ses concurrents. A
 
 Il est cependant indispensable de souligner que, dans ce domaine comme dans d’autres, l’impérialisme américain est largement en tête : alors que le budget militaire américain est évalué à 450 milliards de dollars, celui, cumulé, de l’ensemble des pays européens atteint difficilement 150 milliards !
 
-L’économie d’armement : « un moyen privilégié de réaliser la plus-value (…) un moyen d’accumulation »
-(Rosa Luxembourg)
+L’économie d’armement : « un moyen privilégié de réaliser la plus-value (…) un moyen d’accumulation » (Rosa Luxembourg)
 
 Dans “Défense du Trotskysme II”, reprenant l’analyse réalisée par Rosa Luxembourg dans L”accumulation du capital, Stéphane Just écrivait, à propos du rôle de l’économie d’armement à l’époque impérialiste:
 
 “Le capitalisme au stade de l’impérialisme voit ses possibilités d’extension générale se restreindre à l’échelle mondiale, tant à l’intérieur qu’à l’extérieur des pays capitalistes dominants, une fois que le partage du monde est achevé. La monopolisation, la formation du capital financier, forme extrême de la concentration du capital, fossilisent, ossifient le capitalisme, lui fait perdre sa souplesse antérieur, qui, au prix des crises de surproduction détruisant des masses de forces productives, permettaient le redémarrage du cycle, par la hausse, suivant la chute, du taux de profit et un nouvel équilibre dynamique entre les différents secteurs de la production.
-
 L’Etat de tous temps joua un rôle important dans la formation et le développement capitaliste: un rôle à la fois politique et économique. Sa fonction économique avec la formation des monopoles et du capitalisme financier s’accentuera jusqu’à devenir décisive, mais parasitaire: le militarisme devient un facteur indispensable et majeur du fonctionnement d’ensemble de l’économie capitaliste (…)
 
 Il s’agit d’une gigantesque destruction de valeur d’échange et de valeur d’usage… comme condition de la poursuite du procés d’accumulation du capital. La consommation des marchandises par l’armée, leur cristallisation sous forme de matériels de guerre, ouvrent un marché nouveau. Lorsque jouaient les mécanismes classiques du mode de production capitaliste, sans grandes entraves, le redémarrage du cycle et le “boom”, étaient animés par le renouvellement du capital constant, particulièrement du capital fixe, lequel entraînait l’augmentation de la demande des moyens de consommation. La demande d’armements, la consommation de l’armée, vont désormais entraîner la croissance du capital constant, du capital fixe en particulier, lequel entraînera l’augmentation de la demande de moyens de consommation(…)
@@ -272,21 +164,9 @@ Le “Bilan du Monde” déjà cité note quant à lui:
 
 En mai 2003, la cinquième banque du pays, Resona, était en situation de faillite. Il a fallu que le gouvernement japonais injecte des dizaines de milliards de yen pour réaliser la “recapitalisation par l’Etat” de l’établissement bancaire, dont la faillite aurait déstabilisé l’ensemble du système financier. Des restructurations ont certes eu lieu dans un certain nombre d’entreprises privées, avec leur lot de licenciements, l’augmentation de la flexibilité du travail, du travail temporaire, mais le montant des “créances douteuses”, s’il a diminué de 15% à la fin de l’exercice fiscale 2002, reste une charge considérable qui pèse sur l’ensemble de l’économie japonaise et qui ne manquera pas de provoquer encore de sérieux chocs dans le cas d’un ralentissement de la “reprise” mondiale. Il faut ajouter que la conséquence de “l’interventionnisme” de l’Etat japonais (plus d’une dizaine de “plans de relance” en dix ans, sans compter l’injection ponctuelle de capital pour venir au secours de tel ou tel groupe menacé) se manifeste directement dans la poursuite de la dégradation des finances de l’Etat qui, elle aussi, constitue une lourde charge pour le capitalisme japonais. Le tableau suivant rend compte de cette situation:
 
-(En % du PIB)
-
-2001
-
-2002
-
-2003
-
-Solde financier des administrations publiques
-
--6,1
-
--7,1
-
--7,4
+| (En % du PIB) | 2001 | 2002 | 2003 |
+| --- | --- | --- | --- |
+| Solde financier des administrations publiques | -6,1 | -7,1 | -7,4 |
 
 Tout cela montre à quel point la “reprise” japonaise est fragile, à quel point elle dépend, d’une part, elle aussi, de la poursuite du parasitisme sous toutes ses formes et d’autre part, de la “croissance” américaine et chinoise.
 

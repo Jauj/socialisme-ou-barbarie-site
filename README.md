@@ -13,8 +13,10 @@ de *Combattre pour le socialisme* (CPS) publiés en ligne sur
 S'y ajoutent les **suppléments** (déclarations, tracts, communiqués…) et les **hors‑séries**
 (brochures, rapports de conférence) listés sur le site.
 
-En chiffres : **381 publications, 1 293 articles, 118 tags**, et le **texte intégral de
-7 688 pages** (les 350 PDF disponibles, dont 177 numéros scannés océrisés).
+En chiffres : **381 publications, 1 293 articles, 118 tags**, le **texte intégral de
+7 688 pages** (les 350 PDF disponibles, dont 177 numéros scannés océrisés) et une **version
+Markdown de chaque article** : 1 086 articles avec leur texte, en base (`texte_markdown`) et en
+fichiers `.md` avec leurs métadonnées.
 
 Chiffres et anomalies détectées : voir [`docs/RAPPORT_QUALITE.md`](docs/RAPPORT_QUALITE.md)
 (généré automatiquement à chaque construction).
@@ -23,13 +25,18 @@ Chiffres et anomalies détectées : voir [`docs/RAPPORT_QUALITE.md`](docs/RAPPOR
 
 ```
 data/
-  cps.sqlite            base SQLite : publications, articles, tags, textes d'articles, recherche plein texte
-  cps_complet.sqlite    même base + texte de chaque page de chaque numéro (non versionnée : ~120 Mo,
-                        se régénère en 15 s avec `python3 scripts/build_db.py`, sans réseau)
+  cps.sqlite            base SQLite : publications, articles (avec leur texte en Markdown), tags,
+                        recherche plein texte
+  cps_complet.sqlite    même base + texte brut des articles + texte (brut et Markdown) de chaque page
+                        de chaque numéro (non versionnée : ~200 Mo, se régénère en ~1 min 30 avec
+                        `python3 scripts/build_db.py`, sans réseau)
+  markdown/<publication>/<article>.md   un fichier par article : en-tête YAML (titre, date, numéro,
+                        tags, liens…) puis le texte en Markdown
   cps.json              export hiérarchique publications → articles → tags (sans les textes)
   csv/                  les tables au format CSV (UTF‑8) : publications, articles, tags, articles_tags
-  textes/<article>.txt  texte des articles disposant d'une page HTML ou d'un PDF propre sur le site
-  pages/<publication>.txt  texte intégral de chaque PDF, pages séparées par un saut de page (\f)
+  textes/<article>.md|.txt  texte des articles disposant d'une page HTML ou d'un PDF propre sur le site
+  pages/<publication>.txt|.md  texte intégral de chaque PDF (brut / structuré en Markdown),
+                        pages séparées par un saut de page (\f)
 config/
   corrections.json      corrections manuelles du sommaire du site, chacune justifiée
   regles_tags.json      règles de tags complémentaires (expressions régulières sur les titres)
@@ -64,9 +71,11 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `titre_index` | titre plus complet donné par l'index thématique, quand il diffère |
 | `date`, `serie` | reprises de la publication |
 | `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (`pdf_page` : page indiquée par le site) |
-| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`) ou retrouvée en cherchant le titre dans le texte des pages (`localisation`) |
-| `texte` | texte intégral quand il a pu être obtenu |
-| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (pages du numéro depuis `page_debut` jusqu'à la page où commence l'article suivant : **découpage approximatif**, qui peut déborder sur l'article voisin) |
+| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`) ou retrouvée en cherchant le titre de l'article dans les pages (`titre`) |
+| `texte_markdown` | texte intégral en Markdown, quand il a pu être obtenu (voir plus bas) |
+| `texte` | le même texte, brut — **seulement dans `cps_complet.sqlite`** (dérivable du Markdown, retiré de la base légère pour rester sous 50 Mo) |
+| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin) |
+| `texte_source` | URL du document dont vient le texte, pages et méthode (couche texte ou OCR) |
 | `origine` | `sommaire` (sommaire du site) ou `index_thematique` (article présent seulement dans l'index) |
 
 **`tags`** et **`articles_tags`** — vocabulaire et associations.
@@ -81,24 +90,77 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
   - `regle` : tag déduit du titre par une règle de [`config/regles_tags.json`](config/regles_tags.json)
     (l'index du site est incomplet : beaucoup d'articles n'y figurent pas).
 
-**`pages`** (dans `cps_complet.sqlite`) — texte de chaque page de chaque PDF de publication,
-avec recherche plein texte (`pages_fts`). Les numéros scannés (bulletin 1984, ancienne série et
+**`pages`** (dans `cps_complet.sqlite`) — texte de chaque page de chaque PDF de publication
+(`texte` brut et `markdown` structuré), avec recherche plein texte (`pages_fts`). Les numéros scannés (bulletin 1984, ancienne série et
 nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract (français) : le texte peut
 contenir des erreurs de reconnaissance.
 
 **Localisation des articles.** Le site n'indique la page de début que pour 80 articles. Pour les
-autres, le titre est recherché dans le texte des pages, en ne retenant qu'une ligne composée des
-mots du titre (un intertitre, pas une simple mention), dans l'ordre du sommaire et hors pages de
-sommaire/couverture ; les titres de moins de trois mots significatifs (« Éditorial », « Brésil »…)
-ne sont pas localisés. Sur les articles dont le site donne la page, la méthode retrouve 32 pages
-sur 60, toutes exactes ; 557 articles ont ainsi été localisés.
+autres, le titre est recherché parmi les intertitres des pages structurées en Markdown (seuls ou
+groupés : surtitre, titre, sous‑titre), ou au tout début d'un paragraphe quand l'OCR n'a pas isolé
+l'intertitre ; dans l'ordre du sommaire, en écartant les pages qui citent plusieurs titres (une,
+sommaires) et les titres de moins de trois mots significatifs, sauf égalité exacte. Contrôle : sur
+les 68 articles dont le site donne la page, la méthode (appliquée sans cette information) en
+retrouve 42, dont 40 à la page exacte — les 2 autres sont des erreurs du site (l'article commence
+une page plus tôt que ce qu'il indique). 677 articles ont ainsi été localisés.
 
-**Recherche plein texte.** `cps.sqlite` contient l'index `articles_fts` en mode allégé (recherche
+**Recherche plein texte.** L'index `articles_fts` porte sur `titre`, `titre_index` et
+`texte_markdown`. `cps.sqlite` le contient en mode allégé (recherche
 par mots, opérateurs AND/OR/NOT, préfixes `mot*`, mais pas de phrase exacte entre guillemets) pour
 rester sous 50 Mo. `cps_complet.sqlite` a l'index complet (phrases exactes, NEAR) sur les articles
 et sur les pages.
 
 Vues pratiques : `v_articles` (articles avec leurs tags en une colonne), `v_tags` (tags avec leurs effectifs).
+
+## Version Markdown des articles
+
+Chaque article a une version Markdown, dans la colonne `articles.texte_markdown` et dans
+`data/markdown/<publication>/<article>.md`. Les fichiers commencent par un en‑tête YAML lisible
+par les générateurs de sites (Jekyll, Hugo, Eleventy…) et par Obsidian :
+
+```yaml
+---
+title: "Économie : L’affirmation de l’impérialisme chinois et la radicalisation de la politique américaine approfondissent la décomposition du capitalisme"
+id: "NS-096-04"
+date: 2026-02-28
+publication: "NS-096"
+serie: "nouvelle"
+type_publication: "numero"
+numero: "96"
+numero_cumule: 178
+tags: ["chine", "crise", "noteseco", "usa"]
+tags_libelles: ["Chine", "Crise du Capitalisme", "Situation Economique", "Etats-Unis"]
+url_pdf_publication: "http://socialisme.free.fr/bulletin_cps_archives/2026_02_28_cps_96_178as.pdf"
+page_debut: 12
+texte_disponible: true
+texte_type: "pages_numero"
+texte_source: "http://socialisme.free.fr/bulletin_cps_archives/2026_02_28_cps_96_178as.pdf pages 12-17 (pdf_texte ; du titre de l'article à celui de l'article suivant, découpage automatique)"
+---
+```
+
+Conventions : `##` titre tel qu'affiché dans le document, `###` intertitre, `>` citation, `-`
+liste, `*italique*`, `**gras**`, `[^1]` notes de bas de page, tableaux. Le titre de l'article
+lui‑même est dans l'en‑tête (`title`), pas dans le corps. Les articles sans texte ont un fichier
+avec leur en‑tête et un renvoi au PDF.
+
+Comment le Markdown est obtenu :
+
+- **pages HTML du site** (334 articles) : exports Word convertis en s'appuyant sur la charte de
+  CPS (styles `intertitre`, `citation`, `titre`… et feuille de style), notes Word converties en
+  notes Markdown, menus et bandeaux du site retirés ;
+- **PDF à couche texte** (numéros récents, suppléments) : polices, tailles, gras et italique lus
+  avec `pdftohtml -xml` ; paragraphes reconstitués (interlignes, retraits, colonnes), en‑têtes
+  courants, numéros de page et sommaires de une retirés ;
+- **PDF scannés** (OCR) : paragraphes de Tesseract recousus aux sauts de colonne, intertitres en
+  capitales reconnus, bruit (filets, taches) écarté ;
+- partout, les **césures** de fin de ligne sont recollées d'après le vocabulaire du corpus
+  (« mar‑quées » → « marquées », mais « Jospin‑Gayssot » reste composé).
+
+Contrôles : les 1 086 textes sont rendus par un moteur CommonMark sans aucune emphase cassée,
+les 1 293 en‑têtes YAML sont valides, et pour chaque page la part des mots du texte brut retrouvés
+dans le Markdown est vérifiée (les 44 pages PDF mal reconstruites, sur environ 3 500, ont été
+refaites à partir du texte brut). Limites : les textes océrisés gardent des erreurs de
+reconnaissance, et le découpage automatique des numéros peut déborder sur l'article voisin.
 
 ## Exemples de requêtes
 
@@ -114,6 +176,9 @@ WHERE t.tag = 'editorial' AND a.serie = 'ancienne' ORDER BY a.date;
 -- Recherche plein texte dans les titres et textes d'articles (sans accents ni casse)
 SELECT a.id, a.date, a.titre FROM articles_fts f JOIN articles a ON a.rowid = f.rowid
 WHERE articles_fts MATCH 'echelle AND mobile AND salaires' ORDER BY a.date;
+
+-- Le texte Markdown d'un article
+SELECT texte_markdown FROM articles WHERE id = 'NS-022-07';
 
 -- Seulement dans les titres
 SELECT a.id, a.date, a.titre FROM articles_fts f JOIN articles a ON a.rowid = f.rowid
@@ -134,7 +199,9 @@ Avec Python : `sqlite3.connect("data/cps.sqlite")`, ou avec pandas
 la branche `gh-pages`).
 
 `explorateur/index.html` permet de parcourir la base (recherche, filtres par série, type, tag,
-période, liens directs vers la page de l'article dans le PDF). Il lit `data/cps.json`. En local :
+période, liens directs vers la page de l'article dans le PDF) et de **lire les articles** : le
+bouton « Lire » affiche la version Markdown mise en forme, avec un lien partageable
+(`…/explorateur/#lire=NS-022-07`). Il lit `data/cps.json` et `data/markdown/`. En local :
 `python3 -m http.server` à la racine du dépôt, puis <http://localhost:8000/explorateur/>.
 
 Pour mettre le site en ligne à jour après une reconstruction de la base, pousser le même commit
@@ -142,8 +209,8 @@ sur la branche `gh-pages` : `git push origin HEAD:gh-pages`.
 
 ## Reconstruire la base
 
-Python 3.9+ avec `beautifulsoup4`, et `poppler-utils` (pdftotext, pdftoppm) ;
-`tesseract-ocr` + `tesseract-ocr-fra` pour l'OCR.
+Python 3.9+ avec `beautifulsoup4` et `markdownify`, et `poppler-utils` (pdftotext, pdftoppm,
+pdftohtml) ; `tesseract-ocr` + `tesseract-ocr-fra` pour l'OCR.
 
 ```sh
 pip install -r requirements.txt
@@ -151,15 +218,17 @@ python3 scripts/fetch_sources.py      # sommaire + index thématique → sources
 python3 scripts/build_db.py           # → data/ (sans réseau)
 python3 scripts/fetch_textes.py       # textes des articles HTML/PDF → data/textes/
 python3 scripts/extraire_pages.py     # texte des PDF de numéros (OCR des scans, long) → data/pages/
+python3 scripts/extraire_markdown.py  # versions Markdown des pages et des articles
 python3 scripts/build_db.py           # reconstruction avec les textes
 ```
 
-`build_db.py` ne fait aucun accès réseau et n'utilise que la bibliothèque standard de Python :
-`cps_complet.sqlite` (trop volumineux pour être versionné) se régénère en une quinzaine de
-secondes à partir de `data/pages/` et `data/textes/`.
+`build_db.py` ne fait aucun accès réseau et n'utilise que la bibliothèque standard de Python
+(plus `markdownify`/`beautifulsoup4` pour une fonction partagée) : `cps_complet.sqlite` (trop
+volumineux pour être versionné) se régénère en environ 1 min 30 à partir de `data/pages/` et
+`data/textes/`.
 
 Pour intégrer un nouveau numéro : `fetch_sources.py --refresh`, `fetch_textes.py`,
-`extraire_pages.py`, puis `build_db.py`.
+`extraire_pages.py`, `extraire_markdown.py`, puis `build_db.py`.
 
 ## Corrections apportées au sommaire du site
 

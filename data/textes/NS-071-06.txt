@@ -8,51 +8,13 @@ Au second tour de l’élection présidentielle, le 28 octobre dernier, sur 147 
 
 Ce résultat clôt un cycle, durant lequel toutes les élections présidentielles avaient été gagnées par le PT depuis 2002. Le recul du PT est encore plus spectaculaire si l’on compare les résultats du premier tour depuis 2002. En effet au premier tour, Bolsonaro avait frôlé l’élection directe, avec 46 % des votants exprimés (33 % des inscrits), tandis que Haddad ne réalisait que 21 % des inscrits. En reprenant les résultats des premiers tours des élections présidentielles depuis 2002 des candidats présentés par le PT, il se dégage une tendance très nette.
 
-% des exprimés
-
-Total voix
-
-% des inscrits
-
-2018 Haddad
-
-29,23 %
-
-31 341 839
-
-21,27 %
-
-2014 Dilma Roussef
-
-41,5 %
-
-43 267 488
-
-30,56 %
-
-2010 Dilma Roussef
-
-46,81 %
-
-47 651 434
-
-35,14 %
-
-2006 Lula
-
-48,60 %
-
-46 661 414
-
-40,82 %
-
-2002 Lula
-
-46,44 %
-
-39 455 233
-
-45,81 %
+|  | % des exprimés | Total voix | % des inscrits |
+| --- | --- | --- | --- |
+| 2018 Haddad | 29,23 % | 31 341 839 | 21,27 % |
+| 2014 Dilma Roussef | 41,5 % | 43 267 488 | 30,56 % |
+| 2010 Dilma Roussef | 46,81 % | 47 651 434 | 35,14 % |
+| 2006 Lula | 48,60 % | 46 661 414 | 40,82 % |
+| 2002 Lula | 46,44 % | 39 455 233 | 45,81 % |
 
 Cette tendance est celle d’un déclin historique, après le véritable raz-de-marée de 2002 ; à chaque élection, la perte correspond à 5 % des inscrits, la dernière marche étant double, soit 10 % d’un seul coup. De même, si le PT garde la plus importante fraction parlementaire avec 56 députés, il n’a cessé de perdre des sièges lors des dernières élections, et il est dépassé aujourd’hui en voix par le parti de Bolsonaro (PSL) qui, avec plus de 11 millions de voix au Congrès des députés, devance le PT de plus d’un million voix, même s’il n’est que la deuxième représentation dans ce Congrès avec 52 députés (il passe tout de même de 1 à 52 députés !).
 

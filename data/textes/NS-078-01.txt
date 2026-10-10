@@ -1,7 +1,6 @@
 Éditorial du bulletin « Combattre pour le socialisme » n°78 (n°160 ancienne série) - 21 janvier 2021 :
 
-La catastrophe imminente et la seule manière de la conjurer :
-combattre pour le socialisme
+La catastrophe imminente et la seule manière de la conjurer : combattre pour le socialisme
 
 La pandémie perdure et s’aggrave
 
@@ -33,29 +32,13 @@ La fin de l’année civile donne aux commentateurs de la bourgeoisie l’opport
 
 Évolution des indices boursiers en 2020 :
 
-NASDAQ (valeurs nouvelle technologie Wall Street)
-
-+43,64 %
-
-S § P 500 (Wall Street)
-
-+16,26 %
-
-Nikkei (Tokyo)
-
-+16,53 %
-
-DAX (Francfort)
-
-+3,87 %
-
-STOXX Europe 600
-
--1,99 %
-
-CAC40 (Paris)
-
--7,14 %
+| NASDAQ (valeurs nouvelle technologie Wall Street) | +43,64 % |
+| --- | --- |
+| S § P 500 (Wall Street) | +16,26 % |
+| Nikkei (Tokyo) | +16,53 % |
+| DAX (Francfort) | +3,87 % |
+| STOXX Europe 600 | -1,99 % |
+| CAC40 (Paris) | -7,14 % |
 
 Évidemment les différences de résultats sont aussi significatives, qui montrent par exemple que c’est aux firmes françaises que les actionnaires font le moins confiance et que le résultat d’ensemble en Europe (STOXX) masque des différences considérables, par exemple entre l’Allemagne et d’autres pays européens, dont la France.
 
@@ -63,37 +46,11 @@ Mais le fait marquant, c’est tout de même l’extraordinaire valorisation bou
 
 C’est ce que montre les chiffres concernant l’évolution attendue du PIB en 2020 :
 
-USA (source Rexecode)
-
-- 3,4 %
-
-Espagne
-
-- 11 %
-
-Allemagne
-
-- 5 %
-
-Royaume Uni
-
-- 11 %
-
-France
-
-- 9 %
-
-Japon (source FMI)
-
-- 5,3 %
-
-Italie
-
-- 9 %
-
-Chine (source FMI)
-
-+1,9 %
+| USA (source Rexecode) | - 3,4 % | Espagne | - 11 % |
+| --- | --- | --- | --- |
+| Allemagne | - 5 % | Royaume Uni | - 11 % |
+| France | - 9 % | Japon (source FMI) | - 5,3 % |
+| Italie | - 9 % | Chine (source FMI) | +1,9 % |
 
 Encore faut-il rappeler que le PIB intègre dans ses résultats des éléments (y compris les « produits financiers ») qui n’ont qu’un lointain rapport avec la production de richesses réelles. Ainsi pour les USA, quand la diminution du PIB est de 3,4 %, la diminution de la production industrielle, elle, se situe au-delà des 5 %.
 
@@ -259,10 +216,9 @@ Personne ne peut penser une seule seconde que la satisfaction de ces revendicati
 
 (Encore une fois, où va la France ? II. Les revendications immédiates et la lutte pour le pouvoir, fin mars 1935)
 
-Le premier pas d’un tel combat d’ensemble consisterait, pour les directions syndicales, à organiser une conférence nationale des délégués d’entreprise élus et mandatés par les travailleurs réunis sur la première et élémentaire exigence : pas un seul licenciement, annulation de tous les plans de suppression d’emploi !
+ Le premier pas d’un tel combat d’ensemble consisterait, pour les directions syndicales, à organiser une conférence nationale des délégués d’entreprise élus et mandatés par les travailleurs réunis sur la première et élémentaire exigence : pas un seul licenciement, annulation de tous les plans de suppression d’emploi !
 
-Les appareils syndicaux se vautrent dans le soutien pur et simple aux plans de licenciements.
-Un exemple : Michelin
+Les appareils syndicaux se vautrent dans le soutien pur et simple aux plans de licenciements. Un exemple : Michelin
 
 Mais ce que voient les travailleurs, c’est une toute autre politique des appareils syndicaux, celle du soutien sans fard aux plans de licenciement.
 
@@ -286,8 +242,7 @@ A noter le cynisme particulier du dirigeant CGT qui ne se prononce en aucun cas 
 
 C’est au mur de la politique des appareils syndicaux que la classe ouvrière se trouve confrontée, sans avoir à ce stade les forces de le franchir.
 
-Une rafale de journées d’action pour pimenter la politique
-de « co-construction » avec le gouvernement et le patronat
+Une rafale de journées d’action pour pimenter la politique de « co-construction » avec le gouvernement et le patronat
 
 Une des pièces essentielles de cette orientation des appareils syndicaux, c’est la rafale de journées d’action « culminant » dans celle du 4 février.
 
@@ -318,13 +273,10 @@ La LPR prévoit de sanctionner d’une peine allant jusqu’à trois ans de pris
 La loi « confortant les principes de la République » (anciennement nommée loi « contre le séparatisme ») permet notamment de punir d’une peine allant jusqu’à 5 ans de prison toute diffusion publique d’information sur l’identité de fonctionnaire « dans une intention malveillante ». Sous couvert de protection des enseignants, il s’agit surtout de protéger les flics et d’interdire la dénonciation de leurs exactions. C’est aussi un instrument permettant de manière totalement arbitraire et sans limite de dissoudre n’importe quelle association ou organisation. La procédure ayant conduit à la dissolution du Collectif contre l’Islamophobie – quoiqu’on pense de l’orientation de ce collectif, c’est une véritable forfaiture de lui imputer la responsabilité de l’assassinat de Samuel Paty – en donne un avant-goût. Le Monde du 1er janvier indique :
 
 - [Le projet de loi] « confortant le respect des principes de la République » adopté en conseil des ministres le 9 décembre prévoit dans son article 8 d’élargir les motifs de dissolution administrative d’une association, « de manière à réduire les cas où une telle mesure ne peut être mise en œuvre en raison d’un défaut de base légale » (souligné par nous), lit-on dans l’étude d’impact. Pour cela, le texte prévoit notamment « la possibilité d’imputer à une association ou à un groupement de fait les agissements qui sont soit commis par des membres agissant en cette qualité, soit directement liés aux activités de cette association ou de ce groupement. »
-
 - la publication de trois décrets le 4 décembre permettant un fichage général aussi bien au nom de la « prévention des atteintes à la Sécurité publique »… que comme préalable à certains recrutements de la Fonction publique. Parmi les éléments des fiches ainsi constitués sur des centaines de milliers de personnes dans le pays figurent « les opinions politiques », « les convictions philosophiques et religieuses », « l’appartenance syndicale », « les données de santé révélant une dangerosité particulière », « les comportements et habitudes de vie » (sic), » les déplacements et pratiques sportives » (sic).
-
 - Mais surtout, au cœur de l’offensive, la loi Sécurité globale comprend un véritable arsenal de mesures menaçant de prison ferme la diffusion de toute vidéo ou image d’interventions policières lors de manifestations. Elle permet aussi l’armement des polices municipales, la possibilité pour des entreprises de sécurité privée d’effectuer des contrôles et de prendre des mesures jusqu’ici l’apanage des fonctionnaires de police.
 
-Les appareils syndicaux refusent d’appeler
-à manifester à l’Assemblée nationale le 17 novembre et d’organiser le moindre combat…
+Les appareils syndicaux refusent d’appeler à manifester à l’Assemblée nationale le 17 novembre et d’organiser le moindre combat…
 
 Le 17 novembre, figurait à l’ordre du jour de l’Assemblée nationale à la fois le vote de la LPR et l’ouverture de la discussion sur la « loi Sécurité globale ». Dans les jours qui précédaient, quasi silence des directions syndicales CGT, FO, FSU, UNEF sur la loi Sécurité globale. Il faut d’ailleurs préciser : d’un long communiqué de l’appareil FO ressort surtout… le souci de l’appareil FO de la sécurité des policiers !
 
@@ -348,8 +300,7 @@ Le 21 novembre, des manifestations sont convoquées un peu partout en France par
 
 Dans les organisations elles-mêmes, des voix de plus en plus pressantes se font entendre contre la scandaleuse position des appareils centraux. Le 24 et le 25, se tient le Conseil national de la FSU. Sous la pression des syndicats nationaux, la direction de la FSU est contrainte d’ajouter – ce qu’elle avait exclu au départ – le mot d’ordre de retrait du projet de loi Sécurité globale. Le 28 à Paris, les Unions régionales Ile-de-France CGT, FO ainsi que la FSU et l’UNEF appellent à la manifestation.
 
-Le 12 décembre, les appareils syndicaux donnent à Darmanin un blanc seing
-pour le « sabotage » (Mediapart) du droit de manifester
+Le 12 décembre, les appareils syndicaux donnent à Darmanin un blanc seing pour le « sabotage » (Mediapart) du droit de manifester
 
 Le gouvernement quant à lui, manœuvre. Le groupe parlementaire LREM annonce qu’il va « réécrire » l’article 24 du projet de loi. Castex nomme une commission. Larcher juge quant à lui que c’est au Sénat de « réécrire » le texte. Les polémiques s’étalent dans la presse. Parler de « crise » serait trop dire. Mais on sent bien qu’il suffirait que les organisations dans l’unité appellent à manifester au siège du pouvoir pour le retrait des lois liberticides pour que ces dernières passent à la trappe. C’est précisément ce que veulent éviter les appareils.
 
@@ -359,8 +310,7 @@ Lallement et Darmanin entendront parfaitement le message. La manifestation du 12
 
 Les appareils syndicaux n’avaient pas appelé à manifester le 17 novembre. Ils ont appelé à ne pas manifester le 12 décembre. Aujourd’hui, en lieu et place de l’organisation d’une puissante manifestation au siège du pouvoir pour défaire le gouvernement, ils multiplient ad nauseam les démarches auprès du Conseil d’État (lequel les a une première fois renvoyés dans les cordes). Et sont programmés deux samedis en janvier les habituelles « manifestations décentralisées », visant à éluder tout affrontement avec le gouvernement.
 
-Jusqu’au bout, combattre pour la manifestation centrale au siège du pouvoir
-pour le retrait des lois et décrets liberticides
+Jusqu’au bout, combattre pour la manifestation centrale au siège du pouvoir pour le retrait des lois et décrets liberticides
 
 Il n’y a aucune raison cependant de considérer que le gouvernement et les appareils syndicaux ont d’ores et déjà remporté la partie. Une fraction des travailleurs et en particulier de la jeunesse a non seulement manifesté sa disponibilité au combat contre l’État policier mais a en partie réussi à passer par-dessus les obstacles dressés par les appareils du mouvement ouvrier dans ce sens. C’est dans la continuité de ce qui s’est passé au printemps avec les deux puissantes manifestations de la jeunesse initiées par le Comité « Justice pour Adama Traoré ».
 
