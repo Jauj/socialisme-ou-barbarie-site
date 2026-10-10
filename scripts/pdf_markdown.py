@@ -42,10 +42,13 @@ def mots(texte):
 
 
 class Vocabulaire:
-    """Fréquences des mots du corpus, pour décider des césures."""
+    """Fréquences des mots du corpus, pour décider des césures ; mots en tête de phrase
+    (seuls et suivis du mot suivant), pour rétablir les lettrines perdues par l'OCR."""
 
     def __init__(self, textes=()):
         self.freq = Counter()
+        self.debuts = Counter()
+        self.debuts2 = Counter()
         for t in textes:
             self.ajouter(t)
 
@@ -53,6 +56,9 @@ class Vocabulaire:
         # on ignore les mots coupés en fin de ligne pour ne pas compter les fragments
         texte = re.sub(r"[^\W\d_]+-\s*\n\s*[^\W\d_]+", " ", texte)
         self.freq.update(m.lower() for m in mots(texte))
+        for m in re.finditer(r"(?:^|[.!?»]\s+)([A-ZÉÀÇ][a-zéèêàçâîôûœ]*)[\s’']+([^\W\d_]+)", texte, re.M):
+            self.debuts[m.group(1)] += 1
+            self.debuts2[(m.group(1), m.group(2).lower())] += 1
 
     def recoller(self, avant, apres):
         """Fin de ligne « avant- » suivie de « apres… » : renvoie le séparateur ('' ou '-')."""
@@ -75,6 +81,15 @@ class Vocabulaire:
                          "vice", "demi", "mi", "grand", "petite", "petit", "arrière", "avant", "porte"}:
             return "-"
         return ""
+
+
+def vocabulaire_du_corpus(*dossiers):
+    """Vocabulaire des textes bruts (.txt) des dossiers donnés."""
+    vocab = Vocabulaire()
+    for d in dossiers:
+        for f in sorted(d.glob("*.txt")):
+            vocab.ajouter(f.read_text(encoding="utf-8"))
+    return vocab
 
 
 # ------------------------------------------------------------- emphases

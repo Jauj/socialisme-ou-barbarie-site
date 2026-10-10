@@ -1,9 +1,3 @@
-### LE SOCIALISME
-
-NUMERO SPECIAL 21 bis, 15 MAI 1988.
-
-### MITÉ POUR LA CONSTRUCTION OÙ PARTI OUVRIER REVOLUTIONNAIRE (POUR LA RECONSTRUCTION DE LA IVe INTERNATIONALE)
-
 Défaite de CHIRAC, candidat unique du R.P.R,, de l'UDF, et du F.N.
 
 Défaite de la bourgeoisie MITTERRAND dissout l’Assemblée Nationale : Inconditionnellement pour l'élection d'une majorité de députés du P.6. et du P.C.F, à l'Assemblée Nationale Pour que la défaite électorale de la bourgeoisie devienne une victoire du orolétariat :
@@ -272,10 +266,4 @@ Déclaration du "Comité pour la construction du Parti Ouvrier Révolutionnaire 
 
 - Boycott de la participation. Front Unique de la C.GT., de F.0., de la F.E.N. 11: | Nécessité de construire le Parti Ouvrier Révolutibnnaire | 12:
 
-- La lutte pour la construction du Parti Ouvrier Révhlutionnaire
-
-### BULLETIN D'ABONNEMENT A ‘’COMBATTRE POUR LE SOCIALISME'" — 10 numéros : 70Fr.
-
-NOM 2, A à à à à à "PRENOM, , à qu, à à À 4 à 4 4, 4 ADRESSE : à 2. . a A Part Dubai bn PORTES VE VE EN ET\] CODE POSTAL :, _, LOCALITE :, PONT, (Une Lettre, en caractères d'imprimerie, puk case. Merci. Chèque à l'ordre de : Stéphane JUST. , ENVOYER A : Stéphane JUST B.P. 154 22504 PÜTEAUX CEDEX.
-
-Directeur de la publicationt Stéphane JUST. Commission paritaire N°67187. Imprimerie spéciale. N° 186K: 0763790 X,
+- La lutte pour la construction du Parti Ouvrier Révhlutionnaire

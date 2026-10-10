@@ -6,7 +6,7 @@ Combattre pour que les directions des organisations ouvrières rompent avec la b
 
 Résultats des élections législatives du 20 décembre 2015 :
 
-|  | Résultats en % des Votants | Nbre de députés 2015 | Nbre de députés 2011 |
+| | Résultats en % des Votants | Nbre de députés 2015 | Nbre de députés 2011 |
 | --- | --- | --- | --- |
 | Parti Populaire | 28,72 | 123 | 183 |
 | PSOE | 22,01 | 90 | 110 |
@@ -23,9 +23,9 @@ Résultats des élections législatives du 20 décembre 2015 :
 | Abstentions | 22,62 | 31,29 | 24,34 | 26,15 | 28,31 | 26,80 |
 | Parti Populaire | 29,87 | 30,38 | 28,24 | 29,30 | 31,99 | 20,84 |
 | PSOE | 28,97 | 23,31 | 31,89 | 32,17 | 20,60 | 15,97 |
-| Izquierda Unida  (Unité Populaire en 2015) | 8,11 | 3,72 | 3,71 | 2,75 | 4,96 | 2,67 |
-| Podemos |  |  |  |  |  | 14,98 |
-| Ciudadanos |  |  |  |  |  | 10,11 |
+| Izquierda Unida (Unité Populaire en 2015) | 8,11 | 3,72 | 3,71 | 2,75 | 4,96 | 2,67 |
+| Podemos | | | | | | 14,98 |
+| Ciudadanos | | | | | | 10,11 |
 | Principaux partis "Nationalistes" | 5,95 | 4,77 | 5,75 | 3,92 | 5,69 | 4,87 |
 | Divers | 4,48 | 6,53 | 6,06 | 5,72 | 8,45 | 3,77 |
 

@@ -15,7 +15,7 @@ S'y ajoutent les **suppléments** (déclarations, tracts, communiqués…) et le
 
 En chiffres : **381 publications, 1 293 articles, 118 tags**, le **texte intégral de
 7 688 pages** (les 350 PDF disponibles, dont 177 numéros scannés océrisés) et une **version
-Markdown de chaque article** : 1 086 articles avec leur texte, en base (`texte_markdown`) et en
+Markdown de chaque article** : 1 175 articles avec leur texte, en base (`texte_markdown`) et en
 fichiers `.md` avec leurs métadonnées.
 
 Chiffres et anomalies détectées : voir [`docs/RAPPORT_QUALITE.md`](docs/RAPPORT_QUALITE.md)
@@ -28,7 +28,7 @@ data/
   cps.sqlite            base SQLite : publications, articles (avec leur texte en Markdown), tags,
                         recherche plein texte
   cps_complet.sqlite    même base + texte brut des articles + texte (brut et Markdown) de chaque page
-                        de chaque numéro (non versionnée : ~200 Mo, se régénère en ~1 min 30 avec
+                        de chaque numéro (non versionnée : ~200 Mo, se régénère en ~3 min avec
                         `python3 scripts/build_db.py`, sans réseau)
   markdown/<publication>/<article>.md   un fichier par article : en-tête YAML (titre, date, numéro,
                         tags, liens…) puis le texte en Markdown
@@ -71,10 +71,10 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `titre_index` | titre plus complet donné par l'index thématique, quand il diffère |
 | `date`, `serie` | reprises de la publication |
 | `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (`pdf_page` : page indiquée par le site) |
-| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`) ou retrouvée en cherchant le titre de l'article dans les pages (`titre`) |
+| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`), par le sommaire imprimé en une du numéro (`sommaire`), retrouvée en cherchant le titre de l'article dans les pages (`titre`), ou, pour le premier article d'un numéro introuvable autrement, début de la une (`ordre`) |
 | `texte_markdown` | texte intégral en Markdown, quand il a pu être obtenu (voir plus bas) |
 | `texte` | le même texte, brut — **seulement dans `cps_complet.sqlite`** (dérivable du Markdown, retiré de la base légère pour rester sous 50 Mo) |
-| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin) |
+| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article — surtitre compris — jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin ; `texte_source` signale une « fin incertaine » quand l'article suivant du sommaire n'a pas été retrouvé : le texte est alors borné à 16 pages) |
 | `texte_source` | URL du document dont vient le texte, pages et méthode (couche texte ou OCR) |
 | `origine` | `sommaire` (sommaire du site) ou `index_thematique` (article présent seulement dans l'index) |
 
@@ -96,13 +96,25 @@ nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract (fra
 contenir des erreurs de reconnaissance.
 
 **Localisation des articles.** Le site n'indique la page de début que pour 80 articles. Pour les
-autres, le titre est recherché parmi les intertitres des pages structurées en Markdown (seuls ou
-groupés : surtitre, titre, sous‑titre), ou au tout début d'un paragraphe quand l'OCR n'a pas isolé
-l'intertitre ; dans l'ordre du sommaire, en écartant les pages qui citent plusieurs titres (une,
-sommaires) et les titres de moins de trois mots significatifs, sauf égalité exacte. Contrôle : sur
-les 68 articles dont le site donne la page, la méthode (appliquée sans cette information) en
-retrouve 42, dont 40 à la page exacte — les 2 autres sont des erreurs du site (l'article commence
-une page plus tôt que ce qu'il indique). 677 articles ont ainsi été localisés.
+autres, trois indices sont combinés :
+
+- le **sommaire imprimé en une** (93 numéros, lignes « TITRE ........ P.12 », points de conduite
+  parfois lus comme des lettres par l'OCR), apparié aux titres du site par leurs mots ; il guide
+  la recherche du titre, avec une page de tolérance car il se trompe parfois d'une page ;
+- le **titre**, cherché parmi les intertitres des pages structurées en Markdown (seuls ou
+  groupés : surtitre, titre, sous‑titre), au début d'un paragraphe quand l'OCR n'a pas isolé
+  l'intertitre, ou réduit à sa rubrique pour les rubriques récurrentes (« Les militants
+  interviennent : RATP ; Université… » → intertitre « LES MILITANTS INTERVIENNENT ») ; dans
+  l'ordre du sommaire, en écartant les pages qui citent plusieurs titres (une, sommaires de
+  dernière page) ;
+- en dernier recours, la page du sommaire imprimé, et pour le premier article d'un numéro, la une.
+
+Le début retenu est ensuite ajusté : le surtitre et les intertitres placés juste au‑dessus du titre
+retrouvé sont inclus, et en haut de page la fin de l'article précédent lui est laissée. Le texte
+va jusqu'au début de l'article suivant retrouvé dans le même PDF, sans limite de longueur, sauf
+quand un article intermédiaire du sommaire n'a pas été retrouvé (« fin incertaine », texte borné
+à 16 pages). Contrôle : sur les 79 articles dont le site donne la page, la méthode appliquée sans
+cette information en retrouve 68, dont 65 à la page exacte et 2 à une page près.
 
 **Recherche plein texte.** L'index `articles_fts` porte sur `titre`, `titre_index` et
 `texte_markdown`. `cps.sqlite` le contient en mode allégé (recherche
@@ -154,13 +166,64 @@ Comment le Markdown est obtenu :
 - **PDF scannés** (OCR) : paragraphes de Tesseract recousus aux sauts de colonne, intertitres en
   capitales reconnus, bruit (filets, taches) écarté ;
 - partout, les **césures** de fin de ligne sont recollées d'après le vocabulaire du corpus
-  (« mar‑quées » → « marquées », mais « Jospin‑Gayssot » reste composé).
+  (« mar‑quées » → « marquées », mais « Jospin‑Gayssot » reste composé) ;
+- puis le **nettoyage** ([`scripts/nettoyage.py`](scripts/nettoyage.py)), sur les pages puis sur
+  chaque article découpé :
+  - bruit éditorial retiré : bulletins d'abonnement, mentions légales (directeur de la
+    publication, commission paritaire, ISSN), coordonnées et pieds de page du site, liens de
+    navigation (« Retour à l'accueil »), renvois « suite page 4 », en‑têtes courants restés dans
+    le texte, bandeau de une (« Comité pour la construction… », devise), annonces de brochures,
+    sommaires imprimés, traînées de caractères que l'OCR a lues dans les filets et les points de
+    conduite ;
+  - intertitres : vides ou illisibles supprimés, coupés en plusieurs blocs recollés, paragraphes
+    pris pour des intertitres (30 mots et plus, phrases complètes) rendus au texte, dates et
+    mentions « Article paru dans… » rendues au texte, lettrines recollées (« **G**uerre » →
+    « Guerre ») ou rétablies quand l'OCR les a perdues (« es projets de loi » → « Les projets de
+    loi », d'après les débuts de phrase du corpus) ; dans chaque article, `##` est réservé au
+    titre et les intertitres du corps sont décalés d'un niveau.
 
-Contrôles : les 1 086 textes sont rendus par un moteur CommonMark sans aucune emphase cassée,
+Contrôles : les 1 175 textes sont rendus par un moteur CommonMark sans aucune emphase cassée,
 les 1 293 en‑têtes YAML sont valides, et pour chaque page la part des mots du texte brut retrouvés
 dans le Markdown est vérifiée (les 44 pages PDF mal reconstruites, sur environ 3 500, ont été
-refaites à partir du texte brut). Limites : les textes océrisés gardent des erreurs de
-reconnaissance, et le découpage automatique des numéros peut déborder sur l'article voisin.
+refaites à partir du texte brut). Le rapport de qualité compte à chaque construction le bruit
+qui subsiste (bulletins, mentions légales, en‑têtes, faux intertitres…). Limites : les textes
+océrisés gardent des erreurs de reconnaissance (« Île » pour « le », colonnes parfois mêlées),
+et le découpage automatique des numéros peut déborder sur l'article voisin, en particulier
+quand le sommaire du site omet un article du numéro.
+
+### Mesures avant et après le nettoyage et le nouveau découpage
+
+Nombre d'articles concernés, sur l'ensemble des textes (1 086 textes avant, 1 175 après) :
+
+| Défaut | Avant | Après |
+|---|---|---|
+| Bulletin d'abonnement dans le texte | 106 | 0 |
+| Mentions légales (directeur de la publication, commission paritaire) | 202 | 1 |
+| Pied de page ou coordonnées du site | 164 | 4 |
+| Liens de navigation (« Retour à l'accueil ») | 130 | 0 |
+| En‑tête de page resté dans le texte | 75 | 28 |
+| Renvoi « suite page N » | 16 | 0 |
+| Bandeau de une (« Comité pour la construction… ») | 21 | 0 |
+| Lettrine cassée (« **G**uerre ») | 10 | 0 |
+| Intertitre sans lettre (« ## • ») | 164 | 0 |
+| Intertitre de plus de 20 mots | 437 | 402 |
+| « ## » ailleurs que dans le titre | 201 | 0 |
+| Texte commençant au milieu d'une phrase | 20 | 10 |
+| Texte découpé sur 12 pages ou plus (avant : coupé par une limite de 12 pages) | 73 | 47 |
+
+Découpage : 90 articles ont désormais un texte (rubriques « Les militants interviennent »,
+articles retrouvés grâce au sommaire imprimé), 16 commencent à une page corrigée (titre repris
+en une, ou intertitre de conclusion, auparavant pris pour le début) ; un seul texte a disparu,
+qui n'était en fait qu'un morceau de sommaire. Les longs intertitres restants sont pour la
+plupart de vrais intertitres de CPS, souvent des phrases entières.
+
+Relecture par des agents Haiku (même consigne, mêmes 58 articles tirés au sort, note de 0 à 5) :
+moyenne 3,14 avant, 3,26 après (15 articles mieux notés, 34 inchangés, 9 moins bien) ; textes
+d'articles en PDF 3,4 → 4,2, découpages des numéros 2,8 → 2,9, suppléments 3,0 → 3,1, pages
+HTML 3,4 → 3,3. Les baisses ont été vérifiées : sauf un paragraphe retiré à tort (corrigé
+depuis), les passages en cause sont identiques avant et après ; l'écart vient de la variabilité
+de la notation. Cette relecture a porté sur la version qui précède les dernières retouches
+qu'elle a suggérées (puces converties en listes, sommaires HTML retirés, révisions Word).
 
 ## Exemples de requêtes
 
@@ -223,9 +286,11 @@ python3 scripts/build_db.py           # reconstruction avec les textes
 ```
 
 `build_db.py` ne fait aucun accès réseau et n'utilise que la bibliothèque standard de Python
-(plus `markdownify`/`beautifulsoup4` pour une fonction partagée) : `cps_complet.sqlite` (trop
-volumineux pour être versionné) se régénère en environ 1 min 30 à partir de `data/pages/` et
-`data/textes/`.
+(plus `markdownify`/`beautifulsoup4` pour des fonctions partagées) : `cps_complet.sqlite` (trop
+volumineux pour être versionné) se régénère en environ 4 minutes à partir de `data/pages/` et
+`data/textes/` (découpage des articles, puis nettoyage de chacun avec `scripts/nettoyage.py`).
+`extraire_markdown.py` (environ 5 minutes quand les PDF sont en cache, option `--garder-pdf`)
+applique le même nettoyage aux pages et aux textes propres aux articles.
 
 Pour intégrer un nouveau numéro : `fetch_sources.py --refresh`, `fetch_textes.py`,
 `extraire_pages.py`, `extraire_markdown.py`, puis `build_db.py`.

@@ -12,6 +12,8 @@ Produit, à côté des textes bruts :
 
 Contrôle : pour chaque page, la part des mots du texte brut retrouvés dans le
 Markdown ; une page PDF mal reconstruite (< 90 %) est refaite à partir du texte brut.
+Le Markdown passe ensuite par nettoyage.py (bruit éditorial : bulletins d'abonnement,
+mentions légales, bandeau de une, sommaires… ; intertitres coupés ou vides).
 
 Usage : python3 scripts/extraire_markdown.py [--ids NS-097 …] [--garder-pdf]
 """
@@ -26,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extraire_pages  # noqa: E402
 import fetch_textes  # noqa: E402
 import html_markdown  # noqa: E402
+import nettoyage  # noqa: E402
 import pdf_markdown  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -65,9 +68,7 @@ def main():
     ids = set(args.ids or [])
 
     print("vocabulaire du corpus…", flush=True)
-    vocab = pdf_markdown.Vocabulaire()
-    for f in list(PAGES.glob("*.txt")) + list(TEXTES.glob("*.txt")):
-        vocab.ajouter(f.read_text(encoding="utf-8"))
+    vocab = pdf_markdown.vocabulaire_du_corpus(PAGES, TEXTES)
 
     rapport = {"pages_refaites": [], "articles": {}}
 
@@ -95,6 +96,7 @@ def main():
                         rapport["pages_refaites"].append(f"{pid} p.{k + 1}")
             if not args.garder_pdf:
                 pdf.unlink(missing_ok=True)
+        pages_md = [nettoyage.nettoyer(md, vocab, debut_document=(k == 0)).rstrip("\n") for k, md in enumerate(pages_md)]
         (PAGES / f"{pid}.md").write_text("\f".join(pages_md) + "\n", encoding="utf-8")
         print(f"{pid} : {m['methode']}, {len(pages_md)} pages", flush=True)
 
@@ -116,6 +118,7 @@ def main():
             tmp.unlink(missing_ok=True)
             md = pdf_markdown.fusionner_paragraphes("\n\n".join(p for p in pages_md if p.strip()), vocab)
             md = html_markdown.nettoyer_markdown(md)
+        md = nettoyage.nettoyer(md, vocab, debut_document=True, recoudre=(m["type"] != "html" or data[:5] == b"%PDF-"))
         ancien = (TEXTES / f"{aid}.txt").read_text(encoding="utf-8")
         cov = couverture(ancien, md)
         rapport["articles"][aid] = round(cov, 3)

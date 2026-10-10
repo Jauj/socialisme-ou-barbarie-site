@@ -321,7 +321,9 @@ async function lire(x) {
     const [meta, corps] = enTete(await r.text());
     let html = rendreMarkdown(corps);
     if (meta.texte_type === "pages_numero")
-      html = '<p class="avert">Texte découpé automatiquement dans le PDF du numéro : le début ou la fin peuvent déborder sur l\'article voisin. Pour les numéros scannés, le texte vient de l\'OCR et peut contenir des erreurs.</p>' + html;
+      html = '<p class="avert">Texte découpé automatiquement dans le PDF du numéro : le début ou la fin peuvent déborder sur l\'article voisin.' +
+        (/fin incertaine/.test(meta.texte_source || "") ? " L\'article suivant du sommaire n\'a pas été retrouvé : la fin de ce texte peut en contenir une partie." : "") +
+        ' Pour les numéros scannés, le texte vient de l\'OCR et peut contenir des erreurs.</p>' + html;
     else if (meta.texte_type === "pdf_publication" && /ocr/.test(meta.texte_source || ""))
       html = '<p class="avert">Texte obtenu par OCR d\'un document scanné : il peut contenir des erreurs de reconnaissance.</p>' + html;
     $("l-corps").innerHTML = html;

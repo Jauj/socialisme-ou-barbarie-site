@@ -180,7 +180,7 @@ Rand William Smith dans “Crisis in the French Labour Movement” (1987), prés
 
 «Comment expliquer ce déclin ? En général, les observateurs offrent trois types d’explication : économique, politique et juridique-institutionnelle.
 
- La baisse des effectifs et de l’influence des syndicats est souvent attribuée aux effets tant immédiats qu’à long terme de la récession économique. La crise économique mondiale qui a frappé les pays occidentaux à la fin de 1974 a provoqué une croissance régulière du chômage ; en France, le nombre de chômeurs est passé de 400 000 environ en 1974 à plus de 2,5 millions. Cette rapide croissance, explique-t-on, fait que les travailleurs, craignant pour leur emploi, se montrent accommodants. Un état d’esprit «chacun pour soi» se développe, la solidarité ouvrière se dissout, les syndicats apparaissent comme de plus en plus impuissants. Dans cette théorie, le calme de la classe ouvrière, s’expliquant par un reflux de l’économie, peut être d’aussi courte durée que le sera celui-ci ; les travailleurs reviendront à une plus grande activité militante au moment de la reprise. (…)»
+La baisse des effectifs et de l’influence des syndicats est souvent attribuée aux effets tant immédiats qu’à long terme de la récession économique. La crise économique mondiale qui a frappé les pays occidentaux à la fin de 1974 a provoqué une croissance régulière du chômage ; en France, le nombre de chômeurs est passé de 400 000 environ en 1974 à plus de 2,5 millions. Cette rapide croissance, explique-t-on, fait que les travailleurs, craignant pour leur emploi, se montrent accommodants. Un état d’esprit «chacun pour soi» se développe, la solidarité ouvrière se dissout, les syndicats apparaissent comme de plus en plus impuissants. Dans cette théorie, le calme de la classe ouvrière, s’expliquant par un reflux de l’économie, peut être d’aussi courte durée que le sera celui-ci ; les travailleurs reviendront à une plus grande activité militante au moment de la reprise. (…)»
 
 Ainsi, la classe ouvrière ne serait “combative” que lors des périodes fastes, lorsqu’il y a accumulation du capital ! D’aucuns ne l’accusait-elle pas, il y a peu de temps encore, de s’embourgeoiser ? Qui croire ? L’histoire s’est déjà chargée de rayer d’un trait ce type de jugement “universitaire” (l’Université s’est beaucoup intéressée ces dernières années aux phénomènes de transformation et de déclin syndicaux, tant en Grande-Bretagne qu’aux Etats-Unis) : les mobilisations révolutionnaires des masses de 1917 en Russie, de 1918-23 en Allemagne, de 1936 en Espagne et en France... ne se sont pas développées alors que l’économie capitaliste était en plein essor, bien au contraire.
 
@@ -674,7 +674,7 @@ Ce freinage ne devait plus s’arrêter. On assistait même en juin 1982 à un b
 “La Vérité” n° 575 datée de février 1977 rappelait :
 
 « Au contraire de ce qui a souvent été écrit, le gouvernement Giscard-Barre ne répudie pas la politique des contrats salariaux. Il veut qu'elle soit rigoureusement appliquée.
-A plusieurs reprises Giscard, Barre, Beullac l'ont réaffirmé en termes similaires à ceux que Raymond Barre utilisait le 15 décembre au cours de l'émission « C'est‑à-­dire », sur « Antenne 2 » :
+A plusieurs reprises Giscard, Barre, Beullac l'ont réaffirmé en termes similaires à ceux que Raymond Barre utilisait le 15 décembre au cours de l'émission « C'est‑à-dire », sur « Antenne 2 » :
 Je « souhaite un retour aux sources de la politique contractuelle », que « dans le secteur public on en revienne à des contrats qui tiennent compte de la situation économique générale et de la situation dans l'entreprise... Lorsque les circonstances s'amélioreront, il sera possible de revenir à la progression du pouvoir d'achat ».
 Le 21 décembre, il reprenait devant des journalistes de la presse économique : cette politique a « connu une déviation indiscutable à partir de 1971, lorsque des avenants aux contrats conclus ont instauré une progression automatique du pouvoir d'achat quelles que soient la situation de l'entreprise et celle de l'économie nationale.
 « Pour 1977, il n'est pas exclu qu'en fin d'année, et en fonction des résultats de la politique de lutte contre l'inflation, une éventuelle progression du pouvoir d'achat puisse être consentie au profit des catégories de revenus les moins favorisés. Par ailleurs, le gouvernement ne fait aucune objection à ( ... ) des accords nouveaux prévoyant une progression conditionnelle du pouvoir d'achat en fonction de l'évolution globale des prix et de la productivité de l'entreprise. Le gouvernement souhaite également que les procédures de discussion se déroulent normalement cette année dans le secteur public. »
@@ -693,7 +693,7 @@ Tension entre les gouvernements de l’etape Mitterrand et FO
 
 Au cours des années 1981 et 1982 et suivantes, la crise du régime capitaliste s’est accentuée. Elle a frappé durement le capitalisme français. Le gouvernement Mitterrand-Mauroy-Fiterman-Crépeau et ses suivants ont accentué l’offensive économique contre la classe ouvrière et l’ont développée tous azimuts. Les relations quasiment d’opposition entre l’appareil FO (opposition de sa majesté cependant) et le gouvernement de “l’Union de la Gauche” ont valu un important succès remporté par cette confédération aux élections (19/10/83) des administrateurs du collège des prestataires à la Sécurité Sociale, environ 25 millions d’inscrits. Les résultats ont été les suivants :
 
-|  | nombre de voix | % votants | % des inscrits | nombre sièges |
+| | nombre de voix | % votants | % des inscrits | nombre sièges |
 | --- | --- | --- | --- | --- |
 | cgt | 3 959 049 | 28,17 | 15,6 | 577 |
 | fo | 3 550 147 | 25,56 | 14 | 500 |
@@ -776,7 +776,7 @@ EN APPARENCE donc, rien à voir avec l’offensive en cours sur la formation en 
 
 Or, d’une part, l’accord du 3 juillet 91 est une révision de celui du 9 juillet 1970 qui a ouvert la première brèche dans l’enseignement public au profit de l’apprentissage patronal. D’autre part, le préambule de l’accord de juillet précisait :
 
-- - les conditions d’accueil et de suivi dans les entreprises des jeunes en stage ou en formation.
+- les conditions d’accueil et de suivi dans les entreprises des jeunes en stage ou en formation.
 
 soulignait :
 
@@ -784,7 +784,7 @@ soulignait :
 
 exprimait :
 
-- - l’intérêt des parties signataires pour la conclusion de contrats d’objectifs entre l’Etat, les Régions et les branches professionnelles.
+- l’intérêt des parties signataires pour la conclusion de contrats d’objectifs entre l’Etat, les Régions et les branches professionnelles.
 
 Le cadre permanent constitué par les accords de juillet 1991 et de l’avenant de janvier 1992 signés par Force Ouvrière invoquant à la fois « la politique contractuelle » et « les intérêts des apprentis » a exactement le même contenu de soutien à la politique du patronat et du gouvernement.
 
@@ -930,11 +930,11 @@ Pour sa part, un cadre qui gagnait 20 000 F mensuels touchera dans le même cas 
 L’argument massue des signataires de l'accord est de croire qu'en diminuant le montant des prestations d'assurance chômage, les chômeurs rechercheront ou trouveront plus vite un travail. Le problème, c'est qu'il n'y a pas de travail. Les patrons n'embauchent pas, malgré les diverses possibilités d'exonération des charges sociales mises à leur disposition. Cette tendance est confirmée par les études d'experts qui voient l'avenir plutôt sombre en matière d'emploi.
 L’AUD devrait permettre de réaliser 9 milliards d'économies sur le dos des chômeurs. Il en manque encore 8 pour combler le déficit de l'Unedic estimé à 17 milliards de francs. Les salariés et les employeurs sont eux aussi mis à contribution par le biais de l'augmentation des cotisations de 0,4% à parité, soit 0,8% en tout. Toutefois, en supprimant la contribution pour frais de dossier des entreprises qui mettent fin aux contrats de plus de six mois, l'accord entraîne une perte nette de 1,5 milliards de francs pour le Régime. De plus, en refusant de prendre en charge la surcotisalion de la tranche B (celle des salaires supérieurs à 12 000F), les employeurs s'en tirent une fois de plus à bon compte.
 
-|  | durée de l'affiliation à l'unedic | Montant | durée de l'indemnisation (hors prolongations) |
+| | durée de l'affiliation à l'unedic | Montant | durée de l'indemnisation (hors prolongations) |
 | --- | --- | --- | --- |
 | Allocation de base exceptionnelle | 3 mois | au minimum 95,55F/jour et jusqu'à 56,25 du salaire de référence | 3 mois |
 | Allocation de base | 6 mois à 24 mois | au minimum 127,57 F/jour et jusqu'à 75% du salaire de référence | de 8 mois à 27 mois |
-| Allocation de fin de droits | Chômeur ayant épuisé ses droits à l'allocation de base | 81,30 F/jour  112,70F/jour pour les plus de 52 ans | de 6 mois à 18 mois |
+| Allocation de fin de droits | Chômeur ayant épuisé ses droits à l'allocation de base | 81,30 F/jour 112,70F/jour pour les plus de 52 ans | de 6 mois à 18 mois |
 
 .m2.Dirigeants CGT et CGT-FO signent
 
@@ -1199,15 +1199,11 @@ Journaliste :
 
 “...Nous avons un nouveau gouvernement, quel signe souhaitez-vous lui adresser...”
 
-M. B. :
-
 “...Mon rôle c’est d’aller vers M. Balladur en lui disant : voilà quelles sont les préoccupations des salariés. Nous avions des revendications avant votre arrivée, on maintient ces revendications...Je porterai jugement en fonction des réponses qui me seront apportées...Nous sommes, peut-être, un peu trop tôt (pour juger) puisque le discours de politique générale aura lieu dans quelques jours et que vraisemblablement il y aura consultation des ministères sur les différents problèmes...”
 
 Journaliste :
 
 “...Est-ce que M. Balladur vous a consulté sur le nom de son ministre du travail ?...”
-
-M. B. :
 
 “ça ne s’est pas passé tout à fait comme çà pour différentes raisons : d’abord parce que je crois que les choses étaient réfléchies (préparées)... Pour tout vous dire, les consultations n’ont pas été des consultations directes...Mais je peux certifier que l’organisation syndicale a pesé sur certains choix...Il y a eu des noms qui nous ont fait sursauter et que nous aurions considéré comme des provocations, et nous (avons dit) que nous aimerions pour certains secteurs comme le ministère du Travail avoir des gens qui connaissent au moins l’entreprise au moins les préoccupations des travailleurs c’est plus utile... Soyons clairs, c’est pas nouveau, lorsqu’on a nommé Mme Aubry je m’en suis félicité, je me suis dit c’est quelqu’un qui a fait de la théorie et qui est allé en entreprise, elle aura un sens pratique; disons qu’il y a eu une démarche à peu près semblable de la part de FO et pour être clair que l’on en a tenu compte”.
 
@@ -1410,7 +1406,5 @@ Aucune illusion n’est permise : au point où en sont les appareils des organis
 Le 28 mai 1993.
 
 Vous appréciez cet article : soutenez nous ! Abonnez-vous, faites s’abonner à Combattre pour le Socialisme
-
-Retour à l'accueil
 
 [1]: Plus précisément la Sécurité Sociale, le système d’indemnisation du chômage, “cotisations” patronales comprises, sont alimentés par le salaire différé qui n’est pas directement payé aux travailleurs. Il est donc normal qu’ils soient gérés par leurs syndicats et que les cotisations soient payées par le patronat et qu’il soit revendiqué qu’elles augmentent en fonction des besoins de la population laborieuse.

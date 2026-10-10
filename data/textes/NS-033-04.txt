@@ -64,19 +64,13 @@ Participation
 
 Nombre de voix
 
-%
-
 Députés
 
 Nombre de voix
 
-%
-
 Députés
 
 Nombre de voix
-
-%
 
 Députés
 
@@ -100,8 +94,6 @@ PSOE
 
 125
 
-PP
-
 10.169.973
 
 40.11
@@ -120,8 +112,6 @@ PP
 
 183
 
-IU
-
 963.040
 
 3.80
@@ -139,8 +129,6 @@ IU
 5.45
 
 8
-
-CiU
 
 774.317
 
@@ -187,20 +175,6 @@ UPyD
 1.20
 
 1
-
--
-
--
-
--
-
--
-
--
-
--
-
-ERC
 
 296.473
 

@@ -144,43 +144,43 @@ Le 7 mai 2015, les élections générales étaient appelées à renouveler les 6
 
 | (Source : Union inter-parlementaire, IPU, http://www.ipu.org et House of Commons, http://www.parliament.uk) | | | 7 mai 2015 | 6 mai 2010 | 5 mai 2005 | 7 juin 2001 | 1 mai 1997 | 9 avril 1992 | 11 juin 1987 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Inscrits |  | | 46 354 197 | 45 597 461 | 44 245 939 | 44 403 238 | 43 784 559 | 43 253 000 | 43 181 321 |
-| Exprimés |  | | 30 691 680 | 29 687 604 | 27 148 510 | 26 265 187 | 31 287 097 | 33 609 431 | 32 536 205 |
-|  | % sur Inscrits | | 66,21% | 65,11% | 61,36% | 59,15% | 71,46% | 77,70% | 75,35% |
-| Labour Party |  | | 9 344 328 | 8 609 527 | 9 552 436 | 10 724 895 | 13 517 132 | 11 557 134 | 10 033 633 |
-|  | % sur Exprimés | | 30,45% | 29,00% | 35,19% | 40,83% | 43,20% | 34,39% | 30,84% |
-|  | % sur Inscrits | | 20,16% | 18,88% | 21,59% | 24,15% | 30,87% | 26,72% | 23,24% |
-|  | Sièges | | 232 | 258 | 355 | 412 | 418 | 271 | 229 |
-| Tories |  | | 11 300 303 | 10 726 614 | 8 784 915 | 8 357 622 | 9 602 857 | 14 093 148 | 13 763 134 |
-|  | % sur Exprimés | | 36,82% | 36,13% | 32,36% | 31,82% | 30,69% | 41,93% | 42,30% |
-|  | % sur Inscrits | | 24,38% | 23,52% | 19,85% | 18,82% | 21,93% | 32,58% | 31,87% |
-|  | Sièges | | 330 | 306 | 198 | 166 | 165 | 336 | 376 |
-| Libéraux |  | | 2 415 388 | 6 836 824 | 5 985 454 | 4 812 833 | 5 242 894 | 5 998 446 | 7 339 912 |
-|  | % sur Exprimés | | 7,87% | 23,03% | 22,05% | 18,32% | 16,76% | 17,85% | 22,56% |
-|  | % sur Inscrits | | 5,21% | 14,99% | 13,53% | 10,84% | 11,97% | 13,87% | 17,00% |
-|  | Sièges | | 8 | 57 | 62 | 52 | 46 | 20 | 22 |
+| Inscrits | | | 46 354 197 | 45 597 461 | 44 245 939 | 44 403 238 | 43 784 559 | 43 253 000 | 43 181 321 |
+| Exprimés | | | 30 691 680 | 29 687 604 | 27 148 510 | 26 265 187 | 31 287 097 | 33 609 431 | 32 536 205 |
+| | % sur Inscrits | | 66,21% | 65,11% | 61,36% | 59,15% | 71,46% | 77,70% | 75,35% |
+| Labour Party | | | 9 344 328 | 8 609 527 | 9 552 436 | 10 724 895 | 13 517 132 | 11 557 134 | 10 033 633 |
+| | % sur Exprimés | | 30,45% | 29,00% | 35,19% | 40,83% | 43,20% | 34,39% | 30,84% |
+| | % sur Inscrits | | 20,16% | 18,88% | 21,59% | 24,15% | 30,87% | 26,72% | 23,24% |
+| | Sièges | | 232 | 258 | 355 | 412 | 418 | 271 | 229 |
+| Tories | | | 11 300 303 | 10 726 614 | 8 784 915 | 8 357 622 | 9 602 857 | 14 093 148 | 13 763 134 |
+| | % sur Exprimés | | 36,82% | 36,13% | 32,36% | 31,82% | 30,69% | 41,93% | 42,30% |
+| | % sur Inscrits | | 24,38% | 23,52% | 19,85% | 18,82% | 21,93% | 32,58% | 31,87% |
+| | Sièges | | 330 | 306 | 198 | 166 | 165 | 336 | 376 |
+| Libéraux | | | 2 415 388 | 6 836 824 | 5 985 454 | 4 812 833 | 5 242 894 | 5 998 446 | 7 339 912 |
+| | % sur Exprimés | | 7,87% | 23,03% | 22,05% | 18,32% | 16,76% | 17,85% | 22,56% |
+| | % sur Inscrits | | 5,21% | 14,99% | 13,53% | 10,84% | 11,97% | 13,87% | 17,00% |
+| | Sièges | | 8 | 57 | 62 | 52 | 46 | 20 | 22 |
 | Scottish National Party (SNP) | | | 1 454 436 | 491 686 | 412 267 | 464 305 | 621 540 | 629 552 | 416 873 |
-|  | | % sur Exprimés | 4,74% | 1,66% | 1,52% | 1,77% | 1,99% | 1,87% | 1,28% |
-|  | | % sur Inscrits | 3,14% | 1,08% | 0,93% | 1,05% | 1,42% | 1,46% | 0,97% |
-|  | | Sièges | 56 | 6 | 6 | 5 | 6 | 3 | 3 |
-| UK Independence Party (UKIP) | | | 3 881 129 | 919 546 | 605 973 |  |  |  |  |
-|  | | % sur Exprimés | 12,65% | 3,10% | 2,23% |  |  |  |  |
-|  | | % sur Inscrits | 8,37% | 2,02% | 1,37% |  |  |  |  |
-|  | | Sièges | 1 | 0 | 0 |  |  |  |  |
-| Green Party | |  | 1 157 613 | 285 616 | 257 758 |  |  |  |  |
-|  | | % sur Exprimés | 3,77% | 0,96% | 0,95% |  |  |  |  |
-|  | | % sur Inscrits | 2,50% | 0,63% | 0,58% |  |  |  |  |
-|  | | Sièges | 1 | 1 | 0 |  |  |  |  |
-| Sinn Fein | |  | 176 232 | 171 942 | 174 530 | 175 933 | 126 921 |  |  |
-|  | | % sur Exprimés | 0,57% | 0,58% | 0,64% | 0,67% | 0,41% |  |  |
-|  | | % sur Inscrits | 0,38% | 0,38% | 0,39% | 0,40% | 0,29% |  |  |
-|  | | Sièges | 4 | 5 | 5 | 4 | 2 |  |  |
-| Autres | |  | 962 251 | 1 645 849 | 1 375 177 | 1 729 599 | 2 175 753 | 1 331 151 | 982 653 |
-|  | | % sur Exprimés | 3,14% | 5,54% | 5,07% | 6,59% | 6,95% | 3,96% | 3,02% |
-|  | | % sur Inscrits | 2,08% | 3,61% | 3,11% | 3,90% | 4,97% | 3,08% | 2,28% |
-|  | | Sièges | 18 | 17 | 24 | 20 | 22 | 21 | 20 |
-|  | | Total sièges | 650 | 650 | 650 | 659 | 659 | 651 | 650 |
-|  |  |  |  |  |  |  |  |  |  |
+| | | % sur Exprimés | 4,74% | 1,66% | 1,52% | 1,77% | 1,99% | 1,87% | 1,28% |
+| | | % sur Inscrits | 3,14% | 1,08% | 0,93% | 1,05% | 1,42% | 1,46% | 0,97% |
+| | | Sièges | 56 | 6 | 6 | 5 | 6 | 3 | 3 |
+| UK Independence Party (UKIP) | | | 3 881 129 | 919 546 | 605 973 | | | | |
+| | | % sur Exprimés | 12,65% | 3,10% | 2,23% | | | | |
+| | | % sur Inscrits | 8,37% | 2,02% | 1,37% | | | | |
+| | | Sièges | 1 | 0 | 0 | | | | |
+| Green Party | | | 1 157 613 | 285 616 | 257 758 | | | | |
+| | | % sur Exprimés | 3,77% | 0,96% | 0,95% | | | | |
+| | | % sur Inscrits | 2,50% | 0,63% | 0,58% | | | | |
+| | | Sièges | 1 | 1 | 0 | | | | |
+| Sinn Fein | | | 176 232 | 171 942 | 174 530 | 175 933 | 126 921 | | |
+| | | % sur Exprimés | 0,57% | 0,58% | 0,64% | 0,67% | 0,41% | | |
+| | | % sur Inscrits | 0,38% | 0,38% | 0,39% | 0,40% | 0,29% | | |
+| | | Sièges | 4 | 5 | 5 | 4 | 2 | | |
+| Autres | | | 962 251 | 1 645 849 | 1 375 177 | 1 729 599 | 2 175 753 | 1 331 151 | 982 653 |
+| | | % sur Exprimés | 3,14% | 5,54% | 5,07% | 6,59% | 6,95% | 3,96% | 3,02% |
+| | | % sur Inscrits | 2,08% | 3,61% | 3,11% | 3,90% | 4,97% | 3,08% | 2,28% |
+| | | Sièges | 18 | 17 | 24 | 20 | 22 | 21 | 20 |
+| | | Total sièges | 650 | 650 | 650 | 659 | 659 | 651 | 650 |
+| | | | | | | | | | |
 
 L'élément fondamental est l'échec du Labour Party à reconquérir la majorité, et ce après cinq années de gouvernement des Conservateurs en alliance avec les Libéraux. En dépit de l'effondrement du parti Libéral-Démocrate qui perd 60 % de ses voix et plus de 85 % de ses sièges de 2010, se voyant réduit à huit représentants au parlement, le parti travailliste n'a pas été en mesure de capter le mécontentement, le rejet de l'austérité et des Tories ainsi que de leurs alliés Lib'Dem', et la volonté de résistance des masses qui s'était pourtant largement manifestée au cours de la première mandature de Cameron. Et ce en dépit de la profonde division politique qui traverse la classe possédante anglaise sur le Brexit, ce dont témoigne également la très forte poussée du parti ultra-réactionnaire et raciste UKIP qui recueille en 2015 près de quatre millions de voix, multipliant par plus de quatre son score de 2010.
 
@@ -274,5 +274,3 @@ Plus que jamais : quel programme ? Quel gouvernement ? Quel parti ?
 C’est sur la base de ces éléments programmatiques que les jeunes et les travailleurs révolutionnaires peuvent combattre et se regrouper, tant au sein des organisations ouvrières que dans les mouvements qui ne manqueront pas de se produire sous l’effet de la crise du système capitaliste et des coups portés par la classe ennemie et ses gouvernements.
 
 Le 23 mai 2016
-
-«

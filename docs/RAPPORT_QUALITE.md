@@ -19,10 +19,13 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 | — avec lien PDF propre ou page de PDF | 334 |
 | — avec texte intégral (page HTML ou PDF propre) | 402 |
 | — avec texte intégral (PDF de la publication) | 147 |
-| — avec texte découpé dans le PDF du numéro (titre → article suivant) | 537 |
-| — avec texte (total, Markdown et brut) | 1086 |
+| — avec texte découpé dans le PDF du numéro (titre → article suivant) | 626 |
+| — avec texte (total, Markdown et brut) | 1175 |
 | — page de début indiquée par le site | 80 |
-| — page de début retrouvée par le titre | 677 |
+| — page de début donnée par le sommaire imprimé en une | 336 |
+| — page de début retrouvée par le titre | 503 |
+| — premier article du sommaire, non retrouvé : début de la première page | 23 |
+| — texte découpé dont la fin est incertaine (article suivant non retrouvé) | 85 |
 | Publications dont le texte intégral est disponible (pages) | 350 |
 | — dont océrisées (scans) | 177 |
 | Pages de texte | 7688 |
@@ -30,6 +33,22 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 | Associations article-tag (index du site) | 1535 |
 | Associations article-tag (règles) | 1242 |
 | Articles sans aucun tag | 5 |
+
+## Texte des articles : contrôles
+
+Nombre d'articles dont le texte Markdown présente encore le défaut (après nettoyage).
+
+| Contrôle | Articles |
+|---|---|
+| Articles avec texte | 1175 |
+| Bulletin d'abonnement | 0 |
+| Mentions légales (directeur de la publication, commission paritaire, ISSN) | 1 |
+| En-tête de page resté dans le texte (« C.P.S. … – page N ») | 1 |
+| Lien de navigation du site | 0 |
+| Intertitre sans lettre | 0 |
+| Intertitre de 30 mots ou plus | 46 |
+| « ## » ailleurs qu'en tête (réservé au titre) | 0 |
+| Texte commençant au milieu d'une phrase (minuscule) | 10 |
 
 ## Anomalies
 

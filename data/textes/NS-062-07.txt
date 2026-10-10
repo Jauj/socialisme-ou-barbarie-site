@@ -68,16 +68,16 @@ Un régime aux abois
 
 Depuis la mort de Chávez, le régime dirigé par Maduro est aux abois. De fait le régime bonapartiste a besoin du charisme du chef, et Maduro n’est qu’un épigone. De plus, la crise économique que connaît le Venezuela n’arrange pas les affaires politiques de ce dernier. Mais il faut aussi préciser que l’aura de Chávez lui-même n’avait pas empêché l’opposition de se reconstituer. Si l’on suit les résultats de Chávez, il n’a cessé de gagner des voix, jusqu’en 2012, où il atteint plus de 8 millions de voix, face aux différents candidats de l’opposition « démocratique », c’est-à-dire la fraction de la bourgeoisie liée à l’impérialisme, sous différentes formes et coalitions : Arias Cardenas, le oui lors du référendum révocatoire de 2004, Rosales, puis Capriles le candidat de l’actuelle MUD (table d’unité démocratique). Lors de l’élection de 2013, Maduro ne réalisait pas un mauvais score en soi (il ne perdait que 500 000 voix par rapport à Chavez) mais l’opposition bourgeoise s’était reconstituée derrière la candidature de Capriles.
 
-|  | 2000 | 2004 * | 2006 | 2012 | 2013 |
+| | 2000 | 2004 * | 2006 | 2012 | 2013 |
 | --- | --- | --- | --- | --- | --- |
 | % participation | 56 | 69,9 | 74 | 80,56 | 79,7 |
-| H. Chávez | 3 757 733 |  | 7 309 080 | 8 191 132 |  |
-| F. Arias Cardenas (opposition ) | 2 359 459 |  |  |  |  |
-| No |  | 5 800 629 |  |  |  |
-| Sí (opposition) |  | 3 989 008 |  |  |  |
-| Rosales (opposition) |  |  | 4 292 466 |  |  |
-| Capriles (opposition) |  |  |  | 6 591 304 | 7 363 264 |
-| Maduro |  |  |  |  | 7 587 532 |
+| H. Chávez | 3 757 733 | | 7 309 080 | 8 191 132 | |
+| F. Arias Cardenas (opposition ) | 2 359 459 | | | | |
+| No | | 5 800 629 | | | |
+| Sí (opposition) | | 3 989 008 | | | |
+| Rosales (opposition) | | | 4 292 466 | | |
+| Capriles (opposition) | | | | 6 591 304 | 7 363 264 |
+| Maduro | | | | | 7 587 532 |
 
 *En 2004 un référendum révocatoire a été organisé sur demande des partis de l’opposition « démocratique » bourgeoise.
 
@@ -87,7 +87,7 @@ Depuis 2012, le déclin électoral du régime s’est transformé en défaite ci
 
 Les élections de 2015 ont donc mené à la victoire de la MUD, face à la coalition articulée autour du PSUV, le grand pôle patriotique Simon Bolivar.
 
-|  | 2010 | | 2015 | |
+| | 2010 | | 2015 | |
 | --- | --- | --- | --- | --- |
 | inscrits | 17 712 768 | | 19 504 106 | |
 | exprimés | 11 097 667 | 66,45 % | 14 385 349 | 74,17 % |
@@ -165,12 +165,8 @@ C’est dans ce combat que se dégageront les militants pour la construction d�
 
 Le 5 août 2016
 
-«
-
 De tous les événements survenus depuis le mois d’août, depuis que cet article a été écrit, de tous les nuages noirs qui s’amoncèlent sur l’horizon bolivarien de Maduro, le plus menaçant pour son régime est la chute définitive de Dilma Roussef, dont le sénat brésilien a confirmé l’impeachment le 31 août. Avec l’élection de Macri en Argentine, en novembre 2015, elle semble confirmer le retournement de conjoncture en Amérique latine. La campagne de l’opposition s’est d’ailleurs momentanément intensifiée, pour culminer dans une grande manifestation, massive, organisée par la MUD (table d’unité démocratique) le 1er septembre, manifestation présomptueusement appelée « prise de Caracas » mais qui toutefois regroupait des centaines de milliers de manifestants, faisant disparaître politiquement du paysage la contre-manifestation organisée par le pouvoir. Pour autant, si l’opposition a tenté de prolonger cette mobilisation à la semaine suivante, la mobilisation s’est largement dégonflée. Les partis de l’opposition regroupés dans la MUD tentent donc de faire progresser le plus rapidement possible le référendum révocatoire dont ils ont réussi à faire enregistrer la procédure préparatoire auprès du tribunal constitutionnel.
 
 Menacé, le régime tend donc encore son caractère bonapartiste, Maduro a prolongé pour la quatrième fois l’état d’urgence économique, renforcé l’armement de la police, et militarisé la distribution économique en nommant 18 officiers supérieurs responsables de la distribution de 18 produits de base, huile, sucre, viande, farine de maïs, blé, poisson, produits pharmaceutiques, détergents et savon, ou papier hygiénique. C’est là que la situation économique et monétaire n’offre aucune perspective d’amélioration immédiate. Tandis que la situation des masses s’aggrave de jour en jour. Jusqu’à quel point les tensions et contradictions peuvent-elles s’accumuler ? c’est l’enjeu des semaines à venir.
 
 C’est donc dans ce contexte toujours plus menaçant qu’il faut tirer le bilan du « socialisme du XXIe siècle ».
-
-[ http://socialisme.free.fr - © A.E.P.S., 1 Bis Rue GUTENBERG, 93100 MONTREUIL ]

@@ -30,8 +30,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import assemblage  # noqa: E402
 import html_markdown  # noqa: E402
 import localiser  # noqa: E402
+import nettoyage  # noqa: E402
 import parse_sommaire  # noqa: E402
 import parse_tags  # noqa: E402
+import pdf_markdown  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "sources"
@@ -479,7 +481,7 @@ CREATE TABLE articles (
   url_pdf TEXT,
   pdf_page INTEGER,               -- page dans le PDF quand le site la précise
   page_debut INTEGER,             -- page de début dans le PDF de la publication (ou dans url_pdf)
-  page_debut_source TEXT,         -- site | titre (titre de l'article retrouvé dans le texte des pages)
+  page_debut_source TEXT,         -- site | sommaire (imprimé en une) | titre (retrouvé dans les pages) | ordre (1er article, page 1)
   autres_liens TEXT,              -- JSON
   origine TEXT NOT NULL,          -- sommaire | index_thematique
   texte_markdown TEXT,            -- texte intégral en Markdown (## titre affiché, ### intertitres, > citations, [^n] notes)
@@ -654,7 +656,10 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| — avec texte découpé dans le PDF du numéro (titre → article suivant) | {sum(1 for a in articles if a.get('texte_type') == 'pages_numero')} |",
         f"| — avec texte (total, Markdown et brut) | {sum(1 for a in articles if a.get('texte_markdown'))} |",
         f"| — page de début indiquée par le site | {sum(1 for a in articles if a.get('page_debut_source') == 'site')} |",
+        f"| — page de début donnée par le sommaire imprimé en une | {sum(1 for a in articles if a.get('page_debut_source') == 'sommaire')} |",
         f"| — page de début retrouvée par le titre | {sum(1 for a in articles if a.get('page_debut_source') == 'titre')} |",
+        f"| — premier article du sommaire, non retrouvé : début de la première page | {sum(1 for a in articles if a.get('page_debut_source') == 'ordre')} |",
+        f"| — texte découpé dont la fin est incertaine (article suivant non retrouvé) | {sum(1 for a in articles if 'fin incertaine' in (a.get('texte_source') or ''))} |",
         f"| Publications dont le texte intégral est disponible (pages) | {sum(1 for p in pubs if p['id'] in pages)} |",
         f"| — dont océrisées (scans) | {sum(1 for p in pubs if pages.get(p['id'], {}).get('methode') == 'ocr_tesseract')} |",
         f"| Pages de texte | {sum(len(v['pages']) for k, v in pages.items() if k in {p['id'] for p in pubs})} |",
@@ -664,6 +669,34 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| Articles sans aucun tag | {len({a['id'] for a in articles} - {l[0] for l in liens_tags})} |",
         "",
     ]
+    # contrôles du texte Markdown (bruit résiduel après nettoyage.py)
+    textes = [a["texte_markdown"] for a in articles if a.get("texte_markdown")]
+
+    def nb(f):
+        return sum(1 for t in textes if f(t))
+
+    def titre_dans_le_corps(t):
+        blocs = t.split("\n\n")
+        i0 = next((k for k, b in enumerate(blocs) if b.startswith("#")), len(blocs))
+        while i0 < len(blocs) and blocs[i0].startswith("#"):
+            i0 += 1
+        return any(b.startswith("## ") for b in blocs[i0:])
+    controles = [
+        ("Bulletin d'abonnement", nettoyage.R_BULLETIN.search),
+        ("Mentions légales (directeur de la publication, commission paritaire, ISSN)", nettoyage.R_MENTIONS.search),
+        ("En-tête de page resté dans le texte (« C.P.S. … – page N »)", nettoyage.R_ENTETE_PAGE.search),
+        ("Lien de navigation du site", nettoyage.R_NAV.search),
+        ("Intertitre sans lettre", re.compile(r"^#{2,6}[^\w\n]*$", re.M).search),
+        ("Intertitre de 30 mots ou plus", re.compile(r"^#{2,6} (?:\S+[ \t]+){29,}\S+", re.M).search),
+        ("« ## » ailleurs qu'en tête (réservé au titre)", titre_dans_le_corps),
+        ("Texte commençant au milieu d'une phrase (minuscule)",
+         lambda t: re.match(r"[a-zàâéèêîôûç]", t.lstrip("#*> -"))),
+    ]
+    lignes += ["## Texte des articles : contrôles", "",
+               "Nombre d'articles dont le texte Markdown présente encore le défaut (après nettoyage).", "",
+               "| Contrôle | Articles |", "|---|---|", f"| Articles avec texte | {len(textes)} |"]
+    lignes += [f"| {nom} | {nb(f)} |" for nom, f in controles]
+    lignes.append("")
     par_type = defaultdict(list)
     for typ, ref, msg in anomalies:
         par_type[typ].append((ref, msg))
@@ -735,7 +768,9 @@ def charger_pages(publications):
     return pages, meta
 
 
-MAX_PAGES_ARTICLE = 12
+# fin d'un article suivi, dans le sommaire, d'articles qu'on n'a pas retrouvés dans les pages :
+# on ne sait pas où il s'arrête, on borne son texte
+MAX_PAGES_FIN_INCERTAINE = 16
 
 
 def brut_vers_md(texte):
@@ -751,11 +786,21 @@ def charger_textes(articles, publications, pages):
     1. page HTML ou PDF propre à l'article (fetch_textes.py + extraire_markdown.py) ;
     2. PDF d'une publication qui ne contient qu'un texte (supplément…) ;
     3. découpage du PDF de la publication : le titre de l'article est cherché parmi
-       les intertitres (assemblage.py), en commençant par la page indiquée par le site
-       quand il y en a une ; le texte va jusqu'au titre de l'article suivant."""
+       les intertitres (assemblage.py), en commençant par la page indiquée par le site,
+       à défaut par le sommaire imprimé en une ; le texte va du titre (surtitre compris)
+       jusqu'au titre de l'article suivant.
+    Tous les textes passent ensuite par nettoyage.py (bruit éditorial, intertitres)."""
     dossier = DATA / "textes"
     meta_path = dossier / "index.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    vocab = pdf_markdown.vocabulaire_du_corpus(DATA / "pages", dossier)
+    # rubriques : débuts de titres (avant « : » ou « ( ») communs à au moins trois publications
+    pubs_rubrique = defaultdict(set)
+    for a in articles:
+        r = assemblage.rubrique(a["titre"])
+        if len(r) >= 2 and localiser.jetons_titre(" ".join(r)) and " ".join(r) != " ".join(localiser.jetons(a["titre"])):
+            pubs_rubrique[r].add(a["publication_id"])
+    rubriques = frozenset(r for r, ps in pubs_rubrique.items() if len(ps) >= 3)
     par_pub = defaultdict(list)
     for a in articles:
         par_pub[a["publication_id"]].append(a)
@@ -787,43 +832,65 @@ def charger_textes(articles, publications, pages):
         seul = propres[0] if len(propres) == 1 else None
         if seul and not etrangers and not seul["pdf_page"] and (not seul["url_pdf"] or seul["url_pdf"] == v["source"]):
             if seul["texte_markdown"] is None:
-                seul["texte_markdown"] = assemblage.extraire(blocs, 0, len(blocs))
+                seul["texte_markdown"] = assemblage.extraire(blocs, 0, len(blocs), vocab)
                 seul["texte_type"] = "pdf_publication"
                 seul["texte_source"] = f"{v['source']} ({v['methode']})"
             continue
         imposees = {i: a["pdf_page"] for i, a in enumerate(membres)
                     if a["pdf_page"] and a["url_pdf"] == v["source"] and a["pdf_page"] <= len(pages_md)}
         titres = [a["titre"] for a in membres]
-        debuts = assemblage.localiser_blocs(titres, blocs, imposees)
-        # repli : titre retrouvé en début de ligne dans le texte brut (localiser.py)
+        indiquees = assemblage.indices_sommaire(assemblage.sommaire_imprime(v["pages"]), titres[:len(propres)],
+                                                len(pages_md))
+        debuts, sources = assemblage.localiser_blocs(titres, blocs, imposees, pages_indiquees=indiquees,
+                                                     rubriques=rubriques)
+        # repli : titre retrouvé en début de ligne dans le texte brut (localiser.py), près de la
+        # page du sommaire imprimé quand il y en a une
         for i, page in enumerate(localiser.localiser(titres, v["pages"])):
-            if debuts[i] is None and page and page not in {blocs[d][0] for d in debuts if d is not None}:
+            # (la une, où figure le sommaire, cite les titres des articles qu'il annonce plus loin)
+            if debuts[i] is None and page and page not in {blocs[d][0] for d in debuts if d is not None} \
+                    and not (i in indiquees and page <= 2 and indiquees[i] > page + 1):
                 debuts[i] = assemblage.meilleur_bloc_page(titres[i], blocs, page)
                 if debuts[i] is None:
                     debuts[i] = next((k for k, b in enumerate(blocs) if b[0] == page), None)
+                sources[i] = "titre"
+        en_une = publications[pid]["type"] in ("numero", "numero_special")
+        assemblage.placer_selon_sommaire(debuts, sources, blocs, indiquees, titres, en_une)
+        debuts = assemblage.ajuster_debuts(debuts, blocs, sources, en_une)
         positions = sorted({d for d in debuts if d is not None})
         for i, a in enumerate(membres):
             k = debuts[i]
             if k is None:
                 continue
             page = blocs[k][0]
-            a["page_debut"], a["page_debut_source"] = page, ("site" if i in imposees else "titre")
+            a["page_debut"], a["page_debut_source"] = page, sources[i]
             fin = next((d for d in positions if d > k), len(blocs))
-            fin = next((j for j in range(k, fin) if blocs[j][0] >= page + MAX_PAGES_ARTICLE), fin)
+            # articles du sommaire non retrouvés entre celui-ci et le suivant : fin incertaine
+            suivant = next((j for j, d in enumerate(debuts) if d == fin), len(propres))
+            incertaine = any(debuts[j] is None for j in range(i + 1, min(suivant, len(propres))))
+            if incertaine:
+                fin = next((j for j in range(k, fin) if blocs[j][0] >= page + MAX_PAGES_FIN_INCERTAINE), fin)
             if a["texte_markdown"] is not None:
                 continue
-            md = assemblage.extraire(blocs, k, fin)
+            md = assemblage.extraire(blocs, k, fin, vocab)
             if md.strip():
                 a["texte_markdown"] = md
                 a["texte_type"] = "pages_numero"
                 a["texte_source"] = (f"{v['source']} pages {page}-{blocs[fin - 1][0]} ({v['methode']} ; "
-                                     "du titre de l'article à celui de l'article suivant, découpage automatique)")
+                                     "du titre de l'article à celui de l'article suivant, découpage automatique"
+                                     + ("; fin incertaine, article suivant non retrouvé" if incertaine else "") + ")")
 
-    # texte brut dérivé du Markdown
+    # nettoyage (bruit éditorial, intertitres) et texte brut dérivé du Markdown
     for a in articles:
+        if a["texte_markdown"]:
+            debut = a["texte_type"] != "pages_numero" or a["page_debut"] == 1
+            a["texte_markdown"] = nettoyage.nettoyer(a["texte_markdown"], vocab, debut_document=debut,
+                                                     article=True, titre=a["titre"],
+                                                     recoudre=a["texte_type"] != "html")
         if a["texte_markdown"]:
             a["texte_markdown"] = a["texte_markdown"].strip() + "\n"
             a["texte"] = html_markdown.markdown_vers_texte(a["texte_markdown"])
+        else:
+            a["texte_markdown"] = a["texte_type"] = a["texte_source"] = None
 
 
 def chemin_markdown(a):
