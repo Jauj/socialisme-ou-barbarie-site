@@ -130,10 +130,15 @@ Avec Python : `sqlite3.connect("data/cps.sqlite")`, ou avec pandas
 
 ## Explorateur web
 
+**En ligne : <https://jauj.github.io/socialisme-ou-barbarie-site/>** (GitHub Pages, publié depuis
+la branche `gh-pages`).
+
 `explorateur/index.html` permet de parcourir la base (recherche, filtres par série, type, tag,
-période). Il lit `data/cps.json` : servir le dépôt avec un serveur web, par exemple
-`python3 -m http.server` puis ouvrir <http://localhost:8000/explorateur/>, ou activer GitHub Pages
-sur la racine du dépôt.
+période, liens directs vers la page de l'article dans le PDF). Il lit `data/cps.json`. En local :
+`python3 -m http.server` à la racine du dépôt, puis <http://localhost:8000/explorateur/>.
+
+Pour mettre le site en ligne à jour après une reconstruction de la base, pousser le même commit
+sur la branche `gh-pages` : `git push origin HEAD:gh-pages`.
 
 ## Reconstruire la base
 
