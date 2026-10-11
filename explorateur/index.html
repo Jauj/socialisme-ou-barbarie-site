@@ -375,7 +375,7 @@ function afficher() {
     const meta = document.createElement("div");
     meta.className = "meta";
     meta.append(`${dateFr(x.date)} · `, lienNumero(x.pub), ` · ${x.id}` + (x.date_redaction ? ` · rédigé le ${dateFr(x.date_redaction)}` : "")
-      + (x.origine === "pdf" ? " · absent du sommaire du site, ajouté d'après le sommaire imprimé" : ""));
+      + (x.origine === "pdf" ? " · ajouté d'après le sommaire imprimé du numéro (absent du site)" : ""));
     const titre = document.createElement("div");
     titre.className = "titre";
     titre.textContent = x.titre;

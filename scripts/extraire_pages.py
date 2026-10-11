@@ -129,6 +129,17 @@ def qualite(texte, connus):
     return (sum(1 for w in ms if w not in connus) / len(ms) if ms else 0.0), len(CONFUSIONS.findall(texte))
 
 
+def meilleure_une(ancienne, nouvelle, titres, nb_pages):
+    """Page de une (1-2) : la version dont le sommaire imprimé apparie le plus d'articles du site.
+    Le modèle « best » lit mieux le texte courant mais parfois moins bien les encadrés de sommaire
+    (points de conduite pris pour des mots, renvoi « P.1 » lu « P. 4 »), qui guident le découpage."""
+    import assemblage
+
+    def apparies(texte):
+        return len(assemblage.indices_sommaire(assemblage.sommaire_imprime([texte]), titres, nb_pages))
+    return ancienne if titres and apparies(ancienne) > apparies(nouvelle) else nouvelle
+
+
 def nettoyer(t):
     t = t.replace("\r", "").replace("\f", "")
     t = re.sub(r"[ \t]+\n", "\n", t)
@@ -168,7 +179,8 @@ def main():
             m = index.get(pid, {})
             if args.refaire_ocr and m.get("statut") == "ok" and m.get("methode") == "ocr_tesseract" \
                     and "identique_a" not in m and m.get("ocr", {}).get("modele") != modele:
-                refaire_ocr(pid, url, m, pool, args, modele, connus, i, len(pubs))
+                titres = [t for t, in db.execute("SELECT titre FROM articles WHERE publication_id = ? ORDER BY ordre", (pid,))]
+                refaire_ocr(pid, url, m, pool, args, modele, connus, i, len(pubs), titres)
                 sauver_index()
                 continue
             if pid in index and index[pid].get("statut") in ("ok", "introuvable") and index[pid]["source"] == url:
@@ -210,8 +222,9 @@ def main():
             print(f"[{i}/{len(pubs)}] {pid} : {methode}, {len(pages)} pages, {time.time() - t0:.0f}s", flush=True)
 
 
-def refaire_ocr(pid, url, m, pool, args, modele, connus, i, total):
-    """Nouvel OCR d'une publication scannée ; garde, page par page, la meilleure version."""
+def refaire_ocr(pid, url, m, pool, args, modele, connus, i, total, titres=()):
+    """Nouvel OCR d'une publication scannée ; garde, page par page, la meilleure version
+    (et, pour la une, celle dont le sommaire imprimé est le mieux lu)."""
     t0 = time.time()
     pdf = CACHE / url.rsplit("/", 1)[-1].replace("%20", " ")
     if not telecharger(url, pdf):
@@ -223,15 +236,14 @@ def refaire_ocr(pid, url, m, pool, args, modele, connus, i, total):
     if len(nouvelles) != len(anciennes):
         print(f"[{i}/{total}] {pid} : {len(nouvelles)} pages au lieu de {len(anciennes)}, OCR inchangé", flush=True)
         return
-    gardees, remplacees = [], 0
+    gardees = []
     for ancienne, nouvelle in zip(anciennes, nouvelles):
         (inc_a, conf_a), (inc_n, conf_n) = qualite(ancienne, connus), qualite(nouvelle, connus)
         # la nouvelle version, sauf si elle est nettement moins lisible sans réduire les confusions
-        if inc_n <= inc_a + 0.01 or conf_n < conf_a:
-            gardees.append(nouvelle)
-            remplacees += nouvelle != ancienne
-        else:
-            gardees.append(ancienne)
+        gardees.append(nouvelle if inc_n <= inc_a + 0.01 or conf_n < conf_a else ancienne)
+    for k in range(min(2, n)):
+        gardees[k] = meilleure_une(anciennes[k], gardees[k], titres, n)
+    remplacees = sum(1 for g, a in zip(gardees, anciennes) if g != a)
     (OUT / f"{pid}.txt").write_text("\f".join(gardees) + "\n", encoding="utf-8")
     m.update(caracteres=sum(len(p) for p in gardees),
              ocr={"modele": modele, "pages_remplacees": remplacees, "date": time.strftime("%Y-%m-%d")})

@@ -312,7 +312,10 @@ def extraire(blocs, debut, fin, vocab=None):
 R_ENTREE = re.compile(r"(?P<lead>(?:\.\s?){2,}|…+)(?P<bruit>[^\n]{0,90}?)"
                       r"(?P<ref>(?:\bP\s*[.,]?\s*|\bp\s*[.,\-]?\s*)?(?P<page>\d{1,2}))\s*[^\w\n]{0,2}$")
 # entrée sans points de conduite (OCR) : « LA POLITIQUE DE NOTRE CERCLE … issues P.13 »
-R_ENTREE_NUE = re.compile(r"^(?P<titre>.*?[A-ZÉ]{2}[^a-z\n]*?)(?:\s+[a-zéèàç0-9][^\s]*)*\s*\bP\s*[.,]\s*(?P<page>\d{1,2})\s*\W{0,2}$")
+# (points de conduite lus comme des mots, « EDITORIAL. Lee ae a as aa een .P.1 » : les mots parasites
+# contiennent des minuscules, le titre n'en contient pas)
+R_ENTREE_NUE = re.compile(r"^(?P<titre>.*?[A-ZÉ]{2}[^a-z\n]*?)(?:\s+(?=\S*[a-zéèàç0-9])\S+)*"
+                          r"\s*[.,…]*\s*\bP\s*[.,]\s*(?P<page>\d{1,2})\s*\W{0,2}$")
 PUCES_SOMMAIRE = re.compile(r"^[\s*•+#°\-–—-]*(?:e\s+(?=[A-ZÉ]))?")
 
 

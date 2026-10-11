@@ -15,6 +15,14 @@ class SommaireImprime(unittest.TestCase):
                          [("ÉDITORIAL", 1), ("NOTES SUR LA SITUATION INTERNATIONALE", 11),
                           ("ENSEIGNEMENT PUBLIC", 18), ("LA POLITIQUE DE NOTRE CERCLE: COMBATTRE POUR LE SOCIALISME", 13)])
 
+    def test_points_de_conduite_lus_comme_des_mots(self):
+        page = ("Sommaire:\n* EDITORIAL. Lee ae a as aa a a een ee ee es ae ea eee .P.1\n"
+                "* ENSEIGNEMENT PUBLIC: POUR LE BOYCOTT. Lasers era see des sa a ea eee .P. 10\n"
+                "* ON NOUS COMMUNIQUE (ENSEIGNEMENT PUBLIC)... csrera car ana man er cas P.14\n")
+        self.assertEqual(A.sommaire_imprime([page]),
+                         [("EDITORIAL", 1), ("ENSEIGNEMENT PUBLIC: POUR LE BOYCOTT", 10),
+                          ("ON NOUS COMMUNIQUE (ENSEIGNEMENT PUBLIC)", 14)])
+
     def test_renvoi_illisible_ignore(self):
         page = ("* EDITORIAL ........ P.1\n* AUTRE ARTICLE ........ P.4\n"
                 "* UNE ANNEE DECISIVE POUR L'ENSEIGNEMENT PUBLIC.................... 1.42\n")
