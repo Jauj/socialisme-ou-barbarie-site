@@ -25,6 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import corrections_ocr  # noqa: E402
 import extraire_pages  # noqa: E402
 import fetch_textes  # noqa: E402
 import html_markdown  # noqa: E402
@@ -79,6 +80,7 @@ def main():
             continue
         bruts = (PAGES / f"{pid}.txt").read_text(encoding="utf-8").rstrip("\n").split("\f")
         if m["methode"] == "ocr_tesseract":
+            bruts = corrections_ocr.appliquer(pid, bruts)  # pages relues (data/corrections_ocr/)
             pages_md = [pdf_markdown.page_markdown_ocr(t, vocab) for t in bruts]
         else:
             pdf = extraire_pages.CACHE / m["source"].rsplit("/", 1)[-1].replace("%20", " ")

@@ -11,8 +11,18 @@ Sortie : data/pages/<id_publication>.txt, pages séparées par un saut de page (
 et data/pages/index.json (méthode, nombre de pages, URL source, statut).
 Le script reprend là où il s'était arrêté (publications déjà traitées ignorées).
 
-Dépendances : poppler-utils (pdftotext, pdftoppm, pdfinfo), tesseract-ocr + tesseract-ocr-fra.
+OCR : chaque page est rendue à la résolution native du scan (pdfimages -list ; les scans
+de CPS sont en noir et blanc à 400 ppp), bornée entre 300 et 600 dpi. Avec --tessdata, un
+autre modèle Tesseract peut être utilisé ; le modèle « best » (tessdata_best, ou sa version
+entière du paquet npm @tesseract.js-data/fra : 4.0.0_best_int) supprime les confusions
+systématiques du modèle standard (« Île » pour « le », « 11 » pour « Il », « Ja » pour « la »).
+--refaire-ocr refait l'OCR des publications scannées déjà traitées et garde, page par page,
+la meilleure des deux versions (part de mots inconnus d'un vocabulaire tiré des textes non
+océrisés, et nombre de ces confusions).
+
+Dépendances : poppler-utils (pdftotext, pdftoppm, pdfinfo, pdfimages), tesseract-ocr + tesseract-ocr-fra.
 Usage : python3 scripts/extraire_pages.py [--ids NS-097 AS-001 …] [--workers 4] [--garder-pdf]
+                                          [--tessdata DOSSIER] [--refaire-ocr]
 """
 import argparse
 import json
@@ -70,16 +80,53 @@ def texte_natif(pdf):
     return out.stdout.decode("utf-8", "replace").split("\f")
 
 
+def resolution_native(pdf, page):
+    """Résolution (ppp) de la plus grande image de la page, bornée entre 300 et 600."""
+    out = subprocess.run(["pdfimages", "-f", str(page), "-l", str(page), "-list", str(pdf)],
+                         capture_output=True, text=True, errors="replace").stdout
+    meilleure, ppp = 0, RESOLUTION_OCR
+    for ligne in out.splitlines()[2:]:
+        c = ligne.split()
+        if len(c) >= 14 and c[2] == "image" and c[3].isdigit() and c[12].isdigit():
+            if int(c[3]) * int(c[4]) > meilleure:
+                meilleure, ppp = int(c[3]) * int(c[4]), int(c[12])
+    return min(600, max(300, ppp))
+
+
 def ocr_page(args):
-    pdf, page = args
+    pdf, page, tessdata = args
     env = {**os.environ, "OMP_THREAD_LIMIT": "1"}
     with tempfile.TemporaryDirectory() as tmp:
         base = Path(tmp) / "p"
-        subprocess.run(["pdftoppm", "-r", str(RESOLUTION_OCR), "-gray", "-tiff", "-f", str(page), "-l", str(page),
-                        "-singlefile", str(pdf), str(base)], check=True, capture_output=True)
-        res = subprocess.run(["tesseract", str(base) + ".tif", "stdout", "-l", "fra", "--psm", "1"],
-                             capture_output=True, env=env)
+        subprocess.run(["pdftoppm", "-r", str(resolution_native(pdf, page)), "-gray", "-tiff", "-f", str(page),
+                        "-l", str(page), "-singlefile", str(pdf), str(base)], check=True, capture_output=True)
+        cmd = ["tesseract", str(base) + ".tif", "stdout", "-l", "fra", "--psm", "1"]
+        if tessdata:
+            cmd[3:3] = ["--tessdata-dir", str(tessdata)]
+        res = subprocess.run(cmd, capture_output=True, env=env)
         return res.stdout.decode("utf-8", "replace")
+
+
+CONFUSIONS = re.compile(r"(?<=[a-zé,] )Îles? |(?:^|[.!?] )11s? [a-zé]|(?<= )[Jj]a (?=[a-zé])|(?<= )ia (?=[a-zé])", re.M)
+
+
+def vocabulaire_propre():
+    """Mots (3 lettres et plus) des textes non océrisés : pages à couche texte, textes HTML."""
+    from collections import Counter
+    freq = Counter()
+    index = json.loads((OUT / "index.json").read_text(encoding="utf-8"))
+    fichiers = [OUT / f"{pid}.txt" for pid, m in index.items()
+                if m.get("statut") == "ok" and m.get("methode") == "pdf_texte" and "identique_a" not in m]
+    fichiers += sorted((ROOT / "data" / "textes").glob("*.txt"))
+    for f in fichiers:
+        freq.update(w.lower() for w in re.findall(r"[^\W\d_]{3,}", f.read_text(encoding="utf-8")))
+    return {w for w, n in freq.items() if n >= 2}
+
+
+def qualite(texte, connus):
+    """(part de mots inconnus, nombre de confusions typiques) d'une page océrisée."""
+    ms = [w.lower() for w in re.findall(r"[^\W\d_]{3,}", texte)]
+    return (sum(1 for w in ms if w not in connus) / len(ms) if ms else 0.0), len(CONFUSIONS.findall(texte))
 
 
 def nettoyer(t):
@@ -95,7 +142,11 @@ def main():
     ap.add_argument("--workers", type=int, default=os.cpu_count() or 2)
     ap.add_argument("--garder-pdf", action="store_true", help="ne pas supprimer les PDF du cache après traitement")
     ap.add_argument("--sans-ocr", action="store_true", help="ne traiter que les PDF à couche texte")
+    ap.add_argument("--tessdata", help="dossier du modèle Tesseract (fra.traineddata) à utiliser")
+    ap.add_argument("--refaire-ocr", action="store_true",
+                    help="refaire l'OCR des publications scannées et garder la meilleure version de chaque page")
     args = ap.parse_args()
+    modele = "fra " + (Path(args.tessdata).name if args.tessdata else "standard")
 
     db = sqlite3.connect(ROOT / "data" / "cps.sqlite")
     pubs = db.execute("SELECT id, url_pdf FROM publications WHERE url_pdf IS NOT NULL AND pdf_disponible = 1 "
@@ -111,8 +162,15 @@ def main():
 
     # un même PDF peut servir à plusieurs publications : on le traite une fois
     deja_fait = {v["source"]: k for k, v in index.items() if v.get("statut") == "ok"}
+    connus = vocabulaire_propre() if args.refaire_ocr else None
     with ProcessPoolExecutor(max_workers=args.workers) as pool:
         for i, (pid, url) in enumerate(pubs, 1):
+            m = index.get(pid, {})
+            if args.refaire_ocr and m.get("statut") == "ok" and m.get("methode") == "ocr_tesseract" \
+                    and "identique_a" not in m and m.get("ocr", {}).get("modele") != modele:
+                refaire_ocr(pid, url, m, pool, args, modele, connus, i, len(pubs))
+                sauver_index()
+                continue
             if pid in index and index[pid].get("statut") in ("ok", "introuvable") and index[pid]["source"] == url:
                 continue
             if url in deja_fait:
@@ -138,16 +196,51 @@ def main():
                 continue
             else:
                 methode = "ocr_tesseract"
-                pages = list(pool.map(ocr_page, [(pdf, k) for k in range(1, n + 1)]))
+                pages = list(pool.map(ocr_page, [(pdf, k, args.tessdata) for k in range(1, n + 1)]))
             pages = [nettoyer(p) for p in pages]
             (OUT / f"{pid}.txt").write_text("\f".join(pages) + "\n", encoding="utf-8")
             index[pid] = {"source": url, "statut": "ok", "methode": methode, "pages": len(pages),
                           "caracteres": sum(len(p) for p in pages)}
+            if methode == "ocr_tesseract":
+                index[pid]["ocr"] = {"modele": modele}
             deja_fait[url] = pid
             sauver_index()
             if not args.garder_pdf:
                 pdf.unlink(missing_ok=True)
             print(f"[{i}/{len(pubs)}] {pid} : {methode}, {len(pages)} pages, {time.time() - t0:.0f}s", flush=True)
+
+
+def refaire_ocr(pid, url, m, pool, args, modele, connus, i, total):
+    """Nouvel OCR d'une publication scannée ; garde, page par page, la meilleure version."""
+    t0 = time.time()
+    pdf = CACHE / url.rsplit("/", 1)[-1].replace("%20", " ")
+    if not telecharger(url, pdf):
+        print(f"[{i}/{total}] {pid} : PDF introuvable, OCR inchangé", flush=True)
+        return
+    anciennes = (OUT / f"{pid}.txt").read_text(encoding="utf-8").rstrip("\n").split("\f")
+    n = nb_pages(pdf)
+    nouvelles = [nettoyer(p) for p in pool.map(ocr_page, [(pdf, k, args.tessdata) for k in range(1, n + 1)])]
+    if len(nouvelles) != len(anciennes):
+        print(f"[{i}/{total}] {pid} : {len(nouvelles)} pages au lieu de {len(anciennes)}, OCR inchangé", flush=True)
+        return
+    gardees, remplacees = [], 0
+    for ancienne, nouvelle in zip(anciennes, nouvelles):
+        (inc_a, conf_a), (inc_n, conf_n) = qualite(ancienne, connus), qualite(nouvelle, connus)
+        # la nouvelle version, sauf si elle est nettement moins lisible sans réduire les confusions
+        if inc_n <= inc_a + 0.01 or conf_n < conf_a:
+            gardees.append(nouvelle)
+            remplacees += nouvelle != ancienne
+        else:
+            gardees.append(ancienne)
+    (OUT / f"{pid}.txt").write_text("\f".join(gardees) + "\n", encoding="utf-8")
+    m.update(caracteres=sum(len(p) for p in gardees),
+             ocr={"modele": modele, "pages_remplacees": remplacees, "date": time.strftime("%Y-%m-%d")})
+    avant = sum(len(CONFUSIONS.findall(p)) for p in anciennes)
+    apres = sum(len(CONFUSIONS.findall(p)) for p in gardees)
+    if not args.garder_pdf:
+        pdf.unlink(missing_ok=True)
+    print(f"[{i}/{total}] {pid} : nouvel OCR, {remplacees}/{n} pages remplacées, confusions {avant} → {apres}, "
+          f"{time.time() - t0:.0f}s", flush=True)
 
 
 if __name__ == "__main__":

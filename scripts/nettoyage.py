@@ -13,7 +13,9 @@ Bruit retiré :
     le texte (« Supplément à C.P.S. … – 7 juillet 2019 – page 15 ») ;
   - bandeau de une (titre du journal, « Comité pour la construction… », devise, prix) ;
   - sommaires imprimés, et traînées de caractères que l'OCR a lues dans les filets et les
-    points de conduite (« eeeneneeneeeeennnenen… »).
+    points de conduite (« eeeneneeneeeeennnenen… ») ;
+  - confusions systématiques de l'OCR corrigées en contexte : « Île/Îles » pour « le/les »,
+    « 11/11s » pour « Il/Ils », « Ja »/« ia » pour « la ».
 
 Intertitres :
   - intertitres sans lettre supprimés ; intertitres illisibles (OCR) supprimés ;
@@ -110,6 +112,24 @@ def _sans_bruit_ocr(t, vocab):
 R_ORNEMENT = re.compile(r"\s*-{2,}\s*o\s*O\s*o\s*-{2,}\s*")  # « ----- oOo ----- »
 
 
+MOIS_UNITES = (r"(?:janvier|f[ée]vrier|mars|avril|mai|juin|juillet|ao[uû]t|septembre|octobre|novembre|d[ée]cembre"
+               r"|heures?|h|ans|jours|mois|semaines|pour|sur|à|et|ou|de|des|du)\b")
+CONFUSIONS_OCR = [
+    # « préparé par Île gouvernement », « dans Îles pays » (pas « la petite île de Guam »)
+    (re.compile(r"(?<=[a-zéèàçâêîôû,] )Î(les?) (?!d[eu']|des |aux )(?=[a-zéèàç])"), r"\1 "),
+    # « 11 faut », « 11s ont » en début de phrase (pas « 11 juin », « 11 heures »)
+    (re.compile(rf"(?:(?<=^)|(?<=[.!?»«:] )|(?<=\n))11(s?) (?!{MOIS_UNITES})(?=[a-zéèàç])"), r"Il\1 "),
+    # « Ja politique », « ia lutte » au milieu d'une phrase
+    (re.compile(r"(?<=[a-zéèàç,] )(?:Ja|ia) (?=[a-zéèàç]{2})"), "la "),
+]
+
+
+def corriger_confusions_ocr(t):
+    for regex, remplacement in CONFUSIONS_OCR:
+        t = regex.sub(remplacement, t)
+    return t
+
+
 def nettoyer_en_ligne(b, vocab=None):
     b = b.replace("\u00ad", "")  # traits d'union conditionnels (« rou­lements »)
     if "~~" in b:  # suppressions des révisions Word (« ~~C~~’~~est en particulier l~~Le second degré »)
@@ -124,6 +144,7 @@ def nettoyer_en_ligne(b, vocab=None):
     t = _retirer(t, R_SUITE)
     t = _retirer(t, R_NAV)
     t = _sans_bruit_ocr(t, vocab)
+    t = corriger_confusions_ocr(t)
     t = R_LETTRINE.sub(r"\3\2", t)
     # emphases vidées par les retraits
     t = re.sub(r"(?<![\\*\w])(?:(\*{1,3})\s+\1|\*{4}(?:\*\*)?)(?![*\w])", " ", t)

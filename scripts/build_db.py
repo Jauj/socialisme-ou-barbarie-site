@@ -9,27 +9,33 @@ Entrées :
 
 Sorties :
   data/cps.sqlite           base SQLite (tables + vues + recherche plein texte)
+  data/recherche.sqlite     index plein texte de l'explorateur (expressions exactes)
+  data/cps_complet.sqlite   base complète avec le texte page par page (non versionnée)
+  data/markdown/            un fichier Markdown par article
   data/csv/*.csv            mêmes tables au format CSV (UTF-8)
   data/cps.json             export hiérarchique publications → articles → tags
   docs/RAPPORT_QUALITE.md   anomalies détectées et statistiques
 
-Usage : python3 scripts/build_db.py
+Usage : python3 scripts/build_db.py [--sans-complet]
 """
 import csv
 import difflib
+import hashlib
 import json
 import re
 import sqlite3
 import sys
 import unicodedata
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import assemblage  # noqa: E402
+import corrections_ocr  # noqa: E402
 import html_markdown  # noqa: E402
 import localiser  # noqa: E402
+import metadonnees  # noqa: E402
 import nettoyage  # noqa: E402
 import parse_sommaire  # noqa: E402
 import parse_tags  # noqa: E402
@@ -82,6 +88,14 @@ def ecart_jours(d1, d2):
         y, m, j = (int(x) for x in d.split("-"))
         return date(y, max(m, 1), max(j, 1))
     return abs((p(d1) - p(d2)).days)
+
+
+def ecart_signe(d1, d2):
+    """d1 - d2 en jours (jour ou mois 00 : le 1er)."""
+    def p(d):
+        y, m, j = (int(x) for x in d.split("-"))
+        return date(y, max(m, 1), max(j, 1))
+    return (p(d1) - p(d2)).days
 
 
 def cle_entree(e):
@@ -417,6 +431,26 @@ def ajouter_articles_index(publications, articles, non_trouves):
     return liens, restants, len({id(a) for a in nouveaux.values()})
 
 
+def ajouter_articles_pdf(publications, articles, config):
+    """Articles imprimés dans un numéro (sommaire imprimé en une) mais absents du sommaire du
+    site : section « articles_absents » de config/articles_pdf.json, entrées repérées
+    automatiquement puis relues. Leur texte est découpé dans les pages comme celui des autres
+    articles, à partir de la page indiquée."""
+    ajoutes = 0
+    for e in config.get("articles_absents", []):
+        pid = e["publication"]
+        if pid not in publications:
+            print(f"articles_pdf.json : publication inconnue {pid}", file=sys.stderr)
+            continue
+        ordre = max([a["ordre"] for a in articles if a["publication_id"] == pid] + [0]) + 1
+        articles.append({"id": f"{pid}-{ordre:02d}", "publication_id": pid, "ordre": ordre, "titre": e["titre"],
+                         "date_sommaire": None, "url_html": None, "url_pdf": None, "pdf_page": None,
+                         "autres_liens": [], "origine": "pdf", "page_sommaire": e["page"],
+                         "date": publications[pid]["date"], "serie": publications[pid]["serie"]})
+        ajoutes += 1
+    return ajoutes
+
+
 # ------------------------------------------------------ tags par règles
 
 def appliquer_regles(articles, regles, existants):
@@ -451,7 +485,8 @@ CREATE TABLE publications (
   numero INTEGER,                 -- n° dans la série (n° du numéro parent pour un supplément)
   numero_label TEXT,
   numero_cumule INTEGER,          -- n° continu depuis 1985 (nouvelle série = n° + 82)
-  date TEXT NOT NULL,             -- AAAA-MM-JJ
+  date TEXT NOT NULL,             -- AAAA-MM-JJ (date donnée par le site)
+  date_imprimee TEXT,             -- date lue dans l'en-tête de la une (JJ = 00 : mois seul), si trouvée
   titre TEXT,                     -- pour suppléments et hors-séries
   parent_id TEXT REFERENCES publications(id),
   url_pdf TEXT,
@@ -476,14 +511,16 @@ CREATE TABLE articles (
   titre_index TEXT,               -- titre plus complet donné par l'index thématique, s'il diffère
   date TEXT NOT NULL,             -- date de la publication
   date_sommaire TEXT,             -- date affichée par le site pour l'entrée d'origine
+  date_redaction TEXT,            -- date isolée qui clôt le texte (« Le 7 avril 2008 »), si présente
   serie TEXT NOT NULL,
   url_html TEXT,
   url_pdf TEXT,
   pdf_page INTEGER,               -- page dans le PDF quand le site la précise
   page_debut INTEGER,             -- page de début dans le PDF de la publication (ou dans url_pdf)
   page_debut_source TEXT,         -- site | sommaire (imprimé en une) | titre (retrouvé dans les pages) | ordre (1er article, page 1)
+                                  -- | relecture (page retrouvée par relecture : config/articles_pdf.json)
   autres_liens TEXT,              -- JSON
-  origine TEXT NOT NULL,          -- sommaire | index_thematique
+  origine TEXT NOT NULL,          -- sommaire | index_thematique | pdf (sommaire imprimé du numéro, absent du site)
   texte_markdown TEXT,            -- texte intégral en Markdown (## titre affiché, ### intertitres, > citations, [^n] notes)
   texte TEXT,                     -- le même texte, brut (sans balisage)
   texte_type TEXT,                -- html | pdf_article | pdf_publication | pages_numero (découpage automatique)
@@ -498,8 +535,8 @@ CREATE TABLE tags (
 CREATE TABLE articles_tags (
   article_id TEXT NOT NULL REFERENCES articles(id),
   tag TEXT NOT NULL REFERENCES tags(slug),
-  source TEXT NOT NULL,           -- site | regle
-  detail TEXT,                    -- méthode de rapprochement ou motif de la règle
+  source TEXT NOT NULL,           -- site (index thématique) | regle (titre) | texte (texte intégral)
+  detail TEXT,                    -- méthode de rapprochement, motif de la règle ou nombre d'occurrences
   PRIMARY KEY (article_id, tag)
 );
 CREATE INDEX idx_articles_pub ON articles(publication_id);
@@ -508,7 +545,7 @@ CREATE INDEX idx_at_tag ON articles_tags(tag);
 
 CREATE VIEW v_articles AS
 SELECT a.id, a.date, a.serie, p.type AS type_publication, p.numero_label,
-       p.id AS publication_id, a.ordre, a.titre, a.titre_index,
+       p.id AS publication_id, a.ordre, a.titre, a.titre_index, a.date_redaction,
        (SELECT group_concat(tag, ';') FROM (SELECT tag FROM articles_tags t WHERE t.article_id = a.id ORDER BY tag)) AS tags,
        a.url_html, a.url_pdf, a.pdf_page, a.page_debut, p.url_pdf AS url_pdf_numero,
        a.texte_markdown IS NOT NULL AS texte_disponible
@@ -518,13 +555,15 @@ CREATE VIEW v_tags AS
 SELECT t.slug, t.libelle, t.categorie, t.origine,
        count(at.article_id) AS nb_articles,
        sum(at.source = 'site') AS nb_site,
-       sum(at.source = 'regle') AS nb_regle
+       sum(at.source = 'regle') AS nb_regle,
+       sum(at.source = 'texte') AS nb_texte
 FROM tags t LEFT JOIN articles_tags at ON at.tag = t.slug
 GROUP BY t.slug;
 """
 
 
-COLONNES_ARTICLES = ["id", "publication_id", "ordre", "titre", "titre_index", "date", "date_sommaire", "serie",
+COLONNES_ARTICLES = ["id", "publication_id", "ordre", "titre", "titre_index", "date", "date_sommaire",
+                     "date_redaction", "serie",
                      "url_html", "url_pdf", "pdf_page", "page_debut", "page_debut_source", "autres_liens", "origine",
                      "texte_markdown", "texte", "texte_type", "texte_source"]
 
@@ -544,9 +583,9 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
     db.executescript(schema)
     db.executemany("INSERT INTO series VALUES (?,?,?)",
                    [(k, v["prefixe"], v["libelle"]) for k, v in SERIES.items()])
-    db.executemany("INSERT INTO publications VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+    db.executemany("INSERT INTO publications VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
         (p["id"], p["type"], p["serie"], p["numero"], p["numero_label"], p["numero_cumule"], p["date"],
-         p["titre"], p["parent_id"], p["url_pdf"], p["pdf_disponible"],
+         p.get("date_imprimee"), p["titre"], p["parent_id"], p["url_pdf"], p["pdf_disponible"],
          len(pages[p["id"]]["pages"]) if p["id"] in pages else None,
          pages[p["id"]]["methode"] if p["id"] in pages else None,
          " ; ".join(p["cles_sommaire"]))
@@ -585,6 +624,29 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
     db.close()
 
 
+def ecrire_index_recherche(path, articles):
+    """Index plein texte de l'explorateur, lu dans le navigateur par requêtes HTTP Range :
+    table FTS5 sans contenu (le texte reste dans cps.sqlite et data/markdown) mais avec les
+    positions (detail=full), pour la recherche d'expressions exactes. La table ids relie le
+    rowid de l'index à l'identifiant de l'article."""
+    if path.exists():
+        path.unlink()
+    db = sqlite3.connect(path)
+    db.execute("PRAGMA page_size = 4096")
+    db.execute("PRAGMA journal_mode = DELETE")
+    db.execute("CREATE TABLE ids (n INTEGER PRIMARY KEY, id TEXT NOT NULL)")
+    db.execute("CREATE VIRTUAL TABLE recherche USING fts5(titre, titre_index, texte, content='', "
+               "tokenize='unicode61 remove_diacritics 2', detail=full)")
+    for n, a in enumerate(articles, 1):
+        db.execute("INSERT INTO ids VALUES (?, ?)", (n, a["id"]))
+        db.execute("INSERT INTO recherche(rowid, titre, titre_index, texte) VALUES (?, ?, ?, ?)",
+                   (n, a["titre"], a.get("titre_index") or "", a.get("texte_markdown") or ""))
+    db.execute("INSERT INTO recherche(recherche) VALUES ('optimize')")
+    db.commit()
+    db.execute("VACUUM")
+    db.close()
+
+
 def ecrire_csv(dossier, publications, articles, tags, liens_tags):
     dossier.mkdir(parents=True, exist_ok=True)
     tags_par_article = defaultdict(list)
@@ -597,9 +659,9 @@ def ecrire_csv(dossier, publications, articles, tags, liens_tags):
             wr.writeheader()
             wr.writerows(lignes)
 
-    w("publications.csv", ["id", "type", "serie", "numero", "numero_label", "numero_cumule", "date", "titre",
+    w("publications.csv", ["id", "type", "serie", "numero", "numero_label", "numero_cumule", "date", "date_imprimee", "titre",
                            "parent_id", "url_pdf", "pdf_disponible"], publications)
-    w("articles.csv", ["id", "publication_id", "ordre", "date", "serie", "titre", "titre_index", "tags", "url_html", "url_pdf",
+    w("articles.csv", ["id", "publication_id", "ordre", "date", "date_redaction", "serie", "titre", "titre_index", "tags", "url_html", "url_pdf",
                        "pdf_page", "page_debut", "page_debut_source", "origine", "texte_disponible"],
       [{**a, "tags": ";".join(sorted(tags_par_article[a["id"]])), "texte_disponible": int(bool(a.get("texte")))}
        for a in articles])
@@ -609,14 +671,14 @@ def ecrire_csv(dossier, publications, articles, tags, liens_tags):
       [dict(zip(["article_id", "tag", "source", "detail"], l)) for l in liens_tags])
 
 
-def ecrire_json(path, publications, articles, tags, liens_tags):
+def ecrire_json(path, publications, articles, tags, liens_tags, recherche=None):
     tags_par_article = defaultdict(list)
     for aid, tag, source, _ in liens_tags:
         tags_par_article[aid].append({"tag": tag, "source": source})
     arts = defaultdict(list)
     for a in articles:
         arts[a["publication_id"]].append({
-            k: a.get(k) for k in ("id", "ordre", "titre", "titre_index", "date", "url_html", "url_pdf", "pdf_page",
+            k: a.get(k) for k in ("id", "ordre", "titre", "titre_index", "date", "date_redaction", "url_html", "url_pdf", "pdf_page",
                                   "page_debut", "page_debut_source", "origine")
         } | {"markdown": "data/" + chemin_markdown(a)} | {"tags": sorted(tags_par_article[a["id"]], key=lambda t: t["tag"]),
              "texte_disponible": bool(a.get("texte"))})
@@ -628,10 +690,13 @@ def ecrire_json(path, publications, articles, tags, liens_tags):
         "publications": [{**{k: v for k, v in p.items() if k != "cles_sommaire"}, "articles": arts[p["id"]]}
                          for p in publications],
     }
+    if recherche:
+        out["recherche"] = recherche  # index plein texte de l'explorateur (version : empreinte du fichier)
     path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, non_trouves, nb_ajouts, pages):
+def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, non_trouves, nb_ajouts, pages,
+                   lectures_dates=()):
     pubs = list(publications)
     lignes = ["# Rapport de qualité", "",
               "Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.", "",
@@ -649,6 +714,7 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| — suppléments | {compte(lambda p: p['type']=='supplement')} |",
         f"| Articles | {len(articles)} |",
         f"| — dont ajoutés depuis l'index thématique (absents du sommaire) | {nb_ajouts} |",
+        f"| — dont ajoutés d'après le sommaire imprimé du numéro (absents du site) | {sum(1 for a in articles if a['origine'] == 'pdf')} |",
         f"| — avec lien HTML | {sum(1 for a in articles if a['url_html'])} |",
         f"| — avec lien PDF propre ou page de PDF | {sum(1 for a in articles if a['url_pdf'])} |",
         f"| — avec texte intégral (page HTML ou PDF propre) | {sum(1 for a in articles if a.get('texte_type') in ('html', 'pdf_article'))} |",
@@ -659,13 +725,17 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| — page de début donnée par le sommaire imprimé en une | {sum(1 for a in articles if a.get('page_debut_source') == 'sommaire')} |",
         f"| — page de début retrouvée par le titre | {sum(1 for a in articles if a.get('page_debut_source') == 'titre')} |",
         f"| — premier article du sommaire, non retrouvé : début de la première page | {sum(1 for a in articles if a.get('page_debut_source') == 'ordre')} |",
+        f"| — page de début retrouvée par relecture (config/articles_pdf.json) | {sum(1 for a in articles if a.get('page_debut_source') == 'relecture')} |",
         f"| — texte découpé dont la fin est incertaine (article suivant non retrouvé) | {sum(1 for a in articles if 'fin incertaine' in (a.get('texte_source') or ''))} |",
         f"| Publications dont le texte intégral est disponible (pages) | {sum(1 for p in pubs if p['id'] in pages)} |",
         f"| — dont océrisées (scans) | {sum(1 for p in pubs if pages.get(p['id'], {}).get('methode') == 'ocr_tesseract')} |",
         f"| Pages de texte | {sum(len(v['pages']) for k, v in pages.items() if k in {p['id'] for p in pubs})} |",
         f"| Tags | {len(tags)} |",
         f"| Associations article-tag (index du site) | {sum(1 for l in liens_tags if l[2]=='site')} |",
-        f"| Associations article-tag (règles) | {sum(1 for l in liens_tags if l[2]=='regle')} |",
+        f"| Associations article-tag (règles sur les titres) | {sum(1 for l in liens_tags if l[2]=='regle')} |",
+        f"| Associations article-tag (déduites du texte intégral) | {sum(1 for l in liens_tags if l[2]=='texte')} |",
+        f"| Publications dont la date imprimée en une a été lue | {sum(1 for p in pubs if p.get('date_imprimee'))} |",
+        f"| Articles dont la date de rédaction a été lue (fin du texte) | {sum(1 for a in articles if a.get('date_redaction'))} |",
         f"| Articles sans aucun tag | {len({a['id'] for a in articles} - {l[0] for l in liens_tags})} |",
         "",
     ]
@@ -697,6 +767,7 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
                "| Contrôle | Articles |", "|---|---|", f"| Articles avec texte | {len(textes)} |"]
     lignes += [f"| {nom} | {nb(f)} |" for nom, f in controles]
     lignes.append("")
+    lignes += rapport_dates(lectures_dates, articles, {p["id"]: p for p in pubs})
     par_type = defaultdict(list)
     for typ, ref, msg in anomalies:
         par_type[typ].append((ref, msg))
@@ -727,6 +798,43 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
     lignes += [f"- tag `{slug}` — {e['date']} — {e['titre'][:120]}" for slug, e in non_trouves]
     lignes.append("")
     path.write_text("\n".join(lignes), encoding="utf-8")
+
+
+def rapport_dates(lectures, articles, pubs):
+    """Section du rapport : date imprimée en une contre date du site, dates de rédaction."""
+    if not lectures:
+        return []
+    ecarts = Counter(e for *_, e in lectures)
+    lignes = ["## Dates", "",
+              "Date lue dans l'en-tête de la une (premières lignes de la page 1), comparée à la date donnée "
+              "par le site. Les écarts ne sont pas corrigés : ils sont à vérifier sur le PDF.", "",
+              "| Comparaison | Publications |", "|---|---|"]
+    lignes += [f"| {e} | {n} |" for e, n in ecarts.most_common()]
+    lignes += ["", "| Publication | Date du site | Date imprimée | Lu en une | Écart |", "|---|---|---|---|---|"]
+    lignes += [f"| `{p['id']}` | {p['date']} | {d} | {extrait} | {e} |"
+               for p, d, extrait, e in sorted(lectures, key=lambda x: x[0]["date"])
+               if not e.startswith("identique")]
+    lignes.append("")
+    # date de rédaction postérieure à la date de publication, ou très antérieure
+    bizarres = []
+    for a in articles:
+        d = a.get("date_redaction")
+        if not d:
+            continue
+        p = pubs[a["publication_id"]]
+        imp = p.get("date_imprimee")
+        reference = imp if imp and not imp.endswith("-00") else p["date"]
+        ecart = ecart_signe(d, reference)
+        if ecart > 15 or ecart < -400:
+            bizarres.append((a, d, reference, ecart))
+    lignes += [f"### Dates de rédaction éloignées de la date de publication ({len(bizarres)})", "",
+               "Date qui clôt le texte postérieure de plus de 15 jours à la date de la publication, ou antérieure "
+               "de plus de 400 jours : date de publication erronée, texte republié, ou texte rattaché au mauvais "
+               "numéro.", ""]
+    lignes += [f"- `{a['id']}` : rédigé le {d}, publication du {ref} ({'+' if e > 0 else ''}{e} j) — {a['titre'][:90]}"
+               for a, d, ref, e in bizarres]
+    lignes.append("")
+    return lignes
 
 
 # --------------------------------------------------------------- main
@@ -760,6 +868,8 @@ def charger_pages(publications):
         if not f.exists():
             continue
         brut = f.read_text(encoding="utf-8").rstrip("\n").split("\f")
+        if m["methode"] == "ocr_tesseract":
+            brut = corrections_ocr.appliquer(base, brut)  # pages relues (data/corrections_ocr/)
         fm = dossier / f"{base}.md"
         md = fm.read_text(encoding="utf-8").rstrip("\n").split("\f") if fm.exists() else None
         if md is not None and len(md) != len(brut):
@@ -779,7 +889,7 @@ def brut_vers_md(texte):
     return "\n\n".join(re.sub(r"([*_`\[\]\\])", r"\\\1", p) for p in paras if p)
 
 
-def charger_textes(articles, publications, pages):
+def charger_textes(articles, publications, pages, pages_relues=None):
     """Page de début, texte Markdown et texte brut de chaque article.
 
     Texte, par ordre de préférence :
@@ -789,7 +899,10 @@ def charger_textes(articles, publications, pages):
        les intertitres (assemblage.py), en commençant par la page indiquée par le site,
        à défaut par le sommaire imprimé en une ; le texte va du titre (surtitre compris)
        jusqu'au titre de l'article suivant.
+    pages_relues : {article: {"page", "titre_imprime"}} pour les articles que la recherche
+    automatique ne retrouvait pas (section « pages_relues » de config/articles_pdf.json).
     Tous les textes passent ensuite par nettoyage.py (bruit éditorial, intertitres)."""
+    pages_relues = pages_relues or {}
     dossier = DATA / "textes"
     meta_path = dossier / "index.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
@@ -825,6 +938,9 @@ def charger_textes(articles, publications, pages):
         if not blocs:
             continue
         propres = par_pub.get(pid, [])
+        sommaire = assemblage.sommaire_imprime(v["pages"])
+        if any(a["origine"] == "pdf" for a in propres):
+            propres = ranger_articles_pdf(propres, sommaire, v["source"], len(pages_md))
         etrangers = [a for a in articles if a["publication_id"] != pid and a["pdf_page"] and a["url_pdf"] == v["source"]]
         membres = propres + etrangers
         if not membres:
@@ -839,8 +955,17 @@ def charger_textes(articles, publications, pages):
         imposees = {i: a["pdf_page"] for i, a in enumerate(membres)
                     if a["pdf_page"] and a["url_pdf"] == v["source"] and a["pdf_page"] <= len(pages_md)}
         titres = [a["titre"] for a in membres]
-        indiquees = assemblage.indices_sommaire(assemblage.sommaire_imprime(v["pages"]), titres[:len(propres)],
-                                                len(pages_md))
+        # pages retrouvées par relecture : page imposée, recherche sur le titre tel qu'imprimé
+        relues = set()
+        for i, a in enumerate(propres):
+            r = pages_relues.get(a["id"])
+            if r and i not in imposees and r["page"] <= len(pages_md):
+                imposees[i] = r["page"]
+                titres[i] = r.get("titre_imprime") or titres[i]
+                relues.add(i)
+        indiquees = assemblage.indices_sommaire(sommaire, titres[:len(propres)], len(pages_md))
+        indiquees.update({i: a["page_sommaire"] for i, a in enumerate(propres)
+                          if a.get("page_sommaire") and a["page_sommaire"] <= len(pages_md)})
         debuts, sources = assemblage.localiser_blocs(titres, blocs, imposees, pages_indiquees=indiquees,
                                                      rubriques=rubriques)
         # repli : titre retrouvé en début de ligne dans le texte brut (localiser.py), près de la
@@ -853,6 +978,7 @@ def charger_textes(articles, publications, pages):
                 if debuts[i] is None:
                     debuts[i] = next((k for k, b in enumerate(blocs) if b[0] == page), None)
                 sources[i] = "titre"
+        sources = ["relecture" if i in relues and s == "site" else s for i, s in enumerate(sources)]
         en_une = publications[pid]["type"] in ("numero", "numero_special")
         assemblage.placer_selon_sommaire(debuts, sources, blocs, indiquees, titres, en_une)
         debuts = assemblage.ajuster_debuts(debuts, blocs, sources, en_une)
@@ -893,6 +1019,55 @@ def charger_textes(articles, publications, pages):
             a["texte_markdown"] = a["texte_type"] = a["texte_source"] = None
 
 
+def ranger_articles_pdf(propres, sommaire, source, nb_pages):
+    """Articles de la publication dans l'ordre des pages : ceux ajoutés d'après le sommaire
+    imprimé (origine « pdf ») s'insèrent avant le premier article du site qui commence plus loin."""
+    site = [a for a in propres if a["origine"] != "pdf"]
+    indiquees = assemblage.indices_sommaire(sommaire, [a["titre"] for a in site], nb_pages)
+    connues = [a["pdf_page"] if a["pdf_page"] and a["url_pdf"] == source else indiquees.get(i)
+               for i, a in enumerate(site)]
+    rangees = list(site)
+    for a in sorted((a for a in propres if a["origine"] == "pdf"), key=lambda a: a["page_sommaire"]):
+        apres = next((b for b, p in zip(site, connues) if p and p > a["page_sommaire"]), None)
+        rangees.insert(rangees.index(apres) if apres else len(rangees), a)
+    return rangees
+
+
+def ajouter_dates(publications, articles, pages):
+    """Date imprimée en une de chaque publication et date de rédaction de chaque article.
+    Renvoie les lectures de date imprimée [(publication, date imprimée, extrait, écart)]."""
+    lectures = []
+    for p in publications.values():
+        p["date_imprimee"] = None
+        v = pages.get(p["id"])
+        if not v or not v["pages"]:
+            continue
+        r = metadonnees.date_imprimee(v["pages"][0], p["date"], ocr=v["methode"] == "ocr_tesseract")
+        if r:
+            p["date_imprimee"] = r[0]
+            lectures.append((p, r[0], r[1], metadonnees.comparer_dates(r[0], p["date"])))
+    for a in articles:
+        a["date_redaction"] = None
+        # texte dont la fin est incertaine : la date finale peut être celle de l'article suivant
+        if a.get("texte_markdown") and "fin incertaine" not in (a.get("texte_source") or ""):
+            r = metadonnees.date_redaction(a["texte_markdown"])
+            if r:
+                a["date_redaction"] = r[0]
+    return lectures
+
+
+def tags_du_texte(articles, config, existants):
+    """Tags déduits du texte intégral (règles « texte » de config/regles_tags.json)."""
+    if not config:
+        return []
+    deja = {(a, t) for a, t, *_ in existants}
+    avec_texte = [a for a in articles if a.get("texte_markdown")]
+    liens = []
+    for a, trouves in zip(avec_texte, metadonnees.tags_des_textes([a["texte_markdown"] for a in avec_texte], config)):
+        liens += [(a["id"], tag, "texte", f"{n} occurrences") for tag, n in trouves if (a["id"], tag) not in deja]
+    return liens
+
+
 def chemin_markdown(a):
     return f"markdown/{a['publication_id']}/{a['id']}.md"
 
@@ -918,6 +1093,10 @@ def ecrire_markdown(dossier, publications, articles, tags, liens_tags):
             ("title", y(a["titre"])),
             ("id", y(a["id"])),
             ("date", a["date"]),
+        ]
+        if a.get("date_redaction"):
+            meta.append(("date_redaction", a["date_redaction"]))
+        meta += [
             ("publication", y(p["id"])),
             ("serie", y(p["serie"])),
             ("type_publication", y(p["type"])),
@@ -974,6 +1153,9 @@ def main():
         print(f"attention : {len(manquantes)} page(s) de tag non téléchargée(s) : {manquantes}", file=sys.stderr)
     liens_site, non_trouves = associer_tags_du_site(publications, articles, tag_pages)
     liens_ajout, non_trouves, nb_ajouts = ajouter_articles_index(publications, articles, non_trouves)
+    f = CONFIG / "articles_pdf.json"
+    config_pdf = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    ajouter_articles_pdf(publications, articles, config_pdf)
 
     regles = json.loads((CONFIG / "regles_tags.json").read_text(encoding="utf-8"))
     tags = [{**t, "origine": "site"} for t in tags_site]
@@ -994,7 +1176,12 @@ def main():
         raise SystemExit(f"tags inconnus dans les règles : {inconnus}")
 
     pages, _ = charger_pages(publications)
-    charger_textes(articles, publications, pages)
+    charger_textes(articles, publications, pages, config_pdf.get("pages_relues"))
+    lectures_dates = ajouter_dates(publications, articles, pages)
+    liens_tags += tags_du_texte(articles, regles.get("texte"), liens_tags)
+    inconnus = {l[1] for l in liens_tags} - slugs
+    if inconnus:
+        raise SystemExit(f"tags inconnus dans les règles « texte » : {inconnus}")
 
     ordre_type = {"numero": 0, "numero_special": 1, "hors_serie": 2, "supplement": 3}
     pubs = sorted(publications.values(), key=lambda p: (p["date"], ordre_type[p["type"]], p["id"]))
@@ -1006,12 +1193,16 @@ def main():
     # base principale (versionnée) : sans le texte page par page, pour rester légère ;
     # base complète : avec la table pages et sa recherche plein texte
     ecrire_sqlite(DATA / "cps.sqlite", pubs, articles, tags, liens_tags, pages, avec_pages=False)
+    ecrire_index_recherche(DATA / "recherche.sqlite", articles)
     if not args.sans_complet:
         ecrire_sqlite(DATA / "cps_complet.sqlite", pubs, articles, tags, liens_tags, pages, avec_pages=True)
     ecrire_csv(DATA / "csv", pubs, articles, tags, liens_tags)
-    ecrire_json(DATA / "cps.json", pubs, articles, tags, liens_tags)
+    empreinte = hashlib.sha1((DATA / "recherche.sqlite").read_bytes()).hexdigest()[:12]
+    ecrire_json(DATA / "cps.json", pubs, articles, tags, liens_tags,
+                recherche={"fichier": "data/recherche.sqlite", "version": empreinte})
     ecrire_markdown(DATA / "markdown", pubs, articles, tags, liens_tags)
-    ecrire_rapport(DOCS / "RAPPORT_QUALITE.md", pubs, articles, tags, liens_tags, anomalies, non_trouves, nb_ajouts, pages)
+    ecrire_rapport(DOCS / "RAPPORT_QUALITE.md", pubs, articles, tags, liens_tags, anomalies, non_trouves, nb_ajouts, pages,
+                   lectures_dates)
     print(f"{len(pubs)} publications, {len(articles)} articles, {len(tags)} tags, "
           f"{len(liens_tags)} associations, {len(non_trouves)} entrées de tag non rattachées")
 

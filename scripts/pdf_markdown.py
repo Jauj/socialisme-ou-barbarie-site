@@ -492,6 +492,8 @@ def fusionner_paragraphes(md, vocab=None):
 def _suite(prec, b):
     if not prec or not b or prec.startswith(("#", "|")) or b.startswith(("#", "- ", "|", ">")):
         return False
+    if re.fullmatch(r"[-*_\s\\]+", prec) or re.fullmatch(r"[-*_\s\\]+", b):
+        return False  # séparateur « ----- » ou « *** »
     if prec.startswith("- ") and not b.lstrip("*_\\")[:1].islower():
         return False  # après un élément de liste, seule une suite en minuscule s'y rattache
     if FIN_PHRASE.search(prec.rstrip("*")):
