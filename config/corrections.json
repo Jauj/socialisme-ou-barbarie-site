@@ -65,6 +65,19 @@
     "1998-06-27|cps|73": {
       "numero_label": "73-74",
       "motif": "Numéro double : la couverture porte « C.P.S. N° 73 - 74 », 27 juin 1998, numéro spécial « Stéphane Just 1921-1997 » (fichier 1998_06_27_cps73_74_spe_st_just.pdf). Il n'y a donc pas de n°74 séparé."
+    },
+    "2006-03-24|cps|24|NS": {
+      "pdf_absent": true,
+      "motif": "Le PDF lié au n°24 (2006_06_03_cps_24_106_as.pdf) contient en fait le n°25 du 3 juin 2006 (manchette « C.P.S Nouvelle série N°25 (N° 107) – 3 juin 2006 », articles de l'entrée du n°25) ; le PDF du n°24 n'est pas en ligne."
+    },
+    "2006-06-03|cps|25|NS": {
+      "scinder_numero": {
+        "date": "2006-06-03",
+        "pdf_numero": "http://socialisme.free.fr/bulletin_cps_archives/2006_06_03_cps_24_106_as.pdf",
+        "date_supplement": "2006-08-22",
+        "titre_supplement": "Supplément au n°25 (n°107) : La politique du CCI-PT et de sa prétendue « IV° Internationale » : un nouveau social-patriotisme"
+      },
+      "motif": "L'en-tête du n°25 renvoie au supplément du 22 août 2006 (2006_08_22_cps25_107as_spe_cci.pdf, « La politique du CCI-PT… », manchette vérifiée) ; le PDF du n°25 lui-même (3 juin 2006) est celui que le site lie au n°24. On crée le supplément et on rattache au n°25 son PDF."
     }
   },
   "liens": {

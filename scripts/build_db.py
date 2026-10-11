@@ -152,11 +152,18 @@ def construire_publications(entries, corrections):
         if c:
             corr_utilisees.add(k)
         if "scinder_numero" in c:
-            # en-tête de supplément suivi des articles d'un numéro : on scinde
-            qualifiees.append({**e, "items": [], "_type": "supplement", "_cle": k, "_corr": c})
-            qualifiees.append({**e, "supplement": False, "date": c["scinder_numero"]["date"],
+            # en-tête de supplément suivi des articles d'un numéro : on scinde (le supplément garde
+            # les liens de l'en-tête ; le numéro peut recevoir son propre PDF)
+            sc = c["scinder_numero"]
+            c_supp = {x: v for x, v in c.items() if x not in ("scinder_numero", "pdf_numero")}
+            if sc.get("titre_supplement"):
+                c_supp["titre"] = sc["titre_supplement"]
+            qualifiees.append({**e, "date": sc.get("date_supplement", e["date"]), "items": [],
+                               "_type": "supplement", "_cle": k, "_corr": c_supp})
+            c_num = {**c, "pdf_numero": sc["pdf_numero"]} if sc.get("pdf_numero") else c
+            qualifiees.append({**e, "supplement": False, "date": sc["date"],
                                "titre_entete": "", "liens_entete": [], "_type": "numero",
-                               "_cle": k + " (scindé)", "_corr": c})
+                               "_cle": k + " (scindé)", "_corr": c_num})
             continue
         typ = c.get("type") or ("supplement" if e["supplement"] else "numero")
         if e["numero"] == 0 and typ in ("numero", "supplement"):
@@ -198,7 +205,7 @@ def construire_publications(entries, corrections):
         principale, secondaires = grp[0], grp[1:]
         pub_id = f"{SERIES[serie]['prefixe']}-{num:03d}"
         liens = principale["liens_entete"]
-        pdf = principale["_corr"].get("pdf_numero") or next(
+        pdf = None if principale["_corr"].get("pdf_absent") else principale["_corr"].get("pdf_numero") or next(
             (url_sans_ancre(l["url"]) for l in liens if l["url"].lower().split("#")[0].endswith(".pdf")), None)
         pdf_desactive = any(l["desactive"] for l in liens)
         d = principale["date"]
@@ -859,11 +866,19 @@ def charger_pages(publications):
     dossier = DATA / "pages"
     meta_path = dossier / "index.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
+    # une publication reçoit les pages extraites de son PDF (l'index est tenu par publication au
+    # moment de l'extraction ; une correction peut depuis avoir changé le PDF d'une publication)
+    par_source = {}
+    for pid, m in sorted(meta.items()):
+        if m.get("statut") == "ok":
+            par_source.setdefault(m["source"], (pid, m))
     pages = {}
-    for pid, m in meta.items():
-        if m.get("statut") != "ok" or pid not in publications:
+    for p in publications.values():
+        if not p["url_pdf"] or not p["pdf_disponible"] or p["url_pdf"] not in par_source:
             continue
-        base = m.get("identique_a", pid)
+        pid = p["id"]
+        cle, m = par_source[p["url_pdf"]]
+        base = m.get("identique_a", cle)
         f = dossier / f"{base}.txt"
         if not f.exists():
             continue
@@ -1050,7 +1065,7 @@ def ajouter_dates(publications, articles, pages):
         a["date_redaction"] = None
         # texte dont la fin est incertaine : la date finale peut être celle de l'article suivant
         if a.get("texte_markdown") and "fin incertaine" not in (a.get("texte_source") or ""):
-            r = metadonnees.date_redaction(a["texte_markdown"])
+            r = metadonnees.date_redaction(a["texte_markdown"], int(a["date"][:4]))
             if r:
                 a["date_redaction"] = r[0]
     return lectures

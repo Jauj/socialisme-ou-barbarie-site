@@ -43,6 +43,12 @@ class DateRedaction(unittest.TestCase):
         self.assertEqual(M.date_redaction("Texte.\n\nParis, le 1er mai 1990.\n")[0], "1990-05-01")
         self.assertEqual(M.date_redaction("Texte.\n\nLe 2/3/1990\n")[0], "1990-03-02")
 
+    def test_millesime_mal_lu(self):
+        self.assertEqual(M.date_redaction("Texte.\n\nLe 25/9/98\n", 1998)[0], "1998-09-25")
+        self.assertEqual(M.date_redaction("Texte.\n\nLe 3/1/01\n", 2001)[0], "2001-01-03")
+        self.assertIsNone(M.date_redaction("Texte.\n\nLe 22 septembre 1909\n", 1999))
+        self.assertIsNone(M.date_redaction("Texte.\n\nLe 25/9/58\n", 1998))
+
     def test_suivie_d_une_note(self):
         md = "Texte.\n\nLe 30 septembre 2000\n\n*Dans la seconde partie, CPS reviendra sur la Russie.*\n"
         self.assertEqual(M.date_redaction(md)[0], "2000-09-30")

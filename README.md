@@ -32,18 +32,24 @@ data/
                         `python3 scripts/build_db.py`, sans réseau)
   markdown/<publication>/<article>.md   un fichier par article : en-tête YAML (titre, date, numéro,
                         tags, liens…) puis le texte en Markdown
+  recherche.sqlite      index plein texte de l'explorateur (FTS5 avec positions, sans le texte : lu
+                        dans le navigateur par requêtes HTTP Range)
   cps.json              export hiérarchique publications → articles → tags (sans les textes)
   csv/                  les tables au format CSV (UTF‑8) : publications, articles, tags, articles_tags
   textes/<article>.md|.txt  texte des articles disposant d'une page HTML ou d'un PDF propre sur le site
   pages/<publication>.txt|.md  texte intégral de chaque PDF (brut / structuré en Markdown),
                         pages séparées par un saut de page (\f)
+  corrections_ocr/<publication>.json  pages scannées les plus abîmées, corrigées et contrôlées
 config/
   corrections.json      corrections manuelles du sommaire du site, chacune justifiée
-  regles_tags.json      règles de tags complémentaires (expressions régulières sur les titres)
+  regles_tags.json      règles de tags complémentaires (sur les titres et sur le texte intégral)
+  articles_pdf.json     articles imprimés absents du sommaire du site, pages de début relues
 sources/                pages du site utilisées (sommaire, index thématique, pages de tags)
-scripts/                scripts de collecte et de construction
-explorateur/            page web de consultation (filtres par série, tag, année, recherche)
+scripts/                scripts de collecte et de construction (+ serveur.py, serveur web local)
+tests/                  tests de non-régression (python3 -m unittest discover -s tests -t .)
+explorateur/            page web de consultation (recherche plein texte, filtres, lecture, numéros)
 docs/RAPPORT_QUALITE.md statistiques et anomalies
+.github/workflows/      tests, construction de la base et publication du site (GitHub Actions)
 ```
 
 ## Modèle de données
@@ -57,7 +63,8 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `serie` | `bulletin1984`, `ancienne`, `nouvelle` |
 | `numero`, `numero_label` | n° dans la série (`73-74` pour le numéro double) |
 | `numero_cumule` | n° continu (nouvelle série : n° + 82, ex. NS‑98 = n°180) |
-| `date` | date de parution (AAAA‑MM‑JJ) |
+| `date` | date de parution (AAAA‑MM‑JJ) donnée par le site |
+| `date_imprimee` | date lue dans l'en‑tête de la une (`JJ` = `00` quand seul le mois est imprimé) ; les écarts avec `date` sont listés dans le rapport de qualité |
 | `parent_id` | numéro auquel se rattache un supplément |
 | `url_pdf` | PDF du numéro complet sur le site |
 | `nb_pages`, `texte_methode` | pages dont le texte a été extrait ; `pdf_texte` (couche texte) ou `ocr_tesseract` (scan océrisé) |
@@ -70,13 +77,14 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `titre` | titre tel que dans le sommaire du site |
 | `titre_index` | titre plus complet donné par l'index thématique, quand il diffère |
 | `date`, `serie` | reprises de la publication |
+| `date_redaction` | date isolée qui clôt le texte (« Le 7 avril 2008 », « Le 2/3/1990 »), quand il y en a une |
 | `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (`pdf_page` : page indiquée par le site) |
-| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`), par le sommaire imprimé en une du numéro (`sommaire`), retrouvée en cherchant le titre de l'article dans les pages (`titre`), ou, pour le premier article d'un numéro introuvable autrement, début de la une (`ordre`) |
+| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`), par le sommaire imprimé en une du numéro (`sommaire`), retrouvée en cherchant le titre de l'article dans les pages (`titre`), retrouvée par relecture ([`config/articles_pdf.json`](config/articles_pdf.json), `relecture`), ou, pour le premier article d'un numéro introuvable autrement, début de la une (`ordre`) |
 | `texte_markdown` | texte intégral en Markdown, quand il a pu être obtenu (voir plus bas) |
 | `texte` | le même texte, brut — **seulement dans `cps_complet.sqlite`** (dérivable du Markdown, retiré de la base légère pour rester sous 50 Mo) |
 | `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article — surtitre compris — jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin ; `texte_source` signale une « fin incertaine » quand l'article suivant du sommaire n'a pas été retrouvé : le texte est alors borné à 16 pages) |
 | `texte_source` | URL du document dont vient le texte, pages et méthode (couche texte ou OCR) |
-| `origine` | `sommaire` (sommaire du site) ou `index_thematique` (article présent seulement dans l'index) |
+| `origine` | `sommaire` (sommaire du site), `index_thematique` (article présent seulement dans l'index) ou `pdf` (article imprimé dans le numéro, avec son entrée au sommaire imprimé en une, mais absent du site : voir plus bas) |
 
 **`tags`** et **`articles_tags`** — vocabulaire et associations.
 
@@ -88,7 +96,14 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 - Chaque association indique sa `source` :
   - `site` : l'article figure sur la page du tag dans l'index thématique du site ;
   - `regle` : tag déduit du titre par une règle de [`config/regles_tags.json`](config/regles_tags.json)
-    (l'index du site est incomplet : beaucoup d'articles n'y figurent pas).
+    (l'index du site est incomplet : beaucoup d'articles n'y figurent pas) ;
+  - `texte` : tag déduit du texte intégral, quand un terme du sujet (« Grèce », « Syriza »… ;
+    section `texte` des règles) y revient au moins 5 fois et au moins 2 fois pour 1 000 mots
+    (`detail` donne le nombre d'occurrences). Seuils choisis après contrôle d'un échantillon de
+    120 associations tirées au sort par tranches de densité, jugées par des agents Haiku : le
+    sujet est réellement développé dans au moins un passage de l'article dans 116 cas, cité en
+    passant ou dans une énumération dans 3 cas (1 indécis) ; le motif en cause (« loi Debré »,
+    aussi le nom d'une loi sur l'immigration) a été retiré.
 
 **`pages`** (dans `cps_complet.sqlite`) — texte de chaque page de chaque PDF de publication
 (`texte` brut et `markdown` structuré), avec recherche plein texte (`pages_fts`). Les numéros scannés (bulletin 1984, ancienne série et
@@ -120,7 +135,9 @@ cette information en retrouve 68, dont 65 à la page exacte et 2 à une page pr�
 `texte_markdown`. `cps.sqlite` le contient en mode allégé (recherche
 par mots, opérateurs AND/OR/NOT, préfixes `mot*`, mais pas de phrase exacte entre guillemets) pour
 rester sous 50 Mo. `cps_complet.sqlite` a l'index complet (phrases exactes, NEAR) sur les articles
-et sur les pages.
+et sur les pages. `recherche.sqlite`, utilisé par l'explorateur, a lui aussi l'index complet
+(phrases exactes) mais sans le texte (table FTS5 `content=''`, table `ids` pour retrouver
+l'identifiant de l'article) : environ 17 Mo, dont le navigateur ne lit que les pages utiles.
 
 Vues pratiques : `v_articles` (articles avec leurs tags en une colonne), `v_tags` (tags avec leurs effectifs).
 
@@ -258,42 +275,72 @@ Avec Python : `sqlite3.connect("data/cps.sqlite")`, ou avec pandas
 
 ## Explorateur web
 
-**En ligne : <https://jauj.github.io/socialisme-ou-barbarie-site/>** (GitHub Pages, publié depuis
-la branche `gh-pages`).
+**En ligne : <https://jauj.github.io/socialisme-ou-barbarie-site/>** (GitHub Pages, branche
+`gh-pages`).
 
-`explorateur/index.html` permet de parcourir la base (recherche, filtres par série, type, tag,
-période, liens directs vers la page de l'article dans le PDF) et de **lire les articles** : le
-bouton « Lire » affiche la version Markdown mise en forme, avec un lien partageable
-(`…/explorateur/#lire=NS-022-07`). Il lit `data/cps.json` et `data/markdown/`. En local :
-`python3 -m http.server` à la racine du dépôt, puis <http://localhost:8000/explorateur/>.
+`explorateur/index.html` permet de parcourir la base et de **lire les articles** :
 
-Pour mettre le site en ligne à jour après une reconstruction de la base, pousser le même commit
-sur la branche `gh-pages` : `git push origin HEAD:gh-pages`.
+- **recherche dans le texte intégral** des articles : tous les mots sont requis,
+  `"expression exacte"` entre guillemets (ou « … »), préfixe `trotsk*`, exclusion `-mot`, sans
+  accents ni casse ; résultats triés par pertinence (BM25, titres favorisés) et combinables avec
+  les autres filtres. Elle interroge `data/recherche.sqlite` directement dans le navigateur
+  ([sql.js-httpvfs](https://github.com/phiresky/sql.js-httpvfs), copie dans
+  `explorateur/vendor/`), qui ne télécharge que les pages de l'index nécessaires (requêtes HTTP
+  Range : 150 ko environ pour une recherche) ;
+- recherche instantanée dans les titres, filtres par série, type, tag, numéro, période ;
+- **lecteur** : la version Markdown mise en forme, les termes recherchés surlignés (bouton
+  « Occurrence suivante »), boutons et flèches ← → pour passer à l'article précédent ou suivant
+  (dans la liste affichée, ou à défaut dans le numéro), liens vers le PDF à la bonne page ;
+- **vue d'un numéro** (lien sur le nom du numéro, ou `#pub=NS-065`) : ses articles dans l'ordre
+  du sommaire, la date imprimée en une quand elle diffère de celle du site ;
+- chaque état a une adresse partageable, par exemple
+  `…/explorateur/#qt=%22front+unique%22&lire=NS-022-07`.
+
+Tags : ceux de l'index thématique du site en clair, ceux déduits du titre en italique, ceux
+déduits du texte intégral en pointillé.
+
+En local, il faut un serveur qui accepte les requêtes HTTP Range (ce que ne fait pas
+`python3 -m http.server`) : `python3 scripts/serveur.py` à la racine du dépôt, puis
+<http://localhost:8000/explorateur/>.
 
 ## Reconstruire la base
 
 Python 3.9+ avec `beautifulsoup4` et `markdownify`, et `poppler-utils` (pdftotext, pdftoppm,
-pdftohtml) ; `tesseract-ocr` + `tesseract-ocr-fra` pour l'OCR.
+pdfimages, pdftohtml) ; `tesseract-ocr` pour l'OCR, de préférence avec le modèle français
+« best » (`fra.traineddata` de *tessdata_best*, plus précis que celui des distributions), passé
+par `--tessdata <dossier>`.
 
 ```sh
 pip install -r requirements.txt
 python3 scripts/fetch_sources.py      # sommaire + index thématique → sources/ (--refresh pour mettre à jour)
 python3 scripts/build_db.py           # → data/ (sans réseau)
 python3 scripts/fetch_textes.py       # textes des articles HTML/PDF → data/textes/
-python3 scripts/extraire_pages.py     # texte des PDF de numéros (OCR des scans, long) → data/pages/
+python3 scripts/extraire_pages.py --tessdata DOSSIER   # texte des PDF de numéros (OCR des scans, long) → data/pages/
 python3 scripts/extraire_markdown.py  # versions Markdown des pages et des articles
 python3 scripts/build_db.py           # reconstruction avec les textes
+python3 -m unittest discover -s tests -t .   # tests de non-régression
 ```
 
 `build_db.py` ne fait aucun accès réseau et n'utilise que la bibliothèque standard de Python
-(plus `markdownify`/`beautifulsoup4` pour des fonctions partagées) : `cps_complet.sqlite` (trop
-volumineux pour être versionné) se régénère en environ 4 minutes à partir de `data/pages/` et
-`data/textes/` (découpage des articles, puis nettoyage de chacun avec `scripts/nettoyage.py`).
-`extraire_markdown.py` (environ 5 minutes quand les PDF sont en cache, option `--garder-pdf`)
-applique le même nettoyage aux pages et aux textes propres aux articles.
+(plus `markdownify`/`beautifulsoup4` pour des fonctions partagées) : la base se régénère en
+environ 5 minutes à partir de `data/pages/`, `data/textes/`, `data/corrections_ocr/` et `config/`
+(découpage des articles, nettoyage de chacun avec `scripts/nettoyage.py`, dates et tags déduits
+des textes avec `scripts/metadonnees.py`) ; `--sans-complet` saute `cps_complet.sqlite`, trop
+volumineux pour être versionné. `extraire_markdown.py` (environ 5 minutes quand les PDF sont en
+cache, option `--garder-pdf`) applique le même nettoyage aux pages et aux textes propres aux
+articles. `extraire_pages.py --refaire-ocr` refait l'OCR des numéros scannés déjà traités et
+garde, page par page, la version la plus lisible.
 
 Pour intégrer un nouveau numéro : `fetch_sources.py --refresh`, `fetch_textes.py`,
 `extraire_pages.py`, `extraire_markdown.py`, puis `build_db.py`.
+
+**Intégration continue.** À chaque envoi sur la branche `main`, GitHub Actions
+([`.github/workflows/construction.yml`](.github/workflows/construction.yml)) lance les tests,
+reconstruit la base et publie le site sur la branche `gh-pages` (sources, base, Markdown, CSV et
+JSON construits). Les demandes de fusion sont testées et construites sans publication ; le
+workflow peut aussi être lancé à la main (onglet *Actions*). Les tests portent sur le nettoyage
+du Markdown, le découpage des articles, la reconstitution des paragraphes, les dates et les
+tags déduits des textes, et la construction de la base.
 
 ## Corrections apportées au sommaire du site
 

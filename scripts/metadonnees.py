@@ -85,8 +85,12 @@ def comparer_dates(imprimee, site):
     return "date différente"
 
 
-def date_redaction(md):
-    """(date ISO, ligne) de la date isolée qui clôt l'article, ou None."""
+def date_redaction(md, annee_pub=None):
+    """(date ISO, ligne) de la date isolée qui clôt l'article, ou None.
+
+    annee_pub : année de la publication ; une année à deux chiffres prend le siècle le plus
+    proche, et une date à plus de deux ans de la publication (millésime mal lu par l'OCR,
+    date historique citée) est écartée."""
     lignes = [l.strip() for l in md.rstrip().splitlines() if l.strip()]
     for l in reversed(lignes[-LIGNES_FIN:]):
         l = re.sub(r"[*_\\]", "", l).strip()
@@ -101,9 +105,10 @@ def date_redaction(md):
                 continue
             a = int(m.group(3))
             if a < 100:
-                a += 1900 if a >= 50 else 2000
+                a += min((1900, 2000), key=lambda siecle: abs(siecle + a - annee_pub)) if annee_pub else (
+                    1900 if a >= 50 else 2000)
             d = _iso(a, int(m.group(2)), int(m.group(1)))
-        if d and not d.endswith("-00"):
+        if d and not d.endswith("-00") and (annee_pub is None or abs(int(d[:4]) - annee_pub) <= 2):
             return d, l
     return None
 
