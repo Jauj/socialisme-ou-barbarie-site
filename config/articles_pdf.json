@@ -1,0 +1,777 @@
+{
+  "_description": "Compléments relus (agents, puis contrôle) aux articles du sommaire du site. « articles_absents » : articles imprimés dans un numéro, avec leur entrée au sommaire imprimé en une, mais absents du sommaire du site ; build_db.py les ajoute (origine « pdf ») et découpe leur texte à partir de la page indiquée. « pages_relues » : page de début (et titre tel qu'imprimé, OCR compris) d'articles du site que la recherche automatique ne retrouvait pas ou plaçait mal.",
+  "articles_absents": [
+    {
+      "publication": "NS-008",
+      "titre": "Les militants interviennent et informent CPS",
+      "page": 14,
+      "sommaire_imprime": "LES MILITANTS INTERVIENNENT ET INFORMENT CPS",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-009",
+      "titre": "Le budget Chirac-Raffarin-Ferry : premier acte d’une offensive d’ampleur contre l’enseignement public dont la « décentralisation » sera le coeur",
+      "page": 12,
+      "sommaire_imprime": "ENSEIGNEMENT PUBLIC",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-035",
+      "titre": "Les militants interviennent et informent CPS (hôpitaux, étudiants, fonction publique, enseignants)",
+      "page": 10,
+      "sommaire_imprime": "LES MILITANTS INTERVIENNENT ET INFORMENT CPS (HOPITAUX, ETUDIANTS, FONCTION PUBLIQUE, , ENSEIGNANTS)",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-053",
+      "titre": "Supplément à CPS n°53 (16 mars 2014) : à bas le « pacte de responsabilité » du gouvernement Hollande-Ayrault-Duflot-Pinel et du MEDEF ! Front unique des organisations du mouvement ouvrier (partis et syndicats) pour le retrait du pacte !",
+      "page": 34,
+      "sommaire_imprime": "TRACT 18 MARS 2014",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-054",
+      "titre": "Supplément Fonction publique à « Combattre pour le socialisme » (14 mai 2014)",
+      "page": 18,
+      "sommaire_imprime": "SUPPLÉMENT À CPS FONCTION PUBLIQUE (14 MAI 2014)",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-055",
+      "titre": "Supplément à CPS n°54 – 13 septembre 2014",
+      "page": 33,
+      "sommaire_imprime": "SUPPLÉMENT À CPS DU 13 SEPTEMBRE 2014",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-060",
+      "titre": "Supplément diffusé à l’occasion du 31 mars 2016",
+      "page": 9,
+      "sommaire_imprime": "31 MARS 2016 : SUPPLÉMENT À CPS",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-060",
+      "titre": "Supplément diffusé à l’occasion du 7 mars 2016",
+      "page": 10,
+      "sommaire_imprime": "7 MARS 2016 : SUPPLÉMENT À CPS",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-063",
+      "titre": "Supplément Universités à « Combattre pour le socialisme » (10 octobre 2016)",
+      "page": 19,
+      "sommaire_imprime": "SUPPLÉMENT UNIVERSITÉS",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-067",
+      "titre": "Supplément Fonction publique à « Combattre pour le socialisme » (8 octobre 2017)",
+      "page": 10,
+      "sommaire_imprime": "SUPPLÉMENT À C.P.S. FONCTION PUBLIQUE (8 OCTOBRE 2017)",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-067",
+      "titre": "Supplément Universités à « Combattre pour le socialisme » (11 novembre 2017)",
+      "page": 12,
+      "sommaire_imprime": "SUPPLÉMENT À C.P.S. UNIVERSITÉS (11 NOVEMBRE 2017)",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-067",
+      "titre": "Supplément Finances publiques à « Combattre pour le socialisme » (10 novembre 2017)",
+      "page": 14,
+      "sommaire_imprime": "SUPPLÉMENT À C.P.S. FINANCES PUBLIQUES (10 NOVEMBRE 2017)",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-067",
+      "titre": "Les militants interviennent et informent C.P.S.",
+      "page": 27,
+      "sommaire_imprime": "LES MILITANTS INTERVIENNENT ET INFORMENT C.P.S",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-072",
+      "titre": "Déclarations, communiqués (Jeunes, Finances, loi « anticasseurs », Venezuela, Algérie)",
+      "page": 11,
+      "sommaire_imprime": "DÉCLARATIONS, COMMUNIQUÉS (JEUNES, FINANCES, LOI « ANTICASSEURS », VENEZUELA, ALGÉRIE)",
+      "page_verifiee": true
+    },
+    {
+      "publication": "NS-085",
+      "titre": "Communiqué Iran (31 octobre 2022)",
+      "page": 12,
+      "sommaire_imprime": "COMMUNIQUE IRAN (31 OCTOBRE 2022)",
+      "page_verifiee": false
+    }
+  ],
+  "pages_relues": {
+    "AS-002-02": {
+      "page": 4,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-002-03": {
+      "page": 7,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-002-04": {
+      "page": 9,
+      "titre_imprime": "LA TENTATIVE DE LIQUIDATION DU P.C.I,",
+      "origine": "intertitres des pages"
+    },
+    "AS-003-03": {
+      "page": 10,
+      "titre_imprime": "LIBRE DEBAT 7? OUI, MAIS AVEC QUI ET SUR QUELLES BASES ?",
+      "origine": "intertitres des pages"
+    },
+    "AS-005-02": {
+      "page": 5,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-006-05": {
+      "page": 27,
+      "titre_imprime": "DES FAITS _INTOLERABLES",
+      "origine": "intertitres des pages"
+    },
+    "AS-006-07": {
+      "page": 31,
+      "titre_imprime": "L'EXISTENCE DU P.CI EST EN CAUSE",
+      "origine": "intertitres des pages"
+    },
+    "AS-007-05": {
+      "page": 28,
+      "titre_imprime": "LE CONSEIL GENERAL DE \"OUATRIEME INTERNATIONALE (CHR,)\"",
+      "origine": "intertitres des pages"
+    },
+    "AS-008-05": {
+      "page": 24,
+      "titre_imprime": "IL N'A PAS FALLU TROIS MINUTES...",
+      "origine": "intertitres des pages"
+    },
+    "AS-011-02": {
+      "page": 7,
+      "titre_imprime": "POUR LE BOYCOTT DES ORGANISMES DE \"PARTICIPATION\" PAR LES ORGANISATIONS SYNDICALES (DEUXIE…",
+      "origine": "intertitres des pages"
+    },
+    "AS-011-04": {
+      "page": 24,
+      "titre_imprime": "REPRODUCTION DU SUPPLEMENT, DATE DU 15 JUIN 1986, A \"TRIBUNE SYNDICALISTE UNITAIRE\" \"ANIME…",
+      "origine": "intertitres des pages"
+    },
+    "AS-013-03": {
+      "page": 18,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-013-05": {
+      "page": 29,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-014-06": {
+      "page": 26,
+      "titre_imprime": "LUTTES DE CLASSE EN EUROPE - DEUXIEME PARTIE -",
+      "origine": "intertitres des pages"
+    },
+    "AS-018-07": {
+      "page": 34,
+      "titre_imprime": "INFORMATION",
+      "origine": "intertitres des pages"
+    },
+    "AS-019-04": {
+      "page": 24,
+      "titre_imprime": "UNE SEULE REPONSE : COMBATTRE POUR LE SOCIALISME",
+      "origine": "intertitres des pages"
+    },
+    "AS-020-04": {
+      "page": 18,
+      "titre_imprime": "ERRATA DANS L'ARTICLE \"UNE SEULE REPONSE : COMBATTRE POUR LE SOCIALISME\" PUBLIE DANS LE N°",
+      "origine": "intertitres des pages"
+    },
+    "AS-020-08": {
+      "page": 29,
+      "titre_imprime": "LA “\"PERESTROIKA\" ET LE \"GLANOST\"",
+      "origine": "intertitres des pages"
+    },
+    "AS-021-05": {
+      "page": 17,
+      "titre_imprime": "LE P.C.F. ET LES ELECTIONS PRESIDENTIELLES",
+      "origine": "intertitres des pages"
+    },
+    "AS-021-07": {
+      "page": 23,
+      "titre_imprime": "ARE. RTC Et LES MILITANTS INTERVIENNENT ET INFORMENT CPS.",
+      "origine": "intertitres des pages"
+    },
+    "AS-024-03": {
+      "page": 16,
+      "titre_imprime": "POUR OBTE NIR SATISF ACTION IL FAUT LE FAÏRE CAPITULER",
+      "origine": "intertitres des pages"
+    },
+    "AS-024-06": {
+      "page": 26,
+      "titre_imprime": "LA BUREAUCRATIE DU KREMLIN EN CRISE",
+      "origine": "intertitres des pages"
+    },
+    "AS-025-05": {
+      "page": 16,
+      "titre_imprime": "LE MOUVEMENT DE LA R.A.T.P.",
+      "origine": "intertitres des pages"
+    },
+    "AS-026-02": {
+      "page": 6,
+      "titre_imprime": "16E CONGRÈS CONFÉDÉRAL F.O. : UN ÉVÉNEMENT POLITIQUE CONSIDÉRABLE",
+      "origine": "intertitres des pages"
+    },
+    "AS-026-05": {
+      "page": 19,
+      "titre_imprime": "\"CONFLITS RÉGIONAUX\" RÊGLÉS ET NON RÊGLÉS",
+      "origine": "intertitres des pages"
+    },
+    "AS-027-05": {
+      "page": 20,
+      "titre_imprime": "DEUX THÉORICIENS DE LA RÉVOLUTION DÉMOCRATIQUE BOURGEOISE",
+      "origine": "intertitres des pages"
+    },
+    "AS-029-05": {
+      "page": 19,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-031-06": {
+      "page": 25,
+      "titre_imprime": "DU TRAITÉ DE ROME A L'ACTE U",
+      "origine": "intertitres des pages"
+    },
+    "AS-032-07": {
+      "page": 23,
+      "titre_imprime": "CONCLUSION DU RAPPORT POLITIQUE PRÉPARATOIRE À LA Ve CONFÉRENCE",
+      "origine": "intertitres des pages"
+    },
+    "AS-033-02": {
+      "page": 2,
+      "titre_imprime": "ÉDITORIAL",
+      "origine": "intertitres des pages"
+    },
+    "AS-034-02": {
+      "page": 6,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-035-03": {
+      "page": 8,
+      "titre_imprime": "CPS - ENSEIGNEMENT PUBLIC N° 27 DU 29 OCTOBRE 1990",
+      "origine": "intertitres des pages"
+    },
+    "AS-035-07": {
+      "page": 22,
+      "titre_imprime": "27e CONGRES DU PCF : LA RÉSOLUTION DU C.C. ET LE TEXTE DE FITERMAN",
+      "origine": "intertitres des pages"
+    },
+    "AS-035-08": {
+      "page": 31,
+      "titre_imprime": "NOTES DE LECTURE :",
+      "origine": "intertitres des pages"
+    },
+    "AS-036-02": {
+      "page": 8,
+      "titre_imprime": "UN MOUVEMENT DIVISE, PHAGOCITE ET MENE A L'ECHEC",
+      "origine": "intertitres des pages"
+    },
+    "AS-037-03": {
+      "page": 12,
+      "titre_imprime": "32e CONGRES DE LA FEDERATION DE L’'EDUCATION NATIONALE",
+      "origine": "intertitres des pages"
+    },
+    "AS-037-05": {
+      "page": 21,
+      "titre_imprime": "COMMUNIQUES A CPS",
+      "origine": "intertitres des pages"
+    },
+    "AS-038-03": {
+      "page": 14,
+      "titre_imprime": "LA RESTRUCTURATION",
+      "origine": "intertitres des pages"
+    },
+    "AS-040-02": {
+      "page": 8,
+      "titre_imprime": "LES OBJECTIFS DE LA “MANIFESTATION” DU 12 OCTOBRE",
+      "origine": "intertitres des pages"
+    },
+    "AS-041-05": {
+      "page": 14,
+      "titre_imprime": "50 SIGNATURES - USINE SIDERURGIQUE (U + S) DE RIVES DE GIER (LOIRE)",
+      "origine": "intertitres des pages"
+    },
+    "AS-042-04": {
+      "page": 12,
+      "titre_imprime": "LES MILITANTS DE CPS (YVELINES) INTERVIENNENT",
+      "origine": "intertitres des pages"
+    },
+    "AS-042-08": {
+      "page": 31,
+      "titre_imprime": "LA “RECESSION” ET L'ECONOMIE AMERICAINE1",
+      "origine": "intertitres des pages"
+    },
+    "AS-044-03": {
+      "page": 11,
+      "titre_imprime": "TEXTE REDIGE ET ADOPTE PAR LES 9 PROFESSEURS DE LETTRES DU LYCÉE JACQUES BREL À VENISSIEUX",
+      "origine": "intertitres des pages"
+    },
+    "AS-044-05": {
+      "page": 19,
+      "titre_imprime": "CONJONCTURE ECONOMIQUE MENACÇANTE...",
+      "origine": "intertitres des pages"
+    },
+    "AS-047-04": {
+      "page": 21,
+      "titre_imprime": "PREPARER L'AFFRONTEMENT AVEC LE GOUVERNEMENT ULTRA-REACTIONNAIRE BALLADUR - BAYROU - FILLO",
+      "origine": "intertitres des pages"
+    },
+    "AS-048-04": {
+      "page": 18,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-049-07": {
+      "page": 29,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-051-08": {
+      "page": 35,
+      "titre_imprime": "UN LECTEUR DE NANTES ÉCRIT À CPS",
+      "origine": "intertitres des pages"
+    },
+    "AS-052-02": {
+      "page": 6,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-052-07": {
+      "page": 23,
+      "titre_imprime": "PALESTINE : UN ACCORD NON VIAB",
+      "origine": "intertitres des pages"
+    },
+    "AS-054-03": {
+      "page": 16,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-054-06": {
+      "page": 36,
+      "titre_imprime": "INTERVENTION À LA TRIBUNE DU 23e CONGRES DE L'UD-FO DU RHONE",
+      "origine": "intertitres des pages"
+    },
+    "AS-055-03": {
+      "page": 13,
+      "titre_imprime": "ABROGATION DU “NOUVEAU CONTRAT POUR L'ECOLE\"! PAS DE LOI DE PROGRAMMATION ! FRONT UNIQUE D",
+      "origine": "intertitres des pages"
+    },
+    "AS-055-04": {
+      "page": 15,
+      "titre_imprime": "CONGRES BANQUE DE FRANCE",
+      "origine": "intertitres des pages"
+    },
+    "AS-055-06": {
+      "page": 24,
+      "titre_imprime": "ÉLECTION PRÉSIDENTIELLE AU BRÉSIL",
+      "origine": "intertitres des pages"
+    },
+    "AS-056-02": {
+      "page": 10,
+      "titre_imprime": "L'INSURGE",
+      "origine": "intertitres des pages"
+    },
+    "AS-058-02": {
+      "page": 8,
+      "titre_imprime": "* RUPTURE DES ORGANISATIONS OUVRIERES, PARTIS ET SYNDICATS, AVEC LE GOUVERNEMENT CHIRAC- JUPPÉ",
+      "origine": "intertitres des pages"
+    },
+    "AS-059-02": {
+      "page": 9,
+      "titre_imprime": "DISLOQUER L'ENSEIGNEMENT PUBLIC",
+      "origine": "intertitres des pages"
+    },
+    "AS-059-03": {
+      "page": 12,
+      "titre_imprime": "UNE RENTRÉE EN ACCORD AVEC LES PROJETS DU GOUVERNEMENT...",
+      "origine": "intertitres des pages"
+    },
+    "AS-059-05": {
+      "page": 23,
+      "titre_imprime": "JOSPIN S'OUVRE LA VOIE VERS LA DIRECTION DU P.S.",
+      "origine": "intertitres des pages"
+    },
+    "AS-060-03": {
+      "page": 10,
+      "titre_imprime": "ADRESSE AUX DIRIGEANTS DES SYNDICATS ENSEIGNANTS DE LA FSU, DE LA FEN, DU SNLC- FO... :",
+      "origine": "intertitres des pages"
+    },
+    "AS-060-04": {
+      "page": 11,
+      "titre_imprime": "DÉCLARATION DU COMITÉ POUR LA CONSTRUCTION DU PARTI OUVRIER RÉVOLUTIONNAIRE, LA CONSTRUCTI…",
+      "origine": "intertitres des pages"
+    },
+    "AS-060-05": {
+      "page": 15,
+      "titre_imprime": "L'INSURGÉ",
+      "origine": "intertitres des pages"
+    },
+    "AS-061-02": {
+      "page": 9,
+      "titre_imprime": "LA GRÈVE ET LES MANIFESTATIONS DE NOVEMBRE-DECEMBRE 1995",
+      "origine": "intertitres des pages"
+    },
+    "AS-063-04": {
+      "page": 20,
+      "titre_imprime": "C.P.S. PUBLIE DEUX TEXTES ÉMANANT DE TRAVAILLEURS DE LA RATP CONCERNANT LE “CODE DE DÉONTO",
+      "origine": "intertitres des pages"
+    },
+    "AS-065-02": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-065-05": {
+      "page": 22,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-065-06": {
+      "page": 28,
+      "titre_imprime": "LE PCF PRÉPARE SON 29ÈME CONGRES",
+      "origine": "intertitres des pages"
+    },
+    "AS-066-02": {
+      "page": 10,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-066-04": {
+      "page": 18,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-066-06": {
+      "page": 31,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-067-04": {
+      "page": 11,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-067-07": {
+      "page": 25,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-067-08": {
+      "page": 25,
+      "titre_imprime": "COMMUNIQUÉ DU COMITÉ POUR LA CONSTRUCTION DU PARTI OUVRIER RÉVOLUTIONNAIRE",
+      "origine": "intertitres des pages"
+    },
+    "AS-067-09": {
+      "page": 26,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-068-02": {
+      "page": 10,
+      "titre_imprime": "RETRAIT",
+      "origine": "intertitres des pages"
+    },
+    "AS-068-03": {
+      "page": 14,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-068-08": {
+      "page": 36,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-069-03": {
+      "page": 13,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-069-08": {
+      "page": 36,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-070-05": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-071-02": {
+      "page": 8,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-071-03": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-071-05": {
+      "page": 15,
+      "titre_imprime": "PRÈS L'ADOPTION DE LA LOI S “35 HEURES”",
+      "origine": "intertitres des pages"
+    },
+    "AS-071-06": {
+      "page": 18,
+      "titre_imprime": "SOUS COUVERT DE 35 HEURES: FLEXIBILITÉ, ANNUALISATION ET BAISSE DES SALAIRES !",
+      "origine": "intertitres des pages"
+    },
+    "AS-072-03": {
+      "page": 15,
+      "titre_imprime": "CT \"L'INSURGÉ\" DU 15 MAI 1998",
+      "origine": "intertitres des pages"
+    },
+    "AS-072-04": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-072-06": {
+      "page": 24,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-02": {
+      "page": 12,
+      "titre_imprime": "UNE OFFENSIVE GÉNÉRALE CONTRE LES CONVENTIONS COLLECTIVES QUI À POUR OBJECTIF LA LIQUIDATI…",
+      "origine": "intertitres des pages"
+    },
+    "AS-075-03": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-04": {
+      "page": 22,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-05": {
+      "page": 25,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-06": {
+      "page": 32,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-02": {
+      "page": 8,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-03": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-04": {
+      "page": 13,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-076-05": {
+      "page": 15,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-076-06": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-08": {
+      "page": 20,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-077-03": {
+      "page": 11,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-077-04": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-077-06": {
+      "page": 21,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-078-02": {
+      "page": 6,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-078-03": {
+      "page": 32,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-079-06": {
+      "page": 25,
+      "titre_imprime": "MLITANTS INTERVIENNENT ET INFORMENT CPS",
+      "origine": "intertitres des pages"
+    },
+    "AS-082-02": {
+      "page": 11,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "AS-082-05": {
+      "page": 27,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "B84-002-03": {
+      "page": 4,
+      "titre_imprime": "LES MILITANTS QUI EDITENT “COMBATTRE POUR LE SOCIALISME * AGISSENT.",
+      "origine": "intertitres des pages"
+    },
+    "B84-002-04": {
+      "page": 5,
+      "titre_imprime": "LES_VRAÏIES RAISONS DU XXIX CONGRES.",
+      "origine": "intertitres des pages"
+    },
+    "NS-005-02": {
+      "page": 4,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-005-04": {
+      "page": 21,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-006-04": {
+      "page": 15,
+      "titre_imprime": "LA RESPONSABILITÉ DES DIRECTIONS FSU (DU SNES, DE L'UNATOS, DU SNASUB), DES FEDERATIONS ET…",
+      "origine": "intertitres des pages"
+    },
+    "NS-010-02": {
+      "page": 1,
+      "titre_imprime": "EDITORIAL",
+      "origine": "sommaire imprimé"
+    },
+    "NS-010-S1-01": {
+      "page": 1,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-011-03": {
+      "page": 3,
+      "titre_imprime": "EDITORIAL",
+      "origine": "sommaire imprimé"
+    },
+    "NS-011-S1-01": {
+      "page": 1,
+      "titre_imprime": "COMMUNIQUE DU CERCLE 21/03/2008",
+      "origine": "sommaire imprimé"
+    },
+    "NS-014-03": {
+      "page": 11,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-016-05": {
+      "page": 19,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-019-03": {
+      "page": 15,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-021-03": {
+      "page": 11,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-026-03": {
+      "page": 10,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-029-03": {
+      "page": 14,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-029-05": {
+      "page": 35,
+      "titre_imprime": "RESOLUTION DE CONSTITUTION DU GROUPE POUR LE POR ET L'IOR",
+      "origine": "sommaire imprimé"
+    },
+    "NS-030-05": {
+      "page": 15,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-031-02": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-032-03": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-033-03": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "intertitres des pages"
+    },
+    "NS-038-02": {
+      "page": 10,
+      "titre_imprime": "LES MILITANTS INTERVIENNENT ET INFORMENT CPS",
+      "origine": "sommaire imprimé"
+    },
+    "NS-040-02": {
+      "page": 8,
+      "titre_imprime": "LES MILITANTS INTERVIENNENT ET INFORMENT cPs (ENSEIGNEMENT F FINANCES HOPITAUX RATP |",
+      "origine": "sommaire imprimé"
+    },
+    "NS-043-03": {
+      "page": 9,
+      "titre_imprime": "COMMUNIQUE SUR LA SITUATION EN LIBYE",
+      "origine": "sommaire imprimé"
+    },
+    "NS-043-06": {
+      "page": 19,
+      "titre_imprime": "LES MILITANTS INTERVIENNENT ET INFORMENT CPS",
+      "origine": "sommaire imprimé"
+    },
+    "NS-055-04": {
+      "page": 25,
+      "titre_imprime": "Supplément R.A.T.P. à CPS nouvelle série n°54 COMBATTRE POUR LE SOCIALISME informe :",
+      "origine": "intertitres des pages"
+    },
+    "NS-057-03": {
+      "page": 23,
+      "titre_imprime": "Les militants interviennent et informent C.P.S.",
+      "origine": "intertitres des pages"
+    }
+  }
+}

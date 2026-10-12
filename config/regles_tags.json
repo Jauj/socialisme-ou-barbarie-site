@@ -1,0 +1,634 @@
+{
+  "_description": "Règles de tags complémentaires appliquées aux titres des articles (titre du sommaire + titre de l'index thématique). Chaque règle ajoute le tag 'tag' quand l'expression régulière 'motif' est trouvée et que 'sauf' (facultatif) ne l'est pas. Recherche insensible à la casse sauf si \"casse\": true. Les associations ainsi créées ont source = 'regle' dans la base, pour les distinguer de l'index thématique du site (source = 'site').",
+  "nouveaux_tags": [
+    {
+      "slug": "irak",
+      "libelle": "Irak",
+      "categorie": "International"
+    },
+    {
+      "slug": "tunisie",
+      "libelle": "Tunisie",
+      "categorie": "International"
+    },
+    {
+      "slug": "afrique",
+      "libelle": "Afrique",
+      "categorie": "International"
+    },
+    {
+      "slug": "travail",
+      "libelle": "Code du travail, emploi, chômage, salaires",
+      "categorie": "France"
+    },
+    {
+      "slug": "industrie",
+      "libelle": "Métallurgie, automobile, industrie",
+      "categorie": "France"
+    },
+    {
+      "slug": "vrepublique",
+      "libelle": "Ve République, institutions",
+      "categorie": "France"
+    },
+    {
+      "slug": "grevegenerale",
+      "libelle": "Grève générale",
+      "categorie": "Théorie"
+    },
+    {
+      "slug": "frontunique",
+      "libelle": "Front unique",
+      "categorie": "Théorie"
+    }
+  ],
+  "regles": [
+    {
+      "tag": "editorial",
+      "motif": "^\\W*([ÉE]ditorial|EDITORIAL|Notes [ée]ditoriales)"
+    },
+    {
+      "tag": "militants",
+      "motif": "militants (interviennent|qui [ée]ditent)"
+    },
+    {
+      "tag": "onnouscommuniq",
+      "motif": "^\\W*On nous communique"
+    },
+    {
+      "tag": "noteseco",
+      "motif": "(situation|notes?) (sur la situation )?[ée]conomique|^\\W*[ÉE]conomie\\b|[ée]conomie (mondiale|am[ée]ricaine|capitaliste|fran[çc]aise)|r[ée]cession"
+    },
+    {
+      "tag": "situinter",
+      "motif": "situation (internationale|mondiale)|notes internationales|rapport (sur la situation )?international"
+    },
+    {
+      "tag": "jeunesse",
+      "motif": "\\bjeunes(se)?\\b|lyc[ée]en|Insurg[ée]|\\bCJR\\b|Cercle (de|des) Jeunes|Socialisme ou Barbarie|SouB"
+    },
+    {
+      "tag": "etudiants",
+      "motif": "[ée]tudiant|\\bUNEF"
+    },
+    {
+      "tag": "université",
+      "motif": "universit|enseignement sup[ée]rieur|\\bIUT\\b|Devaquet|\\bLRU\\b|loi ORE|Parcoursup|enseignants-chercheurs|\\bfacs?\\b"
+    },
+    {
+      "tag": "immigration",
+      "motif": "immigr|sans[- ]papiers|droit d.asile"
+    },
+    {
+      "tag": "immigres",
+      "motif": "\\bmigrants?\\b|r[ée]fugi[ée]s|Lampedusa"
+    },
+    {
+      "tag": "hommage",
+      "motif": "hommage|in memoriam|n[ée]crolog"
+    },
+    {
+      "tag": "kanakynouvelle",
+      "motif": "Kanak|Cal[ée]doni"
+    },
+    {
+      "tag": "maghrebsociali",
+      "motif": "Maghreb socialiste"
+    },
+    {
+      "tag": "niger",
+      "motif": "\\bNiger\\b"
+    },
+    {
+      "tag": "srilanka",
+      "motif": "Sri[- ]?Lanka|Tamoul"
+    },
+    {
+      "tag": "elections",
+      "motif": "[ée]lections?\\b|[ée]lectora|pr[ée]sidentielle|l[ée]gislatives|municipales|r[ée]f[ée]rendum|\\bscrutin|(premier|second|deuxi[èe]me) tour"
+    },
+    {
+      "tag": "enseignement",
+      "motif": "\\benseignement\\b(?! sup[ée]rieur)|enseignants?\\b|\\b[ée]coles?\\b|lyc[ée]e|coll[èe]ges?\\b|instituteur|professeurs?\\b|[ÉE]ducation nationale|rentr[ée]e scolaire|\\bSNES\\b|SNUipp|ma[îi]tres auxiliaires|apprentissage|enseignement professionnel|lyc[ée]es? professionnels?",
+      "sauf": "[ée]cole de (falsification|cadres)|enseignements de"
+    },
+    {
+      "tag": "etatpolicier",
+      "motif": "[ée]tat policier|r[ée]pression|polici[eè]r|\\bflics\\b|[ée]tat d.urgence|s[ée]curit[ée] globale|Vigipirate|lois? s[ée]curitaire"
+    },
+    {
+      "tag": "fonctionnaires",
+      "motif": "fonction publique|fonctionnaires|\\bPTT\\b|postiers?|La Poste|\\bFinances\\b|agents publics"
+    },
+    {
+      "tag": "maijuin68",
+      "motif": "mai[- ](juin )?(19)?68|\\b1968\\b"
+    },
+    {
+      "tag": "ratp",
+      "motif": "\\bRATP\\b"
+    },
+    {
+      "tag": "retraites",
+      "motif": "retraite|\\bpensions?\\b"
+    },
+    {
+      "tag": "sante",
+      "motif": "\\bsant[ée]\\b|h[ôo]pita|m[ée]decin|infirmi|covid|pand[ée]mie|sanitaire|AP-HP|\\bEhpad"
+    },
+    {
+      "tag": "secu",
+      "motif": "s[ée]curit[ée] sociale|\\bS[ée]cu\\b|assurance[- ]maladie|plan Jupp[ée]|\\bCSG\\b"
+    },
+    {
+      "tag": "sncf",
+      "motif": "\\bSNCF\\b|cheminot|ferroviaire"
+    },
+    {
+      "tag": "cci",
+      "motif": "\\bCCI\\b|Courant communiste internationaliste",
+      "casse": true
+    },
+    {
+      "tag": "cgt",
+      "motif": "\\bCGT\\b",
+      "casse": true
+    },
+    {
+      "tag": "cjr",
+      "motif": "\\bCJR\\b|Cercle (de|des) Jeunes R[ée]volutionnaires|Socialisme ou Barbarie|SouB"
+    },
+    {
+      "tag": "cps",
+      "motif": "(D[ée]claration|Communiqu[ée]|Conf[ée]rence|Rapport|R[ée]ponse|Lettre) du (Comit[ée]|Groupe|Cercle)\\b|Groupe pour la construction|Cercle pour la construction|adh[èe]re collectivement au Comit[ée]|\\bdu Comit[ée]\\b"
+    },
+    {
+      "tag": "fen",
+      "motif": "\\bFEN\\b",
+      "casse": true
+    },
+    {
+      "tag": "fn",
+      "motif": "Front [Nn]ational|\\bFN\\b|Le Pen|Rassemblement [Nn]ational|\\bRN\\b",
+      "casse": true
+    },
+    {
+      "tag": "fo",
+      "motif": "\\bFO\\b|Force[- ][Oo]uvri[èe]re|Bergeron|Blondel",
+      "casse": true
+    },
+    {
+      "tag": "fsu",
+      "motif": "\\bFSU\\b|SNUipp|SNASUB",
+      "casse": true
+    },
+    {
+      "tag": "lfi",
+      "motif": "\\bLFI\\b|France [Ii]nsoumise|M[ée]lenchon",
+      "casse": true
+    },
+    {
+      "tag": "lo",
+      "motif": "Lutte [Oo]uvri[èe]re|\\bLO\\b",
+      "casse": true
+    },
+    {
+      "tag": "pcf",
+      "motif": "\\bPCF\\b|Parti [Cc]ommuniste [Ff]ran[çc]ais|Marchais|Juquin",
+      "casse": true
+    },
+    {
+      "tag": "pci",
+      "motif": "\\bPCI\\b|Parti [Cc]ommuniste [Ii]nternationaliste",
+      "casse": true
+    },
+    {
+      "tag": "poi",
+      "motif": "\\bPOID?\\b|Parti [Oo]uvrier [Ii]nd[ée]pendant",
+      "casse": true
+    },
+    {
+      "tag": "ps",
+      "motif": "\\bPS\\b|Parti [Ss]ocialiste",
+      "casse": true
+    },
+    {
+      "tag": "pt",
+      "motif": "\\bM?PPT\\b|\\bPT\\b|Parti des [Tt]ravailleurs",
+      "sauf": "Br[ée]sil|Lula|Bolivi|\\bCOB\\b|bolivien",
+      "casse": true
+    },
+    {
+      "tag": "snuipp",
+      "motif": "SNU-?ipp"
+    },
+    {
+      "tag": "syndicats",
+      "motif": "syndica|conf[ée]d[ée]ra|\\bCFDT\\b|\\bCGT\\b|\\bFSU\\b|\\bFO\\b|\\bFEN\\b|\\bUNEF|Force ouvri[èe]re"
+    },
+    {
+      "tag": "unef",
+      "motif": "\\bUNEF"
+    },
+    {
+      "tag": "1789",
+      "motif": "R[ée]volution fran[çc]aise|\\b1789\\b|Robespierre|jacobin"
+    },
+    {
+      "tag": "1917",
+      "motif": "R[ée]volution (russe|d.[Oo]ctobre)|\\b1917\\b"
+    },
+    {
+      "tag": "crise",
+      "motif": "crise (du capitalisme|du capital|financi[èe]re|[ée]conomique|mondiale|capitaliste|du syst[èe]me)|r[ée]cession|\\bkrach|capitalisme en faillite|d[ée]composition du capitalisme"
+    },
+    {
+      "tag": "dialsoc",
+      "motif": "dialogue social|concertation|organismes de participation|\\bparticipation\\b|cogestion|corporatis|conf[ée]rence sociale|refondation sociale"
+    },
+    {
+      "tag": "ecologie",
+      "motif": "[ée]colog|climat|environnement|nucl[ée]aire|r[ée]chauffement|\\bCOP ?\\d"
+    },
+    {
+      "tag": "femmes",
+      "motif": "\\bfemmes?\\b|f[ée]minis|\\bIVG\\b|avortement|8 mars"
+    },
+    {
+      "tag": "guerreimp",
+      "motif": "guerres? (imp[ée]rialiste|mondiale|du Golfe|d.Irak|contre l.Ira[kn]|en |au |Isra[ëe]l)|intervention (militaire|imp[ée]rialiste)|imp[ée]rialiste contre|militarisation|\\bOTAN\\b|cr[ée]dits militaires|invasion|bombardement",
+      "sauf": "guerre (aux|contre la jeunesse|sociale)"
+    },
+    {
+      "tag": "histheo",
+      "motif": "^\\W*Histoire\\b|histoire du (mouvement ouvrier|trotskysme|PCI|Comit)|th[ée]orie|marxis|programme de transition|Commune de Paris|falsification"
+    },
+    {
+      "tag": "ivinter",
+      "motif": "IV[°eè]*(me)?\\s*Internationale|Quatri[èe]me Internationale|\\b4e Internationale|Internationale ouvri[èe]re r[ée]volutionnaire|conf[ée]rences? mondiales?"
+    },
+    {
+      "tag": "laïcité",
+      "motif": "la[ïi]cit|[ée]cole priv[ée]e|enseignement priv[ée]|loi Debr[ée]|Falloux|[ÉE]glise|catholi|cl[ée]rical|religi"
+    },
+    {
+      "tag": "marx",
+      "motif": "\\bMarx\\b|marxis"
+    },
+    {
+      "tag": "trotsky",
+      "motif": "Trotsk"
+    },
+    {
+      "tag": "wwi",
+      "motif": "[Pp]remi[èe]re (guerre|boucherie) (imp[ée]rialiste )?mondiale|\\b1914\\b|Grande Guerre|Zimmerwald"
+    },
+    {
+      "tag": "afdusud",
+      "motif": "Afrique du Sud|sud-africain|\\bANC\\b|COSATU|apartheid|Soweto"
+    },
+    {
+      "tag": "afghanistan",
+      "motif": "\\bAfghan"
+    },
+    {
+      "tag": "albanie",
+      "motif": "\\bAlbani"
+    },
+    {
+      "tag": "algerie",
+      "motif": "\\bAlg[ée]ri"
+    },
+    {
+      "tag": "allemagne",
+      "motif": "\\bAllemagne|allemand|\\bRDA\\b|\\bRFA\\b|\\bSPD\\b|\\bDGB\\b"
+    },
+    {
+      "tag": "ameriquelatine",
+      "motif": "Am[ée]rique latine|latino-am[ée]ricain"
+    },
+    {
+      "tag": "argentine",
+      "motif": "\\bArgentin"
+    },
+    {
+      "tag": "armenie",
+      "motif": "\\bArm[ée]ni"
+    },
+    {
+      "tag": "balkans",
+      "motif": "Balkans"
+    },
+    {
+      "tag": "basque",
+      "motif": "[Bb]asque|Euskadi|\\bETA\\b",
+      "casse": true
+    },
+    {
+      "tag": "belgique",
+      "motif": "\\bBelgi"
+    },
+    {
+      "tag": "bolivie",
+      "motif": "\\bBolivi"
+    },
+    {
+      "tag": "bresil",
+      "motif": "Br[ée]sil|Brasil|Lula|Bolsonaro|\\bCNTE\\b"
+    },
+    {
+      "tag": "catalogne",
+      "motif": "\\bCatalogne|catalan"
+    },
+    {
+      "tag": "chili",
+      "motif": "\\bChili\\b|chilien"
+    },
+    {
+      "tag": "chine",
+      "motif": "\\bChin(e|ois|oise)\\b|Hong[- ]Kong|P[ée]kin|Tian.?anmen"
+    },
+    {
+      "tag": "conf",
+      "motif": "conf[ée]rence.{0,40}\\b(Comit[ée]|Groupe|Cercle)\\b|adopt[ée]e? (par|lors de) la .{0,30}conf[ée]rence (du|de notre)"
+    },
+    {
+      "tag": "coreedusud",
+      "motif": "Cor[ée]e du Sud|sud-cor[ée]en"
+    },
+    {
+      "tag": "cotedivoire",
+      "motif": "C[ôo]te d.Ivoire|ivoirien"
+    },
+    {
+      "tag": "cuba",
+      "motif": "\\bCuba|cubain|Castro"
+    },
+    {
+      "tag": "danemark",
+      "motif": "\\bDanemark|danois"
+    },
+    {
+      "tag": "egypte",
+      "motif": "[ÉE]gypt"
+    },
+    {
+      "tag": "espagne",
+      "motif": "\\bEspagn|\\bPSOE\\b|Podemos|Catalogne|catalan"
+    },
+    {
+      "tag": "europe",
+      "motif": "Union europ[ée]enne|\\bUE\\b|[ÉE]tats[- ]Unis [Ss]ocialistes d.Europe|Maastricht|\\bEurope\\b|europ[ée]en|\\bBCE\\b|Brexit"
+    },
+    {
+      "tag": "france",
+      "motif": "\\bFrance\\b|\\bfran[çc]ais(e|es)?\\b|Mitterrand|Chirac|Jospin|Balladur|Jupp[ée]|Raffarin|Villepin|Sarkozy|Fillon|Hollande|Ayrault|Valls|Macron|Castex|\\bBorne\\b|Attal|Barnier|Bayrou|Lecornu|Rocard|Cresson|B[ée]r[ée]govoy|Fabius|Mauroy|\\bMEDEF\\b|\\bCNPF\\b",
+      "sauf": "Parti communiste fran[çc]ais$"
+    },
+    {
+      "tag": "georgie",
+      "motif": "\\bG[ée]orgi"
+    },
+    {
+      "tag": "grece",
+      "motif": "\\bGr[èe]ce|\\bgrecs?\\b|Syriza|Tsipras"
+    },
+    {
+      "tag": "guadeloupe",
+      "motif": "\\bGuadeloup|Martinique|Antilles|\\bLKP\\b"
+    },
+    {
+      "tag": "haiti",
+      "motif": "\\bHa[ïi]ti"
+    },
+    {
+      "tag": "indochine",
+      "motif": "\\bIndochine|Vi[eê]t-?nam|Cambodg|\\bLaos\\b"
+    },
+    {
+      "tag": "iran",
+      "motif": "\\bIran"
+    },
+    {
+      "tag": "irlande",
+      "motif": "\\bIrland|\\bIRA\\b|Ulster|Sinn F",
+      "casse": true
+    },
+    {
+      "tag": "italie",
+      "motif": "\\bItali"
+    },
+    {
+      "tag": "kosovo",
+      "motif": "\\bKosov"
+    },
+    {
+      "tag": "liban",
+      "motif": "\\bLiban"
+    },
+    {
+      "tag": "lybie",
+      "motif": "\\bLibye|Lybie|libyen"
+    },
+    {
+      "tag": "maghreb",
+      "motif": "Maghreb"
+    },
+    {
+      "tag": "mali",
+      "motif": "\\bMali\\b|malien"
+    },
+    {
+      "tag": "maroc",
+      "motif": "\\bMaroc|marocain"
+    },
+    {
+      "tag": "mayotte",
+      "motif": "\\bMayotte"
+    },
+    {
+      "tag": "mexique",
+      "motif": "\\bMexi"
+    },
+    {
+      "tag": "nicaragua",
+      "motif": "\\bNicaragua|sandinist"
+    },
+    {
+      "tag": "palestine",
+      "motif": "\\bPalestin|Gaza|Isra[ëe]l|sionis|Cisjordanie|Intifada"
+    },
+    {
+      "tag": "pologne",
+      "motif": "\\bPologne|polonais|Solidarno"
+    },
+    {
+      "tag": "roumanie",
+      "motif": "\\bRoumani"
+    },
+    {
+      "tag": "russie",
+      "motif": "\\bRussie|\\brusses?\\b|URSS|sovi[ée]ti|Kremlin|Gorbatchev|Eltsine|Poutine|Perestro|Glasnost|Moscou"
+    },
+    {
+      "tag": "somalie",
+      "motif": "\\bSomali"
+    },
+    {
+      "tag": "tchad",
+      "motif": "\\bTchad"
+    },
+    {
+      "tag": "uk",
+      "motif": "Royaume[- ]Uni|Grande[- ]Bretagne|britannique|\\banglais|Angleterre|Brexit|travailliste|Labour|Thatcher|[ÉE]cosse"
+    },
+    {
+      "tag": "ukraine",
+      "motif": "\\bUkrain"
+    },
+    {
+      "tag": "uruguay",
+      "motif": "\\bUruguay"
+    },
+    {
+      "tag": "usa",
+      "motif": "[ÉE]tats[- ]Unis|\\bam[ée]ricaine?s?\\b|\\bUSA\\b|\\bTrump|\\bBush\\b|Obama|Biden|Reagan|Wall Street",
+      "sauf": "[ÉE]tats[- ]Unis [Ss]ocialistes d.Europe|latino-am[ée]ricain"
+    },
+    {
+      "tag": "venezuela",
+      "motif": "V[ée]n[ée]zu[ée]l|Ch[áa]vez|Maduro"
+    },
+    {
+      "tag": "yougo",
+      "motif": "\\bYougoslav|Serbi|Bosni|Croati|Kosov|Sarajevo|Milosevic|\\bRFY\\b|Mac[ée]doine|Slov[ée]ni"
+    },
+    {
+      "tag": "irak",
+      "motif": "\\bIra[kq]"
+    },
+    {
+      "tag": "tunisie",
+      "motif": "\\bTunisi"
+    },
+    {
+      "tag": "afrique",
+      "motif": "\\bAfrique\\b(?! du Sud)|\\bafricain"
+    },
+    {
+      "tag": "travail",
+      "motif": "code du travail|loi travail|El Khomri|temps de travail|35 heures|flexibilit|ch[ôo]m|licenci|salaires?\\b|pouvoir d.achat|[ée]pargne salariale"
+    },
+    {
+      "tag": "industrie",
+      "motif": "m[ée]tallurg|sid[ée]rurg|Renault|Peugeot|\\bPSA\\b|Citro[ëe]n|automobile|Michelin|Alstom|Airbus|mineurs|chantiers navals",
+      "casse": false
+    },
+    {
+      "tag": "vrepublique",
+      "motif": "V[eè°]*(me)? ?R[ée]publique|Cinqui[èe]me R[ée]publique|constitutionnel|S[ée]nat\\b|Assembl[ée]e nationale|d[ée]centralisation|r[ée]gionalisation"
+    },
+    {
+      "tag": "grevegenerale",
+      "motif": "gr[èe]ve g[ée]n[ée]rale"
+    },
+    {
+      "tag": "frontunique",
+      "motif": "front unique|front uni\\b"
+    }
+  ],
+  "texte": {
+    "_description": "Tags déduits du texte intégral : le tag est ajouté quand le motif (expression régulière, insensible à la casse sauf \"casse\": true) revient au moins \"min\" fois dans le texte et au moins \"densite\" fois pour 1 000 mots (une règle peut surcharger ces seuils). Seuils calibrés sur un échantillon de 120 associations jugées par des agents (voir README) : le sujet est développé dans au moins un passage de l'article dans ~96 % des cas au seuil retenu.",
+    "min": 5,
+    "densite": 2.0,
+    "regles": [
+      {"tag": "afdusud", "motif": "Afrique du Sud|sud-africain"},
+      {"tag": "afghanistan", "motif": "Afghanistan|afghan"},
+      {"tag": "albanie", "motif": "Albanie|albanais"},
+      {"tag": "algerie", "motif": "Alg[ée]ri(?:e|en)"},
+      {"tag": "allemagne", "motif": "Allemagne|\\ballemand|\\bRFA\\b|\\bRDA\\b|Bundestag|\\bSPD\\b"},
+      {"tag": "argentine", "motif": "\\bArgentin"},
+      {"tag": "armenie", "motif": "\\bArm[ée]ni"},
+      {"tag": "balkans", "motif": "Balkans"},
+      {"tag": "basque", "motif": "Pays basque|\\bbasques?\\b|\\bETA\\b"},
+      {"tag": "belgique", "motif": "Belgique|\\bbelges?\\b"},
+      {"tag": "bolivie", "motif": "\\bBolivi"},
+      {"tag": "bresil", "motif": "Br[ée]sil"},
+      {"tag": "catalogne", "motif": "Catalogne|catalan"},
+      {"tag": "chili", "motif": "\\bChili\\b|chilien"},
+      {"tag": "chine", "motif": "\\bChine\\b|chinois"},
+      {"tag": "coreedusud", "motif": "Cor[ée]e du Sud|sud-cor[ée]en"},
+      {"tag": "cotedivoire", "motif": "C[ôo]te d.Ivoire|ivoirien"},
+      {"tag": "cuba", "motif": "\\bCuba\\b|cubain"},
+      {"tag": "danemark", "motif": "Danemark|danois"},
+      {"tag": "egypte", "motif": "\\b[ÉE]gypt"},
+      {"tag": "espagne", "motif": "Espagne|espagnol|\\bPSOE\\b|Podemos"},
+      {"tag": "europe", "motif": "Union europ[ée]enne|Commission europ[ée]enne|Maastricht|trait[ée] de Lisbonne|zone euro|Banque centrale europ[ée]enne|\\bBCE\\b|Parlement europ[ée]en|[ÉE]tats[- ]Unis socialistes d.Europe"},
+      {"tag": "georgie", "motif": "\\bG[ée]orgi"},
+      {"tag": "grece", "motif": "Gr[èe]ce|\\bgrec(?:que)?s?\\b|Syriza"},
+      {"tag": "guadeloupe", "motif": "\\bGuadeloup"},
+      {"tag": "haiti", "motif": "\\bHa[ïi]ti"},
+      {"tag": "immigres", "motif": "migrants?|sans[- ]papiers|immigr[ée]s?\\b|r[ée]fugi[ée]s"},
+      {"tag": "indochine", "motif": "Indochine|Vi[eê]t-?nam"},
+      {"tag": "irak", "motif": "\\bIra[kq]"},
+      {"tag": "iran", "motif": "\\bIran\\b|iranien"},
+      {"tag": "irlande", "motif": "\\bIrland"},
+      {"tag": "italie", "motif": "\\bItali"},
+      {"tag": "kosovo", "motif": "Kosovo|kosovar"},
+      {"tag": "liban", "motif": "\\bLiban|libanais|Hezbollah"},
+      {"tag": "lybie", "motif": "\\bLib?y?bye?\\b|\\blibyen"},
+      {"tag": "mali", "motif": "\\bMali\\b|malien"},
+      {"tag": "maroc", "motif": "\\bMaroc|marocain"},
+      {"tag": "mayotte", "motif": "Mayotte|mahorais"},
+      {"tag": "mexique", "motif": "Mexi(?:que|cain)"},
+      {"tag": "nicaragua", "motif": "\\bNicaragu|sandinist"},
+      {"tag": "palestine", "motif": "\\bPalestin|\\bGaza\\b|Cisjordanie|\\bIsra[ëe]l"},
+      {"tag": "pologne", "motif": "Pologne|polonais|Solidarnosc|Solidarno[sś][cć]"},
+      {"tag": "roumanie", "motif": "\\bRoumani"},
+      {"tag": "russie", "motif": "Russie|\\brusses?\\b|\\bURSS\\b|sovi[ée]tique|Kremlin|Poutine|Gorbatchev|Eltsine"},
+      {"tag": "somalie", "motif": "\\bSomali"},
+      {"tag": "tchad", "motif": "\\bTchad"},
+      {"tag": "tunisie", "motif": "\\bTunisi"},
+      {"tag": "uk", "motif": "Royaume-Uni|Grande-Bretagne|britannique|Angleterre|\\banglais|Labour|travailliste|Thatcher|Blair|Corbyn|\\bTUC\\b"},
+      {"tag": "ukraine", "motif": "\\bUkrain"},
+      {"tag": "uruguay", "motif": "\\bUrugua"},
+      {"tag": "usa", "motif": "[ÉE]tats[- ]Unis(?! socialistes)|am[ée]ricain|\\bUSA\\b|Maison[- ]Blanche|Trump|Obama|Bush|Biden|Clinton|Reagan"},
+      {"tag": "venezuela", "motif": "V[ée]n[ée]zu[ée]l|Chavez|Maduro"},
+      {"tag": "yougo", "motif": "Yougoslav|\\bSerbi|\\bserbe|Croati|\\bcroate|Bosni|Milosevic"},
+      {"tag": "kanakynouvelle", "motif": "\\bKanak|Nouvelle-Cal[ée]donie"},
+      {"tag": "srilanka", "motif": "Sri Lanka|tamoul"},
+      {"tag": "retraites", "motif": "retraites?\\b|retrait[ée]s\\b|\\bpensions?\\b"},
+      {"tag": "secu", "motif": "S[ée]curit[ée] sociale|\\bS[ée]cu\\b|assurance[- ]maladie|\\bCSG\\b|\\bRDS\\b|plan Jupp[ée]"},
+      {"tag": "sante", "motif": "h[ôo]pita|sant[ée] publique|soignants?|infirmi[èe]r"},
+      {"tag": "enseignement", "motif": "enseignants?|\\b[ée]coles?\\b|lyc[ée]es?\\b|coll[èe]ges?\\b|instituteurs?|professeurs?|[ée]ducation nationale"},
+      {"tag": "université", "motif": "universit"},
+      {"tag": "etudiants", "motif": "[ée]tudiant"},
+      {"tag": "sncf", "motif": "\\bSNCF\\b|cheminot"},
+      {"tag": "ratp", "motif": "\\bRATP\\b"},
+      {"tag": "fonctionnaires", "motif": "fonction publique|fonctionnaires?"},
+      {"tag": "etatpolicier", "motif": "[ée]tat policier|r[ée]pression polici[èe]re|violences polici[èe]res|[ée]tat d.urgence|lois? s[ée]curitaires?|loi s[ée]curit[ée] globale"},
+      {"tag": "industrie", "motif": "m[ée]tallurg|automobile|Renault|Peugeot|\\bPSA\\b|Citro[ëe]n|sid[ée]rurg|Arcelor"},
+      {"tag": "laïcité", "motif": "la[ïi]cit[ée]|la[ïi]ques?\\b|enseignement priv[ée]|[ée]coles? priv[ée]es?"},
+      {"tag": "ecologie", "motif": "[ée]cologi|climat|r[ée]chauffement"},
+      {"tag": "femmes", "motif": "\\bfemmes?\\b|\\bIVG\\b|avortement|f[ée]minis"},
+      {"tag": "grevegenerale", "motif": "gr[èe]ve g[ée]n[ée]rale"},
+      {"tag": "frontunique", "motif": "front unique"},
+      {"tag": "ivinter", "motif": "IVe? Internationale|Quatri[èe]me Internationale|IV° Internationale"},
+      {"tag": "trotsky", "motif": "\\bTrotsk"},
+      {"tag": "1917", "motif": "r[ée]volution russe|r[ée]volution d.Octobre|bolchevi"},
+      {"tag": "1789", "motif": "r[ée]volution fran[çc]aise|\\b1789\\b|jacobin"},
+      {"tag": "wwi", "motif": "premi[èe]re guerre mondiale|\\b1914\\b"},
+      {"tag": "maijuin68", "motif": "mai[- ]juin 1968|mai 68|\\b1968\\b"},
+      {"tag": "fn", "motif": "Front national|Rassemblement national|\\bFN\\b|\\bRN\\b|Le Pen|Bardella"},
+      {"tag": "lfi", "motif": "France insoumise|\\bLFI\\b|M[ée]lenchon"},
+      {"tag": "pt", "motif": "\\bMPPT\\b|Parti des [Tt]ravailleurs|\\bPT\\b", "casse": true},
+      {"tag": "poi", "motif": "\\bPOI\\b|Parti ouvrier ind[ée]pendant"},
+      {"tag": "pci", "motif": "\\bPCI\\b|\\bOCI\\b|Lambert"},
+      {"tag": "lo", "motif": "Lutte [Oo]uvri[èe]re|\\bLO\\b", "casse": true},
+      {"tag": "fsu", "motif": "\\bFSU\\b"},
+      {"tag": "fen", "motif": "\\bFEN\\b"},
+      {"tag": "unef", "motif": "\\bUNEF"},
+      {"tag": "snuipp", "motif": "SNUipp"}
+    ]
+  }
+}

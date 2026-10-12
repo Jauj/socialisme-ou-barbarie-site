@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorateur CPS</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #fbfaf8; --fg: #1d1b19; --muted: #6b6560; --line: #e4e0db;
+    --accent: #b3261e; --chip: #f1ece6; --chip-fg: #4a433d; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161514; --fg: #ece8e3; --muted: #a39d96; --line: #34312e;
+      --accent: #ff7a6e; --chip: #2a2725; --chip-fg: #d8d2cb; --card: #1d1c1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header, main { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+  header { padding-top: 24px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px;
+              padding: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+  .controls label { display: flex; flex-direction: column; font-size: .8rem; color: var(--muted); gap: 2px; }
+  .controls .wide { grid-column: 1 / -1; }
+  input, select, button { font: inherit; color: var(--fg); background: var(--bg);
+                          border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+  button { cursor: pointer; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .status { color: var(--muted); margin: 12px 0; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  ol { list-style: none; padding: 0; margin: 0; }
+  li.art { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .meta { font-size: .8rem; color: var(--muted); }
+  .titre { margin: 2px 0; }
+  .titre small { color: var(--muted); }
+  .liens a { font-size: .8rem; margin-right: 10px; color: var(--accent); }
+  .tag { display: inline-block; font-size: .75rem; padding: 1px 7px; margin: 2px 4px 0 0; border-radius: 10px;
+         background: var(--chip); color: var(--chip-fg); border: 0; cursor: pointer; }
+  .tag.regle { opacity: .75; font-style: italic; }
+  .tag.texte { background: transparent; border: 1px dashed var(--chip-fg); opacity: .8; }
+  .more { display: block; margin: 16px auto 40px; }
+  .erreur { color: var(--accent); }
+  footer { color: var(--muted); font-size: .8rem; max-width: 1000px; margin: 0 auto; padding: 0 16px 32px; }
+  .lire { font-size: .8rem; padding: 2px 10px; margin-right: 10px; border-color: var(--accent); color: var(--accent);
+          background: transparent; border-radius: 12px; }
+  dialog#lecteur { width: min(780px, 100%); max-width: 100%; max-height: 92vh; padding: 0; border: 1px solid var(--line);
+                   border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog#lecteur::backdrop { background: rgb(0 0 0 / .45); }
+  .lect-tete { position: sticky; top: 0; background: var(--card); border-bottom: 1px solid var(--line);
+               padding: 14px 52px 10px 20px; z-index: 1; }
+  .lect-tete h2 { font-size: 1.15rem; margin: 4px 0 6px; line-height: 1.35; }
+  #l-fermer { position: absolute; top: 10px; right: 12px; font-size: 1.3rem; line-height: 1; padding: 4px 10px; }
+  .corps { padding: 8px 20px 24px; font: 17px/1.65 Georgia, "Iowan Old Style", "Times New Roman", serif; }
+  .corps h3 { font: 600 1.15rem/1.35 system-ui, sans-serif; margin: 1.4em 0 .5em; }
+  .corps h4, .corps h5 { font: 600 1rem/1.35 system-ui, sans-serif; margin: 1.2em 0 .4em; }
+  .corps blockquote { margin: 1em 0; padding: .1em 1em; border-left: 3px solid var(--line); color: var(--muted); }
+  .corps img { max-width: 100%; height: auto; }
+  .corps table { border-collapse: collapse; font: .85rem/1.4 system-ui, sans-serif; margin: 1em 0; display: block; overflow-x: auto; }
+  .corps td, .corps th { border: 1px solid var(--line); padding: 3px 8px; }
+  .corps .notes { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: .8em; }
+  .corps a { color: var(--accent); }
+  .avert { font: .8rem/1.4 system-ui, sans-serif; color: var(--muted); background: var(--chip); padding: 8px 10px;
+           border-radius: 6px; margin: 10px 0 0; }
+  .aide { font-size: .75rem; color: var(--muted); }
+  .lien-pub { color: inherit; }
+  .numero { margin: 12px 0 0; padding: 10px 12px; background: var(--card); border: 1px solid var(--line);
+            border-left: 3px solid var(--accent); border-radius: 8px; }
+  .numero strong { font-size: 1.05rem; }
+  .numero a, .numero button { font-size: .8rem; margin-right: 10px; }
+  .numero a { color: var(--accent); }
+  mark { background: #ffe58a; color: inherit; border-radius: 2px; padding: 0 1px; }
+  mark.courante { background: #ffb347; }
+  @media (prefers-color-scheme: dark) { mark { background: #6b5a12; } mark.courante { background: #9a5b12; } }
+  .lect-nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 8px; font: .8rem system-ui, sans-serif; }
+  .lect-nav button { font-size: .8rem; padding: 2px 10px; border-radius: 12px; }
+  .lect-nav button:disabled { opacity: .4; cursor: default; }
+  .lect-nav .pos { color: var(--muted); }
+  @media (max-width: 600px) { dialog#lecteur { max-height: 100vh; height: 100vh; border-radius: 0; } .corps { font-size: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Combattre pour le <span>socialisme</span></h1>
+  <p class="sub" id="sub">Chargement de la base…</p>
+  <div class="controls">
+    <label class="wide">Recherche dans le texte intégral
+      <input id="qt" type="search" placeholder='ex. "front unique", grève générale, trotsk*, -Jospin'>
+      <span class="aide">Tous les mots sont requis · « expression exacte » entre guillemets · préfixe* · -mot pour exclure · accents et majuscules indifférents</span>
+    </label>
+    <label class="wide">Recherche dans les titres
+      <input id="q" type="search" placeholder="ex. Bolivie, Jospin, retraites…">
+    </label>
+    <label>Série
+      <select id="serie"><option value="">Toutes</option></select>
+    </label>
+    <label>Type
+      <select id="type"><option value="">Tous</option></select>
+    </label>
+    <label>Tag
+      <select id="tag"><option value="">Tous</option></select>
+    </label>
+    <label>Numéro
+      <select id="pub"><option value="">Tous</option></select>
+    </label>
+    <label>Depuis
+      <input id="de" type="number" min="1984" max="2100" placeholder="1984">
+    </label>
+    <label>Jusqu'à
+      <input id="a" type="number" min="1984" max="2100" placeholder="2026">
+    </label>
+    <label>Tri
+      <select id="tri"><option value="desc">Plus récents d'abord</option><option value="asc">Plus anciens d'abord</option><option value="pertinence">Pertinence (texte intégral)</option></select>
+    </label>
+    <div class="row wide">
+      <label class="row" style="flex-direction:row"><input id="texte" type="checkbox"> Texte intégral disponible</label>
+      <button id="raz" type="button">Réinitialiser</button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="numero" id="numero" hidden></div>
+  <div class="status"><span id="compte"></span><span>Tags : index thématique du site ; <i>en italique</i> : déduits du titre ; en pointillé : déduits du texte intégral.</span></div>
+  <ol id="liste"></ol>
+  <button class="more" id="plus" hidden>Afficher plus</button>
+</main>
+<dialog id="lecteur">
+  <div class="lect-tete">
+    <div class="meta" id="l-meta"></div>
+    <h2 id="l-titre"></h2>
+    <div class="liens" id="l-liens"></div>
+    <div class="lect-nav">
+      <button id="l-prec" type="button">‹ Précédent</button>
+      <button id="l-suiv" type="button">Suivant ›</button>
+      <span class="pos" id="l-pos"></span>
+      <button id="l-occ" type="button" hidden></button>
+    </div>
+    <button id="l-fermer" type="button" aria-label="Fermer">×</button>
+  </div>
+  <div class="corps" id="l-corps"></div>
+</dialog>
+<footer>Source : <a href="http://socialisme.free.fr/">socialisme.free.fr</a> — données : <code>data/cps.json</code>.</footer>
+<script>
+const SERIES = { bulletin1984: "Bulletin 1984", ancienne: "Ancienne série", nouvelle: "Nouvelle série" };
+const TYPES = { numero: "Numéro", numero_special: "Numéro spécial", supplement: "Supplément", hors_serie: "Hors-série" };
+const CHAMPS = ["qt", "q", "serie", "type", "tag", "pub", "de", "a"];
+const PAS = 150;
+const $ = (id) => document.getElementById(id);
+const sansAccents = (s) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+let articles = [], parPub = {}, libelles = {}, limite = PAS, lecture = null, courants = [], versionIndex = "";
+// recherche plein texte : rangs = Map(id → rang) des articles trouvés, motif = RegExp de surlignage
+let recherche = { rangs: null, motif: null, erreur: null, enCours: false }, sequence = 0, minuterie = null, triManuel = false;
+
+function libellePublication(p) {
+  if (p.type === "supplement") return `Supplément au n°${p.numero} (${SERIES[p.serie]})`;
+  if (p.type === "hors_serie") return "Hors-série" + (p.titre ? ` : ${p.titre}` : "");
+  const cumule = p.serie === "nouvelle" && p.numero_cumule ? ` (n°${p.numero_cumule})` : "";
+  const prefixe = p.type === "numero_special" ? "N° spécial " : "n°";
+  return `CPS ${prefixe}${p.numero_label}${cumule} — ${SERIES[p.serie]}`;
+}
+
+function libelleCourt(p) {
+  const n = p.type === "supplement" ? `Suppl. au n°${p.numero}` : p.type === "hors_serie" ? "Hors-série"
+    : (p.type === "numero_special" ? "N° spécial " : "n°") + p.numero_label;
+  return `${n} — ${dateFr(p.date)}`;
+}
+
+function dateFr(d) {
+  const [y, m, j] = d.split("-");
+  return `${j !== "00" ? j + "/" : ""}${m}/${y}`;
+}
+
+function lireEtat() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  for (const k of CHAMPS) $(k).value = h.get(k) || "";
+  $("tri").value = ["asc", "pertinence"].includes(h.get("tri")) ? h.get("tri") : "desc";
+  triManuel = h.has("tri");
+  $("texte").checked = h.get("texte") === "1";
+  return h;
+}
+
+function ecrireEtat() {
+  const h = new URLSearchParams();
+  for (const k of CHAMPS) if ($(k).value) h.set(k, $(k).value);
+  if ($("tri").value !== "desc") h.set("tri", $("tri").value);
+  if ($("texte").checked) h.set("texte", "1");
+  if (lecture) h.set("lire", lecture);
+  history.replaceState(null, "", h.toString() ? "#" + h : location.pathname);
+}
+
+// ---- recherche plein texte : index SQLite FTS5 lu par requêtes HTTP Range (sql.js-httpvfs)
+const LETTRE = "[\\p{L}\\p{N}]", SEPARATEUR = "[^\\p{L}\\p{N}]+";
+const echapperRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+// « mots », "expressions", préfixe*, -exclusion → requête FTS5 et motif de surlignage
+function analyserRequete(s) {
+  const positifs = [], negatifs = [];
+  const re = /(-?)["«“]([^"»”]*)["»”]?(\*?)|(-?)([^\s"«“]+)/g;
+  let m;
+  while ((m = re.exec(s.trim()))) {
+    const entre = m[2] !== undefined;
+    const brut = entre ? m[2] : m[5];
+    const mots = sansAccents(brut).split(new RegExp(SEPARATEUR, "u")).filter(Boolean);
+    if (!mots.length) continue;
+    ((entre ? m[1] : m[4]) === "-" ? negatifs : positifs).push({ mots, prefixe: entre ? m[3] === "*" : brut.endsWith("*") });
+  }
+  if (!positifs.length) return null;
+  const terme = (t) => `"${t.mots.join(" ")}"${t.prefixe ? "*" : ""}`;
+  const fts = positifs.map(terme).join(" ") + negatifs.map((t) => " NOT " + terme(t)).join("");
+  // surlignage : on ignore les mots d'une lettre isolés (l', d'…)
+  const alternatives = positifs.filter((t) => t.mots.length > 1 || t.mots[0].length > 1 || positifs.length === 1)
+    .map((t) => t.mots.map(echapperRegex).join(SEPARATEUR) + (t.prefixe ? LETTRE + "*" : `(?!${LETTRE})`));
+  const motif = alternatives.length ? new RegExp(`(?<!${LETTRE})(?:${alternatives.join("|")})`, "gu") : null;
+  return { fts, motif };
+}
+
+function chargerScript(src) {
+  return new Promise((ok, ko) => {
+    const s = document.createElement("script");
+    s.src = src; s.onload = ok; s.onerror = () => ko(new Error("chargement de " + src));
+    document.head.append(s);
+  });
+}
+
+let promesseBase = null;
+function baseRecherche() {
+  if (!promesseBase) promesseBase = (async () => {
+    await chargerScript("vendor/sql.js-httpvfs/index.js");
+    const abs = (u) => new URL(u, location.href).href;
+    const w = await window.createDbWorker(
+      [{ from: "inline", config: { serverMode: "full", requestChunkSize: 4096,
+          url: abs("../data/recherche.sqlite" + (versionIndex ? "?v=" + versionIndex : "")) } }],
+      abs("vendor/sql.js-httpvfs/sqlite.worker.js"), abs("vendor/sql.js-httpvfs/sql-wasm.wasm"));
+    const ids = new Map((await w.db.query("SELECT n, id FROM ids")).map((r) => [r.n, r.id]));
+    return { w, ids };
+  })().catch((e) => { promesseBase = null; throw e; });
+  return promesseBase;
+}
+
+async function lancerRecherche() {
+  clearTimeout(minuterie);
+  const n = ++sequence;
+  const req = analyserRequete($("qt").value);
+  if (!req) {
+    recherche = { rangs: null, motif: null, erreur: null, enCours: false };
+    if ($("tri").value === "pertinence") $("tri").value = "desc";
+    triManuel = false;
+    limite = PAS; afficher();
+    return;
+  }
+  recherche = { ...recherche, enCours: true, erreur: null };
+  afficherCompte(courants);
+  try {
+    const b = await baseRecherche();
+    const lignes = await b.w.db.query(
+      "SELECT rowid AS n FROM recherche WHERE recherche MATCH ? ORDER BY bm25(recherche, 10.0, 5.0, 1.0)", [req.fts]);
+    if (n !== sequence) return;
+    const rangs = new Map();
+    lignes.forEach((l, i) => { const id = b.ids.get(l.n); if (id) rangs.set(id, i); });
+    recherche = { rangs, motif: req.motif, erreur: null, enCours: false };
+    if (!triManuel && $("tri").value === "desc") $("tri").value = "pertinence";
+  } catch (e) {
+    if (n !== sequence) return;
+    console.error(e);
+    recherche = { rangs: null, motif: null, enCours: false,
+                  erreur: "Recherche plein texte indisponible (" + (e.message || e) + "). Elle demande un serveur web acceptant les requêtes HTTP Range, comme GitHub Pages ou scripts/serveur.py." };
+  }
+  limite = PAS; afficher();
+}
+
+function filtrer() {
+  const q = sansAccents($("q").value).split(/\s+/).filter(Boolean);
+  const serie = $("serie").value, type = $("type").value, tag = $("tag").value, pub = $("pub").value;
+  const de = $("de").value, a = $("a").value, texte = $("texte").checked, rangs = recherche.rangs;
+  const res = articles.filter((x) =>
+    (!pub || x.pub.id === pub) && (!serie || x.pub.serie === serie) && (!type || x.pub.type === type) &&
+    (!tag || x.tags.some((t) => t.tag === tag)) &&
+    (!de || x.date.slice(0, 4) >= de) && (!a || x.date.slice(0, 4) <= a) &&
+    (!texte || x.texte_disponible) && q.every((m) => x.cle.includes(m)) && (!rangs || rangs.has(x.id)));
+  if (pub) return ordreNumero(res);                        // vue d'un numéro : ordre du sommaire
+  else if (rangs && $("tri").value === "pertinence") res.sort((u, v) => rangs.get(u.id) - rangs.get(v.id));
+  else {
+    res.sort((u, v) => (u.date + u.id).localeCompare(v.date + v.id));
+    if ($("tri").value !== "asc") res.reverse();
+  }
+  return res;
+}
+
+// ordre du sommaire du site ; les articles ajoutés d'après le sommaire imprimé (origine « pdf »)
+// s'insèrent avant le premier article du site qui commence plus loin dans le numéro
+function ordreNumero(liste) {
+  const res = liste.filter((a) => a.origine !== "pdf").sort((u, v) => u.ordre - v.ordre);
+  const site = [...res];
+  for (const a of liste.filter((a) => a.origine === "pdf").sort((u, v) => (u.page_debut || 0) - (v.page_debut || 0))) {
+    const apres = site.find((b) => b.page_debut && a.page_debut && b.page_debut > a.page_debut);
+    res.splice(apres ? res.indexOf(apres) : res.length, 0, a);
+  }
+  return res;
+}
+
+function lien(href, texte) {
+  const a = document.createElement("a");
+  a.href = href; a.textContent = texte; a.target = "_blank"; a.rel = "noopener";
+  return a;
+}
+
+function lienNumero(p) {
+  const a = document.createElement("a");
+  a.href = "#pub=" + encodeURIComponent(p.id);
+  a.className = "lien-pub";
+  a.title = "Voir tout le numéro";
+  a.textContent = libellePublication(p);
+  return a;
+}
+
+function afficherCompte(res) {
+  const n = (k) => `${k} article${k > 1 ? "s" : ""}`;
+  let t = n(res.length);
+  if (recherche.enCours) t += " — recherche dans le texte…";
+  else if (recherche.rangs)
+    t = res.length === recherche.rangs.size ? `${n(res.length)} trouvé${res.length > 1 ? "s" : ""} dans le texte intégral`
+      : `${n(res.length)} (sur ${recherche.rangs.size} trouvé${recherche.rangs.size > 1 ? "s" : ""} dans le texte intégral)`;
+  $("compte").textContent = t;
+  if (recherche.erreur) {
+    const e = document.createElement("span");
+    e.className = "erreur";
+    e.textContent = " " + recherche.erreur;
+    $("compte").append(e);
+  }
+}
+
+function afficherNumero() {
+  const p = parPub[$("pub").value], d = $("numero");
+  d.hidden = !p;
+  if (!p) return;
+  const tous = articles.filter((x) => x.pub === p);
+  d.replaceChildren();
+  const s = document.createElement("strong");
+  s.textContent = libellePublication(p);
+  const info = document.createElement("div");
+  info.className = "meta";
+  const imprimee = p.date_imprimee && p.date_imprimee !== p.date ? ` (date imprimée en une : ${dateFr(p.date_imprimee)})` : "";
+  info.textContent = `${dateFr(p.date)}${imprimee} · ${tous.length} article${tous.length > 1 ? "s" : ""}, dans l'ordre du sommaire · ${p.id}`;
+  const liens = document.createElement("div");
+  liens.className = "liens";
+  if (p.url_pdf && p.pdf_disponible) liens.append(lien(p.url_pdf, "PDF du numéro"));
+  const parent = p.parent_id && parPub[p.parent_id];
+  if (parent) {
+    const a = lienNumero(parent);
+    a.textContent = "Numéro parent : " + libelleCourt(parent);
+    liens.append(a);
+  }
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = "Tous les numéros";
+  b.onclick = () => { $("pub").value = ""; limite = PAS; afficher(); };
+  liens.append(b);
+  d.append(s, info, liens);
+}
+
+function afficher() {
+  ecrireEtat();
+  const res = filtrer();
+  courants = res;
+  afficherCompte(res);
+  afficherNumero();
+  const ol = $("liste");
+  ol.replaceChildren();
+  for (const x of res.slice(0, limite)) {
+    const li = document.createElement("li");
+    li.className = "art";
+    const meta = document.createElement("div");
+    meta.className = "meta";
+    meta.append(`${dateFr(x.date)} · `, lienNumero(x.pub), ` · ${x.id}` + (x.date_redaction ? ` · rédigé le ${dateFr(x.date_redaction)}` : "")
+      + (x.origine === "pdf" ? " · ajouté d'après le sommaire imprimé du numéro (absent du site)" : ""));
+    const titre = document.createElement("div");
+    titre.className = "titre";
+    titre.textContent = x.titre;
+    if (x.titre_index) {
+      const s = document.createElement("small");
+      s.textContent = " — " + x.titre_index;
+      titre.append(s);
+    }
+    const liens = document.createElement("div");
+    liens.className = "liens";
+    if (x.texte_disponible) {
+      const b = document.createElement("button");
+      b.className = "lire";
+      b.type = "button";
+      b.textContent = "Lire";
+      b.onclick = () => lire(x);
+      liens.append(b);
+    }
+    if (x.url_html) liens.append(lien(x.url_html, "HTML"));
+    if (x.url_pdf) liens.append(lien(x.url_pdf + (x.pdf_page ? "#page=" + x.pdf_page : ""), x.pdf_page ? `PDF p. ${x.pdf_page}` : "PDF"));
+    if (x.pub.url_pdf && x.pub.pdf_disponible && x.pub.url_pdf !== x.url_pdf) {
+      const p = !x.pdf_page && x.page_debut ? x.page_debut : null;
+      liens.append(lien(x.pub.url_pdf + (p ? "#page=" + p : ""), p ? `PDF du numéro p. ${p}` : "PDF du numéro"));
+    }
+    const tags = document.createElement("div");
+    for (const t of x.tags) {
+      const b = document.createElement("button");
+      b.className = "tag" + (t.source === "site" ? "" : " " + t.source);
+      b.textContent = libelles[t.tag] || t.tag;
+      b.title = { regle: "Tag déduit du titre", texte: "Tag déduit du texte intégral (terme fréquent dans l'article)" }[t.source]
+        || "Tag de l'index thématique du site";
+      b.onclick = () => { $("tag").value = t.tag; limite = PAS; afficher(); window.scrollTo(0, 0); };
+      tags.append(b);
+    }
+    li.append(meta, titre, liens, tags);
+    ol.append(li);
+  }
+  $("plus").hidden = res.length <= limite;
+}
+
+// ---- rendu Markdown (sous-ensemble produit par ce projet), sans HTML venant du texte
+function echapperHTML(t) {
+  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function enLigne(t) {
+  const proteges = [];
+  t = t.replace(/\\([\\`*_{}\[\]()#+\-.!<>|])/g, (m, c) => { proteges.push(c); return "\u0000" + (proteges.length - 1) + "\u0000"; });
+  t = echapperHTML(t);
+  t = t.replace(/!\[([^\]]*)\]\((https?:[^)\s]+)\)/g, (m, alt, u) => `<img src="${u}" alt="${alt}" loading="lazy">`);
+  t = t.replace(/\[\^(\w+)\]/g, (m, n) => `<sup><a href="#note-${n}">${n}</a></sup>`);
+  t = t.replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, (m, txt, u) => `<a href="${u}" target="_blank" rel="noopener">${txt}</a>`);
+  t = t.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
+  t = t.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  t = t.replace(/\*(.+?)\*/g, "<em>$1</em>");
+  return t.replace(/\u0000(\d+)\u0000/g, (m, i) => echapperHTML(proteges[+i]));
+}
+
+function tableau(lignes) {
+  const cellules = (l) => l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+  let h = "<table>", debut = 0;
+  if (lignes.length > 1 && /^\|?\s*:?-{3,}/.test(lignes[1])) {
+    h += "<thead><tr>" + cellules(lignes[0]).map((c) => `<th>${enLigne(c)}</th>`).join("") + "</tr></thead>";
+    debut = 2;
+  }
+  return h + "<tbody>" + lignes.slice(debut).map((l) => "<tr>" + cellules(l).map((c) => `<td>${enLigne(c)}</td>`).join("") + "</tr>").join("") + "</tbody></table>";
+}
+
+function rendreMarkdown(md) {
+  const L = md.split("\n"), notes = [];
+  let h = "", i = 0;
+  const special = /^(#{1,6}\s|>|- |\||\[\^\w+\]:)/;
+  while (i < L.length) {
+    const l = L[i];
+    let m;
+    if (!l.trim()) { i++; continue; }
+    if ((m = l.match(/^(#{1,6})\s+(.*)$/))) {
+      const n = Math.min(6, m[1].length + 1);
+      h += `<h${n}>${enLigne(m[2])}</h${n}>`; i++; continue;
+    }
+    if ((m = l.match(/^\[\^(\w+)\]:\s?(.*)$/))) { notes.push([m[1], m[2]]); i++; continue; }
+    if (l.startsWith(">")) {
+      const b = [];
+      while (i < L.length && (L[i].startsWith(">") || (L[i].trim() && b.length && !special.test(L[i])))) { b.push(L[i].replace(/^>\s?/, "")); i++; }
+      h += `<blockquote>${rendreMarkdown(b.join("\n"))}</blockquote>`; continue;
+    }
+    if (/^- /.test(l)) {
+      h += "<ul>";
+      while (i < L.length && /^- /.test(L[i])) {
+        let item = L[i].slice(2); i++;
+        while (i < L.length && L[i].trim() && !special.test(L[i])) { item += " " + L[i].trim(); i++; }
+        h += `<li>${enLigne(item)}</li>`;
+        while (i + 1 < L.length && !L[i].trim() && /^- /.test(L[i + 1])) i++;
+      }
+      h += "</ul>"; continue;
+    }
+    if (l.startsWith("|")) {
+      const rangs = [];
+      while (i < L.length && L[i].startsWith("|")) rangs.push(L[i++]);
+      h += tableau(rangs); continue;
+    }
+    const p = [];
+    while (i < L.length && L[i].trim() && !(p.length && special.test(L[i]))) p.push(L[i++]);
+    h += "<p>" + p.map((x) => x.endsWith("\\") ? enLigne(x.slice(0, -1)) + "<br>" : enLigne(x)).join(" ") + "</p>";
+  }
+  if (notes.length) h += `<ol class="notes">${notes.map(([n, t]) => `<li id="note-${n}" value="${/^\d+$/.test(n) ? n : ""}">${enLigne(t)}</li>`).join("")}</ol>`;
+  return h;
+}
+
+function enTete(md) {
+  const m = md.match(/^---\n([\s\S]*?)\n---\n/);
+  const meta = {};
+  if (m) for (const l of m[1].split("\n")) {
+    const k = l.indexOf(": ");
+    if (k > 0) { try { meta[l.slice(0, k)] = JSON.parse(l.slice(k + 2)); } catch { meta[l.slice(0, k)] = l.slice(k + 2); } }
+  }
+  return [meta, m ? md.slice(m[0].length) : md];
+}
+
+// ---- surlignage des termes recherchés (insensible aux accents et à la casse)
+function normaliserAvecIndex(t) {
+  let norm = "";
+  const idx = [];
+  for (let i = 0; i < t.length;) {
+    const ch = String.fromCodePoint(t.codePointAt(i));
+    const n = sansAccents(ch);
+    for (let k = 0; k < n.length; k++) idx.push(i);
+    norm += n;
+    i += ch.length;
+  }
+  idx.push(t.length);
+  return [norm, idx];
+}
+
+function surligner(racine, motif) {
+  const marche = document.createTreeWalker(racine, NodeFilter.SHOW_TEXT);
+  const noeuds = [];
+  while (marche.nextNode()) noeuds.push(marche.currentNode);
+  const marques = [];
+  for (const noeud of noeuds) {
+    const t = noeud.nodeValue, [norm, idx] = normaliserAvecIndex(t), plages = [];
+    motif.lastIndex = 0;
+    let m;
+    while ((m = motif.exec(norm))) {
+      if (!m[0]) { motif.lastIndex++; continue; }
+      let k = m.index + m[0].length;
+      while (k < norm.length && idx[k] === idx[k - 1]) k++;
+      plages.push([idx[m.index], idx[k]]);
+    }
+    if (!plages.length) continue;
+    const frag = document.createDocumentFragment();
+    let pos = 0;
+    for (const [d, f] of plages) {
+      if (d > pos) frag.append(t.slice(pos, d));
+      const mk = document.createElement("mark");
+      mk.textContent = t.slice(d, f);
+      frag.append(mk);
+      marques.push(mk);
+      pos = f;
+    }
+    if (pos < t.length) frag.append(t.slice(pos));
+    noeud.replaceWith(frag);
+  }
+  return marques;
+}
+
+let marques = [], iMarque = -1;
+function occurrenceSuivante() {
+  if (!marques.length) return;
+  if (iMarque >= 0) marques[iMarque].classList.remove("courante");
+  iMarque = (iMarque + 1) % marques.length;
+  marques[iMarque].classList.add("courante");
+  marques[iMarque].scrollIntoView({ block: "center" });
+  $("l-occ").textContent = `Occurrence ${iMarque + 1}/${marques.length} ↓`;
+}
+
+// articles voisins : dans la liste affichée si l'article y figure, sinon dans son numéro
+function voisins(x) {
+  let suite = courants.filter((a) => a.texte_disponible);
+  if (!suite.includes(x)) suite = ordreNumero(articles.filter((a) => a.pub === x.pub && a.texte_disponible));
+  const i = suite.indexOf(x);
+  if (i < 0) return { pos: "" };   // article sans texte ouvert par un lien direct
+  return { prec: suite[i - 1], suiv: suite[i + 1], pos: (courants.includes(x) ? "dans la liste : " : "dans le numéro : ") + `${i + 1} / ${suite.length}` };
+}
+
+async function lire(x) {
+  lecture = x.id;
+  ecrireEtat();
+  $("l-meta").replaceChildren(`${dateFr(x.date)} · `, lienNumero(x.pub), ` · ${x.id}` + (x.date_redaction ? ` · rédigé le ${dateFr(x.date_redaction)}` : ""));
+  $("l-titre").textContent = x.titre;
+  const liens = $("l-liens");
+  liens.replaceChildren();
+  if (x.url_html) liens.append(lien(x.url_html, "HTML"));
+  const pdf = x.url_pdf || (x.pub.pdf_disponible ? x.pub.url_pdf : null);
+  const page = x.pdf_page || x.page_debut;
+  if (pdf) liens.append(lien(pdf + (page ? "#page=" + page : ""), page ? `PDF p. ${page}` : "PDF"));
+  liens.append(lien("../" + x.markdown, "Markdown"));
+  const v = voisins(x);
+  for (const [id, cible] of [["l-prec", v.prec], ["l-suiv", v.suiv]]) {
+    $(id).disabled = !cible;
+    $(id).title = cible ? cible.titre : "";
+    $(id).onclick = cible ? () => lire(cible) : null;
+  }
+  $("l-pos").textContent = v.pos;
+  marques = []; iMarque = -1;
+  $("l-occ").hidden = true;
+  $("l-corps").innerHTML = '<p class="meta">Chargement…</p>';
+  if (!$("lecteur").open) $("lecteur").showModal();
+  $("lecteur").scrollTop = 0;
+  try {
+    const r = await fetch("../" + x.markdown);
+    if (!r.ok) throw new Error(r.status);
+    const [meta, corps] = enTete(await r.text());
+    if (lecture !== x.id) return;   // un autre article a été ouvert entre-temps
+    let html = rendreMarkdown(corps);
+    if (meta.texte_type === "pages_numero")
+      html = '<p class="avert">Texte découpé automatiquement dans le PDF du numéro : le début ou la fin peuvent déborder sur l\'article voisin.' +
+        (/fin incertaine/.test(meta.texte_source || "") ? " L\'article suivant du sommaire n\'a pas été retrouvé : la fin de ce texte peut en contenir une partie." : "") +
+        ' Pour les numéros scannés, le texte vient de l\'OCR et peut contenir des erreurs.</p>' + html;
+    else if (meta.texte_type === "pdf_publication" && /ocr/.test(meta.texte_source || ""))
+      html = '<p class="avert">Texte obtenu par OCR d\'un document scanné : il peut contenir des erreurs de reconnaissance.</p>' + html;
+    $("l-corps").innerHTML = html;
+    if (recherche.motif) {
+      marques = surligner($("l-corps"), recherche.motif);
+      if (marques.length) { $("l-occ").hidden = false; occurrenceSuivante(); }
+    }
+  } catch (e) {
+    $("l-corps").innerHTML = '<p class="erreur">Impossible de charger le texte de cet article.</p>';
+  }
+}
+
+function suivreAdresse() {
+  const avant = $("qt").value;
+  const h = lireEtat();
+  limite = PAS;
+  if ($("qt").value !== avant) lancerRecherche(); else afficher();
+  const cible = h.get("lire") && articles.find((a) => a.id === h.get("lire"));
+  if (cible) lire(cible);
+  else if ($("lecteur").open) $("lecteur").close();
+}
+
+async function init() {
+  try {
+    const r = await fetch("../data/cps.json");
+    if (!r.ok) throw new Error(r.status);
+    const data = await r.json();
+    versionIndex = data.recherche?.version || "";
+    for (const t of data.tags) libelles[t.slug] = t.libelle;
+    for (const p of data.publications) {
+      parPub[p.id] = p;
+      for (const a of p.articles)
+        articles.push({ ...a, pub: p, cle: sansAccents(a.titre + " " + (a.titre_index || "")) });
+    }
+    const compte = {};
+    for (const a of articles) for (const t of a.tags) compte[t.tag] = (compte[t.tag] || 0) + 1;
+    for (const [k, v] of Object.entries(SERIES)) $("serie").add(new Option(v, k));
+    for (const [k, v] of Object.entries(TYPES)) $("type").add(new Option(v, k));
+    const cats = {};
+    for (const t of data.tags) (cats[t.categorie] ||= []).push(t);
+    for (const [cat, ts] of Object.entries(cats)) {
+      const g = document.createElement("optgroup");
+      g.label = cat;
+      ts.sort((u, v) => u.libelle.localeCompare(v.libelle, "fr"));
+      for (const t of ts) g.append(new Option(`${t.libelle} (${compte[t.slug] || 0})`, t.slug));
+      $("tag").append(g);
+    }
+    for (const [k, v] of Object.entries(SERIES)) {
+      const g = document.createElement("optgroup");
+      g.label = v;
+      for (const p of data.publications) if (p.serie === k && p.articles.length) g.append(new Option(libelleCourt(p), p.id));
+      $("pub").append(g);
+    }
+    $("sub").textContent = `${data.publications.length} publications, ${articles.length} articles, ${data.tags.length} tags — 1984 à aujourd'hui.`;
+    const h = lireEtat();
+    for (const id of ["q", "serie", "type", "tag", "pub", "de", "a", "tri", "texte"])
+      $(id).addEventListener(id === "q" ? "input" : "change", () => {
+        if (id === "tri") triManuel = true;
+        limite = PAS; afficher();
+        if (id === "pub") window.scrollTo(0, 0);
+      });
+    $("qt").addEventListener("input", () => { clearTimeout(minuterie); minuterie = setTimeout(lancerRecherche, 500); });
+    $("qt").addEventListener("keydown", (e) => { if (e.key === "Enter") lancerRecherche(); });
+    $("plus").onclick = () => { limite += PAS; afficher(); };
+    $("l-fermer").onclick = () => $("lecteur").close();
+    $("l-occ").onclick = occurrenceSuivante;
+    $("lecteur").addEventListener("close", () => { lecture = null; ecrireEtat(); });
+    $("lecteur").addEventListener("click", (e) => { if (e.target === $("lecteur")) $("lecteur").close(); });
+    $("lecteur").addEventListener("keydown", (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.target.matches("input, select, textarea")) return;
+      if (e.key === "ArrowLeft" && !$("l-prec").disabled) $("l-prec").click();
+      if (e.key === "ArrowRight" && !$("l-suiv").disabled) $("l-suiv").click();
+    });
+    window.addEventListener("hashchange", suivreAdresse);
+    $("raz").onclick = () => {
+      for (const id of CHAMPS) $(id).value = "";
+      $("tri").value = "desc"; $("texte").checked = false; triManuel = false;
+      lancerRecherche();
+    };
+    if ($("qt").value) await lancerRecherche(); else afficher();
+    const cible = h.get("lire") && articles.find((a) => a.id === h.get("lire"));
+    if (cible) lire(cible);
+  } catch (e) {
+    console.error(e);
+    $("sub").innerHTML = '<span class="erreur">Impossible de charger ../data/cps.json. Servez le dépôt avec un serveur web (ex. <code>python3 scripts/serveur.py</code> à la racine) puis ouvrez /explorateur/.</span>';
+  }
+}
+init();
+</script>
+</body>
+</html>
