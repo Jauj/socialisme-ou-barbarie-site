@@ -173,6 +173,8 @@ CHAMPS = (r"(?:\b(?:NOM|PR[ÉE]NOM|ADRESSE|CODE\s+POST(?:AL|\.)|LOCALIT[ÉE]|VIL
           r"|E-?MAIL|COURRIEL|SIGNATURE)\b\s*[:;.]?|\b(?:ORGANISATION|SYNDICAT|ENTREPRISE|DATE)\s*:)")
 R_CHAMPS = re.compile(CHAMPS, re.I)
 R_ETIQUETTES = re.compile(r"\b(NOM|PR[ÉE]NOM|ADRESSE|CODE\s+POST|LOCALIT[ÉE]|VILLE|DATE)\b\s*[:;.]?", re.I)
+# « NOM: …… PRENOM: …… » : les deux premiers champs suffisent quand l'OCR a défiguré les suivants
+R_NOM_PRENOM = re.compile(r"\bNOM\s*[:;.…][^\n]{0,200}?\bPR[ÉE]NOM\s*[:;.…]")
 R_BULLETIN = re.compile(r"\w{0,2}ULLETIN\s+D.\s?ABONNEMENT|BULLETIN\s+DE\s+(?:COMMANDE|SOUSCRIPTION)", re.I)
 R_COUPON = re.compile(
     r"^\W*(?:Ch[èe]ques?\s+(?:[àa]\s+(?:établir|libeller)\s+)?(?:[àa]\s+)?l.\s?ordre\s+de"
@@ -244,6 +246,9 @@ def _debut_champs(t):
                  if e.start() - m.start() < 400}
         if len(suite) >= 3 and len(t) - m.start() < 700:
             return m.start()
+    m = R_NOM_PRENOM.search(t)
+    if m and len(t) - m.start() < 700:
+        return m.start()
     return None
 
 

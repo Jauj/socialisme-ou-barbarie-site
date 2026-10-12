@@ -13,9 +13,9 @@ de *Combattre pour le socialisme* (CPS) publiés en ligne sur
 S'y ajoutent les **suppléments** (déclarations, tracts, communiqués…) et les **hors‑séries**
 (brochures, rapports de conférence) listés sur le site.
 
-En chiffres : **381 publications, 1 293 articles, 118 tags**, le **texte intégral de
+En chiffres : **382 publications, 1 309 articles, 118 tags**, le **texte intégral de
 7 688 pages** (les 350 PDF disponibles, dont 177 numéros scannés océrisés) et une **version
-Markdown de chaque article** : 1 175 articles avec leur texte, en base (`texte_markdown`) et en
+Markdown de chaque article** : 1 280 articles avec leur texte, en base (`texte_markdown`) et en
 fichiers `.md` avec leurs métadonnées.
 
 Chiffres et anomalies détectées : voir [`docs/RAPPORT_QUALITE.md`](docs/RAPPORT_QUALITE.md)
@@ -81,7 +81,7 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (`pdf_page` : page indiquée par le site) |
 | `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`), par le sommaire imprimé en une du numéro (`sommaire`), retrouvée en cherchant le titre de l'article dans les pages (`titre`), retrouvée par relecture ([`config/articles_pdf.json`](config/articles_pdf.json), `relecture`), ou, pour le premier article d'un numéro introuvable autrement, début de la une (`ordre`) |
 | `texte_markdown` | texte intégral en Markdown, quand il a pu être obtenu (voir plus bas) |
-| `texte` | le même texte, brut — **seulement dans `cps_complet.sqlite`** (dérivable du Markdown, retiré de la base légère pour rester sous 50 Mo) |
+| `texte` | le même texte, brut — **seulement dans `cps_complet.sqlite`** (dérivable du Markdown, retiré de la base légère pour limiter sa taille, environ 50 Mo) |
 | `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article — surtitre compris — jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin ; `texte_source` signale une « fin incertaine » quand l'article suivant du sommaire n'a pas été retrouvé : le texte est alors borné à 16 pages) |
 | `texte_source` | URL du document dont vient le texte, pages et méthode (couche texte ou OCR) |
 | `origine` | `sommaire` (sommaire du site), `index_thematique` (article présent seulement dans l'index) ou `pdf` (article imprimé dans le numéro, avec son entrée au sommaire imprimé en une, mais absent du site : voir plus bas) |
@@ -129,12 +129,12 @@ de langue) puis contrôlées avant d'être versées dans
 [`config/articles_pdf.json`](config/articles_pdf.json) :
 
 - les entrées du sommaire imprimé en une qu'aucun article du site n'appariait (121 entrées) :
-  ⟨ABSENTS⟩ sont des articles imprimés dans le numéro mais absents du sommaire du site
+  15 sont des articles imprimés dans le numéro mais absents du sommaire du site
   (rubriques « Les militants interviennent et informent CPS », suppléments reproduits dans le
   numéro, communiqués) ; ils sont ajoutés avec `origine = pdf` et découpés comme les autres, ce
   qui borne aussi l'article qui les précède. Les autres entrées étaient des articles déjà
   présents sous un autre titre, des sous‑parties de rubriques ou du bruit d'OCR ;
-- les articles du site qu'aucune méthode ne retrouvait dans les pages (106) : pour ⟨RELUES⟩
+- les articles du site qu'aucune méthode ne retrouvait dans les pages (106) : pour 90
   d'entre eux, la page de début et l'intertitre tel qu'imprimé (erreurs d'OCR comprises) ont été
   repérés parmi les intertitres des pages situées entre l'article précédent et le suivant ;
   chaque proposition a été vérifiée (intertitre présent à la page indiquée) et les cas douteux
@@ -142,7 +142,7 @@ de langue) puis contrôlées avant d'être versées dans
 - enfin, les articles que le nouvel OCR (voir plus bas) faisait perdre ou placer ailleurs, parce
   qu'il lit parfois moins bien les titres en gros caractères : leur page de début est reprise de
   la version précédente de la base, après vérification au cas par cas des déplacements
-  (⟨REPRISES⟩ articles).
+  (35 articles).
 
 Cette relecture a aussi révélé une erreur du site : le PDF lié au n°24 de la nouvelle série est
 celui du n°25, dont le lien mène à un supplément (voir plus bas).
@@ -157,7 +157,7 @@ cette information en retrouve 68, dont 65 à la page exacte et 2 à une page pr�
 **Recherche plein texte.** L'index `articles_fts` porte sur `titre`, `titre_index` et
 `texte_markdown`. `cps.sqlite` le contient en mode allégé (recherche
 par mots, opérateurs AND/OR/NOT, préfixes `mot*`, mais pas de phrase exacte entre guillemets) pour
-rester sous 50 Mo. `cps_complet.sqlite` a l'index complet (phrases exactes, NEAR) sur les articles
+limiter sa taille. `cps_complet.sqlite` a l'index complet (phrases exactes, NEAR) sur les articles
 et sur les pages. `recherche.sqlite`, utilisé par l'explorateur, a lui aussi l'index complet
 (phrases exactes) mais sans le texte (table FTS5 `content=''`, table `ids` pour retrouver
 l'identifiant de l'article) : environ 17 Mo, dont le navigateur ne lit que les pages utiles.
@@ -165,13 +165,13 @@ l'identifiant de l'article) : environ 17 Mo, dont le navigateur ne lit que les p
 Vues pratiques : `v_articles` (articles avec leurs tags en une colonne), `v_tags` (tags avec leurs effectifs).
 
 **Dates.** La date d'une publication est celle du site (`date`). La date imprimée dans l'en‑tête
-de la une est aussi lue (`date_imprimee`, ⟨DATES_LUES⟩ publications) : elle concorde avec celle
-du site dans ⟨DATES_OK⟩ cas ; les écarts (souvent d'un ou deux jours pour les suppléments, parfois
+de la une est aussi lue (`date_imprimee`, 307 publications) : elle concorde avec celle
+du site dans 250 cas (19 autres où la une ne donne que le mois) cas ; les écarts (souvent d'un ou deux jours pour les suppléments, parfois
 de plusieurs mois) sont listés dans le rapport de qualité sans être corrigés. Seule une date
 lue dans les premières lignes de la une est retenue, à un an au plus de celle du site
 (au‑delà, c'est la date d'un événement cité) ; sur un scan, une date qui ne diffère de celle du
 site que d'un caractère est tenue pour une erreur d'OCR. La date de rédaction d'un article
-(`date_redaction`, ⟨REDACTION⟩ articles) est la date isolée qui clôt son texte ; le rapport liste
+(`date_redaction`, 529 articles) est la date isolée qui clôt son texte ; le rapport liste
 celles qui tombent après la date de publication ou plus d'un an avant (texte republié, ou
 rattaché au mauvais numéro par le site).
 
@@ -180,9 +180,10 @@ modèle français « best » de Tesseract, à la résolution native des images (
 standard à 300 ppi) ; page par page, la nouvelle version n'est gardée que si elle n'est pas
 nettement moins lisible (part de mots inconnus du vocabulaire des textes non océrisés), et pour
 les pages 1‑2, celle dont le sommaire imprimé est le mieux lu (le nouveau modèle lit mieux le
-texte courant, parfois moins bien les encadrés et les gros titres) : ⟨OCR_PAGES⟩. Les
+texte courant, parfois moins bien les encadrés et les gros titres) : 4 661 des 4 813 pages ont changé, et
+8 unes ont été rendues à l'ancien OCR. Les
 confusions typiques qui subsistent (« Île » pour « le », « 11 » pour « Il », « Ja »/« ia » pour
-« la ») sont corrigées au nettoyage, selon leur contexte. Enfin les ⟨OCR_CORR⟩ pages les plus
+« la ») sont corrigées au nettoyage, selon leur contexte. Enfin les 47 pages les plus
 abîmées ont été corrigées par des agents Haiku (erreurs de reconnaissance seulement, sans
 reformulation), chaque correction étant contrôlée automatiquement (au plus 25 % de mots
 modifiés, longueur à ± 15 %, moins de mots inconnus) ; elles sont dans `data/corrections_ocr/`,
@@ -247,14 +248,15 @@ Comment le Markdown est obtenu :
     loi », d'après les débuts de phrase du corpus) ; dans chaque article, `##` est réservé au
     titre et les intertitres du corps sont décalés d'un niveau.
 
-Contrôles : les 1 175 textes sont rendus par un moteur CommonMark sans aucune emphase cassée,
-les 1 293 en‑têtes YAML sont valides, et pour chaque page la part des mots du texte brut retrouvés
+Contrôles : les 1 309 en‑têtes YAML sont valides ; rendus par un moteur CommonMark, 53 des 1 280
+textes laissent encore voir un astérisque isolé (bruit d'OCR, comme `"*raisonnable`), contre 68
+dans la version précédente ; pour chaque page, la part des mots du texte brut retrouvés
 dans le Markdown est vérifiée (les 44 pages PDF mal reconstruites, sur environ 3 500, ont été
 refaites à partir du texte brut). Le rapport de qualité compte à chaque construction le bruit
 qui subsiste (bulletins, mentions légales, en‑têtes, faux intertitres…). Limites : les textes
-océrisés gardent des erreurs de reconnaissance (« Île » pour « le », colonnes parfois mêlées),
-et le découpage automatique des numéros peut déborder sur l'article voisin, en particulier
-quand le sommaire du site omet un article du numéro.
+océrisés gardent des erreurs de reconnaissance (moins nombreuses, voir « OCR » plus haut ;
+colonnes parfois mêlées), et le découpage automatique des numéros peut déborder sur l'article
+voisin, en particulier quand un article du numéro n'a pas été retrouvé (30 « fins incertaines »).
 
 ### Mesures avant et après le nettoyage et le nouveau découpage
 
@@ -289,6 +291,28 @@ HTML 3,4 → 3,3. Les baisses ont été vérifiées : sauf un paragraphe retiré
 depuis), les passages en cause sont identiques avant et après ; l'écart vient de la variabilité
 de la notation. Cette relecture a porté sur la version qui précède les dernières retouches
 qu'elle a suggérées (puces converties en listes, sommaires HTML retirés, révisions Word).
+
+### Mesures après le nouvel OCR, la relecture des sommaires et les métadonnées
+
+Par rapport à la version publiée précédemment :
+
+| Mesure | Avant | Après |
+|---|---|---|
+| Articles | 1 293 | 1 309 |
+| Articles avec texte | 1 175 | 1 280 |
+| Textes découpés dont la fin est incertaine | 85 | 30 |
+| « Île(s) » pour « le(s) » dans les textes océrisés (occurrences) | 963 | 7 |
+| « 11 » pour « Il » | 529 | 1 |
+| « Ja » / « ia » pour « la » | 501 | 0 |
+| Mots inconnus du vocabulaire du corpus, textes océrisés | 3,04 % | 2,54 % |
+| Associations article‑tag | 2 777 | 4 386 |
+| — dont déduites du texte intégral | — | 1 583 |
+| Publications dont la date imprimée en une est lue | — | 307 |
+| Articles dont la date de rédaction est lue | — | 529 |
+
+Aucun article n'a perdu son texte ; 105 en ont gagné un (articles retrouvés par la relecture,
+articles absents du site ajoutés). Les compteurs de bruit du tableau précédent sont stables
+(les légères hausses suivent celle du nombre de textes).
 
 ## Exemples de requêtes
 

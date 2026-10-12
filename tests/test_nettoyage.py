@@ -36,6 +36,15 @@ class Bruit(unittest.TestCase):
               "Suite du texte normal qui reprend ici.")
         self.assertEqual(net(md), "Texte.\n\nSuite du texte normal qui reprend ici.\n")
 
+    def test_champs_du_bulletin_defigures_par_l_ocr(self):
+        md = ("Pour cela, que les dirigeants de l'UNEF organisent une conférence nationale des étudiants.\n\n"
+              "NOM: persesensseN rer enn tent eune an renane SPA UT On San PRENOM:....…....…... suénesnauessen tes "
+              "eUAN TS CSPem area Ven NEC Ne ADI 2ESSE: (OPUS Eten Des ED N MO DGSE DOFUS AC ND VASE S NAT")
+        self.assertEqual(net(md), "Pour cela, que les dirigeants de l'UNEF organisent une conférence nationale "
+                                  "des étudiants.\n")
+        texte = "Il donna ses nom et prénom au policier, puis se tut."
+        self.assertEqual(net(texte), texte + "\n")
+
     def test_en_tete_de_page(self):
         self.assertEqual(net("Supplément à C.P.S. nouvelle série n°73 (155) – 7 juillet 2019 – page 15"), "")
         self.assertEqual(net("une 3 CPS N°21 - 20 mars 1988 réalité : le capitalisme"), "une réalité : le capitalisme\n")
