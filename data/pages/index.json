@@ -4,119 +4,204 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 10,
-  "caracteres": 41099
+  "caracteres": 41265,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 10,
+   "date": "2026-10-11"
+  }
  },
  "AS-002": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_05_00_cps_2.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 14,
-  "caracteres": 49182
+  "caracteres": 49685,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 13,
+   "date": "2026-10-11"
+  }
  },
  "AS-002-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_05_09_cps_special_pci.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 12,
-  "caracteres": 41781
+  "caracteres": 41978,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 12,
+   "date": "2026-10-11"
+  }
  },
  "AS-003": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_06_20_cps_3.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 18,
-  "caracteres": 58143
+  "caracteres": 57863,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 17,
+   "date": "2026-10-11"
+  }
  },
  "AS-003-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_07_24_cps_les_syndicats_a_l_epoque_imperialiste.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 23,
-  "caracteres": 93162
+  "caracteres": 93135,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 23,
+   "date": "2026-10-11"
+  }
  },
  "AS-004": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_09_00_cps_4.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 58083
+  "caracteres": 57957,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 16,
+   "date": "2026-10-11"
+  }
  },
  "AS-005": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_10_21_cps_5.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 20,
-  "caracteres": 76566
+  "caracteres": 76768,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 20,
+   "date": "2026-10-11"
+  }
  },
  "AS-005-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1985_11_30_cps_special_pci.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 27,
-  "caracteres": 124372
+  "caracteres": 124914,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 27,
+   "date": "2026-10-11"
+  }
  },
  "AS-006": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_01_06_cps_6.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 114387
+  "caracteres": 114405,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-007": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_02_15_cps_7.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 135076
+  "caracteres": 135105,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-007-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_01_18_suppl_cps_7.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 8,
-  "caracteres": 36820
+  "caracteres": 36836,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 7,
+   "date": "2026-10-11"
+  }
  },
  "AS-007-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_03_17_suppl_cps_7.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 4,
-  "caracteres": 22120
+  "caracteres": 22150,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 2,
+   "date": "2026-10-11"
+  }
  },
  "AS-008": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_03_30_cps_8.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 31,
-  "caracteres": 130540
+  "caracteres": 130832,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "AS-009": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_04_18_cps_9_special_pci.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 20,
-  "caracteres": 87704
+  "caracteres": 87737,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 20,
+   "date": "2026-10-11"
+  }
  },
  "AS-010": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_06_05_cps_10.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 169038
+  "caracteres": 169117,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-011": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_08_25_cps_11.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 152052
+  "caracteres": 152122,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-011-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_09_22_cps_special_PCI.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 129583
+  "caracteres": 129331,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "AS-012": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_10_23_cps_12.pdf",
@@ -131,112 +216,192 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 2,
-  "caracteres": 7267
+  "caracteres": 7263,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 2,
+   "date": "2026-10-11"
+  }
  },
  "AS-012-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_10_23_cps_12.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 169799
+  "caracteres": 169860,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-013": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_12_15_cps_13.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 155397
+  "caracteres": 155446,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-013-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1986_12_31_pour_construction_por.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 10,
-  "caracteres": 43489
+  "caracteres": 43509,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 9,
+   "date": "2026-10-11"
+  }
  },
  "AS-013-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_01_02_supplement_cps_13.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 2,
-  "caracteres": 6206
+  "caracteres": 6188,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 2,
+   "date": "2026-10-11"
+  }
  },
  "AS-014": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_01_26_cps_14.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 150241
+  "caracteres": 149686,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-014-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_01_00_enseignement_et_revolution_socialiste.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 84,
-  "caracteres": 441444
+  "caracteres": 442990,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 76,
+   "date": "2026-10-11"
+  }
  },
  "AS-014-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_01_27_supplement_cps_14.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 20,
-  "caracteres": 95811
+  "caracteres": 95944,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 17,
+   "date": "2026-10-11"
+  }
  },
  "AS-015": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_03_15_cps_15.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 33,
-  "caracteres": 185748
+  "caracteres": 185957,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-015-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_03_30_supplement_a_cps_15.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 14,
-  "caracteres": 72337
+  "caracteres": 72381,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 14,
+   "date": "2026-10-11"
+  }
  },
  "AS-016": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_05_03_cps_16.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 26,
-  "caracteres": 87907
+  "caracteres": 87952,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 25,
+   "date": "2026-10-11"
+  }
  },
  "AS-016-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_05_20_supplement_cps_16_special_PCI.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 163347
+  "caracteres": 163473,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "AS-017": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_07_02_cps_17.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 124802
+  "caracteres": 124899,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "AS-017-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_08_04_supplement_cps_17.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 4,
-  "caracteres": 20136
+  "caracteres": 20087,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 4,
+   "date": "2026-10-11"
+  }
  },
  "AS-018": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_09_12_cps_18.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 184568
+  "caracteres": 184756,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-018-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_11_03_supplement_cps_18.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 10,
-  "caracteres": 38264
+  "caracteres": 38282,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 10,
+   "date": "2026-10-11"
+  }
  },
  "AS-018-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1987_11_03_supplement_cps_18.pdf",
@@ -259,133 +424,228 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 161219
+  "caracteres": 161385,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-020": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_01_25_cps_20.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 183045
+  "caracteres": 183131,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-020-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_03_05_cps_special_PCI.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 157833
+  "caracteres": 157738,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "AS-021": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_03_20_cps_21.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 182284
+  "caracteres": 182325,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-021-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_04_05_supplement_cps_21_election_presidentielle.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 2,
-  "caracteres": 9951
+  "caracteres": 9957,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 2,
+   "date": "2026-10-11"
+  }
  },
  "AS-021-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_04_21_cps_special_PCI.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 22,
-  "caracteres": 98706
+  "caracteres": 98827,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 21,
+   "date": "2026-10-11"
+  }
  },
  "AS-022": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_06_22_cps_22.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 174667
+  "caracteres": 175300,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-023": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_09_15_cps_23.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 167423
+  "caracteres": 167462,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-024": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_11_07_cps_24.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 176977
+  "caracteres": 176898,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-024-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_11_20_cps_special_4eme_conference.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 262584
+  "caracteres": 262534,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-025": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_01_07_cps25.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 165346
+  "caracteres": 165345,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "AS-026": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_02_25_cps_26.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 174071
+  "caracteres": 174014,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "AS-027": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_04_15_cps_27.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 176009
+  "caracteres": 176075,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "AS-028": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_06_22_cps_28.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 190016
+  "caracteres": 190084,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-029": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_09_16_cps_29.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 183165
+  "caracteres": 183343,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-029-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_09_01_supplement_cps_29.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 12,
-  "caracteres": 65119
+  "caracteres": 65102,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 12,
+   "date": "2026-10-11"
+  }
  },
  "AS-030": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_12_02_cps_30.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 211163
+  "caracteres": 210860,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-031": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_01_27_cps_31.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 204025
+  "caracteres": 204070,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-031-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_03_07_supplement_cps_31.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 42,
-  "caracteres": 238378
+  "caracteres": 238250,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 39,
+   "date": "2026-10-11"
+  }
  },
  "AS-031-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_03_07_supplement_cps_31.pdf",
@@ -408,77 +668,132 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 205072
+  "caracteres": 206017,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-033": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_06_05_cps_33.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 207333
+  "caracteres": 207256,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-034": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_09_11_cps_34.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 179541
+  "caracteres": 179822,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "AS-035": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_11_14_cps_35.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 192725
+  "caracteres": 192839,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-035-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1990_12_24_supplement_cps_35.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 172561
+  "caracteres": 172460,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "AS-036": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_02_04_cps_36.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 207301
+  "caracteres": 207171,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-037": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_04_18_cps_37.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 202649
+  "caracteres": 202796,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-037-S1": {
   "source": "http://socialisme.free.fr/supplements/1991_05_15_supplement_cps_37.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 10,
-  "caracteres": 58566
+  "caracteres": 58635,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 10,
+   "date": "2026-10-11"
+  }
  },
  "AS-038": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_06_14_cps_38.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 182313
+  "caracteres": 181875,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 31,
+   "date": "2026-10-11"
+  }
  },
  "AS-039": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_09_07_cps_39.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 198637
+  "caracteres": 198466,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-039-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_09_14_supplement_cps_39.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 85787
+  "caracteres": 85665,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 14,
+   "date": "2026-10-11"
+  }
  },
  "AS-039-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_09_14_supplement_cps_39.pdf",
@@ -493,14 +808,24 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 205265
+  "caracteres": 205211,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-040-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_11_22_supplement_cps_40.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 20,
-  "caracteres": 112568
+  "caracteres": 112355,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 20,
+   "date": "2026-10-11"
+  }
  },
  "AS-040-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1991_11_22_supplement_cps_40.pdf",
@@ -523,70 +848,120 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 195019
+  "caracteres": 195729,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-041-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_03_01_supplement_cps_41.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 14,
-  "caracteres": 63459
+  "caracteres": 63489,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 13,
+   "date": "2026-10-11"
+  }
  },
  "AS-041-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_03_10_supplement_2_cps_41.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 87409
+  "caracteres": 87477,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 14,
+   "date": "2026-10-11"
+  }
  },
  "AS-042": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_04_02_cps_42.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 190316
+  "caracteres": 190183,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-043": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_06_02_cps_43.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 200350
+  "caracteres": 200537,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-043-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_08_22_supplement_cps_43.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 84256
+  "caracteres": 84186,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 14,
+   "date": "2026-10-11"
+  }
  },
  "AS-044": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_10_03_cps_44.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 210434
+  "caracteres": 210312,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-045": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1992_12_05_cps_45.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 201555
+  "caracteres": 201186,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-046": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_02_04_cps_46.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 200200
+  "caracteres": 200283,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-046-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_02_19_supplement_cps_46.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 84518
+  "caracteres": 84610,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 15,
+   "date": "2026-10-11"
+  }
  },
  "AS-046-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_02_19_supplement_cps_46.pdf",
@@ -617,308 +992,528 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 199709
+  "caracteres": 199802,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-048": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_06_20_cps_48.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 222010
+  "caracteres": 221982,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-048-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_06_20_supplement_cps_48.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 14,
-  "caracteres": 88626
+  "caracteres": 88583,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 14,
+   "date": "2026-10-11"
+  }
  },
  "AS-049": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_09_20_cps_49.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 166143
+  "caracteres": 166082,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "AS-050": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_11_26_cps_50.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 205827
+  "caracteres": 205857,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-050-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1993_12_15_supplement_cps_50.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 86591
+  "caracteres": 86534,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 16,
+   "date": "2026-10-11"
+  }
  },
  "AS-050-S2": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_01_07_supplement_cps_50.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 12,
-  "caracteres": 63510
+  "caracteres": 63507,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 12,
+   "date": "2026-10-11"
+  }
  },
  "AS-051": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_02_12_cps_51.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 189537
+  "caracteres": 189670,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-052": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_04_15_cps_52.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 202445
+  "caracteres": 202492,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-052-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_05_02_supplement_cps_52.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 4,
-  "caracteres": 19987
+  "caracteres": 19996,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 4,
+   "date": "2026-10-11"
+  }
  },
  "AS-053": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_06_06_cps_53.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 197485
+  "caracteres": 197478,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-054": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_09_20_cps_54.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 197576
+  "caracteres": 197550,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-055": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1994_12_01_cps_55.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 194766
+  "caracteres": 194958,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-055-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1995_02_00_supplement_cps_55.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 6,
-  "caracteres": 32103
+  "caracteres": 32040,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 6,
+   "date": "2026-10-11"
+  }
  },
  "AS-056": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1995_02_15_cps_56.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 203658
+  "caracteres": 203775,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-057": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1995_04_04_cps_57.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 210613
+  "caracteres": 210668,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-058": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1995_06_09_cps_58.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 205803
+  "caracteres": 210254,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-059": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1995_09_25_cps_59.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 194850
+  "caracteres": 194802,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-060": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1995_11_23_cps_60.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 172685
+  "caracteres": 172782,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-061": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1996_01_20_cps_61.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 177088
+  "caracteres": 177072,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-062": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1996_04_03_cps_62.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 201725
+  "caracteres": 201709,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-063": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1996_06_15_cps_63.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 159140
+  "caracteres": 159228,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "AS-064": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1996_09_15_cps_64.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 206835
+  "caracteres": 206903,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-065": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1996_11_30_cps_65.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 202772
+  "caracteres": 202857,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-066": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1997_02_15_cps_66.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 203820
+  "caracteres": 203618,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-067": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1997_04_11_cps_67.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 204280
+  "caracteres": 204050,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-068": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1997_06_13_cps_68.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 211663
+  "caracteres": 211682,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-069": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1997_09_20_cps_69.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 210054
+  "caracteres": 210004,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-070": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1997_12_08_cps_70.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 204187
+  "caracteres": 204063,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-071": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1998_03_02_cps_71.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 189113
+  "caracteres": 188998,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-072": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1998_06_06_cps_72.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 24,
-  "caracteres": 134996
+  "caracteres": 134817,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 24,
+   "date": "2026-10-11"
+  }
  },
  "AS-073": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1998_06_27_cps73_74_spe_st_just.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 55,
-  "caracteres": 269594
+  "caracteres": 269458,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 45,
+   "date": "2026-10-11"
+  }
  },
  "AS-075": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1998_09_25_cps75.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 175502
+  "caracteres": 175292,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "AS-076": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1999_01_02_cps76.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 201459
+  "caracteres": 201418,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "AS-077": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1999_04_06_cps77.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 202075
+  "caracteres": 202295,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-078": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1999_05_31_cps78.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 186306
+  "caracteres": 185960,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-079": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1999_10_01_cps_79.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 28,
-  "caracteres": 142136
+  "caracteres": 142151,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 27,
+   "date": "2026-10-11"
+  }
  },
  "AS-079-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1999_12_08_supplement_cps_79.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 12,
-  "caracteres": 73748
+  "caracteres": 73946,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 12,
+   "date": "2026-10-11"
+  }
  },
  "AS-080": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2000_01_15_cps_80.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 204988
+  "caracteres": 205054,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "AS-081": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2000_04_28_cps_81.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 201407
+  "caracteres": 201241,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "AS-082": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2000_10_06_cps_82.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 184247
+  "caracteres": 183929,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "AS-21bis": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1988_05_15_cps_special_bis___defaite_de_Chirac.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 14,
-  "caracteres": 59103
+  "caracteres": 59131,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 11,
+   "date": "2026-10-11"
+  }
  },
  "B84-001": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1984_10_00_cps_1.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 10,
-  "caracteres": 41131
+  "caracteres": 40882,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 10,
+   "date": "2026-10-11"
+  }
  },
  "B84-002": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1984_11_00_cps_2.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 10,
-  "caracteres": 44755
+  "caracteres": 44603,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 8,
+   "date": "2026-10-11"
+  }
  },
  "B84-002-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1984_12_03_cps_special_pci.pdf",
@@ -932,7 +1527,12 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 16,
-  "caracteres": 80649
+  "caracteres": 80544,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 15,
+   "date": "2026-10-11"
+  }
  },
  "HS-1996-08-08": {
   "source": "http://socialisme.free.fr/histoire_theorie/1996_08_08_just_mondialisation.pdf",
@@ -981,84 +1581,144 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 168009
+  "caracteres": 168031,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "NS-002": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2001_01_12_cps2_84as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 200702
+  "caracteres": 200449,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-003": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2001_03_30_cps3_85as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 209040
+  "caracteres": 209201,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "NS-004": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2001_06_10_cps4_86as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 183657
+  "caracteres": 183774,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 31,
+   "date": "2026-10-11"
+  }
  },
  "NS-005": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2001_10_12_cps5_87as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 31,
-  "caracteres": 171311
+  "caracteres": 171315,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 31,
+   "date": "2026-10-11"
+  }
  },
  "NS-006": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2002_01_18_cps6_88as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 213580
+  "caracteres": 213795,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "NS-007": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2002_03_27_cps7_89as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 19,
-  "caracteres": 98754
+  "caracteres": 98900,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 18,
+   "date": "2026-10-11"
+  }
  },
  "NS-008": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2002_05_27_cps8_90as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 26,
-  "caracteres": 142509
+  "caracteres": 142725,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 25,
+   "date": "2026-10-11"
+  }
  },
  "NS-009": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2002_10_11_cps9_91as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 164907
+  "caracteres": 165004,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "NS-010": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2002_12_07_cps10_92as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 195901
+  "caracteres": 195922,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 36,
+   "date": "2026-10-11"
+  }
  },
  "NS-010-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2003_01_31_supplement_cps_10_92_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 24,
-  "caracteres": 113362
+  "caracteres": 113559,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 22,
+   "date": "2026-10-11"
+  }
  },
  "NS-011": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2003_03_22_cps11_93as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 31,
-  "caracteres": 170504
+  "caracteres": 170548,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "NS-011-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2003_03_22_cps11_93as.pdf",
@@ -1073,154 +1733,264 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 204705
+  "caracteres": 204818,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "NS-013": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2003_09_29_cps13_95as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 197139
+  "caracteres": 197349,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "NS-014": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2003_12_02_cps14_96as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 33,
-  "caracteres": 182583
+  "caracteres": 182432,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "NS-015": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2004_03_08_cps15_97as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 197921
+  "caracteres": 198124,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "NS-016": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2004_06_03_cps16_98as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 198077
+  "caracteres": 198305,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "NS-017": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2004_10_01_cps17_99as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 33,
-  "caracteres": 183933
+  "caracteres": 184028,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "NS-018": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2005_01_14_cps18_100as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 31,
-  "caracteres": 174883
+  "caracteres": 174903,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "NS-019": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2005_04_09_cps19_101as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 200799
+  "caracteres": 201426,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "NS-020": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2005_04_30_cps20_102as_spe_actu_soc.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 23,
-  "caracteres": 115778
+  "caracteres": 115822,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 22,
+   "date": "2026-10-11"
+  }
  },
  "NS-021": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2005_06_05_cps_21_103_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 159893
+  "caracteres": 159915,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "NS-022": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2005_09_30_cps_22_104_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 208276
+  "caracteres": 208241,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "NS-023": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2006_01_03_cps_23_105_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 195345
+  "caracteres": 195497,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "NS-024": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2006_06_03_cps_24_106_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 33,
-  "caracteres": 186651
+  "caracteres": 186637,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-025": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2006_08_22_cps25_107as_spe_cci.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 22,
-  "caracteres": 122309
+  "caracteres": 122343,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 22,
+   "date": "2026-10-11"
+  }
  },
  "NS-026": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2006_10_07_cps26_108as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 30,
-  "caracteres": 167170
+  "caracteres": 167175,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 29,
+   "date": "2026-10-11"
+  }
  },
  "NS-027": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_01_12_cps27_109as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 204253
+  "caracteres": 204594,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "NS-028": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_03_16_cps28_110as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 24,
-  "caracteres": 118919
+  "caracteres": 119051,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 24,
+   "date": "2026-10-11"
+  }
  },
  "NS-029": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_05_25_cps_29_111_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 177067
+  "caracteres": 176974,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 32,
+   "date": "2026-10-11"
+  }
  },
  "NS-030": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2007_09_29_cps30_112as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 33,
-  "caracteres": 191556
+  "caracteres": 191792,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-031": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_01_12_cps31_113as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 196404
+  "caracteres": 196428,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-032": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_03_29_cps32_114as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 35,
-  "caracteres": 201173
+  "caracteres": 201393,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-033": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_05_31_cps_33_115_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 204873
+  "caracteres": 204987,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 34,
+   "date": "2026-10-11"
+  }
  },
  "NS-033-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2008_05_31_cps_33_115_as.pdf",
@@ -1235,42 +2005,72 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 173568
+  "caracteres": 173566,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 31,
+   "date": "2026-10-11"
+  }
  },
  "NS-035": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_01_07_cps_35_117_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 202335
+  "caracteres": 202238,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "NS-036": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_03_29_cps_36_118_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 179977
+  "caracteres": 180015,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 31,
+   "date": "2026-10-11"
+  }
  },
  "NS-037": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_05_30_cps_37_119_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 182677
+  "caracteres": 182680,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-038": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2009_10_09_cps_38_120_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 189489
+  "caracteres": 189489,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 31,
+   "date": "2026-10-11"
+  }
  },
  "NS-039": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2010_01_23_cps39_121as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 192613
+  "caracteres": 192721,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-039-S2": {
   "source": "http://socialisme.free.fr/supplements/sup030410.pdf",
@@ -1284,28 +2084,48 @@
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 36,
-  "caracteres": 211621
+  "caracteres": 211631,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 35,
+   "date": "2026-10-11"
+  }
  },
  "NS-041": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2010_10_13_cps41_123as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 28,
-  "caracteres": 152500
+  "caracteres": 152726,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 27,
+   "date": "2026-10-11"
+  }
  },
  "NS-042": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2011_02_10_cps42_124as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 34,
-  "caracteres": 182459
+  "caracteres": 182491,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 33,
+   "date": "2026-10-11"
+  }
  },
  "NS-043": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2011_05_11_cps_43_125_as.pdf",
   "statut": "ok",
   "methode": "ocr_tesseract",
   "pages": 32,
-  "caracteres": 182989
+  "caracteres": 183043,
+  "ocr": {
+   "modele": "fra tessdata_best",
+   "pages_remplacees": 30,
+   "date": "2026-10-11"
+  }
  },
  "NS-044": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2011_10_11_cps44_126as.pdf",

@@ -108,6 +108,11 @@
     }
   ],
   "pages_relues": {
+    "AS-002-02": {
+      "page": 4,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-002-03": {
       "page": 7,
       "titre_imprime": null,
@@ -122,6 +127,11 @@
       "page": 10,
       "titre_imprime": "LIBRE DEBAT 7? OUI, MAIS AVEC QUI ET SUR QUELLES BASES ?",
       "origine": "intertitres des pages"
+    },
+    "AS-005-02": {
+      "page": 5,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-006-05": {
       "page": 27,
@@ -152,6 +162,16 @@
       "page": 24,
       "titre_imprime": "REPRODUCTION DU SUPPLEMENT, DATE DU 15 JUIN 1986, A \"TRIBUNE SYNDICALISTE UNITAIRE\" \"ANIME…",
       "origine": "intertitres des pages"
+    },
+    "AS-013-03": {
+      "page": 18,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-013-05": {
+      "page": 29,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-014-06": {
       "page": 26,
@@ -217,6 +237,11 @@
       "page": 20,
       "titre_imprime": "DEUX THÉORICIENS DE LA RÉVOLUTION DÉMOCRATIQUE BOURGEOISE",
       "origine": "intertitres des pages"
+    },
+    "AS-029-05": {
+      "page": 19,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-031-06": {
       "page": 25,
@@ -308,15 +333,35 @@
       "titre_imprime": "PREPARER L'AFFRONTEMENT AVEC LE GOUVERNEMENT ULTRA-REACTIONNAIRE BALLADUR - BAYROU - FILLO",
       "origine": "intertitres des pages"
     },
+    "AS-048-04": {
+      "page": 18,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-049-07": {
+      "page": 29,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-051-08": {
       "page": 35,
       "titre_imprime": "UN LECTEUR DE NANTES ÉCRIT À CPS",
       "origine": "intertitres des pages"
     },
+    "AS-052-02": {
+      "page": 6,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-052-07": {
       "page": 23,
       "titre_imprime": "PALESTINE : UN ACCORD NON VIAB",
       "origine": "intertitres des pages"
+    },
+    "AS-054-03": {
+      "page": 16,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-054-06": {
       "page": 36,
@@ -388,25 +433,90 @@
       "titre_imprime": "C.P.S. PUBLIE DEUX TEXTES ÉMANANT DE TRAVAILLEURS DE LA RATP CONCERNANT LE “CODE DE DÉONTO",
       "origine": "intertitres des pages"
     },
+    "AS-065-02": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-065-05": {
+      "page": 22,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-065-06": {
       "page": 28,
       "titre_imprime": "LE PCF PRÉPARE SON 29ÈME CONGRES",
       "origine": "intertitres des pages"
+    },
+    "AS-066-02": {
+      "page": 10,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-066-04": {
+      "page": 18,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-066-06": {
+      "page": 31,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-067-04": {
+      "page": 11,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-067-07": {
+      "page": 25,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-067-08": {
       "page": 25,
       "titre_imprime": "COMMUNIQUÉ DU COMITÉ POUR LA CONSTRUCTION DU PARTI OUVRIER RÉVOLUTIONNAIRE",
       "origine": "intertitres des pages"
     },
+    "AS-067-09": {
+      "page": 26,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-068-02": {
       "page": 10,
       "titre_imprime": "RETRAIT",
       "origine": "intertitres des pages"
     },
+    "AS-068-03": {
+      "page": 14,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-068-08": {
+      "page": 36,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-069-03": {
+      "page": 13,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-069-08": {
       "page": 36,
       "titre_imprime": null,
       "origine": "intertitres des pages"
+    },
+    "AS-070-05": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-071-02": {
+      "page": 8,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-071-03": {
       "page": 9,
@@ -428,10 +538,50 @@
       "titre_imprime": "CT \"L'INSURGÉ\" DU 15 MAI 1998",
       "origine": "intertitres des pages"
     },
+    "AS-072-04": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-072-06": {
+      "page": 24,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-075-02": {
       "page": 12,
       "titre_imprime": "UNE OFFENSIVE GÉNÉRALE CONTRE LES CONVENTIONS COLLECTIVES QUI À POUR OBJECTIF LA LIQUIDATI…",
       "origine": "intertitres des pages"
+    },
+    "AS-075-03": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-04": {
+      "page": 22,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-05": {
+      "page": 25,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-075-06": {
+      "page": 32,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-02": {
+      "page": 8,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-03": {
+      "page": 9,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-076-04": {
       "page": 13,
@@ -443,15 +593,40 @@
       "titre_imprime": null,
       "origine": "intertitres des pages"
     },
+    "AS-076-06": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-076-08": {
+      "page": 20,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-077-03": {
       "page": 11,
       "titre_imprime": null,
       "origine": "intertitres des pages"
     },
+    "AS-077-04": {
+      "page": 17,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
     "AS-077-06": {
       "page": 21,
       "titre_imprime": null,
       "origine": "intertitres des pages"
+    },
+    "AS-078-02": {
+      "page": 6,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
+    },
+    "AS-078-03": {
+      "page": 32,
+      "titre_imprime": null,
+      "origine": "localisation sur l'OCR précédent"
     },
     "AS-079-06": {
       "page": 25,

@@ -107,8 +107,8 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 
 **`pages`** (dans `cps_complet.sqlite`) — texte de chaque page de chaque PDF de publication
 (`texte` brut et `markdown` structuré), avec recherche plein texte (`pages_fts`). Les numéros scannés (bulletin 1984, ancienne série et
-nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract (français) : le texte peut
-contenir des erreurs de reconnaissance.
+nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract : le texte peut contenir
+des erreurs de reconnaissance (voir « OCR » plus bas).
 
 **Localisation des articles.** Le site n'indique la page de début que pour 80 articles. Pour les
 autres, trois indices sont combinés :
@@ -123,6 +123,29 @@ autres, trois indices sont combinés :
   l'ordre du sommaire, en écartant les pages qui citent plusieurs titres (une, sommaires de
   dernière page) ;
 - en dernier recours, la page du sommaire imprimé, et pour le premier article d'un numéro, la une.
+
+**Relecture des sommaires imprimés.** Deux listes de cas ont été soumises à des agents (modèles
+de langue) puis contrôlées avant d'être versées dans
+[`config/articles_pdf.json`](config/articles_pdf.json) :
+
+- les entrées du sommaire imprimé en une qu'aucun article du site n'appariait (121 entrées) :
+  ⟨ABSENTS⟩ sont des articles imprimés dans le numéro mais absents du sommaire du site
+  (rubriques « Les militants interviennent et informent CPS », suppléments reproduits dans le
+  numéro, communiqués) ; ils sont ajoutés avec `origine = pdf` et découpés comme les autres, ce
+  qui borne aussi l'article qui les précède. Les autres entrées étaient des articles déjà
+  présents sous un autre titre, des sous‑parties de rubriques ou du bruit d'OCR ;
+- les articles du site qu'aucune méthode ne retrouvait dans les pages (106) : pour ⟨RELUES⟩
+  d'entre eux, la page de début et l'intertitre tel qu'imprimé (erreurs d'OCR comprises) ont été
+  repérés parmi les intertitres des pages situées entre l'article précédent et le suivant ;
+  chaque proposition a été vérifiée (intertitre présent à la page indiquée) et les cas douteux
+  écartés (`page_debut_source = relecture`) ;
+- enfin, les articles que le nouvel OCR (voir plus bas) faisait perdre ou placer ailleurs, parce
+  qu'il lit parfois moins bien les titres en gros caractères : leur page de début est reprise de
+  la version précédente de la base, après vérification au cas par cas des déplacements
+  (⟨REPRISES⟩ articles).
+
+Cette relecture a aussi révélé une erreur du site : le PDF lié au n°24 de la nouvelle série est
+celui du n°25, dont le lien mène à un supplément (voir plus bas).
 
 Le début retenu est ensuite ajusté : le surtitre et les intertitres placés juste au‑dessus du titre
 retrouvé sont inclus, et en haut de page la fin de l'article précédent lui est laissée. Le texte
@@ -140,6 +163,31 @@ et sur les pages. `recherche.sqlite`, utilisé par l'explorateur, a lui aussi l'
 l'identifiant de l'article) : environ 17 Mo, dont le navigateur ne lit que les pages utiles.
 
 Vues pratiques : `v_articles` (articles avec leurs tags en une colonne), `v_tags` (tags avec leurs effectifs).
+
+**Dates.** La date d'une publication est celle du site (`date`). La date imprimée dans l'en‑tête
+de la une est aussi lue (`date_imprimee`, ⟨DATES_LUES⟩ publications) : elle concorde avec celle
+du site dans ⟨DATES_OK⟩ cas ; les écarts (souvent d'un ou deux jours pour les suppléments, parfois
+de plusieurs mois) sont listés dans le rapport de qualité sans être corrigés. Seule une date
+lue dans les premières lignes de la une est retenue, à un an au plus de celle du site
+(au‑delà, c'est la date d'un événement cité) ; sur un scan, une date qui ne diffère de celle du
+site que d'un caractère est tenue pour une erreur d'OCR. La date de rédaction d'un article
+(`date_redaction`, ⟨REDACTION⟩ articles) est la date isolée qui clôt son texte ; le rapport liste
+celles qui tombent après la date de publication ou plus d'un an avant (texte republié, ou
+rattaché au mauvais numéro par le site).
+
+**OCR.** Les 177 PDF scannés (images 1 bit à 400 ppi) ont été océrisés une seconde fois avec le
+modèle français « best » de Tesseract, à la résolution native des images (au lieu du modèle
+standard à 300 ppi) ; page par page, la nouvelle version n'est gardée que si elle n'est pas
+nettement moins lisible (part de mots inconnus du vocabulaire des textes non océrisés), et pour
+les pages 1‑2, celle dont le sommaire imprimé est le mieux lu (le nouveau modèle lit mieux le
+texte courant, parfois moins bien les encadrés et les gros titres) : ⟨OCR_PAGES⟩. Les
+confusions typiques qui subsistent (« Île » pour « le », « 11 » pour « Il », « Ja »/« ia » pour
+« la ») sont corrigées au nettoyage, selon leur contexte. Enfin les ⟨OCR_CORR⟩ pages les plus
+abîmées ont été corrigées par des agents Haiku (erreurs de reconnaissance seulement, sans
+reformulation), chaque correction étant contrôlée automatiquement (au plus 25 % de mots
+modifiés, longueur à ± 15 %, moins de mots inconnus) ; elles sont dans `data/corrections_ocr/`,
+le texte brut de l'OCR restant inchangé dans `data/pages/`. Les colonnes que Tesseract mêle
+encore dans certaines pages ne sont pas corrigées.
 
 ## Version Markdown des articles
 
@@ -355,8 +403,14 @@ Le sommaire du site contient quelques erreurs ; elles sont corrigées dans
   il n'y a pas de n°74 manquant ;
 - des « CPS n°0 » qui sont des hors‑séries, des entrées en double qui sont des suppléments.
 
+- le PDF lié au n°24 de la nouvelle série (fichier `2006_06_03_cps_24_106_as.pdf`) contient en
+  réalité le n°25 du 3 juin 2006, et le lien du n°25 mène à un supplément du 22 août 2006
+  (« La politique du CCI‑PT et de sa prétendue IVe Internationale ») : le n°25 reçoit son PDF,
+  le supplément devient une publication (`NS-025-S1`) et le n°24 est sans PDF.
+
 Les autres incohérences repérées automatiquement (dates du sommaire différentes de celle du
-nom de fichier PDF, etc.) sont listées dans le rapport de qualité sans être corrigées.
+nom de fichier PDF ou de la date imprimée en une, dates de rédaction postérieures à la
+publication, etc.) sont listées dans le rapport de qualité sans être corrigées.
 
 ## Droits
 
