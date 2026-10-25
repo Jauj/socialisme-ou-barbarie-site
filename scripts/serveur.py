@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Serveur web local pour l'explorateur, qui accepte les requêtes partielles (HTTP Range)
-comme GitHub Pages : la recherche plein texte lit data/recherche.sqlite par morceaux.
-(`python3 -m http.server` ne les accepte pas.)
+"""Serveur web local pour l'explorateur ; il accepte aussi les requêtes partielles (HTTP Range).
+La recherche plein texte lit l'index par morceaux entiers (data/recherche/, construit par
+build_db.py) : `python3 -m http.server` convient aussi.
 
 Usage : python3 scripts/serveur.py [--port 8000]   puis ouvrir http://localhost:8000/explorateur/
 """

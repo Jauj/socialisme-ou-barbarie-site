@@ -2,3 +2,5 @@ cache/
 __pycache__/
 *.pyc
 data/cps_complet.sqlite
+# morceaux de data/recherche.sqlite pour l'explorateur : construits (build_db.py) et publiés par la CI
+data/recherche/

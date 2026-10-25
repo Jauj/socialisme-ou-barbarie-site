@@ -32,8 +32,9 @@ data/
                         `python3 scripts/build_db.py`, sans réseau)
   markdown/<publication>/<article>.md   un fichier par article : en-tête YAML (titre, date, numéro,
                         tags, liens…) puis le texte en Markdown
-  recherche.sqlite      index plein texte de l'explorateur (FTS5 avec positions, sans le texte : lu
-                        dans le navigateur par requêtes HTTP Range)
+  recherche.sqlite      index plein texte de l'explorateur (FTS5 avec positions, sans le texte) ;
+                        recherche/ en contient la copie en morceaux de 64 Kio que lit le navigateur
+                        (construite par build_db.py et publiée par la CI, non versionnée)
   cps.json              export hiérarchique publications → articles → tags (sans les textes)
   csv/                  les tables au format CSV (UTF‑8) : publications, articles, tags, articles_tags
   textes/<article>.md|.txt  texte des articles disposant d'une page HTML ou d'un PDF propre sur le site
@@ -45,7 +46,7 @@ config/
   regles_tags.json      règles de tags complémentaires (sur les titres et sur le texte intégral)
   articles_pdf.json     articles imprimés absents du sommaire du site, pages de début relues
 sources/                pages du site utilisées (sommaire, index thématique, pages de tags)
-scripts/                scripts de collecte et de construction (+ serveur.py, serveur web local)
+scripts/                scripts de collecte et de construction (+ serveur.py, petit serveur web local)
 tests/                  tests de non-régression (python3 -m unittest discover -s tests -t .)
 explorateur/            page web de consultation (recherche plein texte, filtres, lecture, numéros)
 docs/RAPPORT_QUALITE.md statistiques et anomalies
@@ -173,7 +174,7 @@ par mots, opérateurs AND/OR/NOT, préfixes `mot*`, mais pas de phrase exacte en
 limiter sa taille. `cps_complet.sqlite` a l'index complet (phrases exactes, NEAR) sur les articles
 et sur les pages. `recherche.sqlite`, utilisé par l'explorateur, a lui aussi l'index complet
 (phrases exactes) mais sans le texte (table FTS5 `content=''`, table `ids` pour retrouver
-l'identifiant de l'article) : environ 17 Mo, dont le navigateur ne lit que les pages utiles.
+l'identifiant de l'article) : environ 17 Mo, dont le navigateur ne lit que les morceaux utiles.
 
 Vues pratiques : `v_articles` (articles avec leurs tags en une colonne), `v_tags` (tags avec leurs effectifs).
 
@@ -414,10 +415,14 @@ Avec Python : `sqlite3.connect("data/cps.sqlite")`, ou avec pandas
 - **recherche dans le texte intégral** des articles : tous les mots sont requis,
   `"expression exacte"` entre guillemets (ou « … »), préfixe `trotsk*`, exclusion `-mot`, sans
   accents ni casse ; résultats triés par pertinence (BM25, titres favorisés) et combinables avec
-  les autres filtres. Elle interroge `data/recherche.sqlite` directement dans le navigateur
-  ([sql.js-httpvfs](https://github.com/phiresky/sql.js-httpvfs), copie dans
-  `explorateur/vendor/`), qui ne télécharge que les pages de l'index nécessaires (requêtes HTTP
-  Range : 150 ko environ pour une recherche) ;
+  les autres filtres. Elle interroge l'index `data/recherche.sqlite` directement dans le
+  navigateur ([sql.js-httpvfs](https://github.com/phiresky/sql.js-httpvfs), copie dans
+  `explorateur/vendor/`), qui n'en télécharge que les morceaux nécessaires (`data/recherche/`,
+  morceaux de 64 Kio : 300 à 500 ko compressés pour les premières recherches, table des
+  identifiants comprise, moins ensuite). Chaque morceau est demandé en entier : GitHub Pages
+  compresse les fichiers à l'envoi et applique les requêtes HTTP Range aux octets compressés,
+  ce qui empêche de lire un fichier unique par plages (la bibliothèque a été adaptée en ce sens,
+  voir `explorateur/vendor/sql.js-httpvfs/MODIFICATIONS`) ;
 - recherche instantanée dans les titres, filtres par série, type, tag, numéro, période ;
 - **lecteur** : la version Markdown mise en forme, les termes recherchés surlignés (bouton
   « Occurrence suivante »), boutons et flèches ← → pour passer à l'article précédent ou suivant
@@ -430,9 +435,9 @@ Avec Python : `sqlite3.connect("data/cps.sqlite")`, ou avec pandas
 Tags : ceux de l'index thématique du site en clair, ceux déduits du titre en italique, ceux
 déduits du texte intégral en pointillé.
 
-En local, il faut un serveur qui accepte les requêtes HTTP Range (ce que ne fait pas
-`python3 -m http.server`) : `python3 scripts/serveur.py` à la racine du dépôt, puis
-<http://localhost:8000/explorateur/>.
+En local, n'importe quel serveur web convient (la page ne s'ouvre pas comme simple fichier) :
+`python3 scripts/serveur.py` ou `python3 -m http.server` à la racine du dépôt, après
+`build_db.py` (qui produit `data/recherche/`), puis <http://localhost:8000/explorateur/>.
 
 ## Reconstruire la base
 

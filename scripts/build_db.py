@@ -634,8 +634,8 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
 
 
 def ecrire_index_recherche(path, articles):
-    """Index plein texte de l'explorateur, lu dans le navigateur par requêtes HTTP Range :
-    table FTS5 sans contenu (le texte reste dans cps.sqlite et data/markdown) mais avec les
+    """Index plein texte de l'explorateur, lu dans le navigateur morceau par morceau
+    (decouper_index) : table FTS5 sans contenu (le texte reste dans cps.sqlite et data/markdown) mais avec les
     positions (detail=full), pour la recherche d'expressions exactes. La table ids relie le
     rowid de l'index à l'identifiant de l'article."""
     if path.exists():
@@ -654,6 +654,23 @@ def ecrire_index_recherche(path, articles):
     db.commit()
     db.execute("VACUUM")
     db.close()
+
+
+def decouper_index(path, dossier, taille=None, prefixe=None):
+    """Copie de l'index de recherche en morceaux de `taille` octets (dossier/<prefixe>000, 001…),
+    que l'explorateur lit chacun en entier : GitHub Pages compresse les fichiers à l'envoi et
+    applique alors les requêtes HTTP Range aux octets compressés, ce qui fausse la lecture par
+    plages d'un fichier unique. Renvoie la description lue par l'explorateur (dans cps.json)."""
+    taille, prefixe = taille or MORCEAU_RECHERCHE, prefixe or path.name + "."
+    dossier.mkdir(parents=True, exist_ok=True)
+    for f in dossier.glob(prefixe + "*"):
+        f.unlink()
+    donnees = path.read_bytes()
+    n = -(-len(donnees) // taille)
+    chiffres = max(3, len(str(n - 1)))
+    for i in range(n):
+        (dossier / f"{prefixe}{i:0{chiffres}d}").write_bytes(donnees[i * taille:(i + 1) * taille])
+    return {"prefixe": prefixe, "chiffres": chiffres, "morceau": taille, "taille": len(donnees), "morceaux": n}
 
 
 def ecrire_csv(dossier, publications, articles, tags, liens_tags):
@@ -911,6 +928,8 @@ SCORE_ANCRAGE_CONTRE_SOMMAIRE = 0.9
 MIN_TEXTE_PROPRE = 1000
 # taille au-delà de laquelle GitHub signale un fichier versionné (cps.sqlite)
 LIMITE_GITHUB = 50 * 2**20
+# morceaux de l'index de recherche lus par l'explorateur (decouper_index)
+MORCEAU_RECHERCHE = 64 * 1024
 
 
 def brut_vers_md(texte):
@@ -1262,10 +1281,12 @@ def main():
     ecrire_index_recherche(DATA / "recherche.sqlite", articles)
     if not args.sans_complet:
         ecrire_sqlite(DATA / "cps_complet.sqlite", pubs, articles, tags, liens_tags, pages, avec_pages=True)
+    morceaux = decouper_index(DATA / "recherche.sqlite", DATA / "recherche")
     ecrire_csv(DATA / "csv", pubs, articles, tags, liens_tags)
     empreinte = hashlib.sha1((DATA / "recherche.sqlite").read_bytes()).hexdigest()[:12]
     ecrire_json(DATA / "cps.json", pubs, articles, tags, liens_tags,
-                recherche={"fichier": "data/recherche.sqlite", "version": empreinte})
+                recherche={"fichier": "data/recherche.sqlite", "dossier": "data/recherche/", **morceaux,
+                           "version": empreinte})
     ecrire_markdown(DATA / "markdown", pubs, articles, tags, liens_tags)
     ecrire_rapport(DOCS / "RAPPORT_QUALITE.md", pubs, articles, tags, liens_tags, anomalies, non_trouves, nb_ajouts, pages,
                    lectures_dates)

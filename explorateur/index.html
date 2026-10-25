@@ -151,7 +151,7 @@ const CHAMPS = ["qt", "q", "serie", "type", "tag", "pub", "de", "a"];
 const PAS = 150;
 const $ = (id) => document.getElementById(id);
 const sansAccents = (s) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-let articles = [], parPub = {}, libelles = {}, limite = PAS, lecture = null, courants = [], versionIndex = "";
+let articles = [], parPub = {}, libelles = {}, limite = PAS, lecture = null, courants = [], infosIndex = {};
 // recherche plein texte : rangs = Map(id → rang) des articles trouvés, motif = RegExp de surlignage
 let recherche = { rangs: null, motif: null, erreur: null, enCours: false }, sequence = 0, minuterie = null, triManuel = false;
 
@@ -192,7 +192,9 @@ function ecrireEtat() {
   history.replaceState(null, "", h.toString() ? "#" + h : location.pathname);
 }
 
-// ---- recherche plein texte : index SQLite FTS5 lu par requêtes HTTP Range (sql.js-httpvfs)
+// ---- recherche plein texte : index SQLite FTS5 lu morceau par morceau (sql.js-httpvfs) ; les
+// morceaux (data/recherche/) sont demandés en entier : GitHub Pages compresse les fichiers et
+// fausserait des requêtes HTTP Range sur un fichier unique
 const LETTRE = "[\\p{L}\\p{N}]", SEPARATEUR = "[^\\p{L}\\p{N}]+";
 const echapperRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -231,9 +233,13 @@ function baseRecherche() {
   if (!promesseBase) promesseBase = (async () => {
     await chargerScript("vendor/sql.js-httpvfs/index.js");
     const abs = (u) => new URL(u, location.href).href;
-    const w = await window.createDbWorker(
-      [{ from: "inline", config: { serverMode: "full", requestChunkSize: 4096,
-          url: abs("../data/recherche.sqlite" + (versionIndex ? "?v=" + versionIndex : "")) } }],
+    const r = infosIndex;
+    const config = r.morceau
+      ? { serverMode: "chunked", requestChunkSize: r.morceau, serverChunkSize: r.morceau, maxReadSpeed: r.morceau,
+          databaseLengthBytes: r.taille, urlPrefix: abs("../" + r.dossier + r.prefixe), suffixLength: r.chiffres,
+          cacheBust: r.version }
+      : { serverMode: "full", requestChunkSize: 4096, url: abs("../data/recherche.sqlite" + (r.version ? "?v=" + r.version : "")) };
+    const w = await window.createDbWorker([{ from: "inline", config }],
       abs("vendor/sql.js-httpvfs/sqlite.worker.js"), abs("vendor/sql.js-httpvfs/sql-wasm.wasm"));
     const ids = new Map((await w.db.query("SELECT n, id FROM ids")).map((r) => [r.n, r.id]));
     return { w, ids };
@@ -267,7 +273,7 @@ async function lancerRecherche() {
     if (n !== sequence) return;
     console.error(e);
     recherche = { rangs: null, motif: null, enCours: false,
-                  erreur: "Recherche plein texte indisponible (" + (e.message || e) + "). Elle demande un serveur web acceptant les requêtes HTTP Range, comme GitHub Pages ou scripts/serveur.py." };
+                  erreur: "Recherche plein texte indisponible (" + (e.message || e) + "). Elle demande que la page soit servie par un serveur web (GitHub Pages, scripts/serveur.py), et non ouverte comme fichier local." };
   }
   limite = PAS; afficher();
 }
@@ -622,7 +628,7 @@ async function init() {
     const r = await fetch("../data/cps.json");
     if (!r.ok) throw new Error(r.status);
     const data = await r.json();
-    versionIndex = data.recherche?.version || "";
+    infosIndex = data.recherche || {};
     for (const t of data.tags) libelles[t.slug] = t.libelle;
     for (const p of data.publications) {
       parPub[p.id] = p;

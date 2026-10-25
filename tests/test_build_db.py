@@ -1,5 +1,7 @@
 """Fonctions de construction de la base : articles ajoutés d'après le sommaire imprimé, dates."""
+import tempfile
 import unittest
+from pathlib import Path
 
 from tests import outils  # noqa: F401  (ajoute scripts/ au chemin)
 import build_db
@@ -22,6 +24,21 @@ class RangerArticlesPdf(unittest.TestCase):
         sommaire = [("EDITORIAL", 1), ("GREVE A LA RATP", 12)]
         res = build_db.ranger_articles_pdf(propres, sommaire, "n.pdf", 36)
         self.assertEqual([a["titre"] for a in res], ["Éditorial", "P", "Grève à la RATP"])
+
+
+class DecouperIndex(unittest.TestCase):
+    def test_morceaux_entiers_et_anciens_retires(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            (tmp / "r.sqlite").write_bytes(bytes(range(256)) * 10)          # 2 560 octets
+            (tmp / "m").mkdir()
+            (tmp / "m" / "r.sqlite.009").write_bytes(b"ancien")
+            infos = build_db.decouper_index(tmp / "r.sqlite", tmp / "m", taille=1024)
+            self.assertEqual(infos, {"prefixe": "r.sqlite.", "chiffres": 3, "morceau": 1024, "taille": 2560,
+                                     "morceaux": 3})
+            noms = sorted(f.name for f in (tmp / "m").iterdir())
+            self.assertEqual(noms, ["r.sqlite.000", "r.sqlite.001", "r.sqlite.002"])
+            self.assertEqual(b"".join((tmp / "m" / n).read_bytes() for n in noms), (tmp / "r.sqlite").read_bytes())
 
 
 class Dates(unittest.TestCase):

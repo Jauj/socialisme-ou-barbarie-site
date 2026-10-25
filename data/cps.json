@@ -47978,6 +47978,12 @@
  ],
  "recherche": {
   "fichier": "data/recherche.sqlite",
+  "dossier": "data/recherche/",
+  "prefixe": "recherche.sqlite.",
+  "chiffres": 3,
+  "morceau": 65536,
+  "taille": 17780736,
+  "morceaux": 272,
   "version": "73cfbd7a96e2"
  }
 }
