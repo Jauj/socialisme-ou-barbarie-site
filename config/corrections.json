@@ -1,0 +1,93 @@
+{
+  "_description": "Corrections manuelles appliquées aux entrées du sommaire de socialisme.free.fr. Clé = 'AAAA-MM-JJ|type|numero[|NS]' telle qu'affichée sur le site (type = cps ou supp). Chaque correction est justifiée par un 'motif'.",
+  "entrees": {
+    "1985-01-01|cps|1": {
+      "pdf_numero": "http://socialisme.free.fr/bulletin_cps_archives/1985_01_00_cps_1.pdf",
+      "motif": "Le lien PDF du numéro pointe vers le bulletin n°1 d'octobre 1984 ; le PDF de janvier 1985 est celui lié au premier article (couverture vérifiée)."
+    },
+    "1985-05-01|cps|2": {
+      "pdf_numero": "http://socialisme.free.fr/bulletin_cps_archives/1985_05_00_cps_2.pdf",
+      "motif": "Le lien PDF du numéro pointe vers le bulletin n°2 de novembre 1984 ; le PDF de mai 1985 est celui lié au premier article."
+    },
+    "1986-12-08|cps|12": {
+      "type": "supplement",
+      "motif": "Entrée listée comme « CPS n°12 » mais le fichier lié est 1986_12_08_supplement_2_cps_12 : c'est un supplément au n°12."
+    },
+    "1988-05-15|cps|21": {
+      "type": "numero_special",
+      "numero_label": "21 bis",
+      "motif": "Numéro spécial « 21 bis » (fichier 1988_05_15_cps_special_bis), distinct du n°21 du 20 mars 1988."
+    },
+    "2003-01-31|cps|10|NS": {
+      "type": "supplement",
+      "titre": "Supplément au n°10 (n°92) : 2ème Conférence du Cercle pour la construction du parti ouvrier révolutionnaire",
+      "pdf_numero": "http://socialisme.free.fr/bulletin_cps_archives/2003_01_31_supplement_cps_10_92_as.pdf",
+      "motif": "Entrée listée comme « CPS n°10 » mais tous ses articles renvoient à 2003_01_31_supplement_cps_10_92_as.pdf : c'est le supplément (conférence) au n°10 du 7 décembre 2002."
+    },
+    "2009-03-22|cps|11|NS": {
+      "type": "supplement",
+      "date": "2003-03-21",
+      "motif": "Coquille d'année (2009 pour 2003) : communiqué sur l'Irak, fichier sup_irak_210303 (21/03/2003), rattaché au n°11 de mars 2003."
+    },
+    "2009-05-31|cps|33|NS": {
+      "date": "2008-05-31",
+      "motif": "Coquille d'année : le PDF du n°33 est 2008_05_31_cps_33_115_as.pdf (le n°33 date de mai 2008)."
+    },
+    "2009-05-17|cps|33|NS": {
+      "type": "supplement",
+      "date": "2008-05-17",
+      "motif": "Coquille d'année : supplément du 17 mai 2008 (fichier sup_170508)."
+    },
+    "2013-12-05|supp|52|NS": {
+      "scinder_numero": {
+        "date": "2013-12-10"
+      },
+      "motif": "L'en-tête « Supplément RATP à CPS » (sans lien) est suivi des articles du n°52 lui-même (fichiers 2013_12_10_cps_52_*) ; le n°52 n'a pas d'entrée propre dans le sommaire. On crée le supplément RATP et le n°52 séparément."
+    },
+    "1989-04-16|cps|0": {
+      "type": "hors_serie",
+      "titre": "N° spécial : Militants du PCI et de IV° Internationale-CIR",
+      "pdf_numero": "http://socialisme.free.fr/bulletin_cps_archives/1989_04_00_cps_special_PCI.pdf",
+      "motif": "« CPS n°0 » désigne sur le site un numéro hors série."
+    },
+    "2012-05-27|cps|0": {
+      "type": "hors_serie",
+      "serie": "nouvelle",
+      "titre": "Rapport sur la situation internationale adopté par la 3ème conférence du Groupe",
+      "motif": "« CPS n°0 » désigne sur le site un numéro hors série (époque nouvelle série)."
+    },
+    "2016-04-15|cps|0": {
+      "type": "hors_serie",
+      "serie": "nouvelle",
+      "titre": "Lutte ouvrière, une référence au trotskysme usurpée",
+      "motif": "« CPS n°0 » désigne sur le site un numéro hors série (brochure, époque nouvelle série)."
+    },
+    "1998-06-27|cps|73": {
+      "numero_label": "73-74",
+      "motif": "Numéro double : la couverture porte « C.P.S. N° 73 - 74 », 27 juin 1998, numéro spécial « Stéphane Just 1921-1997 » (fichier 1998_06_27_cps73_74_spe_st_just.pdf). Il n'y a donc pas de n°74 séparé."
+    },
+    "2006-03-24|cps|24|NS": {
+      "pdf_absent": true,
+      "motif": "Le PDF lié au n°24 (2006_06_03_cps_24_106_as.pdf) contient en fait le n°25 du 3 juin 2006 (manchette « C.P.S Nouvelle série N°25 (N° 107) – 3 juin 2006 », articles de l'entrée du n°25) ; le PDF du n°24 n'est pas en ligne."
+    },
+    "2006-06-03|cps|25|NS": {
+      "scinder_numero": {
+        "date": "2006-06-03",
+        "pdf_numero": "http://socialisme.free.fr/bulletin_cps_archives/2006_06_03_cps_24_106_as.pdf",
+        "date_supplement": "2006-08-22",
+        "titre_supplement": "Supplément au n°25 (n°107) : La politique du CCI-PT et de sa prétendue « IV° Internationale » : un nouveau social-patriotisme"
+      },
+      "motif": "L'en-tête du n°25 renvoie au supplément du 22 août 2006 (2006_08_22_cps25_107as_spe_cci.pdf, « La politique du CCI-PT… », manchette vérifiée) ; le PDF du n°25 lui-même (3 juin 2006) est celui que le site lie au n°24. On crée le supplément et on rattache au n°25 son PDF."
+    }
+  },
+  "liens": {
+    "_description": "URL erronées dans le sommaire ou l'index du site (404) → URL du même document qui fonctionne (vérifiée).",
+    "http://socialisme.free.fr/bulletin_cps_archives/2013_09_25_cps51_133as.pdf": "http://socialisme.free.fr/bulletin_cps_archives/2013_09_25_cps_51_133_as.pdf",
+    "http://socialisme.free.fr/sommaires_cps/supplements/2018_04_20_supp_universite.pdf": "http://socialisme.free.fr/supplements/2018_04_20_supp_universite.pdf",
+    "http://socialisme.free.fr/supplements/2021_10_21_ratp.html": "http://socialisme.free.fr/supplements/2021_10_21_ratp.pdf",
+    "http://socialisme.free.fr/supplements/2021_11_02_supp_cps_80_sante.htm": "http://socialisme.free.fr/supplements/2021_11_02_supp_cps_80_sante.pdf",
+    "http://socialisme.free.fr/supplements/2022_09_00_sup_cps_bresil.html": "http://socialisme.free.fr/supplements/2022_09_00_sup_cps_bresil.pdf",
+    "http://socialisme.free.fr/supplement/crisedusyndicalisme.html": "http://socialisme.free.fr/supplements/crisedusyndicalisme.html",
+    "http://socialisme.free.fr/2024_10_01_supp_cps_liban.pdf": "http://socialisme.free.fr/supplements/2024_10_01_supp_cps_liban.pdf"
+  }
+}

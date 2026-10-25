@@ -1,0 +1,2426 @@
+{
+ "AS-021-08": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa21_palestine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45755
+ },
+ "AS-036-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps36_yougoslavie_histoire.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 32294
+ },
+ "AS-037-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps37_serbie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 19804
+ },
+ "AS-037-08": {
+  "source": "http://socialisme.free.fr/bulletin/cps37_yougoslavie_histoire.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 26549
+ },
+ "AS-038-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps38_yougoslavie_histoire.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 27804
+ },
+ "AS-039-S1-01": {
+  "source": "http://socialisme.free.fr/bulletin/cpsas39_algerie_pt.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 38243
+ },
+ "AS-039-S2-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps39_urss.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42079
+ },
+ "AS-040-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps40_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 16455
+ },
+ "AS-041-02": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa41_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5498
+ },
+ "AS-043-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/cpssup43_maastricht.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 82271
+ },
+ "AS-044-04": {
+  "source": "http://socialisme.free.fr/crisedusyndicalisme.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 286521
+ },
+ "AS-044-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps44_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42165
+ },
+ "AS-045-04": {
+  "source": "http://socialisme.free.fr/supplements/crisedusyndicalisme.html",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 286521
+ },
+ "AS-046-04": {
+  "source": "http://socialisme.free.fr/crisedusyndicalisme.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 286521,
+  "identique_a": "AS-044-04"
+ },
+ "AS-046-S4-01": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa46_legislatives.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10805
+ },
+ "AS-047-01": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa47_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 87243
+ },
+ "AS-048-04": {
+  "source": "http://socialisme.free.fr/supplements/crisedusyndicalisme.html",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 286521,
+  "identique_a": "AS-045-04"
+ },
+ "AS-048-05": {
+  "source": "http://socialisme.free.fr/supplements/crisedusyndicalisme.html",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 286521,
+  "identique_a": "AS-045-04"
+ },
+ "AS-050-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps50_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52562
+ },
+ "AS-050-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/cpssup50_cir.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 87152
+ },
+ "AS-051-07": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa51_economie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 44314
+ },
+ "AS-052-01": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa52_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29637
+ },
+ "AS-052-02": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa52_cip.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 20236
+ },
+ "AS-052-03": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa52_fsu.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 16794
+ },
+ "AS-052-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps52_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 20625
+ },
+ "AS-053-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps53_afrique.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52036
+ },
+ "AS-055-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps55_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 38038
+ },
+ "AS-056-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps56_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 32203
+ },
+ "AS-059-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps59_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 38750
+ },
+ "AS-062-04": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa62_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37483
+ },
+ "AS-062-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps62_ex_yougoslavie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36752
+ },
+ "AS-066-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps66_routiers.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 17575
+ },
+ "AS-066-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps66_usa.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34681
+ },
+ "AS-067-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps67_debre.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 24305
+ },
+ "AS-067-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps67_coree.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 26987
+ },
+ "AS-067-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps67_albanie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25256
+ },
+ "AS-068-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps68_grande_bretagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42070
+ },
+ "AS-068-05": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa68_socialisme.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42013
+ },
+ "AS-068-06": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa68_revolution_russe.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36319
+ },
+ "AS-069-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps69_crise_asie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 23243
+ },
+ "AS-069-07": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa69_revolution_russe.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 1985
+ },
+ "AS-070-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps70_routiers.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 21897
+ },
+ "AS-070-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps70_loiaubry.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 24482
+ },
+ "AS-070-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps70_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 39160
+ },
+ "AS-070-07": {
+  "source": "http://socialisme.free.fr/bulletin/cpsa70_revolution_russe.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47351
+ },
+ "AS-071-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps71_batasuna.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 3861
+ },
+ "AS-071-08": {
+  "source": "http://socialisme.free.fr/bulletin/cps71_iut.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 21919
+ },
+ "AS-071-09": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps71_revolution_russe.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 56331
+ },
+ "AS-072-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps72_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34777
+ },
+ "AS-073-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps73.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10887
+ },
+ "HS-1996-08-08-01": {
+  "source": "http://socialisme.free.fr/histoire_theorie/sj_mondialisation0.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 3228
+ },
+ "HS-1997-03-23-01": {
+  "source": "http://socialisme.free.fr/nouvelle_perspective0.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 2437
+ },
+ "HS-2016-04-15-01": {
+  "source": "http://socialisme.free.fr/histoire_theorie/2016_04_15_lo_une_reference_au_trotskysme_usurpee.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59607
+ },
+ "NS-001-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps1_oeuvrer.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 160288
+ },
+ "NS-002-08": {
+  "source": "http://socialisme.free.fr/bulletin/cps2_serbie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35672
+ },
+ "NS-002-09": {
+  "source": "http://socialisme.free.fr/bulletin/cps82_russie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40311
+ },
+ "NS-003-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps3_espagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 55264
+ },
+ "NS-004-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps4_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48483
+ },
+ "NS-005-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps5_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 51667
+ },
+ "NS-006-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps6_notes_inter.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36848
+ },
+ "NS-006-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps6_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28432
+ },
+ "NS-006-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps6_pcf.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47093
+ },
+ "NS-007-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps7_presidentielle.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 92701
+ },
+ "NS-008-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps8_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59508
+ },
+ "NS-008-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps8_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59508,
+  "identique_a": "NS-008-01"
+ },
+ "NS-008-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps7_presidentielle2.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11710
+ },
+ "NS-008-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps8_argentine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34717
+ },
+ "NS-008-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps8_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25271
+ },
+ "NS-008-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_general_050702.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11470
+ },
+ "NS-008-S2-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_rentree2002.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10969
+ },
+ "NS-009-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps9_rapport_france1.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45141
+ },
+ "NS-009-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps9_irak.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10110
+ },
+ "NS-009-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps9_batasuna.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 3977
+ },
+ "NS-009-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps9_fn.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47054
+ },
+ "NS-009-05": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps9_trotskystes_guerre.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35531
+ },
+ "NS-009-S1-01": {
+  "source": "http://socialisme.free.fr/conferences/conference2002_rapport_international.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 84556
+ },
+ "NS-010-04": {
+  "source": "http://socialisme.free.fr/conferences/conference2002_rapport_international.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 84556,
+  "identique_a": "NS-009-S1-01"
+ },
+ "NS-010-05": {
+  "source": "http://socialisme.free.fr/conferences/conference2002_rapport_international.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 84556,
+  "identique_a": "NS-009-S1-01"
+ },
+ "NS-010-06": {
+  "source": "http://socialisme.free.fr/ameriques/cps10_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35915
+ },
+ "NS-011-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps11_ps.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40334
+ },
+ "NS-011-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps11_irak.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34858
+ },
+ "NS-011-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps11_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 27858
+ },
+ "NS-011-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps11_ivoire.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5904
+ },
+ "NS-011-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps11_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28144
+ },
+ "NS-011-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_irak_210303.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 1985
+ },
+ "NS-012-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps12_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 38765
+ },
+ "NS-012-02": {
+  "source": "http://socialisme.free.fr/interventions/interventionsmaijuin2003.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25018
+ },
+ "NS-012-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps12_irak.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45216
+ },
+ "NS-012-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps12_chine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36993
+ },
+ "NS-012-05": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps12_revolution_allemande.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 60352
+ },
+ "NS-013-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps13_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48656
+ },
+ "NS-013-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps13_retraites_bilan.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 72104
+ },
+ "NS-013-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps13_allemagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47267
+ },
+ "NS-013-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_190903.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10006
+ },
+ "NS-014-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps14_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42963
+ },
+ "NS-014-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps14_fse.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45510
+ },
+ "NS-014-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps14_bolivie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 15019
+ },
+ "NS-014-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps14_chine2.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 55239
+ },
+ "NS-015-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps15_interventions_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 14746
+ },
+ "NS-015-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps15_congresfo.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 21150
+ },
+ "NS-015-05": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps15_lolcrpt.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52883
+ },
+ "NS-015-06": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps15_lenine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37700
+ },
+ "NS-015-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_050204.html",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 12028
+ },
+ "NS-016-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps16_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47783
+ },
+ "NS-016-02": {
+  "source": "http://socialisme.free.fr/supplements/sup_irak_140504.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5126
+ },
+ "NS-016-03": {
+  "source": "http://socialisme.free.fr/supplements/sup_europe_030604.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 6946
+ },
+ "NS-016-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps16_ue.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40636
+ },
+ "NS-016-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps16_espagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45988
+ },
+ "NS-016-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps16_eco.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 33555
+ },
+ "NS-017-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps17_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 44031
+ },
+ "NS-017-04": {
+  "source": "http://socialisme.free.fr/interventions/interventions_enseignement_2004.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 8738
+ },
+ "NS-017-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps17_etatsunis.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46791
+ },
+ "NS-017-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps17_irakpalestine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 41704
+ },
+ "NS-018-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps18_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46005
+ },
+ "NS-018-02": {
+  "source": "http://socialisme.free.fr/supplements/sup_ivoire_131104.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5156
+ },
+ "NS-018-03": {
+  "source": "http://socialisme.free.fr/supplements/sup_ep140105.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10952
+ },
+ "NS-018-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps18_ps.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48354
+ },
+ "NS-018-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps18_russie_ukraine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48062
+ },
+ "NS-018-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_110305.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 6185
+ },
+ "NS-019-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps19_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46825
+ },
+ "NS-019-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps19_moyenorient.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47492
+ },
+ "NS-019-05": {
+  "source": "http://socialisme.free.fr/afrique/cps19_afrique.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 54006
+ },
+ "NS-020-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps20_socialisme.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 1985
+ },
+ "NS-021-01": {
+  "source": "http://socialisme.free.fr/supplements/decla_030605.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 9653
+ },
+ "NS-021-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps21_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 41185
+ },
+ "NS-021-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps21_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 38224
+ },
+ "NS-021-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps21_economie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 32432
+ },
+ "NS-021-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps21_thibault.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 24430
+ },
+ "NS-022-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_230905.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 9866,
+  "identique_a": "NS-022-S1-01"
+ },
+ "NS-022-02": {
+  "source": "http://socialisme.free.fr/ldc/com_sncm_280905.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 2689
+ },
+ "NS-022-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps22_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35675
+ },
+ "NS-022-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps22_ep.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35420
+ },
+ "NS-022-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps22_grande_bretagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53097
+ },
+ "NS-022-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps22_bolivie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 30046
+ },
+ "NS-022-08": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps22_attali.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29251
+ },
+ "NS-022-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_230905.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 9866
+ },
+ "NS-022-S2-01": {
+  "source": "http://socialisme.free.fr/supplements/supcps_121105.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10989
+ },
+ "NS-023-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps23_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40770
+ },
+ "NS-023-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps23_sncm.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 31537
+ },
+ "NS-023-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps23_ps.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35509
+ },
+ "NS-023-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps23_allemagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59631
+ },
+ "NS-024-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps24_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 56111
+ },
+ "NS-024-03": {
+  "source": "http://socialisme.free.fr/supplements/sup_ratp_090206.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 13538
+ },
+ "NS-024-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps24_cgt.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34381
+ },
+ "NS-024-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps24_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36488
+ },
+ "NS-024-06": {
+  "source": "http://socialisme.free.fr/ameriques/cps24_venezuela.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48322
+ },
+ "NS-025-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps25_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37856
+ },
+ "NS-025-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps25_international.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 44955
+ },
+ "NS-025-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps25_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45236
+ },
+ "NS-025-04": {
+  "source": "http://socialisme.free.fr/ameriques/cps25_venezuela.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52581
+ },
+ "NS-025-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps25_serge.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 465
+ },
+ "NS-026-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps26_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 43203
+ },
+ "NS-026-02": {
+  "source": "http://socialisme.free.fr/supplements/decla_liban_060906.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5856
+ },
+ "NS-026-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps26_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25488
+ },
+ "NS-026-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps26_moyenorient.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 76845
+ },
+ "NS-026-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps26_serge.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 4454
+ },
+ "NS-026-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_301006.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10610
+ },
+ "NS-027-01": {
+  "source": "http://socialisme.free.fr/supplements/declarationcommune.html",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 8650
+ },
+ "NS-027-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps27_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47495
+ },
+ "NS-027-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps27_ps.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36559
+ },
+ "NS-027-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps27_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53612
+ },
+ "NS-027-06": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps27_hongrie1956.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47608
+ },
+ "NS-029-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps29_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 51582
+ },
+ "NS-029-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps29_rapport_international.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 76818
+ },
+ "NS-029-05": {
+  "source": "http://socialisme.free.fr/resolution_conference_090407.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 9299
+ },
+ "NS-030-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps30_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46674
+ },
+ "NS-030-02": {
+  "source": "http://socialisme.free.fr/supplements/sup_ratp_0907.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10155
+ },
+ "NS-030-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps30_fo.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11164
+ },
+ "NS-030-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps30_universites.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 30480
+ },
+ "NS-030-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps30_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 60689
+ },
+ "NS-030-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_150907.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11615
+ },
+ "NS-030-S2-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_cps_131007.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11271
+ },
+ "NS-031-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps31_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42559
+ },
+ "NS-031-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps31_ratp.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 26849
+ },
+ "NS-031-04": {
+  "source": "http://socialisme.free.fr/france/cps31_universites.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28763
+ },
+ "NS-031-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps31_moyenorient.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 41321
+ },
+ "NS-031-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps31_crise.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 41717
+ },
+ "NS-031-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_230208.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11175
+ },
+ "NS-032-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps32_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40365
+ },
+ "NS-032-02": {
+  "source": "http://socialisme.free.fr/supplements/sup_230208.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11175,
+  "identique_a": "NS-031-S1-01"
+ },
+ "NS-032-04": {
+  "source": "http://socialisme.free.fr/bulletin/cps32_ep.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35593
+ },
+ "NS-032-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps32_fonction-publique.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37023
+ },
+ "NS-032-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps32_laicite.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59858
+ },
+ "NS-033-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps33_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37218
+ },
+ "NS-033-02": {
+  "source": "http://socialisme.free.fr/supplements/sup_lycees_070408.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 4988
+ },
+ "NS-033-04": {
+  "source": "http://socialisme.free.fr/europe/cps33_espagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 41445
+ },
+ "NS-033-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps33_belgique.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36865
+ },
+ "NS-033-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps33_mai68.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 65303
+ },
+ "NS-033-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_170508.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 6094
+ },
+ "NS-034-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps34_editorial_1.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29899
+ },
+ "NS-034-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps34_editorial_2.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28269
+ },
+ "NS-034-03": {
+  "source": "http://socialisme.free.fr/supplements/decla_060908.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 6201
+ },
+ "NS-034-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps34_ep.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29623
+ },
+ "NS-034-06": {
+  "source": "http://socialisme.free.fr/bulletin/cps34_pakistan.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42491
+ },
+ "NS-034-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps34_georgie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 24828
+ },
+ "NS-034-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/declaration_041008.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11947
+ },
+ "NS-035-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps35_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 43821
+ },
+ "NS-035-02": {
+  "source": "http://socialisme.free.fr/supplements/sup_gaza_070109.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 6631
+ },
+ "NS-035-03": {
+  "source": "http://socialisme.free.fr/france/cps35_ps.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42204
+ },
+ "NS-035-04": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps35_npa.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40915
+ },
+ "NS-035-05": {
+  "source": "http://socialisme.free.fr/europe/cps35_italie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 56344
+ },
+ "NS-036-01": {
+  "source": "http://socialisme.free.fr/france/cps36_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 39508
+ },
+ "NS-036-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps36_interv.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 13732
+ },
+ "NS-036-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps36_regroupement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 7499
+ },
+ "NS-036-04": {
+  "source": "http://socialisme.free.fr/ameriques/cps36_guadeloupe.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35894
+ },
+ "NS-036-05": {
+  "source": "http://socialisme.free.fr/france/cps36_sante.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 43093
+ },
+ "NS-036-06": {
+  "source": "http://socialisme.free.fr/moyenorient/cps36_palestine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40213
+ },
+ "NS-036-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/decla_310109.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 7165
+ },
+ "NS-037-01": {
+  "source": "http://socialisme.free.fr/france/cps37_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48526
+ },
+ "NS-037-02": {
+  "source": "http://socialisme.free.fr/supplements/cps37_interventions.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 14757
+ },
+ "NS-037-03": {
+  "source": "http://socialisme.free.fr/jeunesse/cps37_unef.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 10544
+ },
+ "NS-037-04": {
+  "source": "http://socialisme.free.fr/france/cps37_universites.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 39232
+ },
+ "NS-037-05": {
+  "source": "http://socialisme.free.fr/conferences/cps37_conference.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 69045
+ },
+ "NS-037-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/decla_160509.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 12741
+ },
+ "NS-038-01": {
+  "source": "http://socialisme.free.fr/france/cps38_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47382
+ },
+ "NS-038-02": {
+  "source": "http://socialisme.free.fr/supplements/cps38_interventions.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 18492
+ },
+ "NS-038-03": {
+  "source": "http://socialisme.free.fr/france/cps38_ep.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29758
+ },
+ "NS-038-04": {
+  "source": "http://socialisme.free.fr/organisations/cps38_cgt.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46757
+ },
+ "NS-038-05": {
+  "source": "http://socialisme.free.fr/moyenorient/cps38_iran.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48642
+ },
+ "NS-038-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/supcps37_130909.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11905
+ },
+ "NS-039-01": {
+  "source": "http://socialisme.free.fr/france/cps39_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 31195
+ },
+ "NS-039-02": {
+  "source": "http://socialisme.free.fr/supplements/haiti_220110.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 6276
+ },
+ "NS-039-03": {
+  "source": "http://socialisme.free.fr/interventions/retraites_0410.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 3955
+ },
+ "NS-039-04": {
+  "source": "http://socialisme.free.fr/supplements/cps39_ratp.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 23632
+ },
+ "NS-039-05": {
+  "source": "http://socialisme.free.fr/france/cps39_ep.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29770
+ },
+ "NS-039-06": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps39_ecologie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 60232
+ },
+ "NS-039-07": {
+  "source": "http://socialisme.free.fr/histoire_theorie/cps39_csi.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36304
+ },
+ "NS-039-08": {
+  "source": "http://socialisme.free.fr/supplements/cps39_ratp.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 23632,
+  "identique_a": "NS-039-04"
+ },
+ "NS-039-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/sup_cps39.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 12049
+ },
+ "NS-039-S2-01": {
+  "source": "http://socialisme.free.fr/supplements/sup030410.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 20996
+ },
+ "NS-040-01": {
+  "source": "http://socialisme.free.fr/france/cps40_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 39671
+ },
+ "NS-040-02": {
+  "source": "http://socialisme.free.fr/interventions/cps40_interventions.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 22920
+ },
+ "NS-040-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/supcps40_210610.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11878
+ },
+ "NS-041-01": {
+  "source": "http://socialisme.free.fr/france/cps41_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35015
+ },
+ "NS-041-03": {
+  "source": "http://socialisme.free.fr/ameriques/cps_uruguay_12102010.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 11036
+ },
+ "NS-041-06": {
+  "source": "http://socialisme.free.fr/afrique/cps41_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28549
+ },
+ "NS-042-01": {
+  "source": "http://socialisme.free.fr/france/cps42_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52225
+ },
+ "NS-042-02": {
+  "source": "http://socialisme.free.fr/afrique/supcps_tunisie_220111.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 12385
+ },
+ "NS-042-03": {
+  "source": "http://socialisme.free.fr/bulletin/2011_02_10_cps_42_tunisie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 39993
+ },
+ "NS-042-05": {
+  "source": "http://socialisme.free.fr/bulletin/2011_02_10_cps_42_irlande.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 31508
+ },
+ "NS-042-06": {
+  "source": "http://socialisme.free.fr/bulletin/2011_02_10_cps_42_economie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 32915
+ },
+ "NS-043-01": {
+  "source": "http://socialisme.free.fr/economie/cps43_nucleaire.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 31973
+ },
+ "NS-043-02": {
+  "source": "http://socialisme.free.fr/france/cps43_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46161
+ },
+ "NS-043-03": {
+  "source": "http://socialisme.free.fr/afrique/communique_libye_200311.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5068
+ },
+ "NS-043-04": {
+  "source": "http://socialisme.free.fr/afrique/decla_ci_08042011.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5363
+ },
+ "NS-043-05": {
+  "source": "http://socialisme.free.fr/moyenorient/cps43_egypte.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 47794
+ },
+ "NS-044-01": {
+  "source": "http://socialisme.free.fr/bulletin/2011_10_11_cps_44_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 20576
+ },
+ "NS-044-02": {
+  "source": "http://socialisme.free.fr/bulletin/2011_10_11_cps_44_economie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 56664
+ },
+ "NS-044-04": {
+  "source": "http://socialisme.free.fr/bulletin/2011_10_11_cps_44_jeunesse.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 42184
+ },
+ "NS-044-06": {
+  "source": "http://socialisme.free.fr/bulletin/2011_10_11_cps_44_lantier.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 3048
+ },
+ "NS-044-07": {
+  "source": "http://socialisme.free.fr/bulletin/2011_10_11_cps_44_mayotte.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 2279
+ },
+ "NS-045-01": {
+  "source": "http://socialisme.free.fr/bulletin/cps45_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 54037
+ },
+ "NS-045-02": {
+  "source": "http://socialisme.free.fr/bulletin/2012_01_23_cps_45_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 24557
+ },
+ "NS-045-05": {
+  "source": "http://socialisme.free.fr/bulletin/cps45_chili.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 40785
+ },
+ "NS-045-06": {
+  "source": "http://socialisme.free.fr/afrique/cps45_egypte_tunisie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 51344
+ },
+ "NS-046-01": {
+  "source": "http://socialisme.free.fr/supplements/presidentielle2012_declar.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 22087
+ },
+ "NS-046-02": {
+  "source": "http://socialisme.free.fr/bulletin/cps46ns_notesedito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 35690
+ },
+ "NS-046-03": {
+  "source": "http://socialisme.free.fr/bulletin/cps46ns_melenchon.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 31891
+ },
+ "NS-046-06": {
+  "source": "http://socialisme.free.fr/europe/cps46ns_espagne.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 31356
+ },
+ "NS-046-07": {
+  "source": "http://socialisme.free.fr/bulletin/cps46ns_egypte.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 64389
+ },
+ "NS-047-01": {
+  "source": "http://socialisme.free.fr/supplements/declar_apres_legisl_2012.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 6340
+ },
+ "NS-047-02": {
+  "source": "http://socialisme.free.fr/rapp_inter_conf_2012.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 131135
+ },
+ "NS-047-04": {
+  "source": "http://socialisme.free.fr/supplements/declar_apres_presid_2012.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 20280
+ },
+ "NS-048-01": {
+  "source": "http://socialisme.free.fr/bulletin/2012_10_20_cps_48_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52552
+ },
+ "NS-048-02": {
+  "source": "http://socialisme.free.fr/supplements/2012_09_02_groupe_declaration_afrique_du_sud.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 10889
+ },
+ "NS-048-03": {
+  "source": "http://socialisme.free.fr/bulletin/2012_10_20_cps_48_economie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46651
+ },
+ "NS-048-05": {
+  "source": "http://socialisme.free.fr/bulletin/2012_10_20_cps_48_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 30365
+ },
+ "NS-049-01": {
+  "source": "http://socialisme.free.fr/bulletin/2013_01_15_cps_49_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 43715
+ },
+ "NS-049-02": {
+  "source": "http://socialisme.free.fr/supplements/decla_gaza_2012_11_19.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 6611
+ },
+ "NS-049-03": {
+  "source": "http://socialisme.free.fr/bulletin/2013_01_15_cps_49_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 26774
+ },
+ "NS-049-06": {
+  "source": "http://socialisme.free.fr/bulletin/2013_01_15_cps_49_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 58529
+ },
+ "NS-049-07": {
+  "source": "http://socialisme.free.fr/bulletin/2013_01_15_cps_49_afrique_du_sud.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37692
+ },
+ "NS-049-08": {
+  "source": "http://socialisme.free.fr/afrique/2013_01_14_decla_mali.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 4042
+ },
+ "NS-050-01": {
+  "source": "http://socialisme.free.fr/bulletin/2013_04_10_cps_50_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59056
+ },
+ "NS-050-02": {
+  "source": "http://socialisme.free.fr/supplements/2013_03_28_sup_cps_universite.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 22145
+ },
+ "NS-050-03": {
+  "source": "http://socialisme.free.fr/bulletin/2013_04_10_cps_50_afrique_du_sud.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45393
+ },
+ "NS-050-04": {
+  "source": "http://socialisme.free.fr/bulletin/2013_04_10_cps_50_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 32683
+ },
+ "NS-050-06": {
+  "source": "http://socialisme.free.fr/bulletin/2013_04_10_cps_50_indochine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 12800
+ },
+ "NS-051-01": {
+  "source": "http://socialisme.free.fr/bulletin/2013_09_25_cps_51_133as_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 57034
+ },
+ "NS-051-02": {
+  "source": "http://socialisme.free.fr/bulletin/2013_09_25_cps_51_133as_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 57034,
+  "identique_a": "NS-051-01"
+ },
+ "NS-051-03": {
+  "source": "http://socialisme.free.fr/bulletin/2013_09_25_cps_51_133as_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 57034,
+  "identique_a": "NS-051-01"
+ },
+ "NS-051-06": {
+  "source": "http://socialisme.free.fr/bulletin/2013_09_25_cps_51_algerie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 41063
+ },
+ "NS-052-01": {
+  "source": "http://socialisme.free.fr/bulletin/2013_12_10_cps_52_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 50304
+ },
+ "NS-052-02": {
+  "source": "http://socialisme.free.fr/bulletin/2013_12_10_cps_52_guerre_imperialiste.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40165
+ },
+ "NS-052-03": {
+  "source": "http://socialisme.free.fr/bulletin/2013_12_10_cps_52_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 46993
+ },
+ "NS-053-01": {
+  "source": "http://socialisme.free.fr/bulletin/2014_03_19_cps_53_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 48525
+ },
+ "NS-053-02": {
+  "source": "http://socialisme.free.fr/bulletin/2014_03_19_cps_53_ukraine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 13776
+ },
+ "NS-053-03": {
+  "source": "http://socialisme.free.fr/bulletin/2014_03_19_cps_53_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 32258
+ },
+ "NS-053-05": {
+  "source": "http://socialisme.free.fr/bulletin/2014_03_19_cps_53_afrique_du_sud.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 57836
+ },
+ "NS-054-01": {
+  "source": "http://socialisme.free.fr/bulletin/2014_05_31_cps_54_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 50708
+ },
+ "NS-054-02": {
+  "source": "http://socialisme.free.fr/bulletin/2014_05_31_cps_54_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 30287
+ },
+ "NS-054-04": {
+  "source": "http://socialisme.free.fr/bulletin/2014_05_31_cps_54_136_as_chine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 73835
+ },
+ "NS-054-05": {
+  "source": "http://socialisme.free.fr/bulletin/2014_05_31_cps_54_marx_ecologiste.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 14592
+ },
+ "NS-054-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/2014_05_10_supp_fonct_pub_mai_2014.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 9845
+ },
+ "NS-055-01": {
+  "source": "http://socialisme.free.fr/bulletin/2014_12_03_cps_55_137as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 64006
+ },
+ "NS-055-03": {
+  "source": "http://socialisme.free.fr/supplements/2014_11_12_communique_remi_fraisse.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9580
+ },
+ "NS-055-06": {
+  "source": "http://socialisme.free.fr/bulletin/2014_12_03_cps_55_bresil.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 23102
+ },
+ "NS-056-01": {
+  "source": "http://socialisme.free.fr/bulletin/2014_12_03_cps_55_137as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 64006,
+  "identique_a": "NS-055-01"
+ },
+ "NS-056-02": {
+  "source": "http://socialisme.free.fr/supplements/2015_01_12_communique_charlie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 7298
+ },
+ "NS-056-03": {
+  "source": "http://socialisme.free.fr/bulletin/2015_02_19_cps56_138_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 55897
+ },
+ "NS-056-04": {
+  "source": "http://socialisme.free.fr/bulletin/2015_02_19_cps_56_laicite.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 408
+ },
+ "NS-056-06": {
+  "source": "http://socialisme.free.fr/bulletin/2015_02_19_cps_56_italie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 48432
+ },
+ "NS-057-01": {
+  "source": "http://socialisme.free.fr/bulletin/2015_05_13_cps_57_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 74169
+ },
+ "NS-057-02": {
+  "source": "http://socialisme.free.fr/bulletin/2015_05_13_cps_57_139_as_grece.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 51450
+ },
+ "NS-057-04": {
+  "source": "http://socialisme.free.fr/bulletin/2015_05_13_cps_57_139_as_chine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 77612
+ },
+ "NS-057-S1-01": {
+  "source": "http://socialisme.free.fr/bulletin/2015_10_01_cps_supp_57_cci_poi.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 86852
+ },
+ "NS-058-01": {
+  "source": "http://socialisme.free.fr/bulletin/2015_10_10_cps_58_140_as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 51556
+ },
+ "NS-058-02": {
+  "source": "http://socialisme.free.fr/supplements/2015_07_13_declaration_grece.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 21553
+ },
+ "NS-058-03": {
+  "source": "http://socialisme.free.fr/supplements/2015_09_21_cps_declaration_immigres.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 10849
+ },
+ "NS-058-04": {
+  "source": "http://socialisme.free.fr/supplements/2015_09_02_supp_cps_57_fp.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 10808
+ },
+ "NS-058-05": {
+  "source": "http://socialisme.free.fr/bulletin/2015_10_10_cps_58_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 23080
+ },
+ "NS-058-07": {
+  "source": "http://socialisme.free.fr/bulletin/2015_10_10_cps_58_140_as_chine.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 65339
+ },
+ "NS-058-08": {
+  "source": "http://socialisme.free.fr/bulletin_cps_archives/2015_10_01_cps_supp_57_cci_poi.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 88398
+ },
+ "NS-059-01": {
+  "source": "http://socialisme.free.fr/bulletin/2016_01_20_cps_59_141as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 57134
+ },
+ "NS-059-02": {
+  "source": "http://socialisme.free.fr/supplements/2015_11_22_declaration_att.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 17251
+ },
+ "NS-059-03": {
+  "source": "http://socialisme.free.fr/bulletin/2016_01_20_cps_59_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34551
+ },
+ "NS-059-05": {
+  "source": "http://socialisme.free.fr/bulletin/2016_01_20_cps_59_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25115
+ },
+ "NS-059-06": {
+  "source": "http://socialisme.free.fr/bulletin/2016_01_20_cps_59_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 37007
+ },
+ "NS-059-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/2016_03_04_supplement_loi_el_khomri.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 8729
+ },
+ "NS-059-S2-01": {
+  "source": "http://socialisme.free.fr/supplements/2016_03_28_supplement_contre_loi_el_khomri.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 4881
+ },
+ "NS-060-01": {
+  "source": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36770
+ },
+ "NS-060-02": {
+  "source": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_apres_31_mars.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5906
+ },
+ "NS-060-03": {
+  "source": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_notes_inter.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25726
+ },
+ "NS-060-04": {
+  "source": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_ps.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 26757
+ },
+ "NS-060-05": {
+  "source": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 25528
+ },
+ "NS-060-08": {
+  "source": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_espagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53523
+ },
+ "NS-061-01": {
+  "source": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 64546
+ },
+ "NS-061-02": {
+  "source": "http://socialisme.free.fr/supplements/2016_06_07_intervention_congres_snuipp.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 3960
+ },
+ "NS-061-03": {
+  "source": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_51e_congres_cgt.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52359
+ },
+ "NS-061-05": {
+  "source": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 12543
+ },
+ "NS-061-06": {
+  "source": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_angleterre.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 70832
+ },
+ "NS-062-02": {
+  "source": "http://socialisme.free.fr/bulletin/2016_09_28_cps_62_sncf.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28781
+ },
+ "NS-062-03": {
+  "source": "http://socialisme.free.fr/bulletin/2016_09_28_cps_62_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 28814
+ },
+ "NS-062-06": {
+  "source": "http://socialisme.free.fr/bulletin/2016_09_28_cps_62_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 4198
+ },
+ "NS-062-07": {
+  "source": "http://socialisme.free.fr/bulletin/2016_09_28_cps_62_venezuela.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40346
+ },
+ "NS-063-01": {
+  "source": "http://socialisme.free.fr/bulletin/2016_12_07_cps_63_145as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 55158
+ },
+ "NS-063-02": {
+  "source": "http://socialisme.free.fr/bulletin/2016_12_07_cps_63_145as_jeunesse.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 45720
+ },
+ "NS-063-03": {
+  "source": "http://socialisme.free.fr/supplements/2016_10_10_supp_cps_62_universite.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 10632
+ },
+ "NS-063-04": {
+  "source": "http://socialisme.free.fr/bulletin/2016_12_07_cps_63_145as_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 3009
+ },
+ "NS-063-05": {
+  "source": "http://socialisme.free.fr/bulletin/2016_12_07_cps_63_145as_angleterre.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53703
+ },
+ "NS-064-01": {
+  "source": "http://socialisme.free.fr/bulletin/2017_03_01_cps_64_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 43685
+ },
+ "NS-064-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/2017_01_20_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 5984
+ },
+ "NS-067-01": {
+  "source": "http://socialisme.free.fr/bulletin/2017_12_01_cps67_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52510
+ },
+ "NS-067-02": {
+  "source": "http://socialisme.free.fr/bulletin/2017_12_01_cps67_venezuela.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 29031
+ },
+ "NS-067-03": {
+  "source": "http://socialisme.free.fr/bulletin/2017_12_01_cps67_palestine.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 34645
+ },
+ "NS-068-01": {
+  "source": "http://socialisme.free.fr/bulletin/2018_03_01_cps_68_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 56907
+ },
+ "NS-068-02": {
+  "source": "http://socialisme.free.fr/supplements/2018_01_27_supp_universites_cps_67.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9044
+ },
+ "NS-068-03": {
+  "source": "http://socialisme.free.fr/bulletin/2018_03_01_cps_68_enseignement.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 40893
+ },
+ "NS-068-06": {
+  "source": "http://socialisme.free.fr/bulletin/2018_03_01_cps_68_allemagne.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 51801
+ },
+ "NS-069-03": {
+  "source": "http://socialisme.free.fr/supplements/2018_04_20_supp_cps_68.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 18454
+ },
+ "NS-069-04": {
+  "source": "http://socialisme.free.fr/supplements/2018_04_20_supp_universite.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 11704
+ },
+ "NS-070-01": {
+  "source": "http://socialisme.free.fr/bulletin/2018_09_27_cps_70_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 56189
+ },
+ "NS-071-02": {
+  "source": "http://socialisme.free.fr/bulletin/2018_12_05_cps_71_153as_syndicats.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59539
+ },
+ "NS-071-03": {
+  "source": "http://socialisme.free.fr/supplements/2018_10_08_supp_finances_cps_70.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9826
+ },
+ "NS-071-06": {
+  "source": "http://socialisme.free.fr/bulletin/2018_12_05_cps_71_153as_bresil.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 27454
+ },
+ "NS-071-07": {
+  "source": "http://socialisme.free.fr/bulletin/2018_12_05_cps_71_153as_mai68_2eme_partie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 38382
+ },
+ "NS-072-01": {
+  "source": "http://socialisme.free.fr/bulletin/2019_03_13_cps_72_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 59055
+ },
+ "NS-073-01": {
+  "source": "http://socialisme.free.fr/bulletin/2019_06_05_cps_73_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 65383
+ },
+ "NS-073-02": {
+  "source": "http://socialisme.free.fr/supplements/2019_05_07_apres_le_1er_mai_2019.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 5249
+ },
+ "NS-073-03": {
+  "source": "http://socialisme.free.fr/supplements/2019_05_10_declaration_algerie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 5842
+ },
+ "NS-075-01": {
+  "source": "http://socialisme.free.fr/bulletin/2019_12_01_cps_75_1_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53036
+ },
+ "NS-075-03": {
+  "source": "http://socialisme.free.fr/supplements/2019_11_15_supp_jeunes_cps74.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 10099
+ },
+ "NS-076-01": {
+  "source": "http://socialisme.free.fr/bulletin/2020_03_12_cps_76_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 61789
+ },
+ "NS-076-S1-01": {
+  "source": "http://socialisme.free.fr/supplements/2020_03_23_declaration_covid19.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 36651
+ },
+ "NS-077-01": {
+  "source": "http://socialisme.free.fr/bulletin/2020_09_23_cps_77_159as_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 63421
+ },
+ "NS-077-02": {
+  "source": "http://socialisme.free.fr/bulletin/2020_09_23_cps_77_159as_economie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 52603
+ },
+ "NS-077-03": {
+  "source": "http://socialisme.free.fr/bulletin/2020_09_23_cps_77_159as_interventions.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 24067
+ },
+ "NS-077-04": {
+  "source": "http://socialisme.free.fr/bulletin/2020_09_23_cps_77_159as_etat_policier.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53797
+ },
+ "NS-077-05": {
+  "source": "http://socialisme.free.fr/bulletin/2020_09_23_cps_77_159as_algerie.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 35654
+ },
+ "NS-078-01": {
+  "source": "http://socialisme.free.fr/bulletin/2021_01_21_cps_78_160as_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 65183
+ },
+ "NS-080-01": {
+  "source": "http://socialisme.free.fr/bulletin/2021_09_29_cps_80_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 53232
+ },
+ "NS-081-01": {
+  "source": "http://socialisme.free.fr/bulletin/2021_12_01_cps_81_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 58812
+ },
+ "NS-082-01": {
+  "source": "http://socialisme.free.fr/supplements/2022_03_01_declaration_ukraine.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 13995
+ },
+ "NS-082-06": {
+  "source": "http://socialisme.free.fr/bulletin/2022_03_09_cps_82_edito.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 58811
+ },
+ "NS-083-01": {
+  "source": "http://socialisme.free.fr/bulletin/2022_06_01_cps_83_165as_edito.html",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 67352
+ },
+ "NS-083-02": {
+  "source": "http://socialisme.free.fr/supplements/2022_04_12_cps_communique_presidentielle.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 7707
+ },
+ "NS-084-01": {
+  "source": "http://socialisme.free.fr/bulletin/2022_10_06_cps_84_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 43241
+ },
+ "NS-085-02": {
+  "source": "http://socialisme.free.fr/bulletin/2022_12_01_cps_85_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 51322
+ },
+ "NS-085-03": {
+  "source": "http://socialisme.free.fr/supplements/2022_11_08_supp_cps_retraites.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 7664
+ },
+ "NS-086-01": {
+  "source": "http://socialisme.free.fr/bulletin/2023_03_02_cps_86_editorial.htm",
+  "type": "html",
+  "statut": "ok",
+  "caracteres": 30876
+ },
+ "NS-087-01": {
+  "source": "http://socialisme.free.fr/bulletin/2023_05_18_cps_87_169as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 50870
+ },
+ "NS-087-05": {
+  "source": "http://socialisme.free.fr/supplements/2023_04_02_ms_declaration_algerie.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 13632
+ },
+ "NS-088-01": {
+  "source": "http://socialisme.free.fr/bulletin/2023_09_30_cps_88_170as_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 50900
+ },
+ "NS-088-04": {
+  "source": "http://socialisme.free.fr/supplements/2023_08_13_ms_declaration_niger.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 10808
+ },
+ "NS-089-01": {
+  "source": "http://socialisme.free.fr/bulletin/2023_11_30_cps_89_171as_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 58896
+ },
+ "NS-090-01": {
+  "source": "http://socialisme.free.fr/supplements/2024_02_18_supp_cps_palestine.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 4086
+ },
+ "NS-090-02": {
+  "source": "http://socialisme.free.fr/bulletin/2024_03_07_cps_90_172as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 57163
+ },
+ "NS-090-04": {
+  "source": "http://socialisme.free.fr/supplements/2024_01_13_cjr_loi_immigration.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 5536
+ },
+ "NS-091-01": {
+  "source": "http://socialisme.free.fr/bulletin/2024_05_23_cps_91_173as_notes_politiques.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 53017
+ },
+ "NS-091-08": {
+  "source": "http://socialisme.free.fr/bulletin/2024_05_23_cps_91_173as_une.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 3438
+ },
+ "NS-092-01": {
+  "source": "http://socialisme.free.fr/supplements/2024_10_01_supp_cps_liban.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9419
+ },
+ "NS-092-02": {
+  "source": "http://socialisme.free.fr/bulletin/2024_10_09_cps_92_edito.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 54390
+ },
+ "NS-093-01": {
+  "source": "http://socialisme.free.fr/bulletin/2025_01_30_cps_93_175as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 51970
+ },
+ "NS-094-01": {
+  "source": "http://socialisme.free.fr/bulletin/2025_05_08_cps_94_176as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 48901
+ },
+ "NS-094-02": {
+  "source": "http://socialisme.free.fr/supplements/2025_04_04_supplement_cps_93.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 18525
+ },
+ "NS-095-01": {
+  "source": "http://socialisme.free.fr/bulletin/2025_10_11_cps_95_177as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 46268
+ },
+ "NS-095-03": {
+  "source": "http://socialisme.free.fr/supplements/2025_06_08_declaration_gaza_supp_cps94.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9121
+ },
+ "NS-095-04": {
+  "source": "http://socialisme.free.fr/supplements/2025_06_22_declaration_iran_supp_cps94.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 13599
+ },
+ "NS-095-05": {
+  "source": "http://socialisme.free.fr/supplements/2025_09_15_supp_cps_94.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9855
+ },
+ "NS-096-01": {
+  "source": "http://socialisme.free.fr/bulletin/2026_02_28_cps_96_178as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 51405
+ },
+ "NS-096-03": {
+  "source": "http://socialisme.free.fr/supplements/2026_01_07_suppl_venezuela.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 9294
+ },
+ "NS-098-01": {
+  "source": "http://socialisme.free.fr/bulletin/2026_10_01_cps_98_180as_editorial.pdf",
+  "type": "pdf",
+  "statut": "ok",
+  "caracteres": 64307
+ }
+}

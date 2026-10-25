@@ -1,0 +1,13 @@
+sql.js-httpvfs 0.8.12 (https://github.com/phiresky/sql.js-httpvfs), licence Apache 2.0 (LICENSE).
+
+Modification apportée à sqlite.worker.js (2026-10-25) : en mode « chunked », une lecture qui
+commence au début d'un morceau le demande en entier, sans en-tête HTTP Range. GitHub Pages
+compresse les fichiers à l'envoi et applique les requêtes Range aux octets compressés ; un
+morceau demandé en entier est décompressé par le navigateur et lu correctement. L'explorateur
+utilise des morceaux de la même taille que les lectures (requestChunkSize = serverChunkSize).
+
+  rangeMapper du mode chunked : {url, fromByte, toByte} → {url, fromByte, toByte, entier: 0 === fromByte}
+  doXHR : en-tête Range envoyé seulement si !entier
+  createLazyFile : l'option maxReadSpeed de la configuration est transmise ; l'explorateur la
+  fixe à la taille d'un morceau, pour que chaque lecture demande un seul morceau (sans lecture
+  anticipée de plusieurs morceaux, qu'un morceau demandé en entier ne contiendrait pas)
