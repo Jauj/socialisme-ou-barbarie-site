@@ -507,7 +507,7 @@ CREATE TABLE pages (
   page INTEGER NOT NULL,          -- n° de page dans le PDF (1 = couverture)
   texte TEXT NOT NULL,            -- texte brut (couche texte ou OCR)
   markdown TEXT,                  -- la page structurée en Markdown
-  methode TEXT NOT NULL,          -- pdf_texte | ocr_tesseract
+  methode TEXT NOT NULL,          -- pdf_texte | ocr_tesseract (scan, ou page image d'un PDF à couche texte)
   PRIMARY KEY (publication_id, page)
 );
 CREATE TABLE articles (
@@ -526,6 +526,7 @@ CREATE TABLE articles (
   page_debut INTEGER,             -- page de début dans le PDF de la publication (ou dans url_pdf)
   page_debut_source TEXT,         -- site | sommaire (imprimé en une) | titre (retrouvé dans les pages) | ordre (1er article, page 1)
                                   -- | relecture (page retrouvée par relecture : config/articles_pdf.json)
+                                  -- | texte (début du texte de l'article, connu par sa page HTML ou son PDF, retrouvé dans les pages)
   autres_liens TEXT,              -- JSON
   origine TEXT NOT NULL,          -- sommaire | index_thematique | pdf (sommaire imprimé du numéro, absent du site)
   texte_markdown TEXT,            -- texte intégral en Markdown (## titre affiché, ### intertitres, > citations, [^n] notes)
@@ -599,7 +600,8 @@ def ecrire_sqlite(path, publications, articles, tags, liens_tags, pages, avec_pa
         for p in publications])
     if avec_pages:
         db.executemany("INSERT INTO pages VALUES (?,?,?,?,?)", [
-            (pid, i, t, (v["md"][i - 1] if v.get("md") else None), v["methode"])
+            (pid, i, t, (v["md"][i - 1] if v.get("md") else None),
+             "ocr_tesseract" if i in v["pages_ocr"] else v["methode"])
             for pid, v in sorted(pages.items()) for i, t in enumerate(v["pages"], 1)])
 
     def valeur(a, c):
@@ -733,6 +735,7 @@ def ecrire_rapport(path, publications, articles, tags, liens_tags, anomalies, no
         f"| — page de début retrouvée par le titre | {sum(1 for a in articles if a.get('page_debut_source') == 'titre')} |",
         f"| — premier article du sommaire, non retrouvé : début de la première page | {sum(1 for a in articles if a.get('page_debut_source') == 'ordre')} |",
         f"| — page de début retrouvée par relecture (config/articles_pdf.json) | {sum(1 for a in articles if a.get('page_debut_source') == 'relecture')} |",
+        f"| — page de début retrouvée par le début du texte (page HTML ou PDF de l'article) | {sum(1 for a in articles if a.get('page_debut_source') == 'texte')} |",
         f"| — texte découpé dont la fin est incertaine (article suivant non retrouvé) | {sum(1 for a in articles if 'fin incertaine' in (a.get('texte_source') or ''))} |",
         f"| Publications dont le texte intégral est disponible (pages) | {sum(1 for p in pubs if p['id'] in pages)} |",
         f"| — dont océrisées (scans) | {sum(1 for p in pubs if pages.get(p['id'], {}).get('methode') == 'ocr_tesseract')} |",
@@ -889,13 +892,25 @@ def charger_pages(publications):
         md = fm.read_text(encoding="utf-8").rstrip("\n").split("\f") if fm.exists() else None
         if md is not None and len(md) != len(brut):
             md = None
-        pages[pid] = {"pages": brut, "md": md, "methode": m["methode"], "source": m["source"]}
+        pages[pid] = {"pages": brut, "md": md, "methode": m["methode"], "source": m["source"],
+                      # pages images d'un PDF à couche texte, océrisées (extraire_pages.py)
+                      "pages_ocr": set(meta.get(base, m).get("pages_ocr", {}).get("pages", []))}
     return pages, meta
 
 
 # fin d'un article suivi, dans le sommaire, d'articles qu'on n'a pas retrouvés dans les pages :
 # on ne sait pas où il s'arrête, on borne son texte
 MAX_PAGES_FIN_INCERTAINE = 16
+# début d'un article retrouvé par son texte à une page que le sommaire imprimé contredit (un
+# autre article y commence entre-temps) : retenu seulement si ses premiers mots y sont presque
+# tous (une citation partagée avec un autre texte ne suffit pas)
+SCORE_ANCRAGE_CONTRE_SOMMAIRE = 0.9
+# texte propre d'un article (page HTML, PDF) réduit à la note qui présente un texte reproduit en
+# image (quelques lignes terminées par « : ») : le texte découpé dans le numéro, bien plus long,
+# le remplace
+MIN_TEXTE_PROPRE = 1000
+# taille au-delà de laquelle GitHub signale un fichier versionné (cps.sqlite)
+LIMITE_GITHUB = 50 * 2**20
 
 
 def brut_vers_md(texte):
@@ -908,7 +923,9 @@ def charger_textes(articles, publications, pages, pages_relues=None):
     """Page de début, texte Markdown et texte brut de chaque article.
 
     Texte, par ordre de préférence :
-    1. page HTML ou PDF propre à l'article (fetch_textes.py + extraire_markdown.py) ;
+    1. page HTML ou PDF propre à l'article (fetch_textes.py + extraire_markdown.py), sauf s'il
+       se réduit à une note qui annonce un texte absent (« … en date du 27 janvier 1990 : ») et
+       que le découpage du numéro (3.) donne bien plus ;
     2. PDF d'une publication qui ne contient qu'un texte (supplément…) ;
     3. découpage du PDF de la publication : le titre de l'article est cherché parmi
        les intertitres (assemblage.py), en commençant par la page indiquée par le site,
@@ -994,9 +1011,31 @@ def charger_textes(articles, publications, pages, pages_relues=None):
                     debuts[i] = next((k for k, b in enumerate(blocs) if b[0] == page), None)
                 sources[i] = "titre"
         sources = ["relecture" if i in relues and s == "site" else s for i, s in enumerate(sources)]
+        # articles dont on a le texte par ailleurs (page HTML, PDF propre) mais pas le début dans
+        # le numéro : on cherche le début de ce texte dans les pages, entre ses voisins retrouvés
+        for i, a in enumerate(propres):
+            if debuts[i] is None and a["texte_markdown"]:
+                avant = [d for d in debuts[:i] if d is not None]
+                apres = [d for d in debuts[i + 1:len(propres)] if d is not None]
+                bas, haut = (max(avant) if avant else -1), (min(apres) if apres else len(blocs))
+                if bas >= haut:
+                    bas, haut = -1, len(blocs)
+                k, score = assemblage.debut_par_le_texte(a["texte_markdown"], blocs, bas, haut) or (None, 0)
+                if k is None or k in debuts:
+                    continue
+                page = blocs[k][0]
+                # page où le sommaire imprimé fait commencer un autre article, encore à placer
+                if any(p == page and j != i and debuts[j] is None for j, p in indiquees.items()):
+                    continue
+                p_sommaire = indiquees.get(i, page)
+                entre = [p for j, p in indiquees.items()
+                         if j != i and (p_sommaire < p <= page or page <= p < p_sommaire)]
+                if entre and score < SCORE_ANCRAGE_CONTRE_SOMMAIRE:
+                    continue
+                debuts[i], sources[i] = k, "texte"
         en_une = publications[pid]["type"] in ("numero", "numero_special")
         assemblage.placer_selon_sommaire(debuts, sources, blocs, indiquees, titres, en_une)
-        debuts = assemblage.ajuster_debuts(debuts, blocs, sources, en_une)
+        debuts = assemblage.ajuster_debuts(debuts, blocs, sources, en_une, titres)
         positions = sorted({d for d in debuts if d is not None})
         for i, a in enumerate(membres):
             k = debuts[i]
@@ -1010,20 +1049,28 @@ def charger_textes(articles, publications, pages, pages_relues=None):
             incertaine = any(debuts[j] is None for j in range(i + 1, min(suivant, len(propres))))
             if incertaine:
                 fin = next((j for j in range(k, fin) if blocs[j][0] >= page + MAX_PAGES_FIN_INCERTAINE), fin)
-            if a["texte_markdown"] is not None:
+            propre = a["texte_markdown"]
+            if propre is not None and (len(propre) >= MIN_TEXTE_PROPRE or not propre.rstrip(" *_\n").endswith(":")):
                 continue
             md = assemblage.extraire(blocs, k, fin, vocab)
+            if propre is not None:
+                if len(md) < 3 * len(propre):
+                    continue
+                md = assemblage.depuis_le_debut_du_texte(md, propre)
             if md.strip():
+                ocr = sorted(n for n in v["pages_ocr"] if page <= n <= blocs[fin - 1][0])
                 a["texte_markdown"] = md
                 a["texte_type"] = "pages_numero"
-                a["texte_source"] = (f"{v['source']} pages {page}-{blocs[fin - 1][0]} ({v['methode']} ; "
-                                     "du titre de l'article à celui de l'article suivant, découpage automatique"
+                a["texte_source"] = (f"{v['source']} pages {page}-{blocs[fin - 1][0]} ({v['methode']}"
+                                     + (f", pages images océrisées : {', '.join(map(str, ocr))}" if ocr else "")
+                                     + " ; du titre de l'article à celui de l'article suivant, découpage automatique"
                                      + ("; fin incertaine, article suivant non retrouvé" if incertaine else "") + ")")
 
     # nettoyage (bruit éditorial, intertitres) et texte brut dérivé du Markdown
     for a in articles:
         if a["texte_markdown"]:
-            debut = a["texte_type"] != "pages_numero" or a["page_debut"] == 1
+            debut = (a["texte_type"] != "pages_numero" or a["page_debut"] == 1
+                     or nettoyage.commence_par_bandeau(a["texte_markdown"]))  # supplément reproduit
             a["texte_markdown"] = nettoyage.nettoyer(a["texte_markdown"], vocab, debut_document=debut,
                                                      article=True, titre=a["titre"],
                                                      recoudre=a["texte_type"] != "html")
@@ -1057,7 +1104,7 @@ def ajouter_dates(publications, articles, pages):
         v = pages.get(p["id"])
         if not v or not v["pages"]:
             continue
-        r = metadonnees.date_imprimee(v["pages"][0], p["date"], ocr=v["methode"] == "ocr_tesseract")
+        r = metadonnees.date_imprimee(v["pages"][0], p["date"], ocr=v["methode"] == "ocr_tesseract" or 1 in v["pages_ocr"])
         if r:
             p["date_imprimee"] = r[0]
             lectures.append((p, r[0], r[1], metadonnees.comparer_dates(r[0], p["date"])))
@@ -1208,6 +1255,10 @@ def main():
     # base principale (versionnée) : sans le texte page par page, pour rester légère ;
     # base complète : avec la table pages et sa recherche plein texte
     ecrire_sqlite(DATA / "cps.sqlite", pubs, articles, tags, liens_tags, pages, avec_pages=False)
+    taille = (DATA / "cps.sqlite").stat().st_size
+    if taille > LIMITE_GITHUB:
+        print(f"attention : data/cps.sqlite fait {taille / 2**20:.1f} Mio, au-delà des 50 Mio à partir desquels "
+              "GitHub avertit (et des 100 Mio qu'il refuse) : alléger la base légère", file=sys.stderr)
     ecrire_index_recherche(DATA / "recherche.sqlite", articles)
     if not args.sans_complet:
         ecrire_sqlite(DATA / "cps_complet.sqlite", pubs, articles, tags, liens_tags, pages, avec_pages=True)

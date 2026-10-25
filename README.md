@@ -67,7 +67,7 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `date_imprimee` | date lue dans l'en‑tête de la une (`JJ` = `00` quand seul le mois est imprimé) ; les écarts avec `date` sont listés dans le rapport de qualité |
 | `parent_id` | numéro auquel se rattache un supplément |
 | `url_pdf` | PDF du numéro complet sur le site |
-| `nb_pages`, `texte_methode` | pages dont le texte a été extrait ; `pdf_texte` (couche texte) ou `ocr_tesseract` (scan océrisé) |
+| `nb_pages`, `texte_methode` | pages dont le texte a été extrait ; `pdf_texte` (couche texte, ses éventuelles pages images océrisées : voir « OCR ») ou `ocr_tesseract` (scan océrisé) |
 
 **`articles`** — un article d'une publication, dans l'ordre du sommaire.
 
@@ -79,10 +79,10 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 | `date`, `serie` | reprises de la publication |
 | `date_redaction` | date isolée qui clôt le texte (« Le 7 avril 2008 », « Le 2/3/1990 »), quand il y en a une |
 | `url_html`, `url_pdf`, `pdf_page` | liens vers l'article sur le site (`pdf_page` : page indiquée par le site) |
-| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`), par le sommaire imprimé en une du numéro (`sommaire`), retrouvée en cherchant le titre de l'article dans les pages (`titre`), retrouvée par relecture ([`config/articles_pdf.json`](config/articles_pdf.json), `relecture`), ou, pour le premier article d'un numéro introuvable autrement, début de la une (`ordre`) |
+| `page_debut`, `page_debut_source` | page de début dans le PDF de la publication : indiquée par le site (`site`), par le sommaire imprimé en une du numéro (`sommaire`), retrouvée en cherchant le titre de l'article dans les pages (`titre`) ou, pour un article qui a sa propre page HTML ou son PDF, le début de ce texte (`texte`), retrouvée par relecture ([`config/articles_pdf.json`](config/articles_pdf.json), `relecture`), ou, pour le premier article d'un numéro introuvable autrement, début de la une (`ordre`) |
 | `texte_markdown` | texte intégral en Markdown, quand il a pu être obtenu (voir plus bas) |
 | `texte` | le même texte, brut — **seulement dans `cps_complet.sqlite`** (dérivable du Markdown, retiré de la base légère pour limiter sa taille, environ 50 Mo) |
-| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article — surtitre compris — jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin ; `texte_source` signale une « fin incertaine » quand l'article suivant du sommaire n'a pas été retrouvé : le texte est alors borné à 16 pages) |
+| `texte_type` | `html` / `pdf_article` (texte propre à l'article), `pdf_publication` (le supplément entier), `pages_numero` (découpé dans le PDF du numéro, du titre de l'article — surtitre compris — jusqu'au titre de l'article suivant : **découpage automatique**, qui peut déborder sur l'article voisin ; `texte_source` signale une « fin incertaine » quand l'article suivant du sommaire n'a pas été retrouvé : le texte est alors borné à 16 pages). Un texte propre réduit à la note qui présente un texte reproduit en image (moins de 1 000 caractères, terminés par « : ») cède la place au découpage du numéro quand celui‑ci est au moins trois fois plus long |
 | `texte_source` | URL du document dont vient le texte, pages et méthode (couche texte ou OCR) |
 | `origine` | `sommaire` (sommaire du site), `index_thematique` (article présent seulement dans l'index) ou `pdf` (article imprimé dans le numéro, avec son entrée au sommaire imprimé en une, mais absent du site : voir plus bas) |
 
@@ -107,7 +107,8 @@ docs/RAPPORT_QUALITE.md statistiques et anomalies
 
 **`pages`** (dans `cps_complet.sqlite`) — texte de chaque page de chaque PDF de publication
 (`texte` brut et `markdown` structuré), avec recherche plein texte (`pages_fts`). Les numéros scannés (bulletin 1984, ancienne série et
-nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract : le texte peut contenir
+nouvelle série jusqu'au n°45 environ) ont été océrisés avec Tesseract, comme les pages images des
+numéros récents (`methode = ocr_tesseract` pour chacune de ces pages) : le texte peut contenir
 des erreurs de reconnaissance (voir « OCR » plus bas).
 
 **Localisation des articles.** Le site n'indique la page de début que pour 80 articles. Pour les
@@ -122,6 +123,15 @@ autres, trois indices sont combinés :
   interviennent : RATP ; Université… » → intertitre « LES MILITANTS INTERVIENNENT ») ; dans
   l'ordre du sommaire, en écartant les pages qui citent plusieurs titres (une, sommaires de
   dernière page) ;
+- le **début du texte**, pour les articles qui ont leur propre page HTML ou leur PDF sur le site
+  (leur texte vient de là, mais leur place dans le numéro borne les articles voisins) : les 60
+  premiers mots, cherchés par trigrammes dans les pages, entre les articles voisins déjà
+  retrouvés, ce qui résiste mieux aux erreurs d'OCR qu'un titre ; le titre, le chapô en gras ou
+  en italique et le bandeau d'un supplément reproduit qui les précèdent sont inclus. Un début
+  trouvé à la page où le sommaire imprimé fait commencer un autre article encore à placer est
+  écarté, et un début que le sommaire contredit (un autre article commence entre la page qu'il
+  indique et celle trouvée) n'est retenu que si presque tous ses premiers mots y sont (au moins
+  90 % des trigrammes) : une citation commune à deux textes ne suffit pas ;
 - en dernier recours, la page du sommaire imprimé, et pour le premier article d'un numéro, la une.
 
 **Relecture des sommaires imprimés.** Deux listes de cas ont été soumises à des agents (modèles
@@ -148,7 +158,10 @@ Cette relecture a aussi révélé une erreur du site : le PDF lié au n°24 de l
 celui du n°25, dont le lien mène à un supplément (voir plus bas).
 
 Le début retenu est ensuite ajusté : le surtitre et les intertitres placés juste au‑dessus du titre
-retrouvé sont inclus, et en haut de page la fin de l'article précédent lui est laissée. Le texte
+retrouvé sont inclus, comme le surtitre de rubrique séparé du titre par un chapô (« Algérie »
+au‑dessus de « Un an après le déclenchement du Hirak… ») et le bandeau d'un supplément
+reproduit (« GROUPE pour la construction du Parti ouvrier révolutionnaire… »), et en haut de
+page la fin de l'article précédent lui est laissée. Le texte
 va jusqu'au début de l'article suivant retrouvé dans le même PDF, sans limite de longueur, sauf
 quand un article intermédiaire du sommaire n'a pas été retrouvé (« fin incertaine », texte borné
 à 16 pages). Contrôle : sur les 79 articles dont le site donne la page, la méthode appliquée sans
@@ -189,6 +202,15 @@ reformulation), chaque correction étant contrôlée automatiquement (au plus 25
 modifiés, longueur à ± 15 %, moins de mots inconnus) ; elles sont dans `data/corrections_ocr/`,
 le texte brut de l'OCR restant inchangé dans `data/pages/`. Les colonnes que Tesseract mêle
 encore dans certaines pages ne sont pas corrigées.
+
+**Pages images.** Dans les PDF à couche texte des numéros récents, certaines pages ne sont
+qu'une image, parfois sous une ligne de texte : suppléments, tracts, communiqués, ou un article
+ancien (« La laïcité et le prolétariat », CPS n°31 de 1990, reproduit dans le n°56). Elles sont
+océrisées de la même façon (`extraire_pages.py --ocr-pages-images`) quand l'image couvre la
+page et que le texte obtenu est lisible (au plus 25 % de mots inconnus du corpus, bien plus de
+mots que la couche texte) : 42 pages de 19 numéros. Leurs numéros sont notés dans
+`data/pages/index.json` (`pages_ocr`), dans la table `pages` (`methode`) et dans le
+`texte_source` des articles concernés.
 
 ## Version Markdown des articles
 
@@ -256,7 +278,7 @@ refaites à partir du texte brut). Le rapport de qualité compte à chaque const
 qui subsiste (bulletins, mentions légales, en‑têtes, faux intertitres…). Limites : les textes
 océrisés gardent des erreurs de reconnaissance (moins nombreuses, voir « OCR » plus haut ;
 colonnes parfois mêlées), et le découpage automatique des numéros peut déborder sur l'article
-voisin, en particulier quand un article du numéro n'a pas été retrouvé (30 « fins incertaines »).
+voisin, en particulier quand un article du numéro n'a pas été retrouvé (18 « fins incertaines »).
 
 ### Mesures avant et après le nettoyage et le nouveau découpage
 
@@ -313,6 +335,43 @@ Par rapport à la version publiée précédemment :
 Aucun article n'a perdu son texte ; 105 en ont gagné un (articles retrouvés par la relecture,
 articles absents du site ajoutés). Les compteurs de bruit du tableau précédent sont stables
 (les légères hausses suivent celle du nombre de textes).
+
+### Mesures après l'ancrage par le début du texte et l'OCR des pages images
+
+Par rapport à la version publiée précédemment :
+
+| Mesure | Avant | Après |
+|---|---|---|
+| Articles avec texte | 1 280 | 1 284 |
+| Articles dont la page de début est connue | 1 046 | 1 079 |
+| — dont retrouvée par le début de leur texte (`texte`) | — | 122 |
+| Textes découpés dont la fin est incertaine | 30 | 18 |
+| Textes découpés sur 12 pages ou plus | 34 | 29 |
+| Pages images océrisées dans les PDF à couche texte | — | 42 (19 numéros) |
+| Textes qui en contiennent | — | 19 |
+| Associations article‑tag déduites du texte intégral | 1 583 | 1 592 |
+| Articles dont la date de rédaction est lue | 529 | 536 |
+
+Aucun texte perdu. Les quatre textes gagnés sont des suppléments et communiqués reproduits en
+image (NS‑054‑06, NS‑085‑06, NS‑086‑02, NS‑086‑03) ; « La laïcité et le prolétariat » (NS‑056‑04),
+dont le PDF propre ne contient que la note de présentation, a maintenant son texte complet ; une
+quinzaine de textes ont été complétés par des pages images, et 13 nettement raccourcis parce
+que l'article suivant est désormais retrouvé (12 « fins incertaines » en moins). 14 articles ont
+changé de page de début : 12 par l'ancrage sur le texte, d'une ou deux pages le plus souvent
+(trois pour NS‑031‑05, six pour NS‑045‑02, vérifiés dans les pages), 2 parce que leurs pages
+images sont maintenant lues (NS‑085‑03, NS‑089‑03).
+
+Contrôle par des agents Haiku de 54 textes : 24 tirés au sort parmi les 105 gagnés au tour
+précédent, ceux dont le découpage a changé et ceux qui contiennent des pages images. Pour chacun,
+début et fin du texte, titres des articles voisins : le sujet correspond au titre dans 53 cas
+(1 indécis) ; 13 débuts et 13 fins posaient problème, 7 textes restaient peu lisibles (OCR).
+Les défauts systématiques ont été corrigés et vérifiés au cas par cas : bandeau ou en‑tête d'un
+supplément reproduit en tête du texte, titre laissé à l'article précédent (surtitre de rubrique
+au‑dessus d'un chapô, titre court resté simple paragraphe sur une page océrisée), en‑tête de
+page lu « C.P.5. », coordonnées de l'AEPS en fin de texte, début d'un tract sur une page
+d'image surmontée d'une ligne de texte. Restent les défauts propres aux scans les plus abîmés
+(débris d'OCR avant le titre, colonnes mêlées) et les textes qui débordent sur un article non
+retrouvé (« fins incertaines », documents annexes en fin d'article).
 
 ## Exemples de requêtes
 
@@ -401,7 +460,8 @@ des textes avec `scripts/metadonnees.py`) ; `--sans-complet` saute `cps_complet.
 volumineux pour être versionné. `extraire_markdown.py` (environ 5 minutes quand les PDF sont en
 cache, option `--garder-pdf`) applique le même nettoyage aux pages et aux textes propres aux
 articles. `extraire_pages.py --refaire-ocr` refait l'OCR des numéros scannés déjà traités et
-garde, page par page, la version la plus lisible.
+garde, page par page, la version la plus lisible ; `--ocr-pages-images` océrise les pages
+images des PDF à couche texte déjà traités (c'est automatique pour un nouveau numéro).
 
 Pour intégrer un nouveau numéro : `fetch_sources.py --refresh`, `fetch_textes.py`,
 `extraire_pages.py`, `extraire_markdown.py`, puis `build_db.py`.

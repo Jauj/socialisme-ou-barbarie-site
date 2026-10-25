@@ -10,6 +10,7 @@ titre (surtitre compris) jusqu'au titre de l'article suivant localisé dans le m
 """
 import re
 
+import nettoyage
 from localiser import jetons, jetons_titre
 from pdf_markdown import fusionner_paragraphes
 
@@ -196,7 +197,10 @@ def localiser_blocs(titres, blocs, pages_imposees=None, seuil=0.75, pages_indiqu
         elif i in pages_imposees:
             res[i] = meilleur_bloc_page(titres[i], blocs, page)
             if res[i] is None:
-                res[i] = haut.get(page)
+                # titre court resté simple paragraphe (« On nous communique » d'une page océrisée)
+                tj = jetons(titres[i])
+                memes = [k for k, b in enumerate(blocs) if abs(b[0] - page) <= 1 and k not in pris and jetons(b[2]) == tj]
+                res[i] = min(memes, key=lambda k: (abs(blocs[k][0] - page), k)) if memes and tj else haut.get(page)
         if res[i] is not None:
             pris.add(res[i])
             sources[i] = "site" if i in pages_imposees else "sommaire"
@@ -252,10 +256,107 @@ def placer_selon_sommaire(debuts, sources, blocs, pages_indiquees, titres, premi
         debuts[0], sources[0] = 0, "ordre"
 
 
-def ajuster_debuts(debuts, blocs, sources, premier_en_une=True):
+R_PARU_NOTE = re.compile(r"^\W*(?:article|texte|d[ée]claration|tract|[ée]ditorial|interview)s?\s+"
+                         r"(?:paru|publi[ée]|diffus[ée])", re.I)
+
+
+def _trigrammes(texte):
+    j = jetons(texte)
+    return {tuple(j[i:i + 3]) for i in range(len(j) - 2)}
+
+
+def debut_par_le_texte(md, blocs, apres=-1, avant=None, seuil=0.35, n_mots=60):
+    """Rang du bloc où commence, dans les pages d'un numéro, un article dont on a le texte par
+    ailleurs (page HTML, PDF propre) : le bloc dont la fenêtre (lui et ses deux suivants)
+    contient le plus de trigrammes des premiers mots du texte, avec le titre et les surtitres
+    qui le précèdent immédiatement. Plus sûr que le titre sur un scan : une phrase entière
+    résiste mieux aux erreurs d'OCR. Recherche entre les blocs `apres` et `avant` (exclus) ;
+    (rang, part des trigrammes retrouvés), ou None si aucune fenêtre n'en contient au moins `seuil`."""
+    corps = [b for b in md.split("\n\n") if b.strip() and not b.lstrip().startswith("#")
+             and not R_PARU_NOTE.match(b)]  # « Article paru dans CPS n°… » : absent du numéro
+    mots = jetons(" ".join(corps))[:n_mots]
+    if len(mots) < 20:
+        return None
+    voulus = {tuple(mots[i:i + 3]) for i in range(len(mots) - 2)}
+    fin = len(blocs) if avant is None else min(avant, len(blocs))
+    meilleur, choix = 0.0, None
+    for k in range(apres + 1, fin):
+        if _est_titre(blocs[k][2]):
+            continue
+        j = [m for b in blocs[k:min(k + 3, fin)] for m in jetons(b[2])]
+        score = len(voulus & {tuple(j[i:i + 3]) for i in range(len(j) - 2)}) / len(voulus)
+        if score > meilleur:
+            meilleur, choix = score, k
+    if choix is None or meilleur < seuil:
+        return None
+    # premier bloc de la fenêtre qui contient vraiment le texte (en-tête courant, légende…)
+    for _ in range(2):
+        if choix + 1 < fin and not voulus & _trigrammes(blocs[choix][2]):
+            choix += 1
+    # blocs qui le précèdent : intertitres (titre, surtitre), et sur la même page titre ou chapeau
+    # en gras ou en italique (repris du début du texte) et bandeau d'un supplément reproduit
+    tete = _trigrammes(" ".join(b for b in md.split("\n\n")[:12] if not R_PARU_NOTE.match(b)))
+    n = 0
+    while n < 6 and choix - 1 > apres:
+        page, prec = blocs[choix][0], blocs[choix - 1]
+        if _est_titre(prec[2]) and page - prec[0] in (0, 1):
+            pass
+        elif prec[0] != page:
+            break
+        elif not (_part_dans(_trigrammes(prec[2]), tete) >= 0.5 or nettoyage.est_bandeau_supplement(prec[2])):
+            break
+        choix -= 1
+        n += 1
+    return choix, meilleur
+
+
+def _part_dans(a, b):
+    return len(a & b) / len(a) if a else 0.0
+
+
+def depuis_le_debut_du_texte(md, texte):
+    """md (découpé dans un numéro) sans ce qui précède, dans son premier bloc, les premiers mots
+    de `texte` (le même article pris ailleurs) : la mise en page a pu coller la fin de l'article
+    précédent et le début de celui-ci dans un même paragraphe."""
+    corps = [b for b in texte.split("\n\n") if b.strip() and not b.lstrip().startswith("#")
+             and not R_PARU_NOTE.match(b)]
+    mots = re.findall(r"\w+", " ".join(corps))[:8]
+    premier = md.split("\n\n", 1)[0]
+    m = len(mots) >= 5 and re.search(r"\b" + r"\W+".join(map(re.escape, mots)), premier)
+    return md[m.start():] if m and re.search(r"\w", premier[:m.start()]) else md
+
+
+def _emphase(b):
+    """Bloc entièrement en italique ou en gras (chapô, titre en gras)."""
+    return bool(re.fullmatch(r"\*{1,3}[^*\n].*\*", b.strip(), re.S))
+
+
+def _surtitre_rubrique(k, titre, blocs, occupes):
+    """Rang du surtitre qui porte la rubrique du titre (« Algérie » pour « Algérie : Un an
+    après… »), séparé du titre retrouvé par un chapô en italique ou d'autres intertitres, sur la
+    même page ; k sinon."""
+    r = list(rubrique(titre))
+    if not r or r == jetons(titre):
+        return k
+    j = k
+    for _ in range(4):
+        if j - 1 < 0 or blocs[j - 1][0] != blocs[k][0] or (j - 1) in occupes:
+            break
+        j -= 1
+        b = blocs[j][2]
+        if _est_titre(b) and jetons(b)[:len(r)] == r:
+            return j
+        if not (_est_titre(b) or _emphase(b)):
+            break
+    return k
+
+
+def ajuster_debuts(debuts, blocs, sources, premier_en_une=True, titres=None):
     """Retouches des débuts : surtitre et intertitres placés juste au-dessus du titre retrouvé
-    (même page) ; premier article commencé en haut de sa page ; début en haut de page qui
-    tombe sur la fin de l'article précédent (paragraphes en minuscule) : on saute cette fin."""
+    (même page), et surtitre de rubrique au-dessus d'un chapô ; premier article commencé en
+    haut de sa page ; début en haut de page qui tombe sur la fin de l'article précédent
+    (paragraphes en minuscule) : on saute cette fin ; bandeau d'un supplément reproduit, juste
+    au-dessus : il appartient au texte qui suit."""
     debuts = list(debuts)
     occupes = {k for k in debuts if k is not None}
     for i, k in enumerate(debuts):
@@ -278,6 +379,13 @@ def ajuster_debuts(debuts, blocs, sources, premier_en_une=True):
                     and re.match(r"[a-zéèàçâêîôûœ…]", blocs[k][2].lstrip("*_\\")):
                 k += 1
                 n += 1
+        if titres and i < len(titres):
+            k = _surtitre_rubrique(k, titres[i], blocs, occupes - {debuts[i]})
+        n = 0
+        while n < 2 and k - 1 >= 0 and blocs[k - 1][0] == page and (k - 1) not in occupes \
+                and nettoyage.est_bandeau_supplement(blocs[k - 1][2]):
+            k -= 1
+            n += 1
         occupes.discard(debuts[i])
         occupes.add(k)
         debuts[i] = k

@@ -18,25 +18,26 @@ Généré automatiquement par `scripts/build_db.py`. Ne pas modifier à la main.
 | — dont ajoutés d'après le sommaire imprimé du numéro (absents du site) | 15 |
 | — avec lien HTML | 334 |
 | — avec lien PDF propre ou page de PDF | 335 |
-| — avec texte intégral (page HTML ou PDF propre) | 402 |
+| — avec texte intégral (page HTML ou PDF propre) | 401 |
 | — avec texte intégral (PDF de la publication) | 148 |
-| — avec texte découpé dans le PDF du numéro (titre → article suivant) | 730 |
-| — avec texte (total, Markdown et brut) | 1280 |
+| — avec texte découpé dans le PDF du numéro (titre → article suivant) | 735 |
+| — avec texte (total, Markdown et brut) | 1284 |
 | — page de début indiquée par le site | 80 |
-| — page de début donnée par le sommaire imprimé en une | 357 |
-| — page de début retrouvée par le titre | 451 |
-| — premier article du sommaire, non retrouvé : début de la première page | 26 |
+| — page de début donnée par le sommaire imprimé en une | 266 |
+| — page de début retrouvée par le titre | 456 |
+| — premier article du sommaire, non retrouvé : début de la première page | 23 |
 | — page de début retrouvée par relecture (config/articles_pdf.json) | 132 |
-| — texte découpé dont la fin est incertaine (article suivant non retrouvé) | 30 |
+| — page de début retrouvée par le début du texte (page HTML ou PDF de l'article) | 122 |
+| — texte découpé dont la fin est incertaine (article suivant non retrouvé) | 18 |
 | Publications dont le texte intégral est disponible (pages) | 350 |
 | — dont océrisées (scans) | 177 |
 | Pages de texte | 7688 |
 | Tags | 118 |
 | Associations article-tag (index du site) | 1535 |
 | Associations article-tag (règles sur les titres) | 1268 |
-| Associations article-tag (déduites du texte intégral) | 1583 |
+| Associations article-tag (déduites du texte intégral) | 1592 |
 | Publications dont la date imprimée en une a été lue | 307 |
-| Articles dont la date de rédaction a été lue (fin du texte) | 529 |
+| Articles dont la date de rédaction a été lue (fin du texte) | 536 |
 | Articles sans aucun tag | 5 |
 
 ## Texte des articles : contrôles
@@ -45,7 +46,7 @@ Nombre d'articles dont le texte Markdown présente encore le défaut (après net
 
 | Contrôle | Articles |
 |---|---|
-| Articles avec texte | 1280 |
+| Articles avec texte | 1284 |
 | Bulletin d'abonnement | 0 |
 | Mentions légales (directeur de la publication, commission paritaire, ISSN) | 1 |
 | En-tête de page resté dans le texte (« C.P.S. … – page N ») | 0 |

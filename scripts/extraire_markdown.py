@@ -5,7 +5,8 @@ Produit, à côté des textes bruts :
   - data/pages/<publication>.md : Markdown de chaque page du PDF de la publication
     (pages séparées par un saut de page \\f, mêmes numéros que data/pages/<id>.txt) ;
       * PDF à couche texte : structure tirée des polices (pdftohtml -xml) ;
-      * PDF océrisés : structure déduite du texte de Tesseract ;
+      * PDF océrisés, et pages images océrisées des PDF à couche texte : structure déduite
+        du texte de Tesseract ;
   - data/textes/<article>.md : Markdown des articles qui ont leur propre page HTML
     ou leur propre PDF sur le site ; le .txt correspondant est régénéré à partir du
     Markdown (texte débarrassé des menus du site, paragraphes recousus).
@@ -92,8 +93,11 @@ def main():
                 print(f"{pid} : {len(pages_md)} pages Markdown pour {len(bruts)} pages texte, repli sur le texte brut")
                 pages_md = [pdf_markdown.page_markdown_ocr(t, vocab) for t in bruts]
             else:
+                ocr = set(m.get("pages_ocr", {}).get("pages", []))  # pages images (extraire_pages.py)
                 for k, (brut, md) in enumerate(zip(bruts, pages_md)):
-                    if len(brut.strip()) > 200 and (couverture(brut, md) < SEUIL_COUVERTURE or ordre(brut, md) < 0.6):
+                    if k + 1 in ocr:
+                        pages_md[k] = pdf_markdown.page_markdown_ocr(brut, vocab)
+                    elif len(brut.strip()) > 200 and (couverture(brut, md) < SEUIL_COUVERTURE or ordre(brut, md) < 0.6):
                         pages_md[k] = pdf_markdown.page_markdown_ocr(brut, vocab)
                         rapport["pages_refaites"].append(f"{pid} p.{k + 1}")
             if not args.garder_pdf:

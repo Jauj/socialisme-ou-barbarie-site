@@ -10821,7 +10821,7 @@
      "titre": "Votez: contre les candidats bourgeois, pour le front unique des organisations ouvrières",
      "titre_index": null,
      "date": "1992-02-01",
-     "date_redaction": null,
+     "date_redaction": "1992-01-27",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -10855,8 +10855,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cpsa41_algerie.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 7,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-041/AS-041-02.md",
      "tags": [
@@ -14827,7 +14827,7 @@
      "titre": "Nouvelle crise financière au Mexique: Craquements dans le système financier international",
      "titre_index": null,
      "date": "1995-02-15",
-     "date_redaction": null,
+     "date_redaction": "1995-02-08",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -14838,6 +14838,10 @@
      "tags": [
       {
        "tag": "argentine",
+       "source": "texte"
+      },
+      {
+       "tag": "bresil",
        "source": "texte"
       },
       {
@@ -14855,10 +14859,6 @@
       {
        "tag": "usa",
        "source": "texte"
-      },
-      {
-       "tag": "yougo",
-       "source": "texte"
       }
      ],
      "texte_disponible": true
@@ -14873,8 +14873,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps56_ex_yougoslavie.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 18,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-056/AS-056-05.md",
      "tags": [
@@ -16945,11 +16945,15 @@
      "markdown": "data/markdown/AS-066/AS-066-04.md",
      "tags": [
       {
+       "tag": "allemagne",
+       "source": "texte"
+      },
+      {
        "tag": "ps",
        "source": "site"
       },
       {
-       "tag": "usa",
+       "tag": "secu",
        "source": "texte"
       }
      ],
@@ -16965,8 +16969,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps66_usa.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 25,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-066/AS-066-05.md",
      "tags": [
@@ -17149,7 +17153,7 @@
      "titre": "Déclaration du Comité: La responsabilité des dirigeants syndicaux du groupe Renault: Appeler et organiser la grève générale du groupe jusqu'à satisfaction des revendications: aucun licenciement! aucune suppression d'emploi!",
      "titre_index": null,
      "date": "1997-04-11",
-     "date_redaction": null,
+     "date_redaction": "1997-03-13",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -17163,24 +17167,12 @@
        "source": "regle"
       },
       {
-       "tag": "etudiants",
-       "source": "texte"
-      },
-      {
-       "tag": "fn",
-       "source": "texte"
-      },
-      {
        "tag": "france",
        "source": "site"
       },
       {
        "tag": "grevegenerale",
        "source": "regle"
-      },
-      {
-       "tag": "immigres",
-       "source": "texte"
       },
       {
        "tag": "industrie",
@@ -17207,8 +17199,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps67_debre.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 7,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-067/AS-067-03.md",
      "tags": [
@@ -17263,16 +17255,16 @@
      "markdown": "data/markdown/AS-067/AS-067-04.md",
      "tags": [
       {
-       "tag": "albanie",
-       "source": "texte"
-      },
-      {
        "tag": "enseignement",
        "source": "site"
       },
       {
        "tag": "france",
        "source": "regle"
+      },
+      {
+       "tag": "usa",
+       "source": "texte"
       }
      ],
      "texte_disponible": true
@@ -17313,8 +17305,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps67_albanie.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 21,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-067/AS-067-06.md",
      "tags": [
@@ -17633,8 +17625,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cpsa68_revolution_russe.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 29,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-068/AS-068-06.md",
      "tags": [
@@ -18031,6 +18023,10 @@
        "source": "regle"
       },
       {
+       "tag": "unef",
+       "source": "texte"
+      },
+      {
        "tag": "université",
        "source": "site"
       }
@@ -18047,8 +18043,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps70_routiers.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 9,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-070/AS-070-03.md",
      "tags": [
@@ -18069,8 +18065,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps70_loiaubry.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 13,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-070/AS-070-04.md",
      "tags": [
@@ -18101,16 +18097,8 @@
      "markdown": "data/markdown/AS-070/AS-070-05.md",
      "tags": [
       {
-       "tag": "1917",
-       "source": "texte"
-      },
-      {
        "tag": "enseignement",
        "source": "site"
-      },
-      {
-       "tag": "italie",
-       "source": "texte"
       }
      ],
      "texte_disponible": true
@@ -18125,8 +18113,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps70_italie.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 22,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-070/AS-070-06.md",
      "tags": [
@@ -18159,8 +18147,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cpsa70_revolution_russe.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 29,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-070/AS-070-07.md",
      "tags": [
@@ -18439,8 +18427,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps71_iut.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 21,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-071/AS-071-08.md",
      "tags": [
@@ -18481,8 +18469,8 @@
      "url_html": "http://socialisme.free.fr/histoire_theorie/cps71_revolution_russe.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 25,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-071/AS-071-09.md",
      "tags": [
@@ -18523,7 +18511,7 @@
      "titre": "Éditorial: l'issue politique: à bas Chirac! à bas la Ve république! gouvernement PS-PCF sans représentants d'organisations bourgeoises",
      "titre_index": null,
      "date": "1998-06-06",
-     "date_redaction": null,
+     "date_redaction": "1998-06-06",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -18535,10 +18523,6 @@
       {
        "tag": "editorial",
        "source": "site"
-      },
-      {
-       "tag": "enseignement",
-       "source": "texte"
       },
       {
        "tag": "fn",
@@ -18573,8 +18557,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps72_enseignement.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 9,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/AS-072/AS-072-02.md",
      "tags": [
@@ -21128,7 +21112,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 27,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-003/NS-003-05.md",
      "tags": [
@@ -22000,7 +21984,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 12,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-008/NS-008-03.md",
      "tags": [
@@ -22302,7 +22286,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-009/NS-009-03.md",
      "tags": [
@@ -23307,8 +23291,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps12_chine.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 21,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-012/NS-012-04.md",
      "tags": [
@@ -23334,7 +23318,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 27,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-012/NS-012-05.md",
      "tags": [
@@ -23528,7 +23512,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 15,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-013/NS-013-04.md",
      "tags": [
@@ -23778,7 +23762,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 25,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-014/NS-014-06.md",
      "tags": [
@@ -23876,7 +23860,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-015/NS-015-03.md",
      "tags": [
@@ -23951,8 +23935,8 @@
      "url_html": "http://socialisme.free.fr/histoire_theorie/cps15_lolcrpt.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 20,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-015/NS-015-05.md",
      "tags": [
@@ -24086,7 +24070,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "ordre",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-016/NS-016-01.md",
      "tags": [
@@ -24153,8 +24137,8 @@
      "url_html": "http://socialisme.free.fr/supplements/sup_europe_030604.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut": 10,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-016/NS-016-03.md",
      "tags": [
@@ -24406,7 +24390,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 17,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-017/NS-017-04.md",
      "tags": [
@@ -24500,7 +24484,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-018/NS-018-01.md",
      "tags": [
@@ -24552,7 +24536,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 10,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-018/NS-018-03.md",
      "tags": [
@@ -24616,7 +24600,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 16,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-018/NS-018-05.md",
      "tags": [
@@ -24722,7 +24706,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-019/NS-019-01.md",
      "tags": [
@@ -24958,7 +24942,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-021/NS-021-01.md",
      "tags": [
@@ -24987,8 +24971,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps21_editorial.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 4,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-021/NS-021-02.md",
      "tags": [
@@ -25340,7 +25324,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 12,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-022/NS-022-05.md",
      "tags": [
@@ -25918,7 +25902,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 24,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-025/NS-025-04.md",
      "tags": [
@@ -26093,11 +26077,19 @@
      "markdown": "data/markdown/NS-026/NS-026-03.md",
      "tags": [
       {
+       "tag": "afghanistan",
+       "source": "texte"
+      },
+      {
        "tag": "enseignement",
        "source": "regle"
       },
       {
        "tag": "fsu",
+       "source": "texte"
+      },
+      {
+       "tag": "irak",
        "source": "texte"
       },
       {
@@ -26107,6 +26099,10 @@
       {
        "tag": "militants",
        "source": "site"
+      },
+      {
+       "tag": "palestine",
+       "source": "texte"
       },
       {
        "tag": "ratp",
@@ -26125,8 +26121,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps26_enseignement.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 13,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-026/NS-026-04.md",
      "tags": [
@@ -26420,7 +26416,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 29,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-027/NS-027-06.md",
      "tags": [
@@ -26614,7 +26610,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 19,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-029/NS-029-04.md",
      "tags": [
@@ -26806,7 +26802,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 9,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-030/NS-030-02.md",
      "tags": [
@@ -26963,8 +26959,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps30_italie.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 22,
-     "page_debut_source": "sommaire",
+     "page_debut": 24,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-030/NS-030-07.md",
      "tags": [
@@ -27103,6 +27099,10 @@
        "source": "texte"
       },
       {
+       "tag": "fsu",
+       "source": "texte"
+      },
+      {
        "tag": "hommage",
        "source": "regle"
       },
@@ -27139,8 +27139,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps31_ratp.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 12,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-031/NS-031-03.md",
      "tags": [
@@ -27203,8 +27203,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps31_moyenorient.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 24,
-     "page_debut_source": "sommaire",
+     "page_debut": 21,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-031/NS-031-05.md",
      "tags": [
@@ -27250,7 +27250,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 28,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-031/NS-031-06.md",
      "tags": [
@@ -27613,8 +27613,8 @@
      "url_html": "http://socialisme.free.fr/supplements/sup_lycees_070408.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 8,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-033/NS-033-02.md",
      "tags": [
@@ -27645,16 +27645,8 @@
      "markdown": "data/markdown/NS-033/NS-033-03.md",
      "tags": [
       {
-       "tag": "basque",
-       "source": "texte"
-      },
-      {
        "tag": "enseignement",
        "source": "regle"
-      },
-      {
-       "tag": "espagne",
-       "source": "texte"
       },
       {
        "tag": "fonctionnaires",
@@ -27663,6 +27655,10 @@
       {
        "tag": "militants",
        "source": "site"
+      },
+      {
+       "tag": "retraites",
+       "source": "texte"
       },
       {
        "tag": "sante",
@@ -27681,8 +27677,8 @@
      "url_html": "http://socialisme.free.fr/europe/cps33_espagne.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 13,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-033/NS-033-04.md",
      "tags": [
@@ -27784,7 +27780,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-034/NS-034-01.md",
      "tags": [
@@ -27809,8 +27805,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/cps34_editorial_2.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 7,
-     "page_debut_source": "sommaire",
+     "page_debut": 6,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-034/NS-034-02.md",
      "tags": [
@@ -27908,7 +27904,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 16,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-034/NS-034-05.md",
      "tags": [
@@ -27934,7 +27930,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 21,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-034/NS-034-06.md",
      "tags": [
@@ -28052,7 +28048,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-035/NS-035-01.md",
      "tags": [
@@ -28078,7 +28074,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 9,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-035/NS-035-02.md",
      "tags": [
@@ -28107,8 +28103,8 @@
      "url_html": "http://socialisme.free.fr/france/cps35_ps.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 13,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-035/NS-035-03.md",
      "tags": [
@@ -28130,7 +28126,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 20,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-035/NS-035-04.md",
      "tags": [
@@ -28181,7 +28177,7 @@
      "titre": "Les militants interviennent et informent CPS (hôpitaux, étudiants, fonction publique, enseignants)",
      "titre_index": null,
      "date": "2009-01-07",
-     "date_redaction": "2008-12-08",
+     "date_redaction": null,
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -28332,7 +28328,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 8,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-036/NS-036-02.md",
      "tags": [
@@ -28370,7 +28366,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-036/NS-036-03.md",
      "tags": [
@@ -28400,7 +28396,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-036/NS-036-04.md",
      "tags": [
@@ -28426,7 +28422,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 19,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-036/NS-036-05.md",
      "tags": [
@@ -28452,7 +28448,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 27,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-036/NS-036-06.md",
      "tags": [
@@ -28572,7 +28568,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-037/NS-037-01.md",
      "tags": [
@@ -28712,7 +28708,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 22,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-037/NS-037-05.md",
      "tags": [
@@ -28830,7 +28826,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 14,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-038/NS-038-03.md",
      "tags": [
@@ -28999,8 +28995,8 @@
      "url_html": "http://socialisme.free.fr/supplements/haiti_220110.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 7,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-039/NS-039-02.md",
      "tags": [
@@ -29063,8 +29059,8 @@
      "url_html": "http://socialisme.free.fr/supplements/cps39_ratp.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 9,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-039/NS-039-04.md",
      "tags": [
@@ -29089,8 +29085,8 @@
      "url_html": "http://socialisme.free.fr/france/cps39_ep.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 13,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-039/NS-039-05.md",
      "tags": [
@@ -29630,7 +29626,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 10,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-041/NS-041-03.md",
      "tags": [
@@ -29762,7 +29758,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-042/NS-042-01.md",
      "tags": [
@@ -29800,7 +29796,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 10,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-042/NS-042-02.md",
      "tags": [
@@ -29885,8 +29881,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/bulletin/2011_02_10_cps_42_irlande.pdf",
      "pdf_page": null,
-     "page_debut": 22,
-     "page_debut_source": "sommaire",
+     "page_debut": 21,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-042/NS-042-05.md",
      "tags": [
@@ -30036,7 +30032,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 10,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-043/NS-043-04.md",
      "tags": [
@@ -30163,8 +30159,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/2011_10_11_cps_44_editorial.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 2,
-     "page_debut_source": "sommaire",
+     "page_debut": 1,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-044/NS-044-01.md",
      "tags": [
@@ -30435,8 +30431,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/2012_01_23_cps_45_enseignement.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 5,
-     "page_debut_source": "sommaire",
+     "page_debut": 11,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-045/NS-045-02.md",
      "tags": [
@@ -30622,7 +30618,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/presidentielle2012_declar.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-046/NS-046-01.md",
      "tags": [
@@ -30772,7 +30768,7 @@
      "url_pdf": "http://socialisme.free.fr/europe/cps46ns_espagne.pdf",
      "pdf_page": null,
      "page_debut": 21,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-046/NS-046-06.md",
      "tags": [
@@ -30794,7 +30790,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/cps46ns_egypte.pdf",
      "pdf_page": null,
      "page_debut": 26,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-046/NS-046-07.md",
      "tags": [
@@ -30886,7 +30882,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/declar_apres_legisl_2012.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-047/NS-047-01.md",
      "tags": [
@@ -30980,7 +30976,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/declar_apres_presid_2012.pdf",
      "pdf_page": null,
      "page_debut": 31,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-047/NS-047-04.md",
      "tags": [
@@ -31080,7 +31076,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2012_09_02_groupe_declaration_afrique_du_sud.pdf",
      "pdf_page": null,
      "page_debut": 10,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-048/NS-048-02.md",
      "tags": [
@@ -31101,8 +31097,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/2012_10_20_cps_48_economie.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut": 12,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-048/NS-048-03.md",
      "tags": [
@@ -31145,10 +31141,6 @@
        "source": "texte"
       },
       {
-       "tag": "enseignement",
-       "source": "texte"
-      },
-      {
        "tag": "fsu",
        "source": "texte"
       },
@@ -31169,8 +31161,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/2012_10_20_cps_48_enseignement.htm",
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 23,
-     "page_debut_source": "sommaire",
+     "page_debut": 22,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-048/NS-048-05.md",
      "tags": [
@@ -31246,7 +31238,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/decla_gaza_2012_11_19.pdf",
      "pdf_page": null,
      "page_debut": 9,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-049/NS-049-02.md",
      "tags": [
@@ -31272,7 +31264,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-049/NS-049-03.md",
      "tags": [
@@ -31362,7 +31354,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 20,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-049/NS-049-06.md",
      "tags": [
@@ -31388,7 +31380,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 30,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-049/NS-049-07.md",
      "tags": [
@@ -31410,7 +31402,7 @@
      "url_pdf": "http://socialisme.free.fr/afrique/2013_01_14_decla_mali.pdf",
      "pdf_page": null,
      "page_debut": 36,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-049/NS-049-08.md",
      "tags": [
@@ -31498,7 +31490,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2013_03_28_sup_cps_universite.pdf",
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-050/NS-050-02.md",
      "tags": [
@@ -31782,7 +31774,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 22,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "titre",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-051/NS-051-04.md",
      "tags": [
@@ -32212,7 +32204,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-053/NS-053-01.md",
      "tags": [
@@ -32272,7 +32264,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-053/NS-053-03.md",
      "tags": [
@@ -32328,7 +32320,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2014_03_19_cps_53_afrique_du_sud.pdf",
      "pdf_page": null,
      "page_debut": 24,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-053/NS-053-05.md",
      "tags": [
@@ -32631,21 +32623,25 @@
      "titre": "Supplément Fonction publique à « Combattre pour le socialisme » (14 mai 2014)",
      "titre_index": null,
      "date": "2014-05-31",
-     "date_redaction": null,
+     "date_redaction": "2014-05-14",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 18,
+     "page_debut_source": "titre",
      "origine": "pdf",
      "markdown": "data/markdown/NS-054/NS-054-06.md",
      "tags": [
       {
        "tag": "fonctionnaires",
        "source": "regle"
+      },
+      {
+       "tag": "retraites",
+       "source": "texte"
       }
      ],
-     "texte_disponible": false
+     "texte_disponible": true
     }
    ]
   },
@@ -32736,7 +32732,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-055/NS-055-01.md",
      "tags": [
@@ -32784,7 +32780,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2014_11_12_communique_remi_fraisse.pdf",
      "pdf_page": null,
      "page_debut": 23,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-055/NS-055-03.md",
      "tags": [
@@ -32948,7 +32944,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2015_01_12_communique_charlie.pdf",
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-056/NS-056-02.md",
      "tags": [
@@ -32978,7 +32974,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-056/NS-056-03.md",
      "tags": [
@@ -33007,11 +33003,15 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/bulletin/2015_02_19_cps_56_laicite.pdf",
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 21,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-056/NS-056-04.md",
      "tags": [
+      {
+       "tag": "enseignement",
+       "source": "texte"
+      },
       {
        "tag": "laïcité",
        "source": "site"
@@ -33025,7 +33025,7 @@
      "titre": "Les militants interviennent et informent C.P.S.",
      "titre_index": null,
      "date": "2015-02-19",
-     "date_redaction": null,
+     "date_redaction": "2014-11-25",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -33041,10 +33041,6 @@
       {
        "tag": "militants",
        "source": "site"
-      },
-      {
-       "tag": "palestine",
-       "source": "texte"
       }
      ],
      "texte_disponible": true
@@ -33132,7 +33128,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-057/NS-057-01.md",
      "tags": [
@@ -33314,7 +33310,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-058/NS-058-01.md",
      "tags": [
@@ -33344,7 +33340,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2015_07_13_declaration_grece.pdf",
      "pdf_page": null,
      "page_debut": 10,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-058/NS-058-02.md",
      "tags": [
@@ -33374,7 +33370,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2015_09_21_cps_declaration_immigres.pdf",
      "pdf_page": null,
      "page_debut": 14,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-058/NS-058-03.md",
      "tags": [
@@ -33586,7 +33582,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-059/NS-059-01.md",
      "tags": [
@@ -33636,7 +33632,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2015_11_22_declaration_att.pdf",
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-059/NS-059-02.md",
      "tags": [
@@ -34106,7 +34102,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2016_04_07_cps_60_142as_enseignement.pdf",
      "pdf_page": null,
      "page_debut": 21,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-060/NS-060-05.md",
      "tags": [
@@ -34422,7 +34418,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2016_06_07_intervention_congres_snuipp.pdf",
      "pdf_page": null,
      "page_debut": 12,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-061/NS-061-02.md",
      "tags": [
@@ -34451,8 +34447,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_51e_congres_cgt.htm",
      "url_pdf": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_51e_congres_cgt.pdf",
      "pdf_page": null,
-     "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut": 12,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-061/NS-061-03.md",
      "tags": [
@@ -34541,8 +34537,8 @@
      "url_html": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_angleterre.htm",
      "url_pdf": "http://socialisme.free.fr/bulletin/2016_06_07_cps_61_angleterre.pdf",
      "pdf_page": null,
-     "page_debut": 28,
-     "page_debut_source": "sommaire",
+     "page_debut": 27,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-061/NS-061-06.md",
      "tags": [
@@ -34840,7 +34836,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-063/NS-063-01.md",
      "tags": [
@@ -35575,6 +35571,10 @@
       {
        "tag": "elections",
        "source": "site"
+      },
+      {
+       "tag": "fn",
+       "source": "texte"
       },
       {
        "tag": "france",
@@ -36482,7 +36482,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2018_01_27_supp_universites_cps_67.pdf",
      "pdf_page": null,
      "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-068/NS-068-02.md",
      "tags": [
@@ -36606,10 +36606,6 @@
       },
       {
        "tag": "enseignement",
-       "source": "texte"
-      },
-      {
-       "tag": "etudiants",
        "source": "texte"
       },
       {
@@ -37193,6 +37189,10 @@
        "source": "site"
       },
       {
+       "tag": "fonctionnaires",
+       "source": "texte"
+      },
+      {
        "tag": "onnouscommuniq",
        "source": "regle"
       }
@@ -37573,8 +37573,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/supplements/2018_10_08_supp_finances_cps_70.pdf",
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 21,
+     "page_debut_source": "titre",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-071/NS-071-03.md",
      "tags": [
@@ -38548,7 +38548,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-073/NS-073-01.md",
      "tags": [
@@ -38581,8 +38581,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/supplements/2019_05_07_apres_le_1er_mai_2019.pdf",
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 12,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-073/NS-073-02.md",
      "tags": [
@@ -38616,7 +38616,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2019_05_10_declaration_algerie.pdf",
      "pdf_page": null,
      "page_debut": 13,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-073/NS-073-03.md",
      "tags": [
@@ -38680,7 +38680,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 24,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "titre",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-073/NS-073-05.md",
      "tags": [
@@ -39145,6 +39145,10 @@
       {
        "tag": "onnouscommuniq",
        "source": "site"
+      },
+      {
+       "tag": "unef",
+       "source": "texte"
       }
      ],
      "texte_disponible": true
@@ -39500,7 +39504,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2019_11_15_supp_jeunes_cps74.pdf",
      "pdf_page": null,
      "page_debut": 16,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-075/NS-075-03.md",
      "tags": [
@@ -40091,6 +40095,10 @@
        "source": "texte"
       },
       {
+       "tag": "etudiants",
+       "source": "texte"
+      },
+      {
        "tag": "militants",
        "source": "site"
       },
@@ -40100,6 +40108,14 @@
       },
       {
        "tag": "retraites",
+       "source": "texte"
+      },
+      {
+       "tag": "unef",
+       "source": "texte"
+      },
+      {
+       "tag": "université",
        "source": "texte"
       }
      ],
@@ -40542,7 +40558,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-077/NS-077-01.md",
      "tags": [
@@ -40686,7 +40702,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 36,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-077/NS-077-05.md",
      "tags": [
@@ -41325,7 +41341,7 @@
      "titre": "On nous communique : UNEF",
      "titre_index": null,
      "date": "2021-06-03",
-     "date_redaction": null,
+     "date_redaction": "2021-05-27",
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/bulletin_cps_archives/2021_06_03_cps_79_161as.pdf",
      "pdf_page": 28,
@@ -41505,10 +41521,6 @@
       {
        "tag": "fonctionnaires",
        "source": "regle"
-      },
-      {
-       "tag": "frontunique",
-       "source": "texte"
       },
       {
        "tag": "fsu",
@@ -41712,7 +41724,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin_cps_archives/2021_12_01_cps_81_163as.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-081/NS-081-01.md",
      "tags": [
@@ -42324,7 +42336,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin_cps_archives/2022_06_01_cps_83_165as.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-083/NS-083-01.md",
      "tags": [
@@ -43067,8 +43079,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/supplements/2022_11_08_supp_cps_retraites.pdf",
      "pdf_page": null,
-     "page_debut": 9,
-     "page_debut_source": "sommaire",
+     "page_debut": 10,
+     "page_debut_source": "titre",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-085/NS-085-03.md",
      "tags": [
@@ -43149,8 +43161,8 @@
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 12,
+     "page_debut_source": "sommaire",
      "origine": "pdf",
      "markdown": "data/markdown/NS-085/NS-085-06.md",
      "tags": [
@@ -43159,7 +43171,7 @@
        "source": "regle"
       }
      ],
-     "texte_disponible": false
+     "texte_disponible": true
     }
    ]
   },
@@ -43386,7 +43398,7 @@
      "url_pdf": null,
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-086/NS-086-01.md",
      "tags": [
@@ -43415,8 +43427,8 @@
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 7,
+     "page_debut_source": "sommaire",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-086/NS-086-02.md",
      "tags": [
@@ -43425,7 +43437,7 @@
        "source": "site"
       }
      ],
-     "texte_disponible": false
+     "texte_disponible": true
     },
     {
      "id": "NS-086-03",
@@ -43437,8 +43449,8 @@
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 13,
+     "page_debut_source": "sommaire",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-086/NS-086-03.md",
      "tags": [
@@ -43455,7 +43467,7 @@
        "source": "site"
       }
      ],
-     "texte_disponible": false
+     "texte_disponible": true
     },
     {
      "id": "NS-086-04",
@@ -43928,6 +43940,10 @@
      "origine": "sommaire",
      "markdown": "data/markdown/NS-087/NS-087-04.md",
      "tags": [
+      {
+       "tag": "etudiants",
+       "source": "texte"
+      },
       {
        "tag": "fsu",
        "source": "texte"
@@ -44527,7 +44543,7 @@
      "titre": "Notes politiques France",
      "titre_index": null,
      "date": "2023-11-30",
-     "date_redaction": null,
+     "date_redaction": "2023-11-21",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -44549,18 +44565,30 @@
      "titre": "Communiqués de Combattre pour le socialisme sur la Palestine",
      "titre_index": null,
      "date": "2023-11-30",
-     "date_redaction": "2023-11-21",
+     "date_redaction": null,
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
-     "page_debut": 16,
+     "page_debut": 17,
      "page_debut_source": "sommaire",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-089/NS-089-03.md",
      "tags": [
       {
+       "tag": "etudiants",
+       "source": "texte"
+      },
+      {
+       "tag": "fsu",
+       "source": "texte"
+      },
+      {
        "tag": "palestine",
        "source": "site"
+      },
+      {
+       "tag": "usa",
+       "source": "texte"
       }
      ],
      "texte_disponible": true
@@ -44820,7 +44848,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2024_02_18_supp_cps_palestine.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "ordre",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-090/NS-090-01.md",
      "tags": [
@@ -44887,7 +44915,7 @@
      "titre": "À propos de la « liberté de manifester » du prolétariat en France",
      "titre_index": null,
      "date": "2024-03-07",
-     "date_redaction": null,
+     "date_redaction": "2023-02-26",
      "url_html": null,
      "url_pdf": null,
      "pdf_page": null,
@@ -44921,8 +44949,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/supplements/2024_01_13_cjr_loi_immigration.pdf",
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 18,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-090/NS-090-04.md",
      "tags": [
@@ -45718,7 +45746,7 @@
      "url_pdf": "http://socialisme.free.fr/supplements/2024_10_01_supp_cps_liban.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "ordre",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-092/NS-092-01.md",
      "tags": [
@@ -45748,7 +45776,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2024_10_09_cps_92_edito.pdf",
      "pdf_page": null,
      "page_debut": 3,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-092/NS-092-02.md",
      "tags": [
@@ -45938,7 +45966,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2025_01_30_cps_93_175as_editorial.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-093/NS-093-01.md",
      "tags": [
@@ -46376,7 +46404,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2025_05_08_cps_94_176as_editorial.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-094/NS-094-01.md",
      "tags": [
@@ -46413,8 +46441,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/supplements/2025_04_04_supplement_cps_93.pdf",
      "pdf_page": null,
-     "page_debut": null,
-     "page_debut_source": null,
+     "page_debut": 9,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-094/NS-094-02.md",
      "tags": [
@@ -46770,7 +46798,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2025_10_11_cps_95_177as_editorial.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-095/NS-095-01.md",
      "tags": [
@@ -46843,8 +46871,8 @@
      "url_html": null,
      "url_pdf": "http://socialisme.free.fr/supplements/2025_06_22_declaration_iran_supp_cps94.pdf",
      "pdf_page": null,
-     "page_debut": 11,
-     "page_debut_source": "sommaire",
+     "page_debut": 10,
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-095/NS-095-04.md",
      "tags": [
@@ -47174,7 +47202,7 @@
      "url_pdf": "http://socialisme.free.fr/bulletin/2026_02_28_cps_96_178as_editorial.pdf",
      "pdf_page": null,
      "page_debut": 1,
-     "page_debut_source": "sommaire",
+     "page_debut_source": "texte",
      "origine": "sommaire",
      "markdown": "data/markdown/NS-096/NS-096-01.md",
      "tags": [
@@ -47369,8 +47397,16 @@
        "source": "site"
       },
       {
+       "tag": "etudiants",
+       "source": "texte"
+      },
+      {
        "tag": "jeunesse",
        "source": "regle"
+      },
+      {
+       "tag": "palestine",
+       "source": "texte"
       },
       {
        "tag": "université",
@@ -47942,6 +47978,6 @@
  ],
  "recherche": {
   "fichier": "data/recherche.sqlite",
-  "version": "504950265c60"
+  "version": "73cfbd7a96e2"
  }
 }

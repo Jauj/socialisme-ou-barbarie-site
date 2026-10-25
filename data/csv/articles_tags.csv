@@ -850,7 +850,7 @@ AS-040-S3-01,pci,site,url
 AS-040-S3-01,pt,site,url
 AS-040-S3-01,trotsky,texte,32 occurrences
 AS-041-01,elections,site,numero+titre
-AS-041-01,fn,texte,50 occurrences
+AS-041-01,fn,texte,48 occurrences
 AS-041-01,frontunique,regle,front unique|front uni\b
 AS-041-02,algerie,site,url
 AS-041-03,enseignement,regle,\benseignement\b(?! sup[ée]rieur)|enseignants?\b|\b[ée]coles?\b|lyc[ée]e|coll[èe]ges?\b|instituteur|professeurs?\b|[ÉE]ducation nationale|rentr[ée]e scolaire|\bSNES\b|SNUipp|ma[îi]tres auxiliaires|apprentissage|enseignement professionnel|lyc[ée]es? professionnels?
@@ -1222,11 +1222,11 @@ AS-056-03,fsu,regle,\bFSU\b|SNUipp|SNASUB
 AS-056-03,militants,site,numero+titre
 AS-056-03,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
 AS-056-04,argentine,texte,21 occurrences
+AS-056-04,bresil,texte,18 occurrences
 AS-056-04,crise,regle,crise (du capitalisme|du capital|financi[èe]re|[ée]conomique|mondiale|capitaliste|du syst[èe]me)|r[ée]cession|\bkrach|capitalisme en faillite|d[ée]composition du capitalisme
 AS-056-04,mexique,site,numero+titre
 AS-056-04,noteseco,site,numero+titre
-AS-056-04,usa,texte,92 occurrences
-AS-056-04,yougo,texte,187 occurrences
+AS-056-04,usa,texte,33 occurrences
 AS-056-05,uk,texte,12 occurrences
 AS-056-05,usa,texte,62 occurrences
 AS-056-05,yougo,site,url
@@ -1421,8 +1421,9 @@ AS-066-03,grevegenerale,texte,9 occurrences
 AS-066-03,onnouscommuniq,regle,^\W*On nous communique
 AS-066-03,secu,texte,8 occurrences
 AS-066-03,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
+AS-066-04,allemagne,texte,16 occurrences
 AS-066-04,ps,site,numero+titre
-AS-066-04,usa,texte,132 occurrences
+AS-066-04,secu,texte,20 occurrences
 AS-066-05,usa,site,url
 AS-066-06,dialsoc,site,numero+titre
 AS-067-01,allemagne,texte,22 occurrences
@@ -1438,11 +1439,8 @@ AS-067-01,ps,regle,\bPS\b|Parti [Ss]ocialiste
 AS-067-01,sncf,texte,12 occurrences
 AS-067-01,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
 AS-067-02,cps,regle,(D[ée]claration|Communiqu[ée]|Conf[ée]rence|Rapport|R[ée]ponse|Lettre) du (Comit[ée]|Groupe|Cercle)\b|Groupe pour la construction|Cercle pour la construction|adh[èe]re collectivement au Comit[ée]|\bdu Comit[ée]\b
-AS-067-02,etudiants,texte,11 occurrences
-AS-067-02,fn,texte,14 occurrences
 AS-067-02,france,site,numero+titre
 AS-067-02,grevegenerale,regle,gr[èe]ve g[ée]n[ée]rale
-AS-067-02,immigres,texte,10 occurrences
 AS-067-02,industrie,regle,m[ée]tallurg|sid[ée]rurg|Renault|Peugeot|\bPSA\b|Citro[ëe]n|automobile|Michelin|Alstom|Airbus|mineurs|chantiers navals
 AS-067-02,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
 AS-067-02,travail,regle,code du travail|loi travail|El Khomri|temps de travail|35 heures|flexibilit|ch[ôo]m|licenci|salaires?\b|pouvoir d.achat|[ée]pargne salariale
@@ -1454,9 +1452,9 @@ AS-067-03,laïcité,regle,la[ïi]cit|[ée]cole priv[ée]e|enseignement priv[ée]
 AS-067-03,pcf,regle,\bPCF\b|Parti [Cc]ommuniste [Ff]ran[çc]ais|Marchais|Juquin
 AS-067-03,ps,regle,\bPS\b|Parti [Ss]ocialiste
 AS-067-03,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
-AS-067-04,albanie,texte,52 occurrences
 AS-067-04,enseignement,site,numero+titre
 AS-067-04,france,regle,\bFrance\b|\bfran[çc]ais(e|es)?\b|Mitterrand|Chirac|Jospin|Balladur|Jupp[ée]|Raffarin|Villepin|Sarkozy|Fillon|Hollande|Ayrault|Valls|Macron|Castex|\bBorne\b|Attal|Barnier|Bayrou|Lecornu|Rocard|Cresson|B[ée]r[ée]govoy|Fabius|Mauroy|\bMEDEF\b|\bCNPF\b
+AS-067-04,usa,texte,22 occurrences
 AS-067-05,coreedusud,site,url
 AS-067-05,usa,texte,22 occurrences
 AS-067-06,albanie,site,url
@@ -1526,13 +1524,12 @@ AS-070-01,editorial,site,numero+titre
 AS-070-01,noteseco,regle,(situation|notes?) (sur la situation )?[ée]conomique|^\W*[ÉE]conomie\b|[ée]conomie (mondiale|am[ée]ricaine|capitaliste|fran[çc]aise)|r[ée]cession
 AS-070-02,etudiants,regle,[ée]tudiant|\bUNEF
 AS-070-02,onnouscommuniq,regle,^\W*On nous communique
+AS-070-02,unef,texte,6 occurrences
 AS-070-02,université,site,numero+titre
 AS-070-03,dialsoc,site,url
 AS-070-04,france,site,url
 AS-070-04,travail,regle,code du travail|loi travail|El Khomri|temps de travail|35 heures|flexibilit|ch[ôo]m|licenci|salaires?\b|pouvoir d.achat|[ée]pargne salariale
-AS-070-05,1917,texte,35 occurrences
 AS-070-05,enseignement,site,numero+titre
-AS-070-05,italie,texte,63 occurrences
 AS-070-06,allemagne,texte,23 occurrences
 AS-070-06,europe,texte,16 occurrences
 AS-070-06,italie,site,url
@@ -1577,8 +1574,7 @@ AS-071-09,1917,site,url
 AS-071-09,russie,texte,57 occurrences
 AS-071-09,trotsky,texte,26 occurrences
 AS-072-01,editorial,site,numero+titre
-AS-072-01,enseignement,texte,100 occurrences
-AS-072-01,fn,texte,27 occurrences
+AS-072-01,fn,texte,26 occurrences
 AS-072-01,france,regle,\bFrance\b|\bfran[çc]ais(e|es)?\b|Mitterrand|Chirac|Jospin|Balladur|Jupp[ée]|Raffarin|Villepin|Sarkozy|Fillon|Hollande|Ayrault|Valls|Macron|Castex|\bBorne\b|Attal|Barnier|Bayrou|Lecornu|Rocard|Cresson|B[ée]r[ée]govoy|Fabius|Mauroy|\bMEDEF\b|\bCNPF\b
 AS-072-01,pcf,regle,\bPCF\b|Parti [Cc]ommuniste [Ff]ran[çc]ais|Marchais|Juquin
 AS-072-01,ps,regle,\bPS\b|Parti [Ss]ocialiste
@@ -2367,10 +2363,13 @@ NS-026-02,cps,regle,(D[ée]claration|Communiqu[ée]|Conf[ée]rence|Rapport|R[ée
 NS-026-02,irak,texte,5 occurrences
 NS-026-02,liban,site,url
 NS-026-02,usa,texte,7 occurrences
+NS-026-03,afghanistan,texte,7 occurrences
 NS-026-03,enseignement,regle,\benseignement\b(?! sup[ée]rieur)|enseignants?\b|\b[ée]coles?\b|lyc[ée]e|coll[èe]ges?\b|instituteur|professeurs?\b|[ÉE]ducation nationale|rentr[ée]e scolaire|\bSNES\b|SNUipp|ma[îi]tres auxiliaires|apprentissage|enseignement professionnel|lyc[ée]es? professionnels?
-NS-026-03,fsu,texte,15 occurrences
+NS-026-03,fsu,texte,9 occurrences
+NS-026-03,irak,texte,5 occurrences
 NS-026-03,liban,regle,\bLiban
 NS-026-03,militants,site,numero+titre
+NS-026-03,palestine,texte,6 occurrences
 NS-026-03,ratp,regle,\bRATP\b
 NS-026-04,enseignement,site,url
 NS-026-04,fsu,texte,9 occurrences
@@ -2465,13 +2464,14 @@ NS-031-01,france,regle,\bFrance\b|\bfran[çc]ais(e|es)?\b|Mitterrand|Chirac|Josp
 NS-031-01,sncf,texte,20 occurrences
 NS-031-01,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
 NS-031-02,enseignement,regle,\benseignement\b(?! sup[ée]rieur)|enseignants?\b|\b[ée]coles?\b|lyc[ée]e|coll[èe]ges?\b|instituteur|professeurs?\b|[ÉE]ducation nationale|rentr[ée]e scolaire|\bSNES\b|SNUipp|ma[îi]tres auxiliaires|apprentissage|enseignement professionnel|lyc[ée]es? professionnels?
-NS-031-02,fonctionnaires,texte,15 occurrences
+NS-031-02,fonctionnaires,texte,10 occurrences
+NS-031-02,fsu,texte,6 occurrences
 NS-031-02,hommage,regle,hommage|in memoriam|n[ée]crolog
 NS-031-02,industrie,regle,m[ée]tallurg|sid[ée]rurg|Renault|Peugeot|\bPSA\b|Citro[ëe]n|automobile|Michelin|Alstom|Airbus|mineurs|chantiers navals
 NS-031-02,militants,site,numero+titre
 NS-031-02,ratp,regle,\bRATP\b
-NS-031-02,retraites,texte,25 occurrences
-NS-031-02,sncf,texte,18 occurrences
+NS-031-02,retraites,texte,6 occurrences
+NS-031-02,sncf,texte,5 occurrences
 NS-031-03,ratp,site,url
 NS-031-03,retraites,texte,20 occurrences
 NS-031-03,sncf,texte,16 occurrences
@@ -2514,11 +2514,10 @@ NS-033-01,editorial,site,url
 NS-033-01,fonctionnaires,texte,28 occurrences
 NS-033-02,enseignement,site,url
 NS-033-02,jeunesse,regle,\bjeunes(se)?\b|lyc[ée]en|Insurg[ée]|\bCJR\b|Cercle (de|des) Jeunes|Socialisme ou Barbarie|SouB
-NS-033-03,basque,texte,24 occurrences
 NS-033-03,enseignement,regle,\benseignement\b(?! sup[ée]rieur)|enseignants?\b|\b[ée]coles?\b|lyc[ée]e|coll[èe]ges?\b|instituteur|professeurs?\b|[ÉE]ducation nationale|rentr[ée]e scolaire|\bSNES\b|SNUipp|ma[îi]tres auxiliaires|apprentissage|enseignement professionnel|lyc[ée]es? professionnels?
-NS-033-03,espagne,texte,85 occurrences
 NS-033-03,fonctionnaires,regle,fonction publique|fonctionnaires|\bPTT\b|postiers?|La Poste|\bFinances\b|agents publics
 NS-033-03,militants,site,numero+titre
+NS-033-03,retraites,texte,5 occurrences
 NS-033-03,sante,regle,\bsant[ée]\b|h[ôo]pita|m[ée]decin|infirmi|covid|pand[ée]mie|sanitaire|AP-HP|\bEhpad
 NS-033-04,basque,texte,24 occurrences
 NS-033-04,catalogne,texte,15 occurrences
@@ -2847,8 +2846,7 @@ NS-048-03,europe,texte,32 occurrences
 NS-048-03,noteseco,site,url
 NS-048-03,usa,texte,17 occurrences
 NS-048-04,afdusud,texte,11 occurrences
-NS-048-04,enseignement,texte,13 occurrences
-NS-048-04,fsu,texte,15 occurrences
+NS-048-04,fsu,texte,10 occurrences
 NS-048-04,militants,site,numero+titre
 NS-048-05,enseignement,site,url
 NS-048-05,fsu,texte,20 occurrences
@@ -2912,7 +2910,7 @@ NS-051-03,retraites,texte,31 occurrences
 NS-051-03,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
 NS-051-04,fsu,texte,11 occurrences
 NS-051-04,militants,site,numero+titre
-NS-051-04,retraites,texte,29 occurrences
+NS-051-04,retraites,texte,31 occurrences
 NS-051-05,cgt,regle,\bCGT\b
 NS-051-05,fo,regle,\bFO\b|Force[- ][Oo]uvri[èe]re|Bergeron|Blondel
 NS-051-05,militants,site,numero+titre
@@ -2987,6 +2985,7 @@ NS-054-05,ecologie,site,url
 NS-054-05,marx,site,url
 NS-054-05,russie,texte,5 occurrences
 NS-054-06,fonctionnaires,regle,fonction publique|fonctionnaires|\bPTT\b|postiers?|La Poste|\bFinances\b|agents publics
+NS-054-06,retraites,texte,5 occurrences
 NS-054-S1-01,cgt,regle,\bCGT\b
 NS-054-S1-01,fo,regle,\bFO\b|Force[- ][Oo]uvri[èe]re|Bergeron|Blondel
 NS-054-S1-01,fonctionnaires,site,url
@@ -3019,10 +3018,10 @@ NS-056-02,palestine,texte,5 occurrences
 NS-056-03,enseignement,site,url
 NS-056-03,fonctionnaires,site,url
 NS-056-03,fsu,texte,25 occurrences
+NS-056-04,enseignement,texte,21 occurrences
 NS-056-04,laïcité,site,url
 NS-056-05,enseignement,texte,9 occurrences
 NS-056-05,militants,site,numero+titre
-NS-056-05,palestine,texte,6 occurrences
 NS-056-06,grevegenerale,texte,17 occurrences
 NS-056-06,histheo,regle,^\W*Histoire\b|histoire du (mouvement ouvrier|trotskysme|PCI|Comit)|th[ée]orie|marxis|programme de transition|Commune de Paris|falsification
 NS-056-06,italie,site,url
@@ -3277,6 +3276,7 @@ NS-065-04,fsu,texte,16 occurrences
 NS-065-04,militants,site,url
 NS-065-04,ratp,texte,19 occurrences
 NS-065-05,elections,site,url
+NS-065-05,fn,texte,5 occurrences
 NS-065-05,france,site,url
 NS-065-05,onnouscommuniq,regle,^\W*On nous communique
 NS-065-06,bresil,site,url
@@ -3382,11 +3382,10 @@ NS-068-04,ratp,texte,10 occurrences
 NS-068-04,retraites,texte,13 occurrences
 NS-068-05,cgt,site,url
 NS-068-05,enseignement,texte,11 occurrences
-NS-068-05,etudiants,texte,7 occurrences
-NS-068-05,fonctionnaires,texte,13 occurrences
+NS-068-05,fonctionnaires,texte,15 occurrences
 NS-068-05,fsu,site,url
 NS-068-05,onnouscommuniq,regle,^\W*On nous communique
-NS-068-05,université,texte,15 occurrences
+NS-068-05,université,texte,16 occurrences
 NS-068-06,allemagne,site,url
 NS-068-07,hommage,site,url
 NS-068-S1-01,enseignement,texte,8 occurrences
@@ -3440,6 +3439,7 @@ NS-070-03,fsu,texte,7 occurrences
 NS-070-03,militants,site,url
 NS-070-03,retraites,texte,5 occurrences
 NS-070-04,cgt,site,url
+NS-070-04,fonctionnaires,texte,11 occurrences
 NS-070-04,onnouscommuniq,regle,^\W*On nous communique
 NS-070-05,bresil,site,url
 NS-070-05,pt,texte,25 occurrences
@@ -3583,12 +3583,12 @@ NS-073-03,maghrebsociali,regle,Maghreb socialiste
 NS-073-04,algerie,site,numero+titre
 NS-073-04,grevegenerale,texte,19 occurrences
 NS-073-04,jeunesse,regle,\bjeunes(se)?\b|lyc[ée]en|Insurg[ée]|\bCJR\b|Cercle (de|des) Jeunes|Socialisme ou Barbarie|SouB
-NS-073-05,algerie,texte,19 occurrences
+NS-073-05,algerie,texte,35 occurrences
 NS-073-05,etatpolicier,texte,8 occurrences
 NS-073-05,fonctionnaires,texte,33 occurrences
 NS-073-05,fsu,texte,19 occurrences
 NS-073-05,militants,site,numero+titre
-NS-073-05,retraites,texte,11 occurrences
+NS-073-05,retraites,texte,12 occurrences
 NS-073-06,bresil,site,numero+titre
 NS-073-06,enseignement,texte,9 occurrences
 NS-073-06,retraites,texte,25 occurrences
@@ -3629,6 +3629,7 @@ NS-074-05,enseignement,regle,\benseignement\b(?! sup[ée]rieur)|enseignants?\b|\
 NS-074-05,etudiants,regle,[ée]tudiant|\bUNEF
 NS-074-05,fonctionnaires,regle,fonction publique|fonctionnaires|\bPTT\b|postiers?|La Poste|\bFinances\b|agents publics
 NS-074-05,onnouscommuniq,site,url
+NS-074-05,unef,texte,5 occurrences
 NS-074-06,bresil,site,url
 NS-074-06,retraites,regle,retraite|\bpensions?\b
 NS-074-06,université,texte,10 occurrences
@@ -3708,10 +3709,13 @@ NS-076-04,enseignement,texte,11 occurrences
 NS-076-04,etudiants,site,numero+titre
 NS-076-04,retraites,texte,12 occurrences
 NS-076-04,université,site,numero+titre
-NS-076-05,enseignement,texte,5 occurrences
+NS-076-05,enseignement,texte,13 occurrences
+NS-076-05,etudiants,texte,37 occurrences
 NS-076-05,militants,site,numero+titre
 NS-076-05,onnouscommuniq,site,numero+titre
-NS-076-05,retraites,texte,25 occurrences
+NS-076-05,retraites,texte,27 occurrences
+NS-076-05,unef,texte,14 occurrences
+NS-076-05,université,texte,14 occurrences
 NS-076-06,algerie,site,numero+titre
 NS-076-06,enseignement,texte,11 occurrences
 NS-076-S1-01,cps,regle,(D[ée]claration|Communiqu[ée]|Conf[ée]rence|Rapport|R[ée]ponse|Lettre) du (Comit[ée]|Groupe|Cercle)\b|Groupe pour la construction|Cercle pour la construction|adh[èe]re collectivement au Comit[ée]|\bdu Comit[ée]\b
@@ -3830,7 +3834,6 @@ NS-080-02,ecologie,site,url
 NS-080-03,enseignement,regle,\benseignement\b(?! sup[ée]rieur)|enseignants?\b|\b[ée]coles?\b|lyc[ée]e|coll[èe]ges?\b|instituteur|professeurs?\b|[ÉE]ducation nationale|rentr[ée]e scolaire|\bSNES\b|SNUipp|ma[îi]tres auxiliaires|apprentissage|enseignement professionnel|lyc[ée]es? professionnels?
 NS-080-03,etudiants,regle,[ée]tudiant|\bUNEF
 NS-080-03,fonctionnaires,regle,fonction publique|fonctionnaires|\bPTT\b|postiers?|La Poste|\bFinances\b|agents publics
-NS-080-03,frontunique,texte,6 occurrences
 NS-080-03,fsu,texte,9 occurrences
 NS-080-03,onnouscommuniq,site,numero+titre
 NS-080-03,snuipp,texte,14 occurrences
@@ -4016,9 +4019,10 @@ NS-087-03,ecologie,texte,13 occurrences
 NS-087-03,retraites,texte,13 occurrences
 NS-087-03,sncf,texte,13 occurrences
 NS-087-03,syndicats,regle,syndica|conf[ée]d[ée]ra|\bCFDT\b|\bCGT\b|\bFSU\b|\bFO\b|\bFEN\b|\bUNEF|Force ouvri[èe]re
+NS-087-04,etudiants,texte,6 occurrences
 NS-087-04,fsu,texte,19 occurrences
 NS-087-04,militants,site,numero+titre
-NS-087-04,retraites,texte,15 occurrences
+NS-087-04,retraites,texte,21 occurrences
 NS-087-04,snuipp,texte,11 occurrences
 NS-087-05,algerie,site,url
 NS-087-05,maghreb,regle,Maghreb
@@ -4071,7 +4075,10 @@ NS-089-01,editorial,site,url
 NS-089-01,palestine,site,url
 NS-089-01,usa,texte,31 occurrences
 NS-089-02,france,site,numero+titre
+NS-089-03,etudiants,texte,5 occurrences
+NS-089-03,fsu,texte,6 occurrences
 NS-089-03,palestine,site,numero+titre
+NS-089-03,usa,texte,16 occurrences
 NS-089-04,frontunique,texte,5 occurrences
 NS-089-04,fsu,texte,15 occurrences
 NS-089-04,militants,site,numero+titre
@@ -4334,7 +4341,9 @@ NS-096-05,militants,site,numero+titre
 NS-096-05,palestine,texte,42 occurrences
 NS-096-05,université,texte,26 occurrences
 NS-096-06,cjr,site,numero+titre
+NS-096-06,etudiants,texte,11 occurrences
 NS-096-06,jeunesse,regle,\bjeunes(se)?\b|lyc[ée]en|Insurg[ée]|\bCJR\b|Cercle (de|des) Jeunes|Socialisme ou Barbarie|SouB
+NS-096-06,palestine,texte,6 occurrences
 NS-096-06,université,site,numero+titre
 NS-096-07,ameriquelatine,site,numero+titre
 NS-096-07,chine,texte,18 occurrences

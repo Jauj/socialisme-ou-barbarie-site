@@ -1520,7 +1520,12 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 47,
-  "caracteres": 176614
+  "caracteres": 176614,
+  "pages_ocr": {
+   "pages": [],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "HS-1989-04-16": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/1989_04_00_cps_special_PCI.pdf",
@@ -1539,7 +1544,13 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 78,
-  "caracteres": 303858
+  "caracteres": 303858,
+  "pages_ocr": {
+   "pages": [],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "HS-1997-03-23": {
   "source": "http://socialisme.free.fr/conferences/1997_03_23_une_nouvelle_perspective.pdf",
@@ -2181,7 +2192,16 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 34,
-  "caracteres": 183103
+  "caracteres": 193178,
+  "pages_ocr": {
+   "pages": [
+    22,
+    23
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-051-S1": {
   "source": "http://socialisme.free.fr/supplements/2013_10_27_groupe_declaration_manifestations_lyceennes.pdf",
@@ -2209,7 +2229,16 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 35,
-  "caracteres": 186080
+  "caracteres": 195872,
+  "pages_ocr": {
+   "pages": [
+    18,
+    19
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-054-S2": {
   "source": "http://socialisme.free.fr/supplements/2014_09_18_supp_cps54_rentree.pdf",
@@ -2230,7 +2259,18 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 38,
-  "caracteres": 192304
+  "caracteres": 218143,
+  "pages_ocr": {
+   "pages": [
+    22,
+    23,
+    24,
+    28,
+    29
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-057": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2015_05_13_cps_57_139as.pdf",
@@ -2321,7 +2361,14 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 30,
-  "caracteres": 158751
+  "caracteres": 161492,
+  "pages_ocr": {
+   "pages": [
+    27
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-065-S1": {
   "source": "http://socialisme.free.fr/supplements/2017_06_27_supp_cps_65.pdf",
@@ -2384,7 +2431,14 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 38,
-  "caracteres": 203442
+  "caracteres": 205140,
+  "pages_ocr": {
+   "pages": [
+    27
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-068-S1": {
   "source": "http://socialisme.free.fr/supplements/2018_04_20_supp_universite.pdf",
@@ -2412,7 +2466,15 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 36,
-  "caracteres": 199445
+  "caracteres": 202179,
+  "pages_ocr": {
+   "pages": [
+    24
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-070-S1": {
   "source": "http://socialisme.free.fr/supplements/2018_10_06_suppl_cps_70_jeunes.pdf",
@@ -2440,7 +2502,16 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 40,
-  "caracteres": 210302
+  "caracteres": 219919,
+  "pages_ocr": {
+   "pages": [
+    21,
+    22
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-071-S1": {
   "source": "http://socialisme.free.fr/supplements/2018_12_12_supp_gj_cps_71.pdf",
@@ -2531,7 +2602,15 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 40,
-  "caracteres": 221028
+  "caracteres": 224627,
+  "pages_ocr": {
+   "pages": [
+    24
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-073-S1": {
   "source": "http://socialisme.free.fr/supplements/2019_06_17_declaration_algerie_MS.pdf",
@@ -2566,7 +2645,14 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 28,
-  "caracteres": 133202
+  "caracteres": 136870,
+  "pages_ocr": {
+   "pages": [
+    19
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-074-S1": {
   "source": "http://socialisme.free.fr/supplements/2019_10_07_declaration_algerie_ms.pdf",
@@ -2650,7 +2736,15 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 36,
-  "caracteres": 180608
+  "caracteres": 191686,
+  "pages_ocr": {
+   "pages": [
+    30,
+    31
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-076-S1": {
   "source": "http://socialisme.free.fr/supplements/2020_03_23_declaration_covid19.pdf",
@@ -2769,7 +2863,15 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 28,
-  "caracteres": 152805
+  "caracteres": 154864,
+  "pages_ocr": {
+   "pages": [
+    28
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-079-S1": {
   "source": "http://socialisme.free.fr/supplements/2021_08_28_cps_supp_declaration_afghanistan.pdf",
@@ -2783,7 +2885,14 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 34,
-  "caracteres": 184459
+  "caracteres": 188884,
+  "pages_ocr": {
+   "pages": [
+    25
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-080-S1": {
   "source": "http://socialisme.free.fr/supplements/2021_10_02_supp_cps_80_fonction_publique.pdf",
@@ -2888,7 +2997,17 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 33,
-  "caracteres": 158384
+  "caracteres": 171897,
+  "pages_ocr": {
+   "pages": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-085-S1": {
   "source": "http://socialisme.free.fr/supplements/2023_01_05_communique_iran.pdf",
@@ -2930,7 +3049,20 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 35,
-  "caracteres": 151733
+  "caracteres": 179805,
+  "pages_ocr": {
+   "pages": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-086-S1": {
   "source": "http://socialisme.free.fr/supplements/2023_03_10_supp_cps86_fu_bdfn_fsu.pdf",
@@ -2958,14 +3090,26 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 5,
-  "caracteres": 13626
+  "caracteres": 13626,
+  "pages_ocr": {
+   "pages": [],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-087": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2023_05_18_cps_87_169as.pdf",
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 36,
-  "caracteres": 188866
+  "caracteres": 192979,
+  "pages_ocr": {
+   "pages": [
+    23
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-087-S1": {
   "source": "http://socialisme.free.fr/supplements/2023_05_15_supp_bresil_fr.pdf",
@@ -3021,7 +3165,16 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 32,
-  "caracteres": 166491
+  "caracteres": 181961,
+  "pages_ocr": {
+   "pages": [
+    17,
+    18,
+    19
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-089-S1": {
   "source": "http://socialisme.free.fr/supplements/2024_01_13_cjr_loi_immigration.pdf",
@@ -3042,7 +3195,14 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 33,
-  "caracteres": 182342
+  "caracteres": 187894,
+  "pages_ocr": {
+   "pages": [
+    18
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-090-S1": {
   "source": "http://socialisme.free.fr/bulletin_cps_archives/2024_02_29_cps_90_172as_femmes.pdf",
@@ -3140,7 +3300,12 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 32,
-  "caracteres": 91926
+  "caracteres": 91926,
+  "pages_ocr": {
+   "pages": [],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-093-S2": {
   "source": "http://socialisme.free.fr/supplements/2024_09_00_cjr_soub_2.pdf",
@@ -3168,7 +3333,17 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 32,
-  "caracteres": 159511
+  "caracteres": 178311,
+  "pages_ocr": {
+   "pages": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25"
+  }
  },
  "NS-094-S1": {
   "source": "http://socialisme.free.fr/supplements/2025_06_08_declaration_gaza_supp_cps94.pdf",
@@ -3231,7 +3406,16 @@
   "statut": "ok",
   "methode": "pdf_texte",
   "pages": 37,
-  "caracteres": 185448
+  "caracteres": 192854,
+  "pages_ocr": {
+   "pages": [
+    24,
+    25
+   ],
+   "modele": "fra tessdata_best",
+   "date": "2026-10-25",
+   "version": 2
+  }
  },
  "NS-096-S1": {
   "source": "http://socialisme.free.fr/supplements/2026_03_07_supp_iran_cps_96.pdf",

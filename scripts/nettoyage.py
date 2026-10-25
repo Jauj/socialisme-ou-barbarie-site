@@ -34,7 +34,7 @@ from pdf_markdown import fusionner_paragraphes, mots
 
 MOIS = r"(?:janvier|f[ée]vrier|mars|avril|mai|juin|juillet|ao[uû]t|septembre|octobre|novembre|d[ée]cembre)"
 DATE = rf"(?:\d{{1,2}}(?:er)?\s+{MOIS}\s+(?:19|20)\d\d|\d{{1,2}}\s?/\s?\d{{1,2}}\s?/\s?(?:19|20)?\d\d)"
-CPS = r"(?:C\s?\.?-?\s?P\s?\.?\s?S\b\.?|Combattre pour le socialisme)"
+CPS = r"(?:C\s?\.?-?\s?P\s?\.?\s?[S5]\b\.?|Combattre pour le socialisme)"  # « C.P.5. » : S lu 5
 
 # ------------------------------------------------------------------ en ligne
 
@@ -185,22 +185,25 @@ R_DEVISE = re.compile(r"on\s+ne\s+peut\s+aller\W{0,3}\s*de\s+l.\s?avant\s+si\s+l
                       r"|(?:aller\s+de\s+\w?\W{0,2}\s?a\w{2}nt|craint\s+d\W{0,2}\s?aller)\b.{0,40}(?:social|L[ée]nine)", re.I)
 R_BANDEAU = re.compile(
     r"^\W*(?:(?:BULLETIN\s+DU\s+)?(?:CO)?MIT[ÉE]\s+POUR|(?:CERCLE|GROUPE)\s+POUR|COMBATTRE\s+POUR(?:\s+LE\s+SOCIALISME)?"
+    # titre du journal suivi de l'encadré du numéro, souvent illisible (« COMBATTRE POUR LE SOCIALISME | cPsn°88 »)
+    r"|COMBATTRE\s+POUR\s+LE\s+SOCIA\w*(?:\s*\|[^\n]{0,30}|\s+C\W{0,2}P\W{0,2}S\W{0,3}\s*n\s?°\s*\d+)"
     r"|LE\s+SOCIALISME|L[ée]nine"
     r"|(?:NUM[ÉE]RO|N\s?°)\s*(?:SP[ÉE]CIAL\s*)?\d+[^\n]{0,40}"
     r"|Prix\s*:?\s*[\d,.]+\s*(?:€|euros?|F|FF|Fr|francs?)\b[^\n]{0,20})\W*$", re.I)
 R_ORGANISATION = re.compile(
     r"^\W*(?:(?:BULLETIN\s+DU\s+)?(?:CO)?MIT[ÉE]\s+POUR|(?:POUR\s+)?LA\s+CONSTRUCTION|GROUPE\s+POUR|CERCLE\s+POUR)\b"
     r"[^\n]{0,200}?(?:INTERNATIONALE|PARTI\s+OUVRIER)", re.I)
-R_TETE_CPS = re.compile(rf"^[^\n]{{0,6}}?(?:Suppl[ée]ment\s+(?:[\w-]+\s+){{0,3}}(?:[àa]|au)\s+)?[«\"“\s]*(?:{CPS}|Socialisme\s+ou\s+Barbarie)[»\"”]?", re.I)
-R_MOTS_ENTETE = re.compile(r"\b(?:nouvelle|ancienne)\s+s[ée]rie|sp[ée]cial|suppl[ée]ment|jeunes|cjr|n\s?°|num[ée]ro|page|p\."
+R_TETE_CPS = re.compile(rf"^[^\n]{{0,6}}?(?:\d{{1,2}}\s?/\s?\d{{1,2}}\s?/\s?\d{{2,4}}\s+)?(?:Suppl[ée]ment\s+(?:[\w-]+\s+){{0,3}}(?:[àa]|au)\s+)?[«\"“\s]*(?:{CPS}|Socialisme\s+ou\s+Barbarie)[»\"”]?", re.I)
+R_MOTS_ENTETE = re.compile(r"\b(?:nouvelle|ancienne)\s+s[ée]rie|sp[ée]cial|suppl[ée]ment|jeunes|cjr|n\s?°|num[ée]ro|page|p\.|\ble\b"
                            r"|\bau\b|\bdu\b|\bà\b|\bbis\b|\bter\b|\d+", re.I)
 R_SOMMAIRE = re.compile(r"(?:\.{3,}|…+|(?:\.\s){3,})[\s,.]*(?:(?i:p)\s*[.,]?\s*|page\s*)?\d{1,2}(?=\s+[A-ZÉÈ«\"“*\\]|\s*$)")
 # sommaire océrisé : les points de conduite sont lus comme des lettres (« … sesesesseeesnsens 28 »)
 # renvoi de page d'un sommaire (« TITRE P.9 », « … p.19 - ») ; pas « P.5, et du P.C.F. » (P.S. mal lu)
 R_RENVOI_PAGE = re.compile(r"(?:\.{2,}|…|[A-ZÉÈ»\"”]\s{0,3}|\s)[Pp]\s?[.,\-]\s?\d{1,2}(?![\d.,])")
 R_SOMMAIRE_OCR = re.compile(r"(?:\.{3,}|…+)[^.…\d]{0,80}?(?:P\s*[.,]?\s*)?\b\d{1,2}(?=\s+[A-ZÉÈ«\"“*\\]|\s*$)")
-R_CONTACT = re.compile(r"(?:https?\s?:\s?//|www\.)?socialisme\.free\.fr/?(?![\w/])|socialisme@free(?:\.fr)?|mailto:\S+"
-                       r"|A\.\s?E\.\s?P\.\s?S\.?"
+R_CONTACT = re.compile(r"(?:https?\s?:\s?//|www\.)?socialisme\.\s?free\.\s?fr/?(?![\w/])|socialisme@free(?:\.fr)?|mailto:\S+"
+                       r"|\bA\.?\s?E\.?\s?P\.?\s?S\b\.?|(?:\d+|\bI)\s*(?:bis|ter)?\s*,?\s*rue\s+Gutenberg|\b9\d\s?\d{3}\s+Montreuil"
+                       r"|Site\s+(?:web|internet)\s*:?"
                        r"|Prenez\s+contact|Rejoignez[- ]nous|abonnez[- ]vous|Discutons[- ]en", re.I)
 SEPARATEURS = {"(...)", "(…)", "[...]", "[…]", "\\[...\\]", "\\[…\\]", "…", "..."}
 R_FILET = re.compile(r"^(?:[-*_](?:\s?[-*_]){2,}|(?:\\\*\s?){3,})$")  # « *** », « ----- » : séparateurs
@@ -346,6 +349,23 @@ def _fragment_bandeau(t):
     bons = sum(1 for j in js if any(m == j or (len(j) >= 4 and (m.startswith(j) or m.endswith(j)))
                                     or (len(j) >= 5 and (_proche(j, m) or _proche(j, m[:len(j)]))) for m in MOTS_BANDEAU))
     return bool(js) and (bons == len(js) or (bons >= 4 and bons >= 0.8 * len(js)))
+
+
+def est_bandeau_supplement(b):
+    """Bandeau d'un supplément ou d'un tract reproduit dans un numéro (« GROUPE pour la
+    construction du Parti ouvrier révolutionnaire… », « Supplément à CPS n°74 – 15 novembre
+    2019 », devise) : il appartient au texte qui suit."""
+    t = _brut(b)
+    return len(t) <= 260 and bool(R_ORGANISATION.match(t) or (R_DEVISE.search(t) and len(t) < 160)
+                                  or _est_entete_seul(t))
+
+
+def commence_par_bandeau(md):
+    """Le texte s'ouvre-t-il sur le bandeau d'un supplément ou d'un tract reproduit dans un
+    numéro (« GROUPE pour la construction du Parti… ») ? Il se nettoie alors comme un début
+    de document."""
+    premier = _brut(next((b for b in md.split("\n\n") if b.strip()), ""))
+    return len(premier) <= 260 and bool(R_ORGANISATION.match(premier))
 
 
 def _est_bandeau(b, zone):

@@ -27,6 +27,9 @@ class Bruit(unittest.TestCase):
         self.assertEqual(net("[Prenez contact !](mailto:socialisme@free.fr)"), "")
         self.assertEqual(net("[Retour à la section: partis](http://socialisme.free.fr/franceorganisations.htm)"), "")
         self.assertEqual(net("Texte final.\n\nHaut"), "Texte final.\n")
+        self.assertEqual(net("Le 16 mars 2014\n\nPrenez contact : AEPS – 1 bis, rue GUTENBERG - 93100 MONTREUIL"),
+                         "Le 16 mars 2014\n")
+        self.assertEqual(net("Fin.\n\nSite web: http://socialisme.free. fr"), "Fin.\n")
 
     def test_bulletin_d_abonnement(self):
         md = ("Texte.\n\n### BULLETIN D'ABONNEMENT A \"COMBATTRE POUR LE SOCIALISME\" {10 NUMEROS: 100 FRANCS)\n\n"
@@ -48,6 +51,10 @@ class Bruit(unittest.TestCase):
     def test_en_tete_de_page(self):
         self.assertEqual(net("Supplément à C.P.S. nouvelle série n°73 (155) – 7 juillet 2019 – page 15"), "")
         self.assertEqual(net("une 3 CPS N°21 - 20 mars 1988 réalité : le capitalisme"), "une réalité : le capitalisme\n")
+        self.assertEqual(net("Fin.\n\nC.P.5. nouvelle série n°31 (113) - 12 janvier 2008 - page 12"), "Fin.\n")  # S lu 5
+        for entete in ("Supplément Étudiants à Socialisme ou Barbarie n°0 - le 13/02/23 R",
+                       "25/01/26 Supplément à Socialisme ou Barbarie n°4"):
+            self.assertEqual(net(entete + "\n\nLa jeunesse le comprend."), "La jeunesse le comprend.\n")
         self.assertEqual(net("les guerres n'ouvrent de débouchés\n\n### Supplément Enseignement public à CPS n° 98 "
                              "(5 octobre 2026)\n\nqu'aux marchands d'armes."),
                          "les guerres n'ouvrent de débouchés qu'aux marchands d'armes.\n")
@@ -83,6 +90,19 @@ class Bruit(unittest.TestCase):
                          "### VOTER POUR LA RUPTURE AVEC LA BOURGEOISIE\n")
         self.assertEqual(net("### IE POUR LA CONSTRUCTION\n\n### DU PART\n\n### UN PREMIER BILAN\n\nTexte.",
                              debut_document=True), "### UN PREMIER BILAN\n\nTexte.\n")
+        # titre du journal suivi de l'encadré du numéro mal lu ; pas le titre d'une rubrique
+        self.assertEqual(net("## COMBATTRE POUR LE SOCIALISME | cPsn°88\n\nTexte.", debut_document=True), "Texte.\n")
+        self.assertEqual(net("## COMBATTRE POUR LE SOCIALISME CPS n°85\n\nTexte.", debut_document=True), "Texte.\n")
+        self.assertIn("informe", net("COMBATTRE POUR LE SOCIALISME informe :\n\nTexte.", debut_document=True))
+
+    def test_bandeau_d_un_supplement_reproduit(self):
+        md = ("*GROUPE pour la construction du Parti et de l’Internationale ouvriers révolutionnaires* "
+              "Supplément **UNIVERSITÉS** à CPS n°66 –\n\n11 novembre 2017\n\n### À bas la sélection !\n\nTexte.")
+        self.assertTrue(N.commence_par_bandeau(md))
+        self.assertEqual(net(md, debut_document=True), "### À bas la sélection !\n\nTexte.\n")
+        # titre qui cite l'organisation : pas un bandeau en tête de texte
+        self.assertFalse(N.commence_par_bandeau("## CONCLUSION DU RAPPORT\n\n### POUR LA CONSTRUCTION DU PARTI "
+                                                "OUVRIER RÉVOLUTIONNAIRE\n\nTexte."))
 
     def test_debris_et_separateurs(self):
         self.assertEqual(net("Texte un.\n\nhe\n\nTexte deux."), "Texte un.\n\nTexte deux.\n")

@@ -78,11 +78,81 @@ class Localisation(unittest.TestCase):
                                             pages_indiquees={1: 4})
         self.assertEqual((blocs[debuts[1]][0], sources[1]), (3, "sommaire"))
 
+    def test_titre_court_reste_paragraphe_page_voisine(self):
+        texte = "Texte de l'article. " * 20
+        blocs = pages_md("## Premier\n\n" + texte, "On nous communique\n\n" + texte, "## La grève de 1968\n\n" + texte)
+        debuts, _ = A.localiser_blocs(["Premier", "On nous communique", "La grève de 1968"], blocs, {1: 3, 2: 4})
+        self.assertEqual([blocs[d][0] for d in debuts], [1, 2, 3])
+
     def test_fin_d_article_precedent_en_haut_de_page(self):
         blocs = pages_md("## Titre A\n\n" + "Texte A. " * 30,
                          "suite de l'article A en minuscule.\n\nDébut de l'article B. " + "Texte B. " * 20)
         debuts = A.ajuster_debuts([0, 2], blocs, ["titre", "sommaire"])
         self.assertEqual(debuts[1], 3)
+
+    def test_surtitre_de_rubrique_au_dessus_du_chapo(self):
+        blocs = pages_md("## Titre A\n\n" + "Texte A. " * 30,
+                         "Fin de l'article précédent.\n\n### Algérie\n\n*Après l'« élection » du 12 décembre, chapô.*\n\n"
+                         "*Qui est Tebboune ? Second paragraphe du chapô.*\n\n### Un an après le déclenchement du Hirak\n\n"
+                         + "Texte B. " * 20)
+        titres = ["Titre A", "Algérie : Un an après le déclenchement du « Hirak »"]
+        debuts = A.ajuster_debuts([0, 6], blocs, ["titre", "sommaire"], titres=titres)
+        self.assertEqual(blocs[debuts[1]][2], "### Algérie")
+        # sans rubrique commune, le chapô reste à sa place
+        debuts = A.ajuster_debuts([0, 6], blocs, ["titre", "sommaire"], titres=["Titre A", "Un an après le Hirak"])
+        self.assertEqual(debuts[1], 6)
+
+    def test_bandeau_du_supplement_rattache_au_texte_qui_suit(self):
+        blocs = pages_md("## Titre A\n\n" + "Texte A. " * 30,
+                         "### GROUPE POUR LA CONSTRUCTION DU PARTI OUVRIER RÉVOLUTIONNAIRE, LA CONSTRUCTION DE "
+                         "L'INTERNATIONALE OUVRIÈRE RÉVOLUTIONNAIRE\n\n(31 octobre 2022\n\nCommuniqué : Iran. " + "Texte B. " * 20)
+        debuts = A.ajuster_debuts([0, 3], blocs, ["titre", "sommaire"])
+        self.assertEqual(debuts[1], 2)
+
+
+class DebutParLeTexte(unittest.TestCase):
+    pages = [
+        "## Premier article\n\nTexte du premier article sur la grève des cheminots et la direction de la CGT.",
+        "C.P,S, nouvelle série n°34 (113) - 12 janvier 2008 - page 21\n\n"
+        "### MOYEN-ORIENT\n\n"
+        "Une questlon taraude la bourgeoisle américaine, au point d’occuper une bonne place dans la "
+        "précampagne pour la Maison Blanche : comment gérer l'encombrant héritage de la guerre en Irak "
+        "et sortir du bourbier sans perdre la face devant ses alliés et ses rivaux de la région.",
+    ]
+    texte = ("*Article paru dans CPS nouvelle série n°31*\n\n## Moyen-Orient\n\n"
+             "Une question taraude la bourgeoisie américaine, au point d’occuper une bonne place dans la "
+             "précampagne pour la Maison Blanche : comment gérer l'encombrant héritage de la guerre en Irak "
+             "et sortir du bourbier sans perdre la face devant ses alliés et ses rivaux de la région.")
+
+    def test_debut_retrouve_malgre_l_ocr_avec_son_titre(self):
+        blocs = A.blocs_document(self.pages)
+        k, score = A.debut_par_le_texte(self.texte, blocs)
+        self.assertEqual(blocs[k][2], "### MOYEN-ORIENT")
+        self.assertGreater(score, 0.5)   # en-tête courant sauté, intertitre inclus
+
+    def test_texte_absent(self):
+        blocs = A.blocs_document(self.pages[:1])
+        self.assertIsNone(A.debut_par_le_texte(self.texte, blocs))
+
+    def test_fin_de_l_article_precedent_collee_au_debut(self):
+        md = ("Les militants continueront à avancer cette exigence. Nous reproduisons ci-dessous un article "
+              "publié dans le numéro 31 de notre bulletin :\n\n### LA LAÏCITÉ\n\nTexte.")
+        note = "*Article paru dans CPS n°56*\n\nNous reproduisons ci-dessous un article publié dans le numéro 31 :"
+        self.assertTrue(A.depuis_le_debut_du_texte(md, note).startswith("Nous reproduisons ci-dessous"))
+        self.assertEqual(A.depuis_le_debut_du_texte("## Titre\n\n" + md, note), "## Titre\n\n" + md)
+
+    def test_titre_en_gras_et_bandeau_du_supplement_inclus(self):
+        corps = ("Le gouvernement prépare une nouvelle offensive contre les étudiants et les lycéens : "
+                 "sélection à l'entrée de l'université, hausse des frais d'inscription, liquidation des "
+                 "diplômes nationaux au profit de certificats locaux sans valeur sur le marché du travail.")
+        page = ("La grève des cheminots a montré la voie, encore fallait-il que les dirigeants la suivent.\n\n"
+                "*GROUPE pour la construction du Parti ouvrier révolutionnaire et de l'Internationale ouvrière "
+                "révolutionnaire* Supplément Jeunes à CPS n°74 – 15 novembre 2019\n\n"
+                "**Le gouvernement Macron est en guerre contre la jeunesse**\n\n"
+                "## Une seule voie : s'organiser\n\n" + corps)
+        blocs = A.blocs_document([page])
+        k, _ = A.debut_par_le_texte("## Le gouvernement Macron est en guerre contre la jeunesse\n\n" + corps, blocs)
+        self.assertTrue(blocs[k][2].startswith("*GROUPE"), blocs[k][2])
 
 
 if __name__ == "__main__":
